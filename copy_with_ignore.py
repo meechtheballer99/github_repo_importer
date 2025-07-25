@@ -4,8 +4,8 @@ import logging
 from datetime import datetime
 import fnmatch
 # ==== CONFIGURATION ====
-SOURCE_DIR = r"Z:\Meech's stuff\UM-Dearborn-All Projects and Class Files\WINTER 2021 SEMESTER CLASS FILES\CIS 200 - RETAKE - WINTER 2021 -JIE SHEN"
-DEST_DIR = r"C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\projects\CIS-200"
+SOURCE_DIR = r"Z:\Meech's stuff\UM-Dearborn-All Projects and Class Files"
+DEST_DIR = r"C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\temp_files_from_server"
 
 IGNORE_FOLDER_PATTERNS = [".vs", "__pycache__", ".git", "Debug"]
 IGNORE_FILE_PATTERNS = ["*.log", "Thumbs.db", ".DS_Store", "~$*", "*.vcxproj*"]
