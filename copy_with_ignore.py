@@ -5,7 +5,7 @@ from datetime import datetime
 import fnmatch
 # ==== CONFIGURATION ====
 SOURCE_DIR = r"Z:\Meech's stuff\UM-Dearborn-All Projects and Class Files\WINTER 2021 SEMESTER CLASS FILES\CIS 200 - RETAKE - WINTER 2021 -JIE SHEN"
-DEST_DIR = r"C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\projects\test"
+DEST_DIR = r"C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\projects\CIS-200"
 
 IGNORE_FOLDER_PATTERNS = [".vs", "__pycache__", ".git", "Debug"]
 IGNORE_FILE_PATTERNS = ["*.log", "Thumbs.db", ".DS_Store", "~$*", "*.vcxproj*"]
@@ -46,14 +46,32 @@ def get_copy_plan(src_dir, ignore_folders, ignore_files):
                 logging.info(f"IGNORED FILE: {os.path.join(root, file)}")
                 continue
 
-            src_path = os.path.join(root, file)
-            try:
-                size = os.path.getsize(src_path)
-                plan.append((src_path, size))
-                total_files += 1
-                total_size += size
-            except FileNotFoundError:
-                logging.warning(f"File not found during scan: {src_path}")
+            # Normalize path and add \\?\ prefix for Windows long path support
+            raw_path = os.path.join(root, file)
+            src_path = os.path.normpath(raw_path)
+            win_path = f"\\\\?\\{src_path}"
+
+            # Retry logic for getsize
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    if not os.path.exists(win_path):
+                        logging.warning(f"File does not exist: {win_path}")
+                        break  # Don't retry nonexistent files
+
+                    size = os.path.getsize(win_path)
+                    plan.append((win_path, size))
+                    total_files += 1
+                    total_size += size
+                    break
+                except FileNotFoundError as e:
+                    if attempt < max_retries - 1:
+                        time.sleep(0.2)
+                        continue
+                    logging.warning(f"File not found during scan after retries: {win_path} | {e}")
+                except Exception as e:
+                    logging.error(f"Unexpected error accessing file: {win_path} | {e}")
+                    break
 
     return plan, total_files, total_size
 
@@ -63,7 +81,8 @@ def copy_files_with_progress(plan, src_dir, dest_dir):
     copied_bytes = 0
 
     for src_file, size in plan:
-        rel_path = os.path.relpath(src_file, src_dir)
+        src_file_clean = src_file[4:] if src_file.startswith('\\\\?\\') else src_file
+        rel_path = os.path.relpath(src_file_clean, src_dir)
         dest_file = os.path.join(dest_dir, rel_path)
         dest_folder = os.path.dirname(dest_file)
 
