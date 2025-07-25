@@ -2,14 +2,17 @@ import os
 import shutil
 import logging
 from datetime import datetime
-
+import fnmatch
 # ==== CONFIGURATION ====
 SOURCE_DIR = r"Z:\Meech's stuff\UM-Dearborn-All Projects and Class Files\WINTER 2021 SEMESTER CLASS FILES\CIS 200 - RETAKE - WINTER 2021 -JIE SHEN"
 DEST_DIR = r"C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\projects\test"
 
-IGNORE_FOLDERS = [".vs", ".git", "__pycache__"]
-IGNORE_FILES = ["Thumbs.db", ".DS_Store"]
+IGNORE_FOLDER_PATTERNS = [".vs", "__pycache__", ".git", "Debug"]
+IGNORE_FILE_PATTERNS = ["*.log", "Thumbs.db", ".DS_Store", "~$*", "*.vcxproj*"]
 
+# ==== MATCHING HELPERS ====
+def matches_any_glob(name, pattern_list):
+    return any(fnmatch.fnmatch(name, pattern) for pattern in pattern_list)
 # ==== SETUP LOGGING ====
 script_dir = os.path.dirname(os.path.abspath(__file__))
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -33,12 +36,13 @@ def get_copy_plan(src_dir, ignore_folders, ignore_files):
     for root, dirs, files in os.walk(src_dir):
         # Remove ignored folders
         for d in list(dirs):
-            if d in ignore_folders:
+            if matches_any_glob(d, IGNORE_FOLDER_PATTERNS):
                 logging.info(f"IGNORED FOLDER: {os.path.join(root, d)}")
                 dirs.remove(d)
 
+        # Check each file
         for file in files:
-            if file in ignore_files:
+            if matches_any_glob(file, IGNORE_FILE_PATTERNS):
                 logging.info(f"IGNORED FILE: {os.path.join(root, file)}")
                 continue
 
@@ -78,7 +82,7 @@ def copy_files_with_progress(plan, src_dir, dest_dir):
 # ==== MAIN ====
 if __name__ == "__main__":
     logging.info("Scanning source directory...")
-    copy_plan, total_files, total_size = get_copy_plan(SOURCE_DIR, IGNORE_FOLDERS, IGNORE_FILES)
+    copy_plan, total_files, total_size = get_copy_plan(SOURCE_DIR, IGNORE_FOLDER_PATTERNS , IGNORE_FILE_PATTERNS)
 
     logging.info("\nSUMMARY:")
     logging.info(f"  Files to copy: {total_files}")
