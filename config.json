@@ -1,6 +1,6 @@
 {
-  "github_token": "ghp_your_token_here",
-  "username": "your_github_username",
+  "github_token": "your_ghp_toke_here_see_https://github.com/settings/tokens_to_generate_token",
+  "username": "meechtheballer99",
   "projects": [
     {
       "repo_name": "CS101",
