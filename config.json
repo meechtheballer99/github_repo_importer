@@ -1,0 +1,18 @@
+{
+  "github_token": "ghp_your_token_here",
+  "username": "your_github_username",
+  "projects": [
+    {
+      "repo_name": "CS101",
+      "repo_description": "CS101 assignments",
+      "private": false,
+      "input_folder": "./projects/CS101"
+    },
+    {
+      "repo_name": "Math241",
+      "repo_description": "Math 241 homework",
+      "private": true,
+      "input_folder": "./projects/Math241"
+    }
+  ]
+}
