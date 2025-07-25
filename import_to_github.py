@@ -57,16 +57,16 @@ for project in config["projects"]:
             with open(readme_path, "w") as f:
                 f.write(f"# {name}\n\n{desc}\n")
 
-        os.chdir(dest_path)
+        def git(*args):
+            subprocess.run(["git", *args], check=True, cwd=dest_path)
 
-        subprocess.run(["git", "init"], check=True)
-        subprocess.run(["git", "config", "user.name", username], check=True)
-        subprocess.run(["git", "config", "user.email", f"{username}@users.noreply.github.com"], check=True)
-
-        subprocess.run(["git", "add", "."], check=True)
-        subprocess.run(["git", "commit", "-m", "Initial commit"], check=True)
-        subprocess.run(["git", "branch", "-M", "main"], check=True)
-        subprocess.run(["git", "remote", "add", "origin", repo_url], check=True)
-        subprocess.run(["git", "push", "-u", push_url, "main"], check=True)
-
+        git("init")
+        git("config", "user.name", username)
+        git("config", "user.email", f"{username}@users.noreply.github.com")
+        git("add", ".")
+        git("commit", "-m", "Initial commit")
+        git("branch", "-M", "main")
+        git("remote", "add", "origin", repo_url)
+        git("push", "-u", push_url, "main")
+        
         print(f"🚀 Pushed to: {repo_url}")
