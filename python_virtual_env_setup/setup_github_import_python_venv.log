@@ -1,0 +1,31 @@
+2025-07-25 11:28:49,096 [INFO] Starting environment setup...
+2025-07-25 11:28:49,097 [INFO] Creating virtual environment...
+2025-07-25 11:28:59,242 [INFO] Virtual environment created.
+2025-07-25 11:28:59,243 [INFO] Running command in venv: C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\python_virtual_env_setup\github_import_python_venv\Scripts\python.exe -m pip show requests
+2025-07-25 11:28:59,747 [ERROR] WARNING: Package(s) not found: requests
+2025-07-25 11:28:59,747 [INFO] Installing missing packages: requests
+2025-07-25 11:28:59,748 [INFO] Running command in venv: C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\python_virtual_env_setup\github_import_python_venv\Scripts\python.exe -m pip install requests
+2025-07-25 11:29:04,662 [INFO] Collecting requests
+  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting charset_normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.4.2-cp313-cp313-win_amd64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests)
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests)
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests)
+  Downloading certifi-2025.7.14-py3-none-any.whl.metadata (2.4 kB)
+Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+Downloading charset_normalizer-3.4.2-cp313-cp313-win_amd64.whl (105 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading certifi-2025.7.14-py3-none-any.whl (162 kB)
+Installing collected packages: urllib3, idna, charset_normalizer, certifi, requests
+
+Successfully installed certifi-2025.7.14 charset_normalizer-3.4.2 idna-3.10 requests-2.32.4 urllib3-2.5.0
+2025-07-25 11:29:04,663 [INFO] Running command in venv: C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\python_virtual_env_setup\github_import_python_venv\Scripts\python.exe -m pip list --outdated
+2025-07-25 11:29:06,654 [INFO] Environment setup complete.
+2025-07-25 11:29:06,654 [INFO] To activate the environment, run:
+C:\Users\demet\OneDrive\Documents\GitHub\github_repo_importer\python_virtual_env_setup\github_import_python_venv\Scripts\activate.bat
+2025-07-25 11:29:06,655 [INFO] Then you can run your script with:
+python your_script.py
