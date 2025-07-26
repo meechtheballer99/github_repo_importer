@@ -4,3 +4,4 @@ github_import_python_venv/
 *.vs/
 *.vcxproj*
 temp_files_from_server/
+*skipped_files_*.csv
