@@ -1,3 +1,6 @@
 github_import_python_venv/
 *token_added.json
 *.log
+*.vs/
+*.vcxproj*
+temp_files_from_server/
