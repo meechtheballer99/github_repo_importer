@@ -7,6 +7,9 @@ import requests
 import logging
 from datetime import datetime
 
+# === Default setting (can be overridden by config.json) ===
+pause_between_repos = False
+
 # Setup logging
 log_filename = f"upload_log_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
 logging.basicConfig(
@@ -28,6 +31,11 @@ try:
     token = config["github_token"]
     username = config["username"]
     headers = {"Authorization": f"token {token}"}
+
+    # Override default pause flag if specified in config
+    if "pause_between_repos" in config:
+        pause_between_repos = config["pause_between_repos"]
+
 except Exception as e:
     logging.error(f"Failed to load configuration: {e}")
     raise SystemExit(1)
@@ -100,3 +108,7 @@ for project in config.get("projects", []):
     except (subprocess.CalledProcessError, OSError, Exception) as e:
         logging.error(f"❌ Failed to process repo '{name}': {e}")
         continue
+
+    # Optional pause
+    if pause_between_repos:
+        input("⏸️ Press Enter to continue to the next repository...")
