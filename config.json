@@ -3,128 +3,128 @@
   "username": "meechtheballer99",
   "projects": [
     {
-      "repo_name": "CIS-150_WITH_ANYS_BACHA",
-      "repo_description": "CIS-150 course repository - Intro to Computer Science I",
+      "repo_name": "CIS-150_COMPUTER_SCIENCE_I",
+      "repo_description": "CIS-150 course repository - Computer Science I - with Dr. Anys Bacha - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
-      "input_folder": "./projects/CIS-200 _RETAKE_WITH_JIE_SHIEN"
+      "input_folder": "./projects/CIS-150"
     },
     {
-      "repo_name": "CIS-200_RETAKE_WITH_JIE_SHIEN",
-      "repo_description": "CIS-200 retake with Jie Shien - Intro to Computer Science II",
+      "repo_name": "CIS-200_COMPUTER_SCIENCE_II__RETAKE",
+      "repo_description": "CIS-200 course repository - Computer Science II - with Dr. Jie Shien - UNIVERISTY OF MICHIGAN-DEARBORN - second and successful attempt at this course",
       "private": false,
-      "input_folder": "./projects/CIS-200 _RETAKE_WITH_JIE_SHIEN"
+      "input_folder": "./projects/CIS-200_RETAKE_WITH_JIE_SHIEN"
     },
     {
-      "repo_name": "CIS-200_With_Robert_Mann",
-      "repo_description": "CIS-200 with Robert Mann - Intro to Computer Science II - all course work and programs",
+      "repo_name": "CIS-200_COMPUTER_SCIENCE_II",
+      "repo_description": "CIS-200 course repository - Computer Science II - With Robert R Mann - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-200_With_Robert_Mann"
     },
     {
-      "repo_name": "CIS-285",
-      "repo_description": "CIS-285 - Software Engineering Tools - course repository with all hw and programs and projects",
+      "repo_name": "CIS-285_SOFTWARE_ENGINEERING_TOOLS",
+      "repo_description": "CIS-285 course repository - Software Engineering Tools - with Dr. Bruce Maxim - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-285"
     },
     {
-      "repo_name": "CIS-298",
-      "repo_description": "CIS-298 course repository - Intro To Python",
+      "repo_name": "CIS-298_INTRO_TO_PYTHON",
+      "repo_description": "CIS-298 course repository - Intro To Python - with Robert R Mann - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-298"
     },
     {
-      "repo_name": "CIS-306",
-      "repo_description": "CIS-306 course repository -  Discrete Structure II -  With John P Baugh",
+      "repo_name": "CIS-306_DISCRETE_STRUCTURES_II",
+      "repo_description": "CIS-306 course repository - Discrete Structures II - With Dr. John P Baugh -  UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-306"
     },
     {
-      "repo_name": "CIS-310",
-      "repo_description": "CIS-310 - Assembly Language - Assembly Language course work and programming I completed",
+      "repo_name": "CIS-310_COMPUTER_ORGANIZATION_AND_ASSEMBLY_LANGUAGE",
+      "repo_description": "CIS-310 course repository - Computer Organization and Assembly Langauge - With Dr. David Yoon - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-310"
     },
     {
-      "repo_name": "CIS-310_RETAKE",
-      "repo_description": "CIS-310 - Assembly Language - course retake repository",
+      "repo_name": "CIS-310_COMPUTER_ORGANIZATION_AND_ASSEMBLY_LANGUAGE__RETAKE",
+      "repo_description": "CIS-310 course repository - Computer Organization and Assembly Langauge - With Dr. David Yoon - UNIVERISTY OF MICHIGAN-DEARBORN - Second and successful attempt at completing ",
       "private": false,
       "input_folder": "./projects/CIS-310_RETAKE"
     },
     {
-      "repo_name": "CIS-350",
-      "repo_description": "CIS-350 course repository - Data Structures and Algorithm Analysis - with PRofessor Jinhua Guo",
+      "repo_name": "CIS-350_DATA_STRUCTURES_ALGORITHM_ANALYSIS",
+      "repo_description": "CIS-350 course repository - Data Structures Algorithm Analysis - With Dr. Jinhua Guo - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-350"
     },
     {
-      "repo_name": "CIS-375",
-      "repo_description": "CIS-375 course repository",
+      "repo_name": "CIS-375_SOFTWARE_ENGINEERING_I",
+      "repo_description": "CIS-375 course repository - Software Engineering I - With Dr. Abou-Nasr - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-375"
     },
     {
-      "repo_name": "CIS-381",
-      "repo_description": "CIS-381 course repository",
+      "repo_name": "CIS-381_INDUSTRIAL_ROBOTS",
+      "repo_description": "CIS-381 course repository - Industrial Robots - With Dr. Cheol W. Lee - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-381"
     },
     {
-      "repo_name": "CIS-387",
-      "repo_description": "CIS-387 course repository",
+      "repo_name": "CIS-387_DIGITAL_FORENSICS_I",
+      "repo_description": "CIS-387 course repository - Digital Forensics I - With Dr. Jinhua Guo - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-387"
     },
     {
-      "repo_name": "CIS-427",
-      "repo_description": "CIS-427 course repository",
+      "repo_name": "CIS-427_COMPUTER_NETWORKS_AND_DISTRIBUTED_SYSTEMS",
+      "repo_description": "CIS-427 course repository - Computer Networks And Distributed Systems - With Dr. Zheng Song - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-427"
     },
     {
-      "repo_name": "CIS-447",
-      "repo_description": "CIS-447 course repository",
+      "repo_name": "CIS-447_COMPUTER_AND_NETWORK_SECURITY",
+      "repo_description": "CIS-447 course repository - Computer And Network Security - With Dr. Anys Bacha - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-447"
     },
     {
-      "repo_name": "CIS-449",
-      "repo_description": "CIS-449 course repository",
+      "repo_name": "CIS-449_SOFTWARE_SECURITY",
+      "repo_description": "CIS-449 course repository - Software Security - With Dr. Anys Bacha - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-449"
     },
     {
-      "repo_name": "CIS-450",
-      "repo_description": "CIS-450 course repository",
+      "repo_name": "CIS-450_OPERATING_SYSTEMS",
+      "repo_description": "CIS-450 course repository - Operating Systems -  With Dr. Jinhua Guo - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-450"
     },
     {
-      "repo_name": "CIS-479",
-      "repo_description": "CIS-479 course repository",
+      "repo_name": "CIS-479_INTRO_TO_ARTIFICIAL_INTELLIGENCE",
+      "repo_description": "CIS-479 course repository - Intro To Artificial Intelligence - With Dr. Shengquan Wang - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-479"
     },
     {
-      "repo_name": "CIS-479_RETAKE",
-      "repo_description": "CIS-479 retake repository",
+      "repo_name": "CIS-479_INTRO_TO_ARTIFICIAL_INTELLIGENCE__RETAKE",
+      "repo_description": "CIS-479 course repository - Intro To Artificial Intelligence - With Dr. Shengquan Wang - UNIVERISTY OF MICHIGAN-DEARBORN - second and successful attempt",
       "private": false,
       "input_folder": "./projects/CIS-479_RETAKE"
     },
     {
-      "repo_name": "CIS-490H",
-      "repo_description": "CIS-490H course repository",
+      "repo_name": "CIS-490H_EDGE_COMPUTING",
+      "repo_description": "CIS-490H course repository - Edge Computing - with Dr. Zheng Song - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-490H"
     },
     {
-      "repo_name": "CIS-490I",
-      "repo_description": "CIS-490I course repository",
+      "repo_name": "CIS-490I_ARTIFICIAL_INTELLIGENCE_DEEP_LEARNING",
+      "repo_description": "CIS-490I course repository - AI Deep Learining - With Dr. Jin Lu - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-490I"
     },
     {
-      "repo_name": "CIS-4951",
-      "repo_description": "CIS-4951 course repository",
+      "repo_name": "CIS-4951_DESIGN_SEMINAR_I",
+      "repo_description": "CIS-4951 course repository - Design Seminar I - With Dr. Zheng Song, Dr. Bruce Maxim, and Dr. Abuo-Nasr - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/CIS-4951"
     },
@@ -135,8 +135,8 @@
       "input_folder": "./projects/CS101"
     },
     {
-      "repo_name": "MATH-227",
-      "repo_description": "MATH-227 course repository",
+      "repo_name": "MATH-227_LINEAR_ALGEBRA",
+      "repo_description": "MATH-227 course repository - Linear Algebra - With Dr. Ali Bazi - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/MATH-227"
     },
@@ -147,14 +147,14 @@
       "input_folder": "./projects/Math241"
     },
     {
-      "repo_name": "SKY_SOCKET_SD2",
-      "repo_description": "SKY SOCKET SD2 project",
+      "repo_name": "SKY_SOCKET_SENIOR_DESIGN_II",
+      "repo_description": "SKY SOCKET SD2 project - FINALIZED - With Dr. Bruce Maxim, Dr. Zheng Song, and Dr. Abuo-Nasr - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/SKY SOCKET SD2"
     },
     {
-      "repo_name": "SPAN-420",
-      "repo_description": "SPAN-420 course repository",
+      "repo_name": "SPAN-420_INTRO_TO_TRANSLATION",
+      "repo_description": "SPAN-420 course repository - Intro To Translation - Con La Profesora Calzada-Orihuela - UNIVERISTY OF MICHIGAN-DEARBORN",
       "private": false,
       "input_folder": "./projects/SPAN-420"
     }
