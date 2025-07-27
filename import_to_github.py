@@ -10,7 +10,7 @@ Key behaviours
   • Clear status icons for Success / Failed / Skipped in the final summary.
   • If pause_between_repos == True → always pause after each repo, regardless of outcome,
     showing which repo is next with a ➡️ marker.
-  • NEW: one commit per top‑level directory (plus a root‑files commit) so you can see
+  • One commit per top‑level directory (plus a root‑files commit) so you can see
     exactly which directory was last pushed if the run fails mid‑way.
 """
 
@@ -24,7 +24,7 @@ import tempfile
 import requests
 import logging
 from datetime import datetime
-from typing import List                      # NEW
+from typing import List
 
 # === Default setting (can be overridden by config.json) ===
 pause_between_repos = False
@@ -63,14 +63,14 @@ except Exception as e:
     raise SystemExit(1)
 
 # ---------------------------------------------------------------------------
-#  Status tracking helpers
+#  Status‑tracking helpers
 # ---------------------------------------------------------------------------
 repo_status: dict[str, str]         = {}   # {repo_name: "Success" | "Failed" | "Skipped"}
-repo_status_details: dict[str, str] = {}   # {repo_name: human-readable reason}
+repo_status_details: dict[str, str] = {}   # {repo_name: human‑readable reason}
 
 
 def get_next_repo(current_repo: str | None) -> str | None:
-    """Return the next repo (by order in config.json) that hasn't been processed yet."""
+    """Return the next repo (by order in config.json) that hasn’t been processed yet."""
     found_current = current_repo is None
     for project in config.get("projects", []):
         name = project.get("repo_name")
@@ -116,7 +116,7 @@ def print_repo_summary(
 def pause_if_requested(current_repo: str) -> None:
     """
     Pause between repos if the config flag is True.
-    Shows summary and the ➡️ pointer for what's next.
+    Shows summary and the ➡️ pointer for what’s next.
     """
     if not pause_between_repos:
         return
@@ -151,7 +151,6 @@ def win_long(path: str) -> str:
         return abs_path
     return path
 
-
 # ---------------------------------------------------------------------------
 #  Optional initial pause before the first repo
 # ---------------------------------------------------------------------------
@@ -165,7 +164,6 @@ if pause_between_repos:
         next_repo=next_repo,
     )
     input(f"\n🔄 Press Enter to start with the first repository ({next_repo})...\n")
-
 
 # ---------------------------------------------------------------------------
 #  Main processing loop
@@ -204,7 +202,6 @@ for project in config.get("projects", []):
         continue
 
     # ---------- create the repo ----------
-    repo_created = False
     try:
         payload = {"name": name, "description": desc, "private": private}
         c_resp  = requests.post(
@@ -216,20 +213,16 @@ for project in config.get("projects", []):
 
         if c_resp.status_code == 201:
             logging.info(f"✅ Repo {name} created successfully.")
-            repo_created = True
             repo_status[name]         = "Success"
             repo_status_details[name] = "✅ Repo created (push pending)"
         else:
             msg = c_resp.json().get("message", "unknown error")
-            logging.error(f"❌ Failed to create repo '{name}': {c_resp.status_code} - {msg}")
-            repo_status[name]         = "Failed"
-            repo_status_details[name] = f"❌ Repo creation failed: {msg}"
-            pause_if_requested(name)
-            continue
-    except requests.RequestException as e:
-        logging.error(f"❌ Exception while creating repo '{name}': {e}")
+            raise RuntimeError(f"{c_resp.status_code} - {msg}")
+
+    except Exception as e:
+        logging.error(f"❌ Failed to create repo '{name}': {e}")
         repo_status[name]         = "Failed"
-        repo_status_details[name] = "❌ Repo creation failed"
+        repo_status_details[name] = f"❌ Repo creation failed: {e}"
         pause_if_requested(name)
         continue
 
@@ -260,45 +253,57 @@ for project in config.get("projects", []):
                 "README.md",
             )
 
-            def git(*args: str) -> None:
-                subprocess.run(
+            def git(*args: str) -> subprocess.CompletedProcess:
+                return subprocess.run(
                     ["git", *args],
-                    check=True,
                     cwd=dest_path,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
+                    text=True,
                 )
 
             # ------------------------------------------------------------------
-            #  NEW incremental git workflow with verbose logging
+            #  Git workflow
             # ------------------------------------------------------------------
-            git("init")
-            git("config", "user.name", username)
-            git("config", "user.email", f"{username}@users.noreply.github.com")
-            git("branch", "-M", "main")
-            git("remote", "add", "origin", repo_url)
+            git("init").check_returncode()
+            git("config", "user.name", username).check_returncode()
+            git("config", "user.email", f"{username}@users.noreply.github.com").check_returncode()
+            git("branch", "-M", "main").check_returncode()
+            git("remote", "add", "origin", repo_url).check_returncode()
             logging.info("🔧 Git repo initialised and remote set to %s", repo_url)
 
+            def has_staged_changes() -> bool:
+                """Return True if there is something staged to commit."""
+                result = git("diff", "--cached", "--quiet")
+                return result.returncode == 1  # 1 means changes staged
+
             def commit_and_push(paths: List[str], message: str, first: bool = False) -> None:
-                """Add paths, commit, push, and log each step."""
-                rel = ", ".join(paths)
-                logging.info("➕  Adding paths: %s", rel)
-                git("add", *paths)
+                logging.info("➕  Adding paths: %s", ", ".join(paths))
+                git("add", *paths).check_returncode()
+
+                if not has_staged_changes():
+                    logging.info("🛈 Nothing to commit for %s – skipping.", message)
+                    return
 
                 logging.info("💾  Committing: %s", message)
-                git("commit", "-m", message)
+                git("commit", "-m", message).check_returncode()
 
                 logging.info("🚀  Pushing commit (%s)…", "first push" if first else "subsequent push")
                 if first:
-                    git("push", "-u", push_url, "main")   # set upstream
+                    git("push", "-u", push_url, "main").check_returncode()
                 else:
-                    git("push", push_url, "main")
+                    git("push", push_url, "main").check_returncode()
                 logging.info("✅  Push complete for: %s", message)
 
             # --- classify items at repo root ----------------------------------
             items      = sorted(os.listdir(dest_path))
             root_files = [p for p in items if os.path.isfile(os.path.join(dest_path, p))]
-            root_dirs  = [p for p in items if os.path.isdir(os.path.join(dest_path, p))]
+
+            # ⚠️ FIX: exclude hidden dirs like .git/
+            root_dirs  = [
+                p for p in items
+                if os.path.isdir(os.path.join(dest_path, p)) and not p.startswith(".")
+            ]
 
             first_push = True
 
@@ -306,7 +311,7 @@ for project in config.get("projects", []):
             if root_files:
                 logging.info("📂 Root‑level files detected: %s", ", ".join(root_files))
                 commit_and_push(root_files, "Add root‑level files", first=True)
-                first_push = False                      # upstream now set
+                first_push = False
             else:
                 logging.info("📂 No root‑level files to commit")
 
@@ -316,29 +321,27 @@ for project in config.get("projects", []):
                 commit_and_push([d], f"Add {d} directory", first=first_push)
                 first_push = False
 
-            logging.info(f"🚀 Successfully pushed files from '{input_folder}' to '{repo_url}'")
+            logging.info("🚀 Successfully pushed files from '%s' to '%s'", input_folder, repo_url)
             repo_status[name]         = "Success"
             repo_status_details[name] = "✅ Repo created and files pushed"
 
     # ---------- enhanced failure diagnostics ----------
     except subprocess.CalledProcessError as e:
-        # Capture stdout & stderr for the git command that failed
-        out = (e.stdout or b"").decode(errors="ignore").strip()
-        err = (e.stderr or b"").decode(errors="ignore").strip()
-        masked_cmd = " ".join(e.cmd).replace(token, "****")
         logging.error(
-            f"❌ Push failed for '{name}':\n"
-            f"    return code: {e.returncode}\n"
-            f"    command: {masked_cmd}\n"
-            f"    stdout: {out!r}\n"
-            f"    stderr: {err!r}"
+            "❌ Push failed for '%s':\n"
+            "    return code: %s\n"
+            "    command: %s\n"
+            "    stdout: %r\n"
+            "    stderr: %r",
+            name, e.returncode,
+            " ".join(e.cmd).replace(token, "****"),
+            e.stdout, e.stderr,
         )
         repo_status[name]         = "Failed"
         repo_status_details[name] = "⚠️ Repo created but push failed"
 
     except Exception:
-        # Any other unexpected error: full traceback for easier debugging
-        logging.exception(f"❌ Unexpected error processing '{name}'")
+        logging.exception("❌ Unexpected error processing '%s'", name)
         repo_status[name]         = "Failed"
         repo_status_details[name] = "❌ Push/setup failed (see traceback)"
 
