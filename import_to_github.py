@@ -135,6 +135,23 @@ def pause_if_requested(current_repo: str) -> None:
     input(prompt)
 
 # ---------------------------------------------------------------------------
+#  Helper: enable paths longer than 260 chars on Windows
+# ---------------------------------------------------------------------------
+def win_long(path: str) -> str:
+    """
+    Prefix the absolute path with  \\?\\  on Windows so the OS uses the
+    extended‑length file‑system APIs (32 767‑char limit).  
+    On non‑Windows systems the path is returned unchanged.
+    """
+    if os.name == "nt":
+        abs_path = os.path.abspath(path)
+        if not abs_path.startswith(r"\\?\\"):
+            abs_path = r"\\?\\" + abs_path
+        return abs_path
+    return path
+
+
+# ---------------------------------------------------------------------------
 #  Optional initial pause before the first repo
 # ---------------------------------------------------------------------------
 if pause_between_repos:
@@ -222,9 +239,10 @@ for project in config.get("projects", []):
 
         with tempfile.TemporaryDirectory() as tmpdir:
             dest_path = os.path.join(tmpdir, name)
-            shutil.copytree(input_folder, dest_path)
+            shutil.copytree(win_long(input_folder), win_long(dest_path))
 
             def write_if_missing(path: str, content: str, label: str) -> None:
+                path = win_long(path)            # long‑path safe
                 if not os.path.exists(path):
                     with open(path, "w", encoding="utf-8") as f:
                         f.write(content)
