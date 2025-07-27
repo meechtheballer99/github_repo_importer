@@ -2,7 +2,7 @@
 """
 import_to_github.py
 -------------------
-Bulk‑create (or skip) GitHub repositories and push local folders.
+Bulk-create (or skip) GitHub repositories and push local folders.
 
 Key behaviours
   • If the repo already exists → skip everything (no defaults, no push).
@@ -11,6 +11,8 @@ Key behaviours
   • If pause_between_repos == True → always pause after each repo, regardless of outcome,
     showing which repo is next with a ➡️ marker.
 """
+
+from __future__ import annotations
 
 import json
 import os
@@ -60,8 +62,8 @@ except Exception as e:
 # ---------------------------------------------------------------------------
 #  Status tracking helpers
 # ---------------------------------------------------------------------------
-repo_status         = {}   # {repo_name: "Success" | "Failed" | "Skipped"}
-repo_status_details = {}   # {repo_name: human‑readable reason}
+repo_status: dict[str, str]         = {}   # {repo_name: "Success" | "Failed" | "Skipped"}
+repo_status_details: dict[str, str] = {}   # {repo_name: human-readable reason}
 
 
 def get_next_repo(current_repo: str | None) -> str | None:
@@ -71,7 +73,6 @@ def get_next_repo(current_repo: str | None) -> str | None:
     found_current = current_repo is None
     for project in config.get("projects", []):
         name = project.get("repo_name")
-        # skip keys which are still "Not yet processed"
         if not found_current:
             found_current = (name == current_repo)
             continue
@@ -80,18 +81,20 @@ def get_next_repo(current_repo: str | None) -> str | None:
     return None
 
 
-def print_repo_summary(config_projects: list,
-                       status: dict[str, str],
-                       details: dict[str, str],
-                       next_repo: str | None = None) -> None:
-    """Pretty one‑pager at the end (or after each pause if enabled)."""
+def print_repo_summary(
+    config_projects: list,
+    status: dict[str, str],
+    details: dict[str, str],
+    next_repo: str | None = None,
+) -> None:
+    """Pretty one-pager at the end (or after each pause if enabled)."""
     logging.info("📊 Repository status summary:")
     for project in config_projects:
         repo    = project.get("repo_name") or "Unnamed"
         state   = status.get(repo, "Not yet processed")
         reason  = details.get(repo, "")
 
-        # pick an icon
+        # icon per state
         match state:
             case "Success" if "already exists" in reason.lower(): symbol = "⚠️"
             case "Success":   symbol = "✅"
@@ -99,7 +102,7 @@ def print_repo_summary(config_projects: list,
             case "Skipped":   symbol = "⏭️"
             case _:           symbol = "⏳"
 
-        # override with arrow if it's the next one
+        # arrow for next repo
         if repo == next_repo:
             symbol = "➡️"
 
@@ -119,9 +122,12 @@ def pause_if_requested(current_repo: str) -> None:
 
     next_repo = get_next_repo(current_repo)
     logging.info(f"⏸️ Paused after processing: {current_repo}")
-    print_repo_summary(config.get("projects", []),
-                       repo_status, repo_status_details,
-                       next_repo=next_repo)
+    print_repo_summary(
+        config.get("projects", []),
+        repo_status,
+        repo_status_details,
+        next_repo=next_repo,
+    )
     prompt = "\n🔄 Press Enter to continue"
     if next_repo:
         prompt += f" to the next repository ({next_repo})"
@@ -151,7 +157,7 @@ for project in config.get("projects", []):
     # ---------- does the repo already exist? ----------
     repo_api_url = f"https://api.github.com/repos/{username}/{name}"
     try:
-        resp = requests.get(repo_api_url, headers=headers)
+        resp = requests.get(repo_api_url, headers=headers, timeout=15)
         if resp.status_code == 200:
             logging.warning(f"⚠️ Repo already exists: {name} – skipping.")
             repo_status[name]         = "Skipped"
@@ -169,8 +175,12 @@ for project in config.get("projects", []):
     repo_created = False
     try:
         payload = {"name": name, "description": desc, "private": private}
-        c_resp  = requests.post("https://api.github.com/user/repos",
-                                headers=headers, json=payload)
+        c_resp  = requests.post(
+            "https://api.github.com/user/repos",
+            headers=headers,
+            json=payload,
+            timeout=30,
+        )
 
         if c_resp.status_code == 201:
             logging.info(f"✅ Repo {name} created successfully.")
@@ -226,6 +236,7 @@ for project in config.get("projects", []):
                     stderr=subprocess.PIPE,
                 )
 
+            # -- actual git workflow --
             git("init")
             git("config", "user.name", username)
             git("config", "user.email", f"{username}@users.noreply.github.com")
@@ -239,13 +250,27 @@ for project in config.get("projects", []):
             repo_status[name]         = "Success"
             repo_status_details[name] = "✅ Repo created and files pushed"
 
-    except Exception as e:
-        logging.error(f"❌ Push failed for '{name}': {e}")
-        repo_status[name] = "Failed"
-        if repo_created:
-            repo_status_details[name] = "⚠️ Repo created but push failed"
-        else:
-            repo_status_details[name] = "❌ Push/setup failed"
+    # ---------- enhanced failure diagnostics ----------
+    except subprocess.CalledProcessError as e:
+        # Capture stdout & stderr for the git command that failed
+        out = (e.stdout or b"").decode(errors="ignore").strip()
+        err = (e.stderr or b"").decode(errors="ignore").strip()
+        masked_cmd = " ".join(e.cmd).replace(token, "****")
+        logging.error(
+            f"❌ Push failed for '{name}':\n"
+            f"    return code: {e.returncode}\n"
+            f"    command: {masked_cmd}\n"
+            f"    stdout: {out!r}\n"
+            f"    stderr: {err!r}"
+        )
+        repo_status[name]         = "Failed"
+        repo_status_details[name] = "⚠️ Repo created but push failed"
+
+    except Exception:
+        # Any other unexpected error: full traceback for easier debugging
+        logging.exception(f"❌ Unexpected error processing '{name}'")
+        repo_status[name]         = "Failed"
+        repo_status_details[name] = "❌ Push/setup failed (see traceback)"
 
     # ---------- always pause if requested ----------
     pause_if_requested(name)
@@ -254,4 +279,8 @@ for project in config.get("projects", []):
 #  Final report
 # ---------------------------------------------------------------------------
 logging.info("\n🏁 All projects processed. Final summary:")
-print_repo_summary(config.get("projects", []), repo_status, repo_status_details)
+print_repo_summary(
+    config.get("projects", []),
+    repo_status,
+    repo_status_details,
+)
