@@ -2,6 +2,8 @@ import os
 import pathlib
 import logging
 import sys
+from datetime import datetime
+import math
 
 # === OPTIONAL HARDCODED TARGET DIRECTORY === 
 # (if command line argument of file path is passed in, TARGET_DIR will be overwritten to use that value)
@@ -10,7 +12,8 @@ TARGET_DIR = None  # e.g., "~/OneDrive/Documents/GitHub/github_repo_importer/pro
 
 # === SETUP SCRIPT DIRECTORY AND LOGGING ===
 script_dir = pathlib.Path(__file__).parent.resolve()
-log_file = script_dir / "directory_sizes.log"
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+log_file = script_dir / f"directory_sizes_{timestamp}.log"
 
 logging.basicConfig(
     filename=log_file,
@@ -29,21 +32,25 @@ def format_size(bytes_size):
     else:
         return f"{bytes_size / (1024 ** 3):.2f} GB"
 
-def get_directory_size_bytes(path):
-    """Recursively calculate total size of all files in a directory."""
+def get_directory_sizes(path, allocation_unit=4096):
+    """Recursively calculate total size and size-on-disk of all files in a directory."""
     total_size = 0
+    size_on_disk = 0
     try:
         for root, dirs, files in os.walk(path, topdown=True, followlinks=False):
             for f in files:
                 try:
                     fp = os.path.join(root, f)
-                    total_size += os.path.getsize(fp)
+                    size = os.path.getsize(fp)
+                    total_size += size
+                    # Round up to nearest allocation unit to estimate disk usage
+                    size_on_disk += math.ceil(size / allocation_unit) * allocation_unit
                 except Exception as fe:
                     logging.warning(f"⚠️ Could not read size of file {fp}: {fe}")
     except Exception as e:
         logging.error(f"❌ Error walking through {path}: {e}")
-        return 0
-    return total_size
+        return 0, 0
+    return total_size, size_on_disk
 
 def list_subdirectory_sizes(base_path):
     if not base_path.is_dir():
@@ -55,22 +62,28 @@ def list_subdirectory_sizes(base_path):
     logging.info(f"📂 Scanning directory: {base_path}")
 
     dir_sizes = []
-    total_size_bytes = 0
+    total_bytes = 0
+    total_disk = 0
 
     for item in base_path.iterdir():
         if item.is_dir() and not item.is_symlink():
-            size_bytes = get_directory_size_bytes(item)
-            dir_sizes.append((item.name, size_bytes))
-            total_size_bytes += size_bytes
-            logging.info(f"📁 {item.name}: {format_size(size_bytes)}")
+            size_bytes, disk_bytes = get_directory_sizes(item)
+            dir_sizes.append((item.name, size_bytes, disk_bytes))
+            total_bytes += size_bytes
+            total_disk += disk_bytes
+            logging.info(f"📁 {item.name}: actual={format_size(size_bytes)}, disk={format_size(disk_bytes)}")
 
     dir_sizes.sort(key=lambda x: x[1], reverse=True)
 
-    for name, size_bytes in dir_sizes:
-        print(f"📦 {name:<30} — {format_size(size_bytes):>10}")
+    for name, size_bytes, disk_bytes in dir_sizes:
+        print(f"📦 {name:<30} — actual: {format_size(size_bytes):>10} | disk: {format_size(disk_bytes):>10}")
 
-    print(f"\n📊 Total size of subdirectories: {format_size(total_size_bytes)}")
-    logging.info(f"📊 Total size of subdirectories: {format_size(total_size_bytes)}")
+    print(f"\n📊 Total size of subdirectories:")
+    print(f"   📄 Actual Size     : {format_size(total_bytes)}")
+    print(f"   💽 Size on Disk    : {format_size(total_disk)}")
+
+    logging.info(f"📊 Total actual size: {format_size(total_bytes)}")
+    logging.info(f"💽 Total size on disk: {format_size(total_disk)}")
 
     print(f"\n✅ Done. Log saved to: {log_file}")
 
