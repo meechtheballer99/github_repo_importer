@@ -25,6 +25,7 @@ import requests
 import logging
 from datetime import datetime
 from typing import List
+from pathlib import Path
 
 # === Default setting (can be overridden by config.json) ===
 pause_between_repos = False
@@ -231,7 +232,7 @@ for project in config.get("projects", []):
         repo_url = f"https://github.com/{username}/{name}.git"
         push_url = f"https://{username}:{token}@github.com/{username}/{name}.git"
 
-        with tempfile.TemporaryDirectory() as tmpdir:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmpdir:
             dest_path = os.path.join(tmpdir, name)
             shutil.copytree(win_long(input_folder), win_long(dest_path))
 
@@ -268,6 +269,7 @@ for project in config.get("projects", []):
             git("init").check_returncode()
             git("config", "user.name", username).check_returncode()
             git("config", "user.email", f"{username}@users.noreply.github.com").check_returncode()
+            git("config", "core.longpaths", "true").check_returncode()
             git("branch", "-M", "main").check_returncode()
             git("remote", "add", "origin", repo_url).check_returncode()
             logging.info("🔧 Git repo initialised and remote set to %s", repo_url)
@@ -279,7 +281,8 @@ for project in config.get("projects", []):
 
             def commit_and_push(paths: List[str], message: str, first: bool = False) -> None:
                 logging.info("➕  Adding paths: %s", ", ".join(paths))
-                git("add", *paths).check_returncode()
+                safe_paths = [str(Path(p)) for p in paths]      # normalise & stringify
+                git("add", *safe_paths).check_returncode()
 
                 if not has_staged_changes():
                     logging.info("🛈 Nothing to commit for %s – skipping.", message)
@@ -340,10 +343,23 @@ for project in config.get("projects", []):
         repo_status[name]         = "Failed"
         repo_status_details[name] = "⚠️ Repo created but push failed"
 
+    except OSError as e:
+        # Windows couldn’t delete the temp directory because some file was still open.
+        if getattr(e, "winerror", None) == 145:          # ERROR_DIR_NOT_EMPTY
+            logging.warning("⚠️ Temp cleanup failed but push was successful: %s", e)
+            repo_status[name]         = "Success"
+            repo_status_details[name] = "✅ Pushed (temp cleanup warning)"
+        else:
+            logging.exception("❌ Unexpected OS error processing '%s'", name)
+            repo_status[name]         = "Failed"
+            repo_status_details[name] = "❌ Push/setup failed (see traceback)"
+
     except Exception:
+        # Anything else that’s not an OSError
         logging.exception("❌ Unexpected error processing '%s'", name)
         repo_status[name]         = "Failed"
         repo_status_details[name] = "❌ Push/setup failed (see traceback)"
+
 
     # ---------- always pause if requested ----------
     pause_if_requested(name)
