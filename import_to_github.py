@@ -2,7 +2,7 @@
 """
 import_to_github.py
 -------------------
-Bulk-create (or skip) GitHub repositories and push local folders.
+Bulk‑create (or skip) GitHub repositories and push local folders.
 
 Key behaviours
   • If the repo already exists → skip everything (no defaults, no push).
@@ -10,6 +10,8 @@ Key behaviours
   • Clear status icons for Success / Failed / Skipped in the final summary.
   • If pause_between_repos == True → always pause after each repo, regardless of outcome,
     showing which repo is next with a ➡️ marker.
+  • NEW: one commit per top‑level directory (plus a root‑files commit) so you can see
+    exactly which directory was last pushed if the run fails mid‑way.
 """
 
 from __future__ import annotations
@@ -22,6 +24,7 @@ import tempfile
 import requests
 import logging
 from datetime import datetime
+from typing import List                      # NEW
 
 # === Default setting (can be overridden by config.json) ===
 pause_between_repos = False
@@ -67,9 +70,7 @@ repo_status_details: dict[str, str] = {}   # {repo_name: human-readable reason}
 
 
 def get_next_repo(current_repo: str | None) -> str | None:
-    """
-    Return the next repo (by order in config.json) that hasn't been processed yet.
-    """
+    """Return the next repo (by order in config.json) that hasn't been processed yet."""
     found_current = current_repo is None
     for project in config.get("projects", []):
         name = project.get("repo_name")
@@ -87,7 +88,7 @@ def print_repo_summary(
     details: dict[str, str],
     next_repo: str | None = None,
 ) -> None:
-    """Pretty one-pager at the end (or after each pause if enabled)."""
+    """Pretty one‑pager at the end (or after each pause if enabled)."""
     logging.info("📊 Repository status summary:")
     for project in config_projects:
         repo    = project.get("repo_name") or "Unnamed"
@@ -140,7 +141,7 @@ def pause_if_requested(current_repo: str) -> None:
 def win_long(path: str) -> str:
     """
     Prefix the absolute path with  \\?\\  on Windows so the OS uses the
-    extended‑length file‑system APIs (32 767‑char limit).  
+    extended‑length file‑system APIs (32 767‑char limit).
     On non‑Windows systems the path is returned unchanged.
     """
     if os.name == "nt":
@@ -268,15 +269,52 @@ for project in config.get("projects", []):
                     stderr=subprocess.PIPE,
                 )
 
-            # -- actual git workflow --
+            # ------------------------------------------------------------------
+            #  NEW incremental git workflow with verbose logging
+            # ------------------------------------------------------------------
             git("init")
             git("config", "user.name", username)
             git("config", "user.email", f"{username}@users.noreply.github.com")
-            git("add", ".")
-            git("commit", "-m", "Initial commit")
             git("branch", "-M", "main")
             git("remote", "add", "origin", repo_url)
-            git("push", "-u", push_url, "main")
+            logging.info("🔧 Git repo initialised and remote set to %s", repo_url)
+
+            def commit_and_push(paths: List[str], message: str, first: bool = False) -> None:
+                """Add paths, commit, push, and log each step."""
+                rel = ", ".join(paths)
+                logging.info("➕  Adding paths: %s", rel)
+                git("add", *paths)
+
+                logging.info("💾  Committing: %s", message)
+                git("commit", "-m", message)
+
+                logging.info("🚀  Pushing commit (%s)…", "first push" if first else "subsequent push")
+                if first:
+                    git("push", "-u", push_url, "main")   # set upstream
+                else:
+                    git("push", push_url, "main")
+                logging.info("✅  Push complete for: %s", message)
+
+            # --- classify items at repo root ----------------------------------
+            items      = sorted(os.listdir(dest_path))
+            root_files = [p for p in items if os.path.isfile(os.path.join(dest_path, p))]
+            root_dirs  = [p for p in items if os.path.isdir(os.path.join(dest_path, p))]
+
+            first_push = True
+
+            # --- commit + push root‑level files -------------------------------
+            if root_files:
+                logging.info("📂 Root‑level files detected: %s", ", ".join(root_files))
+                commit_and_push(root_files, "Add root‑level files", first=True)
+                first_push = False                      # upstream now set
+            else:
+                logging.info("📂 No root‑level files to commit")
+
+            # --- commit + push each top‑level directory -----------------------
+            for d in root_dirs:
+                logging.info("📁 Processing directory: %s", d)
+                commit_and_push([d], f"Add {d} directory", first=first_push)
+                first_push = False
 
             logging.info(f"🚀 Successfully pushed files from '{input_folder}' to '{repo_url}'")
             repo_status[name]         = "Success"
