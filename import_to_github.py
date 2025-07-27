@@ -134,6 +134,20 @@ def pause_if_requested(current_repo: str) -> None:
     prompt += "...\n"
     input(prompt)
 
+# ---------------------------------------------------------------------------
+#  Optional initial pause before the first repo
+# ---------------------------------------------------------------------------
+if pause_between_repos:
+    next_repo = get_next_repo(None)          # first repo that will be processed
+    logging.info("⏸️ Initial pause before processing any repositories.")
+    print_repo_summary(
+        config.get("projects", []),
+        repo_status,
+        repo_status_details,
+        next_repo=next_repo,
+    )
+    input(f"\n🔄 Press Enter to start with the first repository ({next_repo})...\n")
+
 
 # ---------------------------------------------------------------------------
 #  Main processing loop
