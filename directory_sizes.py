@@ -4,6 +4,7 @@ import logging
 import sys
 from datetime import datetime
 import math
+import platform
 
 # === OPTIONAL HARDCODED TARGET DIRECTORY === 
 # (if command line argument of file path is passed in, TARGET_DIR will be overwritten to use that value)
@@ -32,7 +33,35 @@ def format_size(bytes_size):
     else:
         return f"{bytes_size / (1024 ** 3):.2f} GB"
 
-def get_directory_sizes(path, allocation_unit=4096):
+def get_allocation_unit_size(path):
+    """Determine filesystem cluster size (allocation unit) depending on OS."""
+    if platform.system() == 'Windows':
+        import ctypes
+
+        sectors_per_cluster = ctypes.c_ulong()
+        bytes_per_sector = ctypes.c_ulong()
+        num_free_clusters = ctypes.c_ulong()
+        total_num_clusters = ctypes.c_ulong()
+
+        root_path = pathlib.Path(path).drive + '\\'
+        result = ctypes.windll.kernel32.GetDiskFreeSpaceW(
+            ctypes.c_wchar_p(root_path),
+            ctypes.byref(sectors_per_cluster),
+            ctypes.byref(bytes_per_sector),
+            ctypes.byref(num_free_clusters),
+            ctypes.byref(total_num_clusters)
+        )
+
+        if result == 0:
+            raise OSError("Failed to get disk free space info on Windows")
+
+        return sectors_per_cluster.value * bytes_per_sector.value
+
+    else:
+        stat = os.statvfs(path)
+        return stat.f_frsize  # fragment size
+
+def get_directory_sizes(path, allocation_unit):
     """Recursively calculate total size and size-on-disk of all files in a directory."""
     total_size = 0
     size_on_disk = 0
@@ -43,7 +72,6 @@ def get_directory_sizes(path, allocation_unit=4096):
                     fp = os.path.join(root, f)
                     size = os.path.getsize(fp)
                     total_size += size
-                    # Round up to nearest allocation unit to estimate disk usage
                     size_on_disk += math.ceil(size / allocation_unit) * allocation_unit
                 except Exception as fe:
                     logging.warning(f"⚠️ Could not read size of file {fp}: {fe}")
@@ -61,13 +89,23 @@ def list_subdirectory_sizes(base_path):
     print(f"\n📂 Scanning directory: {base_path}\n")
     logging.info(f"📂 Scanning directory: {base_path}")
 
+    try:
+        allocation_unit = get_allocation_unit_size(base_path)
+    except Exception as e:
+        print(f"⚠️ Failed to determine allocation unit size: {e}")
+        logging.error(f"⚠️ Failed to determine allocation unit size: {e}")
+        allocation_unit = 4096  # default fallback
+
+    print(f"💾 Allocation unit size: {format_size(allocation_unit)}\n")
+    logging.info(f"💾 Allocation unit size: {allocation_unit} bytes")
+
     dir_sizes = []
     total_bytes = 0
     total_disk = 0
 
     for item in base_path.iterdir():
         if item.is_dir() and not item.is_symlink():
-            size_bytes, disk_bytes = get_directory_sizes(item)
+            size_bytes, disk_bytes = get_directory_sizes(item, allocation_unit)
             dir_sizes.append((item.name, size_bytes, disk_bytes))
             total_bytes += size_bytes
             total_disk += disk_bytes
