@@ -5,3 +5,6 @@ github_import_python_venv/
 *.vcxproj*
 temp_files_from_server/
 *skipped_files_*.csv
+temp_files_from_server.zip
+OfficialTranscript_DEMETRIUSJOHNSON.pdf
+projects/
