@@ -8,7 +8,8 @@ Key behaviours
   • If the repo already exists → skip everything (no defaults, no push).
   • If the repo is created but push fails → log that distinction.
   • Clear status icons for Success / Failed / Skipped in the final summary.
-  • If pause_between_repos == True → always pause after each repo, regardless of outcome.
+  • If pause_between_repos == True → always pause after each repo, regardless of outcome,
+    showing which repo is next with a ➡️ marker.
 """
 
 import json
@@ -59,13 +60,30 @@ except Exception as e:
 # ---------------------------------------------------------------------------
 #  Status tracking helpers
 # ---------------------------------------------------------------------------
-repo_status          = {}   # {repo_name: "Success" | "Failed" | "Skipped"}
-repo_status_details  = {}   # {repo_name: human‑readable reason}
+repo_status         = {}   # {repo_name: "Success" | "Failed" | "Skipped"}
+repo_status_details = {}   # {repo_name: human‑readable reason}
+
+
+def get_next_repo(current_repo: str | None) -> str | None:
+    """
+    Return the next repo (by order in config.json) that hasn't been processed yet.
+    """
+    found_current = current_repo is None
+    for project in config.get("projects", []):
+        name = project.get("repo_name")
+        # skip keys which are still "Not yet processed"
+        if not found_current:
+            found_current = (name == current_repo)
+            continue
+        if found_current and name not in repo_status:
+            return name
+    return None
 
 
 def print_repo_summary(config_projects: list,
                        status: dict[str, str],
-                       details: dict[str, str]) -> None:
+                       details: dict[str, str],
+                       next_repo: str | None = None) -> None:
     """Pretty one‑pager at the end (or after each pause if enabled)."""
     logging.info("📊 Repository status summary:")
     for project in config_projects:
@@ -81,18 +99,34 @@ def print_repo_summary(config_projects: list,
             case "Skipped":   symbol = "⏭️"
             case _:           symbol = "⏳"
 
+        # override with arrow if it's the next one
+        if repo == next_repo:
+            symbol = "➡️"
+
         msg = f"   {symbol} {repo} - {state}"
         if reason:
             msg += f" (! {reason})"
         logging.info(msg)
 
 
-def pause_if_requested(repo_name: str) -> None:
-    """Pause between repos if flag turned on."""
-    if pause_between_repos:
-        logging.info(f"⏸️ Paused after processing: {repo_name}")
-        print_repo_summary(config.get("projects", []), repo_status, repo_status_details)
-        input("\n🔄 Press Enter to continue to the next repository...\n")
+def pause_if_requested(current_repo: str) -> None:
+    """
+    Pause between repos if the config flag is True.
+    Shows summary and the ➡️ pointer for what's next.
+    """
+    if not pause_between_repos:
+        return
+
+    next_repo = get_next_repo(current_repo)
+    logging.info(f"⏸️ Paused after processing: {current_repo}")
+    print_repo_summary(config.get("projects", []),
+                       repo_status, repo_status_details,
+                       next_repo=next_repo)
+    prompt = "\n🔄 Press Enter to continue"
+    if next_repo:
+        prompt += f" to the next repository ({next_repo})"
+    prompt += "...\n"
+    input(prompt)
 
 
 # ---------------------------------------------------------------------------
@@ -134,9 +168,9 @@ for project in config.get("projects", []):
     # ---------- create the repo ----------
     repo_created = False
     try:
-        payload  = {"name": name, "description": desc, "private": private}
-        c_resp   = requests.post("https://api.github.com/user/repos",
-                                 headers=headers, json=payload)
+        payload = {"name": name, "description": desc, "private": private}
+        c_resp  = requests.post("https://api.github.com/user/repos",
+                                headers=headers, json=payload)
 
         if c_resp.status_code == 201:
             logging.info(f"✅ Repo {name} created successfully.")
