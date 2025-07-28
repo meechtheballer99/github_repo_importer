@@ -269,6 +269,7 @@ for project in config.get("projects", []):
             #  Git workflow
             # ------------------------------------------------------------------
             git("init").check_returncode()
+            git("commit", "--allow-empty", "-m", "Initial commit").check_returncode()
             git("config", "user.name", username).check_returncode()
             git("config", "user.email", f"{username}@users.noreply.github.com").check_returncode()
             git("config", "core.longpaths", "true").check_returncode()
@@ -289,14 +290,21 @@ for project in config.get("projects", []):
                 # --- NEW: un-stage any file > 100 MB -----------------------------------
                 oversized: list[str] = []
                 staged = git("diff", "--cached", "--name-only").stdout.splitlines()
-                for rel_path in staged:
+                for raw_rel_path in staged:
+                    rel_path = raw_rel_path.strip('"')
                     abs_path = os.path.join(dest_path, rel_path)
+
                     try:
                         if os.path.getsize(abs_path) > MAX_FILE_SIZE:
-                            git("reset", "HEAD", rel_path).check_returncode()
+                            # 🛈 Log exactly when we un‑stage an oversized file
+                            logging.info("↩️ Un‑staging oversized file: %s", rel_path)
+                            git("reset", "HEAD", raw_rel_path).check_returncode()
                             oversized.append(rel_path)
-                    except FileNotFoundError:
-                        # File vanished between add and size-check – just ignore
+
+                    except (FileNotFoundError, OSError) as e:
+                        # 🛈 Log when a path can’t be stat‑ed and is being un‑staged
+                        logging.info("↩️ Un‑staging problematic path %s (%s)", raw_rel_path, e)
+                        git("reset", "HEAD", raw_rel_path).check_returncode()
                         continue
 
                 if oversized:
