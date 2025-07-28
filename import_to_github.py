@@ -256,13 +256,21 @@ for project in config.get("projects", []):
                 "README.md",
             )
 
-            def git(*args: str) -> subprocess.CompletedProcess:
+            def git(*args: str, **kw) -> subprocess.CompletedProcess:
+                """
+                Thin wrapper around subprocess.run for Git calls.
+
+                • Accepts **any** subprocess.run keyword (e.g. text=False when we
+                want raw bytes).
+                • Defaults to text=True so existing callers keep getting str output.
+                """
+                kw.setdefault("text", True)            # default behaviour unchanged
                 return subprocess.run(
                     ["git", *args],
                     cwd=dest_path,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
-                    text=True,
+                    **kw,                              # forward to subprocess.run
                 )
 
             # ------------------------------------------------------------------
@@ -272,39 +280,36 @@ for project in config.get("projects", []):
             git("commit", "--allow-empty", "-m", "Initial commit").check_returncode()
             git("config", "user.name", username).check_returncode()
             git("config", "user.email", f"{username}@users.noreply.github.com").check_returncode()
+            git("config", "core.quotepath", "false").check_returncode()
             git("config", "core.longpaths", "true").check_returncode()
             git("branch", "-M", "main").check_returncode()
             git("remote", "add", "origin", repo_url).check_returncode()
             logging.info("🔧 Git repo initialised and remote set to %s", repo_url)
 
-            def has_staged_changes() -> bool:
-                """Return True if there is something staged to commit."""
-                result = git("diff", "--cached", "--quiet")
-                return result.returncode == 1  # 1 means changes staged
+            # --- NEW helper: NUL‑delimited staged‑file list (no quoting, raw UTF‑8) ----
+            def list_staged() -> list[str]:
+                raw = git("diff", "--cached", "--name-only", "-z", text=False).stdout
+                return [b.decode("utf-8", "surrogateescape") for b in raw.split(b"\0") if b]
 
             def commit_and_push(paths: List[str], message: str, first: bool = False) -> None:
                 logging.info("➕  Adding paths: %s", ", ".join(paths))
-                safe_paths = [str(Path(p)) for p in paths]          # normalise & stringify
-                git("add", *safe_paths).check_returncode()
+                git("add", *paths).check_returncode()
 
-                # --- NEW: un-stage any file > 100 MB -----------------------------------
                 oversized: list[str] = []
-                staged = git("diff", "--cached", "--name-only").stdout.splitlines()
-                for raw_rel_path in staged:
-                    rel_path = raw_rel_path.strip('"')
-                    abs_path = os.path.join(dest_path, rel_path)
+                for rel_path in list_staged():
+                    abs_path = Path(dest_path, rel_path)           # normalise separators
 
                     try:
-                        if os.path.getsize(abs_path) > MAX_FILE_SIZE:
-                            # 🛈 Log exactly when we un‑stage an oversized file
+                        # --- FAST, portable size check via Git (no filesystem quirks) ---
+                        size = int(git("cat-file", "-s", f":{rel_path}").stdout)
+                        if size > MAX_FILE_SIZE:
                             logging.info("↩️ Un‑staging oversized file: %s", rel_path)
-                            git("reset", "HEAD", raw_rel_path).check_returncode()
+                            git("reset", "HEAD", "--", rel_path).check_returncode()
                             oversized.append(rel_path)
 
-                    except (FileNotFoundError, OSError) as e:
-                        # 🛈 Log when a path can’t be stat‑ed and is being un‑staged
-                        logging.info("↩️ Un‑staging problematic path %s (%s)", raw_rel_path, e)
-                        git("reset", "HEAD", raw_rel_path).check_returncode()
+                    except subprocess.CalledProcessError as e:
+                        logging.info("↩️ Un‑staging problematic path %s (%s)", rel_path, e)
+                        git("reset", "HEAD", "--", rel_path).check_returncode()
                         continue
 
                 if oversized:
@@ -313,8 +318,7 @@ for project in config.get("projects", []):
                         len(oversized), ", ".join(oversized)
                     )
 
-                # If nothing left to commit, bail out early
-                if not has_staged_changes():
+                if not list_staged():                 # nothing left staged
                     logging.info("🛈 Nothing to commit for %s – skipping.", message)
                     return
 
@@ -328,7 +332,6 @@ for project in config.get("projects", []):
                 else:
                     git("push", push_url, "main").check_returncode()
                 logging.info("✅  Push complete for: %s", message)
-
             # --- classify items at repo root ----------------------------------
             items      = sorted(os.listdir(dest_path))
             root_files = [p for p in items if os.path.isfile(os.path.join(dest_path, p))]
