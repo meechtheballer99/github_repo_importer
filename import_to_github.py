@@ -29,6 +29,8 @@ from pathlib import Path
 
 # === Default setting (can be overridden by config.json) ===
 pause_between_repos = False
+# --- GitHub hard limit: 100 MB per file ------------------------------------
+MAX_FILE_SIZE = 100 * 1024 * 1024      # bytes
 
 # ---------------------------------------------------------------------------
 #  Logging
@@ -281,13 +283,34 @@ for project in config.get("projects", []):
 
             def commit_and_push(paths: List[str], message: str, first: bool = False) -> None:
                 logging.info("➕  Adding paths: %s", ", ".join(paths))
-                safe_paths = [str(Path(p)) for p in paths]      # normalise & stringify
+                safe_paths = [str(Path(p)) for p in paths]          # normalise & stringify
                 git("add", *safe_paths).check_returncode()
 
+                # --- NEW: un-stage any file > 100 MB -----------------------------------
+                oversized: list[str] = []
+                staged = git("diff", "--cached", "--name-only").stdout.splitlines()
+                for rel_path in staged:
+                    abs_path = os.path.join(dest_path, rel_path)
+                    try:
+                        if os.path.getsize(abs_path) > MAX_FILE_SIZE:
+                            git("reset", "HEAD", rel_path).check_returncode()
+                            oversized.append(rel_path)
+                    except FileNotFoundError:
+                        # File vanished between add and size-check – just ignore
+                        continue
+
+                if oversized:
+                    logging.warning(
+                        "🚫 Skipped %d oversized file(s) (>100 MB): %s",
+                        len(oversized), ", ".join(oversized)
+                    )
+
+                # If nothing left to commit, bail out early
                 if not has_staged_changes():
                     logging.info("🛈 Nothing to commit for %s – skipping.", message)
                     return
 
+                # --- commit + push ------------------------------------------------------
                 logging.info("💾  Committing: %s", message)
                 git("commit", "-m", message).check_returncode()
 
