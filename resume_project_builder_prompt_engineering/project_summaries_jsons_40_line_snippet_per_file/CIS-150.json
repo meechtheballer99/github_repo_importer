@@ -1,0 +1,308 @@
+[
+  {
+    "repo": "CIS-150",
+    "folder": "FINAL PROJECT CIS-150 WINTER 2020\\FINAL PROJECT CIS-150 WINTER 2020 - MEECH",
+    "code_files": [
+      "FINAL PROJECT CIS-150 WINTER 2020\\FINAL PROJECT CIS-150 WINTER 2020 - MEECH\\FINAL PROJECT CIS-150 WINTER 2020 - MEECH.cpp",
+      "FINAL PROJECT CIS-150 WINTER 2020\\FINAL PROJECT CIS-150 WINTER 2020 - MEECH\\RowLetters.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\FINAL PROJECT CIS-150 WINTER 2020\\FINAL PROJECT CIS-150 WINTER 2020 - MEECH\\FINAL PROJECT CIS-150 WINTER 2020 - MEECH.cpp",
+        "snippet": "// FINAL PROJECT CIS-150 WINTER 2020 - MEECH.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n\n//************EXTRA CREDIT PORTION COMPLETED********************HAVE BUILT MY PROGRAM AROUND ANY NUMBER OF ROWS AND LETTERS IN ROW AND EVEN MIXTURES*****\n//***********YOU CAN USE ANY INPUT FILE OF THE SAME FORMAT. JUST END FILE WITHOUT A NEWLINE, AND ENSURE YOU HAVE EACH ROW START WITH ONLY 1 NUMBER AND END WITH A LETTER, THEN A NEWLINE (EXCPET FOR LAST ROW).\n//ROWS DO NOT HAVE TO HAVE SAME NUMBER OF SEATS/LETTERS.\n\n//   Purpose: Airline Seat Reservation/Cancellation Program -- Airliner of any size seating (EXTRA CREDIT)\n//   Author: Demetrius E. Johnson\n//   Creation Date: 4-15-20\n//   Last Modification Date: 4-17-20\n\n#include \"RowLetters.h\"\n#include <iostream>\n#include <fstream>\n#include <vector>\n#include <iomanip>\n#include <string>\n#include <sstream>\nusing namespace std;\n\n\n//-------------------------------FUNCTION DECLARATIONS----------------------------------------//\nvoid readAircraftSeatingInfo(ifstream& ifs, vector<RowLetters>& seatingVector);\nvoid writeAircraftSeatingInfo(ofstream& ofs, vector<RowLetters>& seatingVector);\nvoid X_ammendAircraftSeatingInfo(string userEntry, vector<RowLetters>& seatingVector);\nvoid Char_ammendAircraftSeatingInfo(string userEntry, vector<RowLetters>& seatingVector);\nvoid displayMenu();\nvoid mainMenu();\nvoid displaySeatingChart(vector<RowLetters>& seatingVector);\nvoid displayTableHeader();\n//------------------------------------FUNCTION DELCARATIONS------------------------------------//\n\n\nint main()\n{\n\tint userChoice, stringPosition = 0, errorChecker = 0;\n\tstring userSeatEntry;\n\tstring airCraftSeatingInfoFile = \"chartIn.txt\";"
+      },
+      {
+        "file": "CIS-150\\FINAL PROJECT CIS-150 WINTER 2020\\FINAL PROJECT CIS-150 WINTER 2020 - MEECH\\RowLetters.cpp",
+        "snippet": "//   Purpose: Airline Seat Reservation/Cancellation Program -- Airliner of any size seating (EXTRA CREDIT)\n//   Author: Demetrius E. Johnson\n//   Creation Date: 4-15-20\n//   Last Modification Date: 4-17-20\n//CLASS USED TO STORE FILE DATA\n\n\n#include \"RowLetters.h\"\n#include <iostream>\n#include <vector>\n#include <iomanip>\n#include <string>\n\nusing namespace std;\n\nRowLetters::RowLetters() {\n\trowNumber = 0;\n\tlettersInRow = \"Row Number and Letters not available\";\n}\n\nvoid RowLetters::setRowNum(int inputNumber) {\n\trowNumber = inputNumber;\n}\n\nint RowLetters::getRowNum() {\n\n\treturn rowNumber;\n}\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t//THE REST OF FUNCTIONS ARE SIMPLE/HEADER NOT NECESSARRY\nvoid RowLetters::setLettersInRow(string letters) {\n\n\tlettersInRow = letters;\n\n}\n\nstring RowLetters::getLettersInRow() {\n\t\n\treturn lettersInRow;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 1",
+    "code_files": [
+      "Lab 1\\Lab1Q1.cpp",
+      "Lab 1\\Lab1Q2.cpp",
+      "Lab 1\\Lab1Q3.cpp",
+      "Lab 1\\Source1--Q3 TEST.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 1\\Lab1Q1.cpp",
+        "snippet": "/*\n *Author: Demetrius Johnson\n *Creation Date: 01 Jan. 2020\n *Modification Date: 01 Jan. 2020\n *Purpose: Display output message\n*/\n#include <iostream>\n\nusing namespace std;\n\nint main()\n{\n\tcout << \"Hello World!\" << endl;\n\tcout << \"CIS 150 - Winter 2019\" << endl;\n\n\tsystem(\"pause\");\n\treturn 0;\n}"
+      },
+      {
+        "file": "CIS-150\\Lab 1\\Lab1Q2.cpp",
+        "snippet": "/* Author: Demetrius Johnson\n   Creation Date: 01 Jan. 2020\n   Last Modification Date: 01 Jan 2020\n   Purpose: Debug and execute a simple input-output program\n*/\n\n#include <iostream> \n#include <string>\nusing namespace std;\n\nint main()\n{\n\n\tstring first;\n\n\tcout << endl << \"Please enter your first name : \";\n\tcin >> first;\n\n\tcout << \"Hi \" << first << \": I hope you will enjoy CIS 150 this semester.\" << endl;\n\n\tsystem(\"pause\");\n\treturn 0;\n}"
+      },
+      {
+        "file": "CIS-150\\Lab 1\\Lab1Q3.cpp",
+        "snippet": "/* Author: Demetrius Johnson\n   Creation Date: 15 Jan. 2020\n   Last Modification Date: 15 Jan. 2020\n   Purpose: Create this output:  \n\t * \n\t*** \n   ***** \n  ******* \n\n*/\n\n#include <iostream> \n#include <string>\nusing namespace std;\n\nint main() \n{\n\n\t/* Type your code here.\n\t*I will using string function that I learned from \n\t*the Zybooks homework to solve this program solution for the tree output(:\t\n\t      *\n\t     ***\n        *****\n       *******\n\t*/\n\n\tstring oneStars   = \"   *\";\n\tstring threeStars = \"  ***\";\n\tstring fiveStars  = \" *****\";\n\tstring sevenStars = \"*******\";\n\t\n\tcout << oneStars << endl << threeStars << endl << fiveStars << endl << sevenStars << endl;\n\n\tsystem(\"pause\");\n\treturn 0;\n}"
+      },
+      {
+        "file": "CIS-150\\Lab 1\\Source1--Q3 TEST.cpp",
+        "snippet": "/* Author: Demetrius Johnson\n   Creation Date: 15 Jan. 2020\n   Last Modification Date: 15 Jan. 2020\n   Purpose: Create this output:\n\t *\n\t***\n\t  *****\n\t *******\n\n*/\n\n#include <iostream> \n#include <string>\nusing namespace std;\n\nint main()\n{\n\n\t/* Type your code here.\n\t*I will using string function that I learned from\n\t*the Zybooks homework to solve this program solution for the tree output(:\n\t\t*\n\t   ***\n\t\t *****\n\t\t*******\n\t*/\n\n\tstring oneStars = \"   *\";\n\tstring threeStars = \"  ***\";\n\tstring fiveStars = \" *****\";\n\tstring sevenStars = \"*******\";\n\n\tcout << oneStars << endl << threeStars << endl << fiveStars << endl << sevenStars << endl;\n\n\tsystem(\"pause\");\n\treturn 0;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 10\\Lab 10 - Meech",
+    "code_files": [
+      "Lab 10\\Lab 10 - Meech\\LAB10Q1.cpp",
+      "Lab 10\\Lab 10 - Meech\\LAB10Q2.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 10\\Lab 10 - Meech\\LAB10Q1.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 01 April 2020\n\t*Modification Date: 01 April 2020\n\t*Purpose: use #include <vector> and fix any errors\n\n\t// LAB 10 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\t-------------------------\n\n\n\tLets consider the following code.\n\n\t\tCompile and fix all errors.\n\t\tNo test cases are required for this question.\n\t\tRun and provide a single screenshot showing the output.\n\t\tComplete the missing comments to explain the action performed by each statement highlighted in red. The first comment is given as an example.\n\t\tCopy and paste the source code with the comments filled out in your report.\n\n\n\n\t#include <vector>\t\t\t// Compiler directive to use vectors\n\t#include <iostream>\n\n\tusing namespace std;\n\n\tint main () {\n\t\t\tvector<double> v;\t//\n\n\t\t\tv.assign( 8, 16.3 );\t\t//\n\t\t\tv[2] = 16.4; v[3] = 20.6;\t//\n\t\t\tv.push_back(17.8);\t\t//\n\t\t\tv.push_back(-7.3);\t\t//\n\n\t\t\tfor( int i = 0; i < v.size(); i++ ) {\t// v.size()gives \n\t\t\t\t\tcout << v[i] << \" \";\t\t// v[i] gives"
+      },
+      {
+        "file": "CIS-150\\Lab 10\\Lab 10 - Meech\\LAB10Q2.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 01 April 2020\n\t*Modification Date: 01 April 2020\n\t*Purpose: Calculates the number of days with freezing temperatures from an input file by the user and displays it to screen\n\n\t// LAB 10 - CIS 150 - MEECH.cpp\n\n\tQuestion 2\n\t-------------------------\n\n\tYou are required to use vectors in this question. We consider a vector that contains daily recorded temperatures.\n\n\tWrite the following two functions:\n\n\t// The function returns a new vector that contains all the freezing\n\t// temperatures in the original vector V. (<=32F) \n\t// You need to consider the case where the vector is empty\n\tvector <int> vectorFreezingTemperatures (vector<int> & V)\n\t{\n\n\n\n\t}\n\t// The function reads temperatures (integers) from a text file and \n\t// pushes them to the vector V. The number of integers in the file is \n\t// unknown.\n\tvoid readTemperaturesFromFile (vector<int> & V, ifstream& ifs)\n\t{\n\n\n\t}\n\n\tWrite a main program that asks the user for a file name. The file contains daily temperatures (integers). \n\tThe main calls the two functions to (1) store temperatures in the vector (2) displays the number of days with freezing temperatures. \n\tYou must provide at least 4 test cases (4 separate files consisting of different temperature data).\n\n\n*/"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 11\\Lab 11 - Meech",
+    "code_files": [
+      "Lab 11\\Lab 11 - Meech\\LAB 11 main.cpp",
+      "Lab 11\\Lab 11 - Meech\\LAB11Q1_main.cpp",
+      "Lab 11\\Lab 11 - Meech\\state.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 11\\Lab 11 - Meech\\LAB 11 main.cpp",
+        "snippet": "#include \"state.h\"\n#include <iostream>\n#include <fstream>\n#include <vector>\n#include <iomanip>\n#include <string>\n#include <sstream>\n\n\nusing namespace std;\n\n//prototypes\nvoid readStateInfo(ifstream &ifs, vector<State> & stateVec);\nvoid searchByStatehood(vector <State> & stVec, int year, int & startIndex);\nint searchByAbrv(vector <State> & stVec, string abrv);\nvoid displayMenu();\nvoid mainMenu();\nvoid displayTableHeader();\n\n\n\n\n\nint main()\n{\n\n\tvector <State> stateVec;\n\t//other declarations\n\n\t//read state info into vector\n\n\n\t//display menu & process input\n\tdisplayMenu();\n\n\n\n\treturn 0;\n\n}"
+      },
+      {
+        "file": "CIS-150\\Lab 11\\Lab 11 - Meech\\LAB11Q1_main.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 01 April 2020\n\t*Modification Date: 06 April 2020\n\t*Purpose: \n\n\t// LAB 11 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\t-------------------------\n\tIn this question, you will create a database with information about US states. \n\tYou are given usstates.txt which is a file that contains some data about all 50 states.\n\tIts columns are, respectively: state abbreviation, state name, capital, population, year it became a state, and number of representatives in congress.\n\tYour job is to design and write a class, to be named State. \n\tThe class's private attributes should be the above \n\tmentioned six data items (use stateAbrv, stateName, capital, population, year, numCongress); the first three should be string, the last three should be int.\n\tIn addition to the above six attributes, which should be private, the class should also contain \n\tthe usual public methods, access methods (set/get), and utility methods of your choice. \n\tAn example of utility method (but feel free to implement any other one is a method that returns the number of state residents per representatives.\n\tYou will then write an implementation for the class (state.cpp) that is compatible with the interface, and that contains the code for its methods.\n\tYou will have a total of three files: state.h, state.cpp, and main.cpp.\n\n\tYour program should first call a function that reads the data from the file and stores it into a vector or array (your choice) of object of type State.\n\tYour main program will then present a menu to the user. \n\tThe menu will consist of the following three options to allow a user to search for information about a given state using your State class:\n\t1.\tSearch by state abbreviation (e.g. MI).\n\t2.\tSearch by year of statehood (e.g. 1837).\n\t3.\tExit program.\n\t   Please enter your choice (1-3):\n\tEach option in the menu should be executed by a calling function.\n\tYou program, will then output the information in tabulated form:\n\tState Abrv.    Name     Capital  Population Year #Congress\n\tMI\t        Michigan   Lansing   9923000   1837     14\n\n\n\tIn the case of option 2, if there are multiple states that have the same year of statehood, then you program must list all of them (one state per row) as shown below:\n\tState Abr.   Name      Capital   Population Year #Congress"
+      },
+      {
+        "file": "CIS-150\\Lab 11\\Lab 11 - Meech\\state.cpp",
+        "snippet": "#include \"state.h\"\n#include <iostream>\n#include <vector>\n#include <iomanip>\n#include <string>\n\nusing namespace std;\n\nState::State()\n{\n\tstring stateAbrv = \"State Abbreviation Not Found\";\n\tstring stateName = \"OR\";\n\tstring capital = \"No Year Found\";\n\tint population = 0;\n\tint year = 0;\n\tint numCongress = 0;\n}\n\nvoid State::setStateAbrv(string abrv)\n{\n\tstateAbrv = abrv;\n}\n\n\nvoid State::setStateName(string sName)\n{\n\tstateName = sName;\n}\n\nvoid State::setCapital(string cap)\n{\n\tcapital = cap;\n}\n\nvoid State::setPopulation(int pop)\n{\n\tpopulation = pop;\n}\n\nvoid State::setYear(int y)"
+      },
+      {
+        "file": "CIS-150\\Lab 11\\Lab 11 - Meech\\TEST FOLDER\\LAB 11 TEST PROJECT\\LAB 11 TEST PROJECT.cpp",
+        "snippet": "// LAB 11 TEST PROJECT.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n\n\n#include <iostream>\n#include <fstream>\n#include <vector>\n#include <iomanip>\n#include <string>\n#include <sstream>\nusing namespace std;\n\n\n\n//-------------------------------FUNCTION DECLARATIONS----------------------------------------//\n\nvoid displayMenu();\nvoid mainMenu();\n//------------------------------------FUNCTION DELCARATIONS------------------------------------//\n\n\n\n\n\nint main()\n{\n\tint userChoice;\n\n\t//display menu & process input\n\tmainMenu();\n\tcin >> userChoice;\n\tif (userChoice != 1 && userChoice != 2) {\n\t\tcout << \"You have selected to exit the program. Thank you for US STATE's-ing with us(:\\n\\n\";\n\t\tsystem(\"pause\");\n\t\treturn 0;\n\t}\n\telse {\n\t\twhile (userChoice == 1 || userChoice == 2) {\n\t\t\tswitch (userChoice) {"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 11\\Lab 11 - Meech\\TEST FOLDER\\LAB 11 TEST PROJECT",
+    "code_files": [
+      "Lab 11\\Lab 11 - Meech\\TEST FOLDER\\LAB 11 TEST PROJECT\\LAB 11 TEST PROJECT.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 11\\Lab 11 - Meech\\TEST FOLDER\\LAB 11 TEST PROJECT\\LAB 11 TEST PROJECT.cpp",
+        "snippet": "// LAB 11 TEST PROJECT.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n\n\n#include <iostream>\n#include <fstream>\n#include <vector>\n#include <iomanip>\n#include <string>\n#include <sstream>\nusing namespace std;\n\n\n\n//-------------------------------FUNCTION DECLARATIONS----------------------------------------//\n\nvoid displayMenu();\nvoid mainMenu();\n//------------------------------------FUNCTION DELCARATIONS------------------------------------//\n\n\n\n\n\nint main()\n{\n\tint userChoice;\n\n\t//display menu & process input\n\tmainMenu();\n\tcin >> userChoice;\n\tif (userChoice != 1 && userChoice != 2) {\n\t\tcout << \"You have selected to exit the program. Thank you for US STATE's-ing with us(:\\n\\n\";\n\t\tsystem(\"pause\");\n\t\treturn 0;\n\t}\n\telse {\n\t\twhile (userChoice == 1 || userChoice == 2) {\n\t\t\tswitch (userChoice) {"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 2",
+    "code_files": [
+      "Lab 2\\LAB2Q1.cpp",
+      "Lab 2\\LAB2Q2.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 2\\LAB2Q1.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 22 Jan. 2020\n\t*Modification Date: 22 Jan. 2020\n\t*Purpose: Takes number of different coins as input, computes, and prints total dollar value.\n\n\t// LAB 2 - CIS 150 --MEECH.cpp\n\n\tQuestion 1:\n\n\tCreate a new project.  Copy and paste the program coins.cpp (given below). Compile your project and fix any errors found during the compilation process.\n\n\t//  coins.cpp\n\t//  From Ch2 of Big C++\n\t//  Takes number of different coins as input, computes, and prints total dollar value\n\n\t//  coins.cpp\n\t//  From Ch2 of Big C++\n\t//  Takes number of different coins as input, computes, and prints total dollar valu\n*/\n\n\n#include <iostream>\nusing namespace std;\n\nconst double PENNY_VALUE = 0.01;\nconst double NICKEL_VALUE = 0.05;\nconst double DIME_VALUE = 0.10;\nconst double QUARTER_VALUE = 0.25;\n\nint main()\n{\n\t\n\tint pennies, nickels, dimes, quarters, dollars;\t\t\t// declaring variables corresponding to the number of different types of coins\n\tdouble total = 0.0;\n\n\tcout << \"How many pennies do you have? \";\n\tcin >> pennies;"
+      },
+      {
+        "file": "CIS-150\\Lab 2\\LAB2Q2.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 22 Jan. 2020\n\t*Modification Date: 22 Jan. 2020\n\t*Purpose: Prompts the user for two integers and displays the sum of the two integers\n\n\t// LAB 2 - CIS 150 --MEECH.cpp\n\n\tQuestion 2: \n\n\tThe following program prompts the user for two integers and displays the sum of the two integers.  Complete the missing statements/lines.\n\n\tCompile your project and fix any error during the compilation process. \n\n\t*put here header comments that give information about the program\n\t *put here the compiler directive for the library necessary for reading and writin\n*/\n\n\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n\tint first_Integer, second_Integer, integer_Sum;\t\t// declare three variables of type int\n\n\tcout << \"Please enter your first integer value: \";\t// display a message asking the user to enter a first integer\n\n\tcin >> first_Integer;\t\t\t\t\t\t\t\t// get a value from the user for assigning to first_Integer\n\n\tcout << \"Please enter your second integer value: \";\t// display a message asking the user to enter a second integer\n\n\tcin >> second_Integer;\t\t\t\t\t\t\t\t// get a value from the user for assigning to second_Integer\n\n\tinteger_Sum = first_Integer + second_Integer;\t\t// sum the values of first_Integer and second_Integer for assigning to integer_Sum\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\tcout << \"The sum of your integer values is:    \" << first_Integer << \" + \" << second_Integer << \" = \" << integer_Sum << endl;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t//in the above line of code: output of message with calculated integer sum value"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 3",
+    "code_files": [
+      "Lab 3\\LAB3Q1.cpp",
+      "Lab 3\\LAB3Q2.cpp",
+      "Lab 3\\LAB3Q3.cpp",
+      "Lab 3\\LAB3Q4.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 3\\LAB3Q1.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 29 Jan. 2020\n\t*Modification Date: 29 Jan. 2020\n\t*Purpose: Use \"step over\" function in cpp\n\n\t// LAB 3 - CIS 150 - MEECH.cpp\n\n\tQuestion 1:\n\n\t1)\tUse the step over option to trace the execution of the program for an input value of 15. \n\t\tCopy and paste 2 screenshots showing the execution trace inside both the true and false sections of the if statement for this value.\n\t2)\tRepeat for input value 14.\n\n*/\n\n\n#include <iostream>\n\nusing namespace std;\n\nint main() {\n\tint x, y;\n\n\tcout << \"Please enter an integer value : \";\n\tcin >> x;\n\n \tif (x >= 15)\n\t{\n\t\tx++;\n\t\ty = x + x - 7;\n\t}\n\telse\n\t{\n\t\tx = x * 2;\n\t\ty = x * x + 7;\n\t}"
+      },
+      {
+        "file": "CIS-150\\Lab 3\\LAB3Q2.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 29 Jan. 2020\n\t*Modification Date: 29 Jan. 2020\n\t*Purpose: Age-depedent voter registration eligibility message\n\n\t// LAB 3 - CIS 150 - MEECH.cpp\n\n\tQuestion 2:\n\n\tWrite a program that asks users for their name and age; then display one of the following messages depending on the users age:\n\n\t\"Congratulations <NAME>! Your vote registration was successfully processed.\"\n\t//when age is greater than or equal to 18\n\n\t\"You are not eligible to vote <NAME>.\"\t\n\t//when age is smaller than 18\n\n\n*/\n\n\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n\tint userAge;\n\tstring userName;\n\n\tcout << \"Please enter your first name: \";\n\tcin >> userName;\n\n\tcout << \"Please enter your age: \";\n\tcin >> userAge;\n\n\tif (userAge >= 18)\n\t{"
+      },
+      {
+        "file": "CIS-150\\Lab 3\\LAB3Q3.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 29 Jan. 2020\n\t*Modification Date: 29 Jan. 2020\n\t*Purpose: Computes the weekly pay for a worker, including any applicable overtime\n\n\t// LAB 3 - CIS 150 - MEECH.cpp\n\n\tQuestion 3:\n\n\t*You are to write a program to compute the weekly pay for a worker, including any applicable overtime.  \n\t*Overtime refers to hours worked per week in excess of 40 hours. \n\t*Companies pay regular pay up to and including 40 hours per week and time-and-a-half only for overtime hours.\n\n\t//Input: The number of hours worked in 1 week (a double)\n             The amount of pay per hour (a double) \n\t\t\t\t//place both cin input values on same line for entry; ex: 10.0 20.0\n\t//Output:  The total pay for the week\n\n\tSample input/user entries:\n\t//Enter the hours worked and the pay rate: 30.0 10.0\tGross pay for the week is $300\n\t//Enter the hours worked and the pay rate: 50.0 10.0\tGross pay for the week is $550\n\n\n\n\n*/\n\n\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n\tdouble numHrsWorked, hourlyWage, totalPayForWeek, OT_Hours, OT_PayRate = 1.5;\n\tstring userName;\n\n\tcout << \"Please enter the total amount in hours that you have worked this week and your hourly wage\" << endl;"
+      },
+      {
+        "file": "CIS-150\\Lab 3\\LAB3Q4.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 29 Jan. 2020\n\t*Modification Date: 29 Jan. 2020\n\t*Purpose: Evaluates the roots of a quadratic function given coefficients a, b, and c from the quadratic formula\n\n\t// LAB 3 - CIS 150 - MEECH.cpp\n\n\tQuestion 4: \n\n\t*Prompt the user to input 3 doubles, a, b and c.  \n\t*The 3 doubles will represent the coefficients in the quadratic equation ax^2 + bx + c  = 0.  \n\t*Print out the solutions (if any) of the quadratic equation. \n\t*If no root exists (this happens if a == 0, or b^2 <4ac) print the message \"No real root\".\n\n\tSample input/ user entries:\n\t//Enter a, b and c which represent the coefficients in the quadratic equation ax^2 + bx + c = 0 : 1 0 -8 \t\n\t\tRoot1 is  2.828427\n\t\tRoot2 is -2.828422\n\t//Enter a, b and c which represent the coefficients in the quadratic equation ax^2 + bx + c = 0 : 0 3 5\t\n\t\tNo real root\n\t//Enter a, b and c which represent the coefficients in the quadratic equation ax^2 + bx + c = 0 : 1 5 -5\t\n\t\tRoot1 is 0.854101\n\t\tRoot2 is -5.854101\n\n\n\n*/\n\n\n#include <iostream>\n#include <math.h>\n\nusing namespace std;\n\nint main() {\n\tdouble a, b, c, discriminant, Bsquared, rootONE, rootTWO;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 4",
+    "code_files": [
+      "Lab 4\\LAB4Q1.cpp",
+      "Lab 4\\LAB4Q2.cpp",
+      "Lab 4\\LAB4Q3.cpp",
+      "Lab 4\\LAB4Q4--1 - forLoop.cpp",
+      "Lab 4\\LAB4Q4--2 - whileLoop.cpp",
+      "Lab 4\\LAB4Q5.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 4\\LAB4Q1.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 05 Feb. 2020\n\t*Modification Date: 05 Feb. 2020\n\t*Purpose: Tell the user what to do based on a given input temperature (F)\n\n\t// LAB 4 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\n\tThe following program asks the user for the current temperature (in Fahrenheit).  \n\tAdd a series of if statements (if with multiple alternatives i.e. if/else if/else) \n\tSo that one of the following messages is printed based on the temperature value:\n\n\tTemperature (F)\t\t\t\t\t\t\tMessage\n\t>90                                    \"Go swimming.\"\n\t<=90, >80                              \"Turn on air conditioning.\"\n\t<=80, >70                              \"Do nothing.\"\n\t<=70, >55                              \"Turn on heat.\"\n\t<=55, >30                              \"Wear a heavy coat.\"\n\t<=30, >0                               \"Wear gloves.\"\n\t<=0                                    \"Stay inside, make a fire.\"\n\n\t// Include ALL the compiler directives you need in the program\n\t**to be filled in**\n\n\n*/\n\n\n#include <iostream>\n#include <ctype.h>\n\n\nusing namespace std;\n\nint main()\n{"
+      },
+      {
+        "file": "CIS-150\\Lab 4\\LAB4Q2.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 05 Feb. 2020\n\t*Modification Date: 05 Feb. 2020\n\t*Purpose: Display a message based on user input of a valid letter grade\n\n\t// LAB 4 - CIS 150 - MEECH.cpp\n\n\tQuestion 2\n\n\tUse a switch statement to write the following program:\n\n\tThe program prompts the user for a letter grade (of type char). The list of valid letter grades is:\n\tA\tB\tC\tD\tE\tF\n\n\tThe program should consider both lower and upper case\n\n\tThe program will then display the following messages:\n\tFor grade 'A': display \"Excellent\"\n\tFor grade 'B': display \"Good\"\n\tFor Grade 'C': display \"Average\"\n\tFor grade 'D' or 'E': display \"Below Average\"\n\tFor Grade 'F': display \"Fail\"\n\tFor any other letter grade entered by users: display \"Invalid Grade\"\n\n\n\n*/\n\n\n#include <iostream>\n#include <cctype>\nusing namespace std;\n\nint main()\n{\n\tchar studentLetGrad;"
+      },
+      {
+        "file": "CIS-150\\Lab 4\\LAB4Q3.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 05 Feb. 2020\n\t*Modification Date: 05 Feb. 2020\n\t*Purpose: See what happens to variables when using ++ prefix versus ++ postfix operators\n\n\t// LAB 4 - CIS 150 - MEECH.cpp\n\n\tQuestion 3\n\n\tRun the following code and explain, using your own words, \n\twhat is happening with each variable (w,x,y,z) \n\tand what is the difference between ++x  and w++ \n\t(is there any influence on the result between prefix or postfix ++ operator?). \n\tProvide a snippet of the output showing the result. \n\n\tProvide a paragraph that answers question 3 (see below and in word document)\n\n\t//\n\t\n\tFor the code provided in question 3, \n\tthe postfix and prefix function using the ++ operator \n\thas two cases: using ++ before a variable name (++variable) \n\ttells the compiler to increment the variable by a value of 1 (variable+1) \n\tbefore it is used in any other expression  this is why it is called a prefix.\n\tWhen the ++ operator comes after the variable (variable++), it says to \n\tuse the variables currently stored value, and afterwards execute the \n\tfunction of incrementing the variable by one (variable +1). \n\tThis is why it is called a postfix.\n\tSo, for the code provided above, whenever ++comes before a variable \n\t(in this case for x), the compiler executed incrementing the \n\tvalue of x by 1, and then proceeding to add y [y  = y + (++x); is the same as: y = y + (x+1);]. \n\tFor variable w, where ++ comes after, the value of w is first \n\tadded to z, and only then after that variable w is used in that \n\texpression is it incremented as w = w +1 \n\t[z = z + (w++); is the same as z = z + w; and w = w + 1; --> executed as separate statements]."
+      },
+      {
+        "file": "CIS-150\\Lab 4\\LAB4Q4--1 - forLoop.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 05 Feb. 2020\n\t*Modification Date: 05 Feb. 2020\n\t*Purpose: Calculate sum of N integers entered by user - using a 'for' loop\n\n\t// LAB 4 - CIS 150 - MEECH.cpp\n\n\tQuestion 4--1 - forLoop\n\n\tUse a for loop to write a program that calculates the sum of N integers entered by the user. \n\tN is a computer generated random number between 5 and 15 (both inclusive).\n\t1.\tRepeat the program using a while loop\n\n\tNote: Use the following libraries for rand(),srand(), and time() support.\n\n\t#include <cstdlib> (random numbers library)\n\t#include <ctime> (used for time function)\n\n\tUse this for setting a seed: srand(time(NULL))\n\n\tUse this for generating a random number: rand()  (restrict random number 5-15  inclusive) (loop rand() val number of times)\n\n\n*/\n\n\n#include <iostream>\t\t//input-output stream allowed\n#include <cstdlib>\t\t//(random numbers library)\n#include <ctime>\t\t//(used for time function)\n\n\nusing namespace std;\n\nint main()\n{\n\tint NumIntToGen = 0, randInt = 0, randIntSum = 0;   //declare variables, and also initialize with a value (0 in this case) to carve out memory storage for using modulus and rand functions.\n\tsrand(time(NULL));\t\t\t\t\t\t\t\t\t//use srand and time functions to generate random numbers for rand() functions every start of program."
+      },
+      {
+        "file": "CIS-150\\Lab 4\\LAB4Q4--2 - whileLoop.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 05 Feb. 2020\n\t*Modification Date: 05 Feb. 2020\n\t*Purpose: Calculate sum of N integers entered by user - using a 'while' loop\n\n\t// LAB 4 - CIS 150 - MEECH.cpp\n\n\tQuestion 4--2 - whileLoop\n\n\tUse a for loop to write a program that calculates the sum of N integers entered by the user.\n\tN is a computer generated random number between 5 and 15 (both inclusive).\n\t1.\tRepeat the program using a while loop\n\n\n*/\n\n\n#include <iostream>\t\t//input-output stream allowed\n#include <cstdlib>\t\t//(random numbers library)\n#include <ctime>\t\t//(used for time function)\n\n\nusing namespace std;\n\nint main()\n{\n\tint count = 0, NumIntToGen = 0, randInt = 0, randIntSum = 0;   //declare variables, and also initialize with a value (0 in this case) to carve out memory storage for using modulus and rand functions.\n\tsrand(time(NULL));\t\t\t\t\t\t\t\t\t//use srand and time functions to generate random numbers for rand() functions every start of program.\n\n\tcout << \"Enter the number of random integers you would like the program to generate (whole numbers only): \";\n\tcin >> NumIntToGen;\n\tcout << endl << \"The random numbers generated are from 5-15 (incusive), and will be summed.\" << endl << endl;\n\n\twhile (count < NumIntToGen) {\t\t//use 'while' loop to generate the entered value of desired number of random integers.\n\n\t\trandInt = rand() % 11 + 5;\t\t\t\t//use rand function to generate a random number from range 5-15 (inclusive).\n\t\tcout << randInt << \", \";\t\t\t\t//display the generated random integer to the user.\n\t\trandIntSum = randIntSum + randInt;\t\t//add the generated random integer to total random integer sum; sum will keep increasing every time loop is ran to add all integers."
+      },
+      {
+        "file": "CIS-150\\Lab 4\\LAB4Q5.cpp",
+        "snippet": "/*  *Author: Demetrius Johnson\n\t*Creation Date: 05 Feb. 2020\n\t*Modification Date: 05 Feb. 2020\n\t*Purpose: Print a triangle of Nth height provided by user input for N (N is for height of triangle)\n\n\t// LAB 4 - CIS 150 - MEECH.cpp\n\n\tQuestion 5\n\n\tPrompt the user for a character and the height of a right triangle. \n\tThen, print a triangle of that height using the symbol entered.  \n\tThe Nth line of the triangle should contain N copies of the symbol. \n\tValidate that the height entered is > 0.\n\n\tHint: Use nested loops\n\n\tExample Input\t\t\t\t\tCorresponding output\n\t------------------------       ----------------------\n\tEnter a character : #\n\n\tEnter a height : 4\t\t\t\t#\n\t\t\t\t\t\t\t\t\t##\n\t\t\t\t\t\t\t\t\t###\n\t\t\t\t\t\t\t\t\t####\n\n\n\n*/\n\n\n#include <iostream>\t\t//input-output stream allowed\n\n\n\nusing namespace std;\n\nint main()\n{"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 5",
+    "code_files": [
+      "Lab 5\\LAB5Q1.cpp",
+      "Lab 5\\LAB5Q2.cpp",
+      "Lab 5\\LAB5Q3.cpp",
+      "Lab 5\\LAB5Q4.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 5\\LAB5Q1.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 12 Feb. 2020\n\t*Modification Date: 12 Feb. 2020\n\t*Purpose: Computes the average grade in the class\n\n\t// LAB 5 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\t-------------------------\n\tWrite a program that asks the user for the number of students in the class. \n\tThe program asks the user for the grade of each student, computes the average grade in the class, and displays the calculated average.\n\tYou are required to use the for loop.\n\n\n*/\n\n\n#include <iostream>\nusing namespace std;\n\n\n//-------------function declarations-------------------------//\n\nvoid MenuOne();\t\t\t\t\t\t\t\t\t\t\t\t //\nint compAVG(int x, int y);\n//-------------function declarations-------------------------//\n\n\nint main()\n{\n\tint totNumStud, totalNumStudOrigin, studGrade, studGradeSum = 0, studAvgGr, studID = 1;\n\tMenuOne(); //instruction menu\n\t\n\n\tcout << endl << endl << \"Enter the value for the number of students in the class: \";\n\tcin >> totNumStud;"
+      },
+      {
+        "file": "CIS-150\\Lab 5\\LAB5Q2.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 12 Feb. 2020\n\t*Modification Date: 12 Feb. 2020\n\t*Purpose: Computes and displays Max and Min integer out of any set of inputs of integers\n\n\t// LAB 5 - CIS 150 - MEECH.cpp\n\n\tQuestion 2\n\t-------------------------\n\tWrite a program that displays the following menu. \n\tYour program should include two functions that return the minimum and maximum.\n\tDo not use cout statements in your function. \n\tThe cout statements must be done in main based on the return value from each function.\n\n\tHint: the main program should use a \"do while\" (guarantees youll do at least one pass;\n\twith only while it means you could not do any action at all if you dont meet condition initially!) loop to display the menu.\n\n\t---------------------------------------------------------------------------------------------------------\n\tWELCOME -- select one of the following choices below by entering letter A, B, or C (not case sensitive):\n\t---------------------------------------------------------------------------------------------------------\n\n\tA.) Maximum of two integers  separate function\n\tB.) Minimum of two integers  separate function\n\tC.) Quit\n\t---------------------------------------------------------------------------------------------------------\n\n\n\tEXAMPLE: \n\tPlease select an operation: A\n\n\tPlease provide the first number: 3\n\tPlease provide the second number: 5\n\tThe maximum of 3 and 5 is 5\n\n\n*/"
+      },
+      {
+        "file": "CIS-150\\Lab 5\\LAB5Q3.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 12 Feb. 2020\n\t*Modification Date: 12 Feb. 2020\n\t*Purpose: Display who is the winner (or if it is a tie) between two basketball teams\n\n\t// LAB 5 - CIS 150 - MEECH.cpp\n\n\tQuestion 3\n\t-------------------------\n\n\tWrite a program that prompts users for the name and number of points of two basketball teams. \n\tThen, it uses a nested if to display the winner (if any)\n\tor a message stating a tie if both teams have \n\tthe same number of points  One screen shot per scenario  use one function \n\tto determine the possible scenarios.\n\n\t(input for two teams, team 1 and team 2, then you must figure out who is the winner and display who is the winner (or if it is a tie)\n\n\n\n*/\n\n\n\nusing namespace std;\n\n#include <iostream>\n#include <string>\nusing namespace std;\n\n\n//-------------function declarations-------------------------//\n\nvoid MenuWelcome();\nvoid MenuTeamScore();\n//-------------function declarations-------------------------//"
+      },
+      {
+        "file": "CIS-150\\Lab 5\\LAB5Q4.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 12 Feb. 2020\n\t*Modification Date: 12 Feb. 2020\n\t*Purpose: Prompts users for N integers and determines and displays the Max and Min Integer value\n\n\t// LAB 5 - CIS 150 - MEECH.cpp\n\n\tQuestion 4\n\t-------------------------\n\t\n\tWrite a program that prompts users for N integers\n\tand determines and displays the integer \n\twith the highest / lowest value  use separate functions \n\tto return the highest / lowest value.\n\n\tDONT USE COUT IN FUNCTION, COUT SHOULD BE DONE IN MAIN ONLY FOR DISPLAY.\n\n\n*/\n\n\n#include <iostream>\nusing namespace std;\n\n\n//-------------function declarations-------------------------//\n\nvoid MenuOne();\t\t\t\t\t\t\t\t\t\t\t\t //\nint valMAX(int x, int y);\nint valMIN(int x, int y);\n//-------------function declarations-------------------------//\n\n\nint main()\n{\n\tint numIntComp, numIntCompOrigin, intVal, intID = 1; //declare integers for the for-loop counter - the number of integers to input and compare - and integer ID, and hold hold value"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 6",
+    "code_files": [
+      "Lab 6\\LAB6Q1.cpp",
+      "Lab 6\\LAB6Q2.cpp",
+      "Lab 6\\LAB6Q3.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 6\\LAB6Q1.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 19 Feb. 2020\n\t*Modification Date: 19 Feb. 2020\n\t*Purpose: Computes the sum of N + N-1 up to 0 --> and average of that sum\n\n\t// LAB 6 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\t-------------------------\n\n\tWrite a program that calls a function calculateSum to calculate the sum from 0 to N integers. \n\tThe function calculateSum has one parameter N of type integer and returns an integer which represents the sum from 0 to N, inclusive. \n\n\tWrite another function calculateAverage that calculates an average. \n\tThis function will have two parameters: the sum and the number of items. It returns the average (of type float). \n\n\tThe main function should be responsible for all inputs and outputs. \n\tYour functions will only calculate and return the values and NOT print anything.  \n\tN is provided by the user; user input must be asked for repeatedly until a negative integer is provided.\n\n\tEX: INPUT IS 3, OUTPUT IS 3+2+1+0=6\n\tANY NEGATIVE # SHOULD BE SIGNAL TO EXIT PROGRAM\n\t*hint, can use counter-controlled for loop\n\t*be careful for 0 sum average (divide by 0 parameter); should always be divide by 1 or greater since even N=0 means sum=0; average = 0/1 = 0.\n\n*/\n\n\n#include <iostream>\nusing namespace std;\n\n\n//-------------function declarations-------------------------//\n\nvoid MenuONE();\nint calculateSumN_0(int N);"
+      },
+      {
+        "file": "CIS-150\\Lab 6\\LAB6Q2.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 19 Feb. 2020\n\t*Modification Date: 19 Feb. 2020\n\t*Purpose: Outputs a C shape of specified user input character\n\n\t// LAB 6 - CIS 150 - MEECH.cpp\n\n\tQuestion 2\n\t-------------------------\n\t\n\n\tWrite a program that prompts users to enter:\n\n\to\tThe character to use (any character besides *) //don't use this for your test cases\n\to\tThe width of the display\n\to\tThe height of the display\n\n\tto produce a C shape.  This is an example for width of 10 and height of 9\n\n\t**********\n\t*        \n\t*        \n\t*        \n\t*        \n\t*        \n\t*        \n\t*        \n\t**********\n\n\tYou must use separate functions to display the vertical and the horizontal lines.\n\n\n\t*CALL TO HORZ, THEN VERT, THEN HORZ FUNCTION AGAIN.\n\t*BE SURE TO DO HEIGHT MINUS TWO SINCE TWO HORZ FUNCTIONS ACCOUNT FOR 2 OF THE HIEGHT UNITS"
+      },
+      {
+        "file": "CIS-150\\Lab 6\\LAB6Q3.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 19 Feb. 2020\n\t*Modification Date: 19 Feb. 2020\n\t*Purpose: Use int& (call by reference) to write functions and use functon call to change int main() values\n\n\t// LAB 6 - CIS 150 - MEECH.cpp\n\n\tQuestion 3\n\t-------------------------\n\tPASS BY REFERENCE\n\t-------------------------\n\tConsider the following functions:\n\n\tint doIt(int &a, int b)\n\t{\n\t\ta = a + 5;\n\t\tb = b + 5\n\t}\n\n\tint doIt2(int a, int& b)\n\t{\n\t\ta += 5;\n\t\tb += 5\n\t}\n\n\tint doIt3(int & a, int& b)\n\t{\n\t\ta = a + 5;\n\t\tb += 5\n\t}\n\n\tFix any errors in the above functions and write a main program that prompts the user for two integer numbers (num1 and num2). \n\tThen, the main program calls the functions doIt, doIt2, and doIt3 with num1 and num2 as parameters. \n\tThe main program will print the content of num1 and num2 to the screen after each function is called. \n\tAdd an addendum to the test plan to explain for each function the difference between a and b."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 7",
+    "code_files": [
+      "Lab 7\\LAB7Q1.cpp",
+      "Lab 7\\LAB7Q2.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 7\\LAB7Q1.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 26 Feb. 2020\n\t*Modification Date: 26 Feb. 2020\n\t*Purpose: A program that computes the weekly salary of each employee\n\n\t// LAB 7 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\t-------------------------\n\n\n\tConsider a text file that you will create named \"employees.txt\".  The file contains data organized according to the following format:\n\n\tJohn     Smith      10     15\n\tSarah    Johnson  \t40     12\n\tMary     Taylor\t    27\t   13\n\tJim      Stewart    25\t    8\n\n\tFor instance, \"John\" is the first name, \"Smith\" is the last name, \"20\" is the number of hours per week, and \"9\" is the hourly rate.\n\n\tWrite a program that computes the weekly salary of each employee. \n\tThe program prints the first name, last name, and weekly salary of each employee in a file named \"results.txt\". \n\tThe \"results.txt\" must be created automatically by your program. \n\tYou must use a function to read/process the data from the input file and this function must have parameters. \n\tThe \"employees.txt\" file must be opened from main and read from within your defined function.\n\n\n*/\n\n\n#include <iostream>\n#include <fstream>\n#include <string>\n\nusing namespace std;"
+      },
+      {
+        "file": "CIS-150\\Lab 7\\LAB7Q2.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 26 Feb. 2020\n\t*Modification Date: 26 Feb. 2020\n\t*Purpose: Calculates and displays the average and high score of all students by reading the data from the named file the user provided\n\n\t// LAB 7 - CIS 150 - MEECH.cpp\n\n\tQuestion 2\n\t-------------------------\n\t\n\tConsider a file with the following student information:\n\n\tJohn\t\tSmith\t\t99\n\tSarah\t\tJohnson\t\t85\n\tJim\t\t\tRobinson\t70\n\tMary\t\tAnderson\t100\n\tMichael\t\tJackson\t\t92\n\n\tEach line in the file contains the first name, last name, and test score of a student.\n\n\tWrite a program that prompts the user for the file name, \n\tthen calculates and displays the average score of all students by reading the data from the named file the user provided.\n\tYou should use a function to read/process the data from the file and this function must have parameters and should use call by reference. \n\tYour program should also present the highest score in class. The average and highest scores must be determined within your function. \n\tHowever, the display of the average and highest scores must be done in main.\n\n\n\n*/\n\n#include <iostream>\n#include <fstream>\n#include <string>\n\nusing namespace std;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 8",
+    "code_files": [
+      "Lab 8\\LAB8Q1.cpp",
+      "Lab 8\\LAB8Q2.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 8\\LAB8Q1.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 11 Mar. 2020\n\t*Modification Date: 11 Mar. 2020\n\t*Purpose: display sum, average, lowest, and highest number of an array of given size\n\n\t// LAB 8 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\t-------------------------\n\n\tConsider the following code segment:\n\n\tint main()\n\t{\n\t\tcons int SIZE = 20;\n\t\tint values[SIZE] = {0, 23, 34, -7, 110, 42, -350, 424, 25, 99, 10, 05, 50, -5, 1, 200, -350, 437, 25, 147};\n\n\t\t// your code goes here\n\n\t}\n\n\tWrite a complete program to display the values from each of the following four steps.\n\tAll displays must be done in main.\n\tUse separate functions for each step below, passing the array to each function.\n\t1.1)\tProvide the sum of the numbers in this array  function must return an int.\n\t1.2)\tProvide the average of the positive numbers in this array  function must return a double.\n\t1.3)\tProvide the lowest number in the array  function must return an int.\n\t1.4)\tProvide the highest number in the array  function must return an int.\n\n\n*/\n\n\n#include <iostream>\n#include <limits>\nusing namespace std;"
+      },
+      {
+        "file": "CIS-150\\Lab 8\\LAB8Q2.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 11 Mar. 2020\n\t*Modification Date: 11 Mar. 2020\n\t*Purpose: The program prompts the user for an integer value then calls a function to find out if the value exists in the array\n\n\t// LAB 8 - CIS 150 - MEECH.cpp\n\n\tQuestion 2\n\t-------------------------\n\n\tWrite the following function definition:\n\n\t// Author:\n\t// Creation Date:\n\t// Last Modification Date:\n\t// Purpose: Search for a value V in the array a of integers\n\t//          Return the position of V in the array if V is found\n\t//          Otherwise (V not found), return -1\n\n\tint searchValueInArray (int V, int a[], int size)\n\t{\n\n\t// To be completed by student\n\n\t}\n\n\n\n\tWrite a main program that includes the following array declaration:\n\n\tconst int SIZE = 8;\n\tint array [SIZE] = {10, 60, 20, 50, 30, 40, -10, 0};\n\n\tThe program prompts the user for an integer value\n\tthen calls the function to find out if the value exists in the array.\n\t--------------------------------------------------------------------------\n\tExample 1:\n\n\tPlease enter an integer value: 20"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "Lab 9\\Lab 09 - Meech",
+    "code_files": [
+      "Lab 9\\Lab 09 - Meech\\LAB9Q1.cpp",
+      "Lab 9\\Lab 09 - Meech\\LAB9Q2.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\Lab 9\\Lab 09 - Meech\\LAB9Q1.cpp",
+        "snippet": "/*  \n\t*Author: Demetrius Johnson\n\t*Creation Date: 18 Mar. 2020\n\t*Modification Date: 18 Mar. 2020\n\t*Purpose: Display sum of elements of a 2D array and tell if it contains a given user value\n\n\t// LAB 9 - CIS 150 - MEECH.cpp\n\n\tQuestion 1\n\t-------------------------\n\n\tWrite the following two functions. \n\n\tThe first function accepts as input a two-dimensional array of integers. It returns two results: the sum of the elements of the array and the average.\n\n\tThe second function accepts as input a two-dimensional array of integers and integer value V. It returns true if the value V is found in the array, false otherwise.\n\n\tWrite a main program that declares and initializes the following array:\n\n\tconst int ROWS = 4;\n\tconst int COLS = 4;\n\n\tint box[ROWS][COLS] = {{11,8,0,-4}, {74,5,13,42}, {29,-7,45,4}, {100,23,-3,61}};\n\n\tYour program needs to call both functions and display appropriate messages from main.\n\n*/\n\n\n#include <iostream>\n#include <limits>\nusing namespace std;\nconst int ROWS = 4;\nconst int COLS = 4;  //global variables for array row and column sizes\n\n\n//-------------function declarations-------------------------//"
+      },
+      {
+        "file": "CIS-150\\Lab 9\\Lab 09 - Meech\\LAB9Q2.cpp",
+        "snippet": "/*\n\t*Author: Demetrius Johnson\n\t*Creation Date: 18 Mar. 2020\n\t*Modification Date: 18 Mar. 2020\n\t*Purpose: using Structs, reads grades from a file specified by user and processes the data of high, low, avg, and number of students into another a file specified by the user\n\n\t// LAB 9 - CIS 150 - MEECH.cpp\n\n\tQuestion 2\n\t-------------------------\n\n\tLets consider an input file that contains student id (int), first name (string), last name (string), and grade (float). We assume that the file contains information for a maximum of 10 students.\n\n\tWrite a program that:\n\n\tDeclare the structure named student composed of id (int), first (string), last (string), and grade (float).\n\tAsks the user for the name of the input file.\n\tReads the grades from the file to fill up an array of type student. \n\tCalculates and displays (to a file) the maximum grade in the array with name.\n\tCalculates and displays (to a file) the minimum grade in the array with name.\n\tCalculates and displays (to a file) the average grade.\n\tCalculates and displays (to a file) how many students were processed. \n\tProduce a file with the information above based on a file name provided by the user.\n\tThe main idea is to explore the benefits of using structs. So every task should be done after the whole array is filled up\n\tAll tasks must be done with functions w/ parameters. Any cin/cout statements must be done from main().\n\n\n*/\n\n\n#include <iostream>\n#include <limits>\n#include <string>\n#include <fstream>\n\nusing namespace std;\nstruct student {int id = 0; string firstName = \"first\", lastName = \"last\"; float grade = 0.0;};\n\n//-------------function declarations-------------------------//\nvoid MenuOne();"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-150",
+    "folder": "WORKOUT PACE CALCULATOR --BY DEMETRIUS JOHNSON",
+    "code_files": [
+      "WORKOUT PACE CALCULATOR --BY DEMETRIUS JOHNSON\\WORKOUT PACE CALCULATOR --BY DEMETRIUS JOHNSON.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-150\\WORKOUT PACE CALCULATOR --BY DEMETRIUS JOHNSON\\WORKOUT PACE CALCULATOR --BY DEMETRIUS JOHNSON.cpp",
+        "snippet": "// WORKOUT PACE CALCULATOR --BY DEMETRIUS JOHNSON.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n\n\n\n#include <iostream>\nusing namespace std;\n\nint main()\n{\n    char userChoice;\n    int min, sec, reps, avgMin;\n    int count = 0;\n    double remAvgSec, avgSeconds = 0.0, totalSeconds = 0.0;\n    cout << \"enter total minutes, followed by a space, then enter seconds (EX: MINUTES_SECONDS).\\n\";\n    cout << \"enter -1 followed by a space and then any number (EX: -1_ANYNUMBER) when finished to calculate average of inputs.\\n\\n\";\n    cout << \"enter letter A enter or repeat program, or letter B to exit.\\n\\n\";\n    cout << \"select a menu option (A or B): \";\n    cin >> userChoice;\n    \n    while (userChoice == 'A' || userChoice == 'a') {\n        totalSeconds = 0.0;\n        count = 0;\n        cout << \"enter MIN_SEC: \";\n        cin >> min >> sec;\n        do {\n\n            totalSeconds += 60 * min + sec;\n            count++;\n            cout << \"enter MIN_SEC: \";\n            cin >> min >> sec;\n        } while (min != -1);\n\n        avgSeconds = totalSeconds / count;\n        avgMin = avgSeconds / 60;\n        remAvgSec = avgSeconds - (60 * avgMin);\n\n        cout << \"\\n\\nAverage is: \" << avgMin << \"_MINUTES & \" << remAvgSec << \"_SECONDS ----->>> (\" << avgMin << \":\" << remAvgSec << \")\\n\\n\";\n        cout << \"select a menu option (A to repeat or B to exit): \";"
+      }
+    ]
+  }
+]

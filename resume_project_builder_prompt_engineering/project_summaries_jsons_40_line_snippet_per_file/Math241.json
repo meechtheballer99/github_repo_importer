@@ -1,0 +1,15 @@
+[
+  {
+    "repo": "Math241",
+    "folder": ".",
+    "code_files": [
+      ".\\integration_hw.py"
+    ],
+    "snippets": [
+      {
+        "file": "Math241\\integration_hw.py",
+        "snippet": "def integrate(f, a, b, steps=1000):\n    dx = (b - a) / steps\n    return sum(f(a + i*dx) * dx for i in range(steps))\n\nprint(integrate(lambda x: x**2, 0, 1))"
+      }
+    ]
+  }
+]

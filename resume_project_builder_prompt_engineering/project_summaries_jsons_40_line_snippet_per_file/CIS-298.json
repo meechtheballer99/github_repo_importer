@@ -1,0 +1,110 @@
+[
+  {
+    "repo": "CIS-298",
+    "folder": "HW\\CIS-298-IntroPython-HWassgs",
+    "code_files": [
+      "HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HW3-meech.py",
+      "HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HW7-meech.py",
+      "HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HW8-meech.py",
+      "HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HWassgs.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-298\\HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HW3-meech.py",
+        "snippet": "#Submit your homework in a report named using the format lastname_firstname_HWnumber.    \n#For each of the 20 questions, enter question number, copy/paste code that solves the question, followed by a snippet of output demonstrating your code works\n\n\n\n#p58, 1-10\n\n#1. Assume the days of the week are numbered 0,1,2,3,4,5,6 from Sunday to Saturday. Write a program that asks a\n#day number, and prints the day name (a string).\n\n\n\nday_of_week = int(input(\"Enter a day of the week (0 = Sunday, 6 = Saturday): \"))\nDAYS_list = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"]\nprint(DAYS_list[day_of_week])\n        \n        \n#2. You go on a wonderful holiday (perhaps to jail, if you don\u2019t like happy exercises) leaving on day number 3\n#(a Wednesday). You return home after 137 sleeps. Write a general version of the program which asks for the\n#starting day number, and the length of your stay, and it will tell you the name of day of the week you will return on\n\nday_of_week = int(input(\"Enter a day of the week that you are leaving on (0 = Sunday, 6 = Saturday): \"))\nlength_of_stay = int(input(\"Enter the number of days you will be away: \"))\nDAYS_list = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"]\n\n\nprint(\"You left on: \", DAYS_list[day_of_week])\nday_of_week = (day_of_week + (length_of_stay % 7)) % 7\nprint(\"You return on: \", DAYS_list[day_of_week])\n\n\n\n#3. Give the logical opposites of these conditions\n#(a) a > b\nprint(\"logical opposite of a > b --> a >= b\")\n\n#(b) a >= b\nprint(\"logical opposite of a >= b --> a < b\")\n\n#(c) a >= 18 and day == 3"
+      },
+      {
+        "file": "CIS-298\\HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HW7-meech.py",
+        "snippet": "#Author: Demetrius Johnson\n#CIS-298 Intro to Python with Professor Robert Mann\n#HW7 - Working with Files\n#Remember to copy/paste your code for each question separately. \n#Then, follow it with a snippet showing the output.\n#Due: Thu March 16, 2023 3:30pm\n\n#special note:\n#A CSV (Comma Separated Values) file is a list of data separated by commas. For instance, it may look like the following: \n#Name,email,phone number,address. Example,example@example.com,555-555-5555,Example Address.\n#Description:\n\n#For this assignment, you will be processing a CSV file containing scores from a game tournament.\n\n \n\n#Requirements:\n\n#You shall manually create a CSV file to store names and scores.\n#The file format is last name, first name, score 1, score 2, score 3, score 4.\n#Scores range from 1-50, or -1 if no score available.\n#Enter at least 7 players into your data file.\nimport random\n#I will recycle my code for random number generator from hw6 and make some adaptations\ndef get_random_num(positive_range=50, negative_range=1):\n       #random() function returns a number between 0 and 1\n       #Multiply pos_range*random() and subtract neg_range*random() in order to make the values have a range of [pos_range,neg_range]\n        random_num = positive_range * random.random() - negative_range * random.random()\n        return random_num if random_num >=1 else -1 #increase chances of -1 being returned --> return -1 for all numbers < 1\n#use list comprehension and random number function to create csv (comma separated values) string\nnumber_of_players = 30\nall_player_names_and_scores = [\n    #03d simply means fill 0's (if necessary) and make the integer length of 3...\n    \"P_%03d_last,P_%03d_first,%d,%d,%d,%d\\n\" #added a newline at the end so when it is written to file each player+stats are written on their own line\n    %(iterator,\n      iterator,\n      get_random_num(),\n      get_random_num(),\n      get_random_num(),\n      get_random_num()) #generate 4 random numbers [-1 to 50, 0 not included] for all players"
+      },
+      {
+        "file": "CIS-298\\HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HW8-meech.py",
+        "snippet": "#Author: Demetrius Johnson\n#CIS-298 Intro to Python with Professor Robert Mann\n#HW8 - Working with matplotlib\n#Remember to copy/paste your code for each question separately. \n#Then, follow it with a snippet showing the output.\n#Due: Thu March 28, 2023 4pm\n\n\n\n#Description\n\n#For this project you will be reading a file, counting occurrences of all letters and numbers, \n#and displaying the results in a histogram.\n\n \n\n#Requirements:\n\n#Your input file is the syllabus for this course, found on Canvas under files. \n#Use the text version (you may read the docx version if you\u2019d like but it needs a library).  \n#Read the file, counting the number of times each letter\n#(not differentiating between uppercase and lowercase) and number appears (a-z, A-Z, 0-9; 36 total items).  \n#Display the results as a histogram with appropriate title and labels for x-axis and y-axis.\n\nSyllabus_File = open(\"Syllabus_CIS298_001MannW23.txt\")\nprint(Syllabus_File.read())\n\n#seek back to beginning of file since I already read all lines and current pos is EOF:\nSyllabus_File.seek(0) \n#Now store the contents of the file as a string, \nfile_data_char_tokens = Syllabus_File.read()\n\n#First, identify every unique character in the string to create a list of unique characters:\nunique_chars = []\nfor character in file_data_char_tokens:\n    if unique_chars.count(character) == 0:\n        unique_chars.append(character)\nprint(unique_chars)\n\n#create list of the ASCII decimal equivalent of the unique chars for easier comparisons:"
+      },
+      {
+        "file": "CIS-298\\HW\\CIS-298-IntroPython-HWassgs\\CIS_298_IntroPython_HWassgs.py",
+        "snippet": "#CIS-298 Intro to Python\n#With Professor Robert Mann\n#HW #2\n#Student: Demetrius Johnson\n#19 January 2023\n#Due: 24 January 2023 at 4pm\n\n\n#Submit your code in a report: question number, code copy/pasted, snippet of output.\n\n \n\n#You may answer all questions in one program but only submit the code for that question, separately from any other code. \n\n#****** Lists has 3 questions, tuples has 3 questions, dictionary has 8 questions. ******\n\n#* Lists []\n\n#Create an empty list and print the list\n\n#Create a singleton list and print the list\n\n#Create a list of 5 items of mixed types and print the list\n\n#Print the 3rd item in the list\n\n#Print the item at index -3\n\n#Change the 3rd item in the list to \u201cbye\u201d and print the whole list\n\n#Change the -4th item in the list to \u2018hello\u2019 and print the whole list\n\n#Print the length of the list\n\n#Find the min and max of the list\n\n#Delete the -5th item in the list\n\n#Add list [\u2018heaven\u2019, -986] to the beginning of your list"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-298",
+    "folder": "HW\\HW2",
+    "code_files": [
+      "HW\\HW2\\CIS_298_IntroPython_HW2-meech.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-298\\HW\\HW2\\CIS_298_IntroPython_HW2-meech.py",
+        "snippet": "#CIS-298 Intro to Python\n#With Professor Robert Mann\n#HW #2\n#Student: Demetrius Johnson\n#19 January 2023\n#Due: 24 January 2023 at 4pm\n\n\n#Submit your code in a report: question number, code copy/pasted, snippet of output.\n\n \n\n#You may answer all questions in one program but only submit the code for that question, separately from any other code. \n\n#****** Lists has 3 questions, tuples has 3 questions, dictionary has 8 questions. ******\n\n#* Lists []\nprint(\"LISTS\")\n\n#Create an empty list and print the list\nmy_list = []\nprint(my_list)\n#Create a singleton list and print the list\nmy_list_1 = [1]\n#Create a list of 5 items of mixed types and print the list\nmy_list_5 = [5, -5.5, 'item', 'c', 0]\nprint(my_list_5)\n#Print the 3rd item in the list\nprint(my_list_5[2])\n#Print the item at index -3\nprint(my_list_5[-3])\n#Change the 3rd item in the list to \u201cbye\u201d and print the whole list\nmy_list_5[2] = \"bye\"\nprint(my_list_5)\n#Change the -4th item in the list to \u2018hello\u2019 and print the whole list\nmy_list_5[-4] = \"hello\"\nprint(my_list_5)\n#Print the length of the list\nprint(len(my_list_5))\n#Find the min and max of the list"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-298",
+    "folder": "HW\\HW3",
+    "code_files": [
+      "HW\\HW3\\CIS_298_IntroPython_HW3-meech.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-298\\HW\\HW3\\CIS_298_IntroPython_HW3-meech.py",
+        "snippet": "#Submit your homework in a report named using the format lastname_firstname_HWnumber.    \n#For each of the 20 questions, enter question number, copy/paste code that solves the question, followed by a snippet of output demonstrating your code works\n\n\n\n#p58, 1-10\n\n#1. Assume the days of the week are numbered 0,1,2,3,4,5,6 from Sunday to Saturday. Write a program that asks a\n#day number, and prints the day name (a string).\n\n\n\nday_of_week = int(input(\"Enter a day of the week (0 = Sunday, 6 = Saturday): \"))\nDAYS_list = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"]\nprint(DAYS_list[day_of_week])\n        \n        \n#2. You go on a wonderful holiday (perhaps to jail, if you don\u2019t like happy exercises) leaving on day number 3\n#(a Wednesday). You return home after 137 sleeps. Write a general version of the program which asks for the\n#starting day number, and the length of your stay, and it will tell you the name of day of the week you will return on\n\nday_of_week = int(input(\"Enter a day of the week that you are leaving on (0 = Sunday, 6 = Saturday): \"))\nlength_of_stay = int(input(\"Enter the number of days you will be away: \"))\nDAYS_list = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"]\n\n\nprint(\"You left on: \", DAYS_list[day_of_week])\nday_of_week = (day_of_week + (length_of_stay % 7)) % 7\nprint(\"You return on: \", DAYS_list[day_of_week])\n\n\n\n#3. Give the logical opposites of these conditions\n#(a) a > b\nprint(\"logical opposite of a > b --> a >= b\")\n\n#(b) a >= b\nprint(\"logical opposite of a >= b --> a < b\")\n\n#(c) a >= 18 and day == 3"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-298",
+    "folder": "HW\\HW6",
+    "code_files": [
+      "HW\\HW6\\CIS-298-HW6-PostSubmission-v1.py",
+      "HW\\HW6\\CIS_298_IntroPython_HW6-meech-specialProblem.py",
+      "HW\\HW6\\CIS_298_IntroPython_HW6-SubmittedVersion-meech.py",
+      "HW\\HW6\\CIS_298_IntroPython_HW6Q6-SOLVED-meech.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-298\\HW\\HW6\\CIS-298-HW6-PostSubmission-v1.py",
+        "snippet": "import time #import time ahead of time so no wasted time on imports on the first call to some of the functions used for timing\n\n#define a timing function that I can use to easily pass in any function to test it and for a desired number of iterations:\ndef timing_function(function_to_time, num_iterations=1):\n    ##import time function in order to time our functions\n    import time\n    time_sum = 0\n    total_iterations = num_iterations\n    print(\"Number of iterations function will run:\", num_iterations)\n    while(num_iterations > 0):\n        print(\"\\nIteration#%d:\"%(total_iterations - num_iterations + 1))\n        start = time.perf_counter()\n        function_to_time()\n        end = time.perf_counter()\n        elapsed_time = end - start\n        print(\"----Time elapsed for iteration#%d:\"% (total_iterations - num_iterations + 1),elapsed_time, sep='')\n        time_sum += elapsed_time #track sum of time for all iterations\n        num_iterations -= 1 #track iteration value\n    print(  \"----Total Time: %f----Average Time: %f\"%( time_sum,(time_sum/total_iterations) )  )\n    return (time_sum/total_iterations)\n##Now, time given solutions, and develop my own solutions to time as well:\n\n\n#soliution 1:\ndef even_nums_sol_1():\n    print(*[n for n in range(1000, 3001) if all([(int(c) % 2 == 0) for c in str(n)])], sep=',')\n#call timing function for solution 1:\nprint(\"\\n---------TIMING FOR SOLUTION 1:\")\ntiming_function(even_nums_sol_1,num_iterations=3)\n\n\n\n#soliution 2:\ndef even_nums_sol_2():\n    numbers = []\n    for i in range(1000, 3001):\n        is_even = True\n        for j in str(i):\n            if int(j) %2 == 1:\n                is_even = False"
+      },
+      {
+        "file": "CIS-298\\HW\\HW6\\CIS_298_IntroPython_HW6-meech-specialProblem.py",
+        "snippet": "#Author: Demetrius Johnson\n#CIS-298 Intro to Python with Professor Robert Mann\n#HW6 - Algorithmic Efficiency\n#Remember to copy/paste your code for each question separately. \n#Then, follow it with a snippet showing the output.\n#Due: Thu March 09, 2023 4:00pm\n\n\n#Question 6 (from hw5 question 10) - Make it work.  Then make it better.\n \n#Here is my original solution from hw5, question 10\ndef even_nums_MySol_1():\n    for number in range(1000, 3001, 2): # range [1000, 3001] and only return a number every 2 values (step = 2)\n        print(number, ', ', end = '')\n#note: range function returns an iterable list with only even numbers based on the parameters I passed to the function\n#even_nums_MySol_1() #call my function\n\n\n#From Professor: \n#In grading homework 5 I noticed a variety of solutions \n#to question 10 (print all numbers between 1000 and 3000,inclusive, where each digit is even). \n#I appreciate questions like this for it allows me to see a range of thinking on how to solve a problem.  \n\n#Here are two solutions that were given:\n\n#Solution 1:\n#print(*[n for n in range(1000, 3001) if all([(int(c) % 2 == 0) for c in str(n)])], sep=',')\n\n#Solution 2:\n#numbers = []\n#for i in range(1000, 3001):\n#    is_even = True\n#    for j in str(i):\n#        if int(j) %2 == 1:\n#            is_even = False\n#    if is_even:\n#        numbers.append(i)\n#print(numbers)"
+      },
+      {
+        "file": "CIS-298\\HW\\HW6\\CIS_298_IntroPython_HW6-SubmittedVersion-meech.py",
+        "snippet": "import time #import time ahead of time so no wasted time on imports on the first call to some of the functions used for timing\n\n#define a timing function that I can use to easily pass in any function to test it and for a desired number of iterations:\ndef timing_function(function_to_time, num_iterations=1):\n    ##import time function in order to time our functions\n    import time\n    time_sum = 0\n    total_iterations = num_iterations\n    print(\"Number of iterations function will run:\", num_iterations)\n    while(num_iterations > 0):\n        print(\"\\nIteration#%d:\"%(total_iterations - num_iterations + 1))\n        start = time.perf_counter()\n        function_to_time()\n        end = time.perf_counter()\n        elapsed_time = end - start\n        print(\"----Time elapsed for iteration#%d:\"% (total_iterations - num_iterations + 1),elapsed_time, sep='')\n        time_sum += elapsed_time #track sum of time for all iterations\n        num_iterations -= 1 #track iteration value\n    print(  \"----Total Time: %f----Average Time: %f\"%( time_sum,(time_sum/total_iterations) )  )\n    return (time_sum/total_iterations)\n##Now, time given solutions, and develop my own solutions to time as well:\n\n\n#soliution 1:\ndef even_nums_sol_1():\n    print(*[n for n in range(1000, 3001) if all([(int(c) % 2 == 0) for c in str(n)])], sep=',')\n#call timing function for solution 1:\nprint(\"\\n---------TIMING FOR SOLUTION 1:\")\ntiming_function(even_nums_sol_1,num_iterations=3)\n\n\n\n#soliution 2:\ndef even_nums_sol_2():\n    numbers = []\n    for i in range(1000, 3001):\n        is_even = True\n        for j in str(i):\n            if int(j) %2 == 1:\n                is_even = False"
+      },
+      {
+        "file": "CIS-298\\HW\\HW6\\CIS_298_IntroPython_HW6Q6-SOLVED-meech.py",
+        "snippet": "#Author: Demetrius Johnson\n#CIS-298 Intro to Python with Professor Robert Mann\n#HW6 - Algorithmic Efficiency\n#Remember to copy/paste your code for each question separately. \n#Then, follow it with a snippet showing the output.\n#Due: Thu March 09, 2023 4:00pm\n\n\n#Question 6 (from hw5 question 10) - Make it work.  Then make it better.\n \n#Here is my original solution from hw5, question 10\ndef even_nums_MySol_1():\n    for number in range(1000, 3001, 2): # range [1000, 3001] and only return a number every 2 values (step = 2)\n        print(number, ', ', end = '')\n#note: range function returns an iterable list with only even numbers based on the parameters I passed to the function\n#even_nums_MySol_1() #call my function\n\n\n#From Professor: \n#In grading homework 5 I noticed a variety of solutions \n#to question 10 (print all numbers between 1000 and 3000,inclusive, where each digit is even). \n#I appreciate questions like this for it allows me to see a range of thinking on how to solve a problem.  \n\n#Here are two solutions that were given:\n\n#Solution 1:\n#print(*[n for n in range(1000, 3001) if all([(int(c) % 2 == 0) for c in str(n)])], sep=',')\n\n#Solution 2:\n#numbers = []\n#for i in range(1000, 3001):\n#    is_even = True\n#    for j in str(i):\n#        if int(j) %2 == 1:\n#            is_even = False\n#    if is_even:\n#        numbers.append(i)\n#print(numbers)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-298",
+    "folder": "HW\\HW7",
+    "code_files": [
+      "HW\\HW7\\CIS_298_IntroPython_HW7-meech.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-298\\HW\\HW7\\CIS_298_IntroPython_HW7-meech.py",
+        "snippet": "#Author: Demetrius Johnson\n#CIS-298 Intro to Python with Professor Robert Mann\n#HW7 - Working with Files\n#Remember to copy/paste your code for each question separately. \n#Then, follow it with a snippet showing the output.\n#Due: Thu March 16, 2023 3:30pm\n\n#special note:\n#A CSV (Comma Separated Values) file is a list of data separated by commas. For instance, it may look like the following: \n#Name,email,phone number,address. Example,example@example.com,555-555-5555,Example Address.\n#Description:\n\n#For this assignment, you will be processing a CSV file containing scores from a game tournament.\n\n \n\n#Requirements:\n\n#You shall manually create a CSV file to store names and scores.\n#The file format is last name, first name, score 1, score 2, score 3, score 4.\n#Scores range from 1-50, or -1 if no score available.\n#Enter at least 7 players into your data file.\nimport random\n#I will recycle my code for random number generator from hw6 and make some adaptations\ndef get_random_num(positive_range=50, negative_range=1):\n       #random() function returns a number between 0 and 1\n       #Multiply pos_range*random() and subtract neg_range*random() in order to make the values have a range of [pos_range,neg_range]\n        random_num = positive_range * random.random() - negative_range * random.random()\n        return random_num if random_num >=1 else -1 #increase chances of -1 being returned --> return -1 for all numbers < 1\n#use list comprehension and random number function to create csv (comma separated values) string\nnumber_of_players = 30\nall_player_names_and_scores = [\n    #03d simply means fill 0's (if necessary) and make the integer length of 3...\n    \"P_%03d_last,P_%03d_first,%d,%d,%d,%d\\n\" #added a newline at the end so when it is written to file each player+stats are written on their own line\n    %(iterator,\n      iterator,\n      get_random_num(),\n      get_random_num(),\n      get_random_num(),\n      get_random_num()) #generate 4 random numbers [-1 to 50, 0 not included] for all players"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-298",
+    "folder": "HW\\HW8",
+    "code_files": [
+      "HW\\HW8\\CIS_298_IntroPython_HW8-meech.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-298\\HW\\HW8\\CIS_298_IntroPython_HW8-meech.py",
+        "snippet": "#Author: Demetrius Johnson\n#CIS-298 Intro to Python with Professor Robert Mann\n#HW8 - Working with matplotlib\n#Remember to copy/paste your code for each question separately. \n#Then, follow it with a snippet showing the output.\n#Due: Thu March 28, 2023 4pm\n\n\n\n#Description\n\n#For this project you will be reading a file, counting occurrences of all letters and numbers, \n#and displaying the results in a histogram.\n\n \n\n#Requirements:\n\n#Your input file is the syllabus for this course, found on Canvas under files. \n#Use the text version (you may read the docx version if you\u2019d like but it needs a library).  \n#Read the file, counting the number of times each letter\n#(not differentiating between uppercase and lowercase) and number appears (a-z, A-Z, 0-9; 36 total items).  \n#Display the results as a histogram with appropriate title and labels for x-axis and y-axis.\n\nSyllabus_File = open(\"Syllabus_CIS298_001MannW23.txt\")\nprint(Syllabus_File.read())\n\n#seek back to beginning of file since I already read all lines and current pos is EOF:\nSyllabus_File.seek(0) \n#Now store the contents of the file as a string, \nfile_data_char_tokens = Syllabus_File.read()\n\n#First, identify every unique character in the string to create a list of unique characters:\nunique_chars = []\nfor character in file_data_char_tokens:\n    if unique_chars.count(character) == 0:\n        unique_chars.append(character)\nprint(unique_chars)\n\n#create list of the ASCII decimal equivalent of the unique chars for easier comparisons:"
+      }
+    ]
+  }
+]

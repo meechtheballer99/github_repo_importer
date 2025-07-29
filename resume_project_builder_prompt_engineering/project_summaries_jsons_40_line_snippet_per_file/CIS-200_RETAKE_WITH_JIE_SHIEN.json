@@ -1,0 +1,581 @@
+[
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 1",
+    "code_files": [
+      "Labs\\Lab 1\\Lab1.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 1\\Lab1.cpp",
+        "snippet": "// lab1.cpp\n#include <iostream>\nusing namespace std;\n\nint main ()\n{\n    cout << \"Hello Everyone !\" << endl;\n  \n    cout << \"This is Lab 1 of CIS 200 Winter 2021.\" << endl;\n    \n  return 0;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 10\\Bakcup TXT",
+    "code_files": [
+      "Labs\\Lab 10\\Bakcup TXT\\CIS-200-LAB_10_Q1.cpp",
+      "Labs\\Lab 10\\Bakcup TXT\\Pet.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 10\\Bakcup TXT\\CIS-200-LAB_10_Q1.cpp",
+        "snippet": "// CIS-200-LAB 10 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 12 April 2021\n//Last Modification Date: 04-12-2021\n//Purpose: Demonstrate the use of Polymorphism and Dynamic Binding: one of the corner stones of object-oriented programming in C++\n\n*/\n\n/*\nQuestion 1:\n\nWrite a program that uses inheritance and polymorphism. Make a Pet class and let it have a kind of food (string). \nYou have a feed() function and a speak() function. Both functions should be virtual functions.\nChild classes will have different things depending on what it is. \nInside the four child classes, you should override the feed( ) and speak( ) functions to generate the specified output.\n\n\n//notes:\n\n//Dynamic binding (i.e., polymorphism) is one corner stone of the object-oriented programming.\n//In C++, we rely on virtual functions and pointers to a base class and its derived classes to implement the polymorphism.\n\n**it gives the capabaility of using one pointer to point to several different but similarly derived objects but with their own unique characteristics\n//and take advantage of being able to accessing all of the functions and data members because \n//of dynamic binding (polymorphism of the base class, from which other classes are dereived so as to take on another form of the base class object)\n\n*/\n\n#include <iostream>\n#include \"Pet.cpp\"\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 10\\Bakcup TXT\\Pet.cpp",
+        "snippet": "/*\n//Author: Demetrius E Johnson\n//Date: 12 April 2021\n//Last Modification Date: 04-14-2021\n//Purpose: Demonstrate the use of Polymorphism and Dynamic Binding: one of the corner stones of object-oriented programming in C++\n\n*/\n\n#include <string>\n#include <iostream>\nusing namespace std;\n\nclass Pet\n{\nprotected:\n    string Kind_of_Food = \"Eats generic food\";\n    string Kind_of_Sound = \"Makes an animal noise\";\npublic:\n\n    Pet() { //default constructor\n    \n        //cout << \"Got a pet\" << endl;\n        //special noteL: I had to comment out the above line because I learned while stepping through the program that\n        //all derived class constructors will always first call the base class constructor before executing any of its code lines\n\n    }\n   \n    virtual void feed(void) {\n    \n        cout << Kind_of_Food << endl;\n    }\n\n    virtual void speak(void) {\n    \n        cout << Kind_of_Sound << endl;\n    \n    }\n};\n\n//note: good practice for when overiding a virtual function is to use keyword 'override'"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 10\\CIS-200-LAB_10-DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 10\\CIS-200-LAB_10-DemetriusJohnson\\CIS-200-LAB_10_Q1.cpp",
+      "Labs\\Lab 10\\CIS-200-LAB_10-DemetriusJohnson\\Pet.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 10\\CIS-200-LAB_10-DemetriusJohnson\\CIS-200-LAB_10_Q1.cpp",
+        "snippet": "// CIS-200-LAB 10 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 12 April 2021\n//Last Modification Date: 04-12-2021\n//Purpose: Demonstrate the use of Polymorphism and Dynamic Binding: one of the corner stones of object-oriented programming in C++\n\n*/\n\n/*\nQuestion 1:\n\nWrite a program that uses inheritance and polymorphism. Make a Pet class and let it have a kind of food (string). \nYou have a feed() function and a speak() function. Both functions should be virtual functions.\nChild classes will have different things depending on what it is. \nInside the four child classes, you should override the feed( ) and speak( ) functions to generate the specified output.\n\n\n//notes:\n\n//Dynamic binding (i.e., polymorphism) is one corner stone of the object-oriented programming.\n//In C++, we rely on virtual functions and pointers to a base class and its derived classes to implement the polymorphism.\n\n**it gives the capabaility of using one pointer to point to several different but similarly derived objects but with their own unique characteristics\n//and take advantage of being able to accessing all of the functions and data members because \n//of dynamic binding (polymorphism of the base class, from which other classes are dereived so as to take on another form of the base class object)\n\n*/\n\n#include <iostream>\n#include \"Pet.cpp\"\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 10\\CIS-200-LAB_10-DemetriusJohnson\\Pet.cpp",
+        "snippet": "/*\n//Author: Demetrius E Johnson\n//Date: 12 April 2021\n//Last Modification Date: 04-14-2021\n//Purpose: Demonstrate the use of Polymorphism and Dynamic Binding: one of the corner stones of object-oriented programming in C++\n\n*/\n\n#include <string>\n#include <iostream>\nusing namespace std;\n\nclass Pet\n{\nprotected:\n    string Kind_of_Food = \"Eats generic food\";\n    string Kind_of_Sound = \"Makes an animal noise\";\npublic:\n\n    Pet() { //default constructor\n    \n        //cout << \"Got a pet\" << endl;\n        //special noteL: I had to comment out the above line because I learned while stepping through the program that\n        //all derived class constructors will always first call the base class constructor before executing any of its code lines\n\n    }\n   \n    virtual void feed(void) {\n    \n        cout << Kind_of_Food << endl;\n    }\n\n    virtual void speak(void) {\n    \n        cout << Kind_of_Sound << endl;\n    \n    }\n};\n\n//note: good practice for when overiding a virtual function is to use keyword 'override'"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 11\\BAKCUP_TXT",
+    "code_files": [
+      "Labs\\Lab 11\\BAKCUP_TXT\\BinarySearchTree.cpp",
+      "Labs\\Lab 11\\BAKCUP_TXT\\CIS-200-LAB_11-DemetriusJohnson.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 11\\BAKCUP_TXT\\BinarySearchTree.cpp",
+        "snippet": "/*\n//Author: Demetrius E Johnson\n//Date: 15 April 2021\n//Last Modification Date: 04-19-2021\n//Purpose: Use a tree struct node to demonstrate the structure of a Binary Search Tree data type\n*/\n\n//#include <vector>\n#include<iostream>\n//TREE NODE STRUCT:\ntemplate<class ItemType>\nstruct TreeNode\n{\n\t\n\tItemType info;  //hold the actual data information for the current node\n\tTreeNode<ItemType>* left; //left child pointer\n\tTreeNode<ItemType>* right; //right child pointer\n\t//bool markedForDeletion = false; //use this to assist with the destructor function\n};\n\n//BINARY SEARCH TREE CLASS:\ntemplate<class ItemType>\nclass BST \n{\n\nprivate:\n\tint length;\n\tTreeNode<ItemType>* tempPtr; //use this to point to different parts of the tree; this will serve to help with writing insert and delete functions\n\tTreeNode<ItemType>* root; //use this to store the address of the first element (which is also the root) of the tree structure\n\t//std::vector<TreeNode<ItemType>*> nodeVector; //use this to store all addresses to assist with the destructor function\n\npublic:\n\tBST() {\n\t\n\t\ttempPtr = nullptr;\n\t\troot = nullptr;\n\t\tlength = 0;\n\t\n\t} //default constructor"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 11\\BAKCUP_TXT\\CIS-200-LAB_11-DemetriusJohnson.cpp",
+        "snippet": "// CIS-200-LAB_11 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 15 April 2021\n//Last Modification Date: 04-19-2021\n//Purpose: Use a tree struct node to demonstrate the structure of a Binary Search Tree data type\n*/\n\n/*\nQuestion 1:\n\nQuestion 1  Tree\nIn this assignment, perform the following four coding tasks:\n(1)\tCreate a struct TreeNode\n(2)\tUse this TreeNode to construct a binary search tree based on the following input queue:\n                  F,  A,  B,  M,  C, Q\n\n(3)\tUse Inorder Traversal to print out the content of this tree\n\nYou need to provide screenshots of your code and running result.\n\n*/\n\n\n\n#include <iostream>\n#include \"BinarySearchTree.cpp\" //had to just use a cpp file since template classes require more than just the declaration (because of how the compiler works at compile time)\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 11\\CIS-200-LAB_11-DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 11\\CIS-200-LAB_11-DemetriusJohnson\\BinarySearchTree.cpp",
+      "Labs\\Lab 11\\CIS-200-LAB_11-DemetriusJohnson\\CIS-200-LAB_11-DemetriusJohnson.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 11\\CIS-200-LAB_11-DemetriusJohnson\\BinarySearchTree.cpp",
+        "snippet": "/*\n//Author: Demetrius E Johnson\n//Date: 15 April 2021\n//Last Modification Date: 04-19-2021\n//Purpose: Use a tree struct node to demonstrate the structure of a Binary Search Tree data type\n*/\n\n//#include <vector>\n#include<iostream>\n//TREE NODE STRUCT:\ntemplate<class ItemType>\nstruct TreeNode\n{\n\t\n\tItemType info;  //hold the actual data information for the current node\n\tTreeNode<ItemType>* left; //left child pointer\n\tTreeNode<ItemType>* right; //right child pointer\n\t//bool markedForDeletion = false; //use this to assist with the destructor function\n};\n\n//BINARY SEARCH TREE CLASS:\ntemplate<class ItemType>\nclass BST \n{\n\nprivate:\n\tint length;\n\tTreeNode<ItemType>* tempPtr; //use this to point to different parts of the tree; this will serve to help with writing insert and delete functions\n\tTreeNode<ItemType>* root; //use this to store the address of the first element (which is also the root) of the tree structure\n\t//std::vector<TreeNode<ItemType>*> nodeVector; //use this to store all addresses to assist with the destructor function\n\npublic:\n\tBST() {\n\t\n\t\ttempPtr = nullptr;\n\t\troot = nullptr;\n\t\tlength = 0;\n\t\n\t} //default constructor"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 11\\CIS-200-LAB_11-DemetriusJohnson\\CIS-200-LAB_11-DemetriusJohnson.cpp",
+        "snippet": "// CIS-200-LAB_11 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 15 April 2021\n//Last Modification Date: 04-19-2021\n//Purpose: Use a tree struct node to demonstrate the structure of a Binary Search Tree data type\n*/\n\n/*\nQuestion 1:\n\nQuestion 1  Tree\nIn this assignment, perform the following four coding tasks:\n(1)\tCreate a struct TreeNode\n(2)\tUse this TreeNode to construct a binary search tree based on the following input queue:\n                  F,  A,  B,  M,  C, Q\n\n(3)\tUse Inorder Traversal to print out the content of this tree\n\nYou need to provide screenshots of your code and running result.\n\n*/\n\n\n\n#include <iostream>\n#include \"BinarySearchTree.cpp\" //had to just use a cpp file since template classes require more than just the declaration (because of how the compiler works at compile time)\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q1.cpp",
+      "Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q2.cpp",
+      "Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q3.cpp",
+      "Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q4.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q1.cpp",
+        "snippet": "// CIS 200 - LAB 2 - WINTER 2021 - DEMETRIUS JOHNSON.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 4 FEB 2021\n//Last Modification Date: 2-5-2021\n//Purpose: a program to print an upside-down triangle composed of a symbol provided by user input\n\n\n*/\n\n/* \nQuestion 1 (2.5 points)\n//Write a program to print an upside-down triangle composed of a symbol. \n//The number of lines in the triangle and the symbol should be entered as input from the keyboard. \n//For example, if the input values are 4 and $, the output is as follows:\n\n                      $$$$$$$\n                       $   $ \n                        $ $  \n                         $   \n\n\n                        \n\n//In your program documentation, describe the loop(s) used as count-controlled or event-controlled.  You should print out the following results:\n//(1)\t5 and *    (five layers and symbol is *)\n//(2)\t6 and &   (six layers and symbol is &)\n\n\n\n\n\n*/\n\n#include <iostream>\n#include <iomanip>\nusing namespace std;"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q2.cpp",
+        "snippet": "// CIS 200 - LAB 2 - WINTER 2021 - DEMETRIUS JOHNSON.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 4 FEB 2021\n//Last Modification Date: 2-5-2021\n//Purpose: take a positive integer from users via cin and to print out the value of this number in its octal representation (8-based numbering system)\n\n\n*/\n\n/*\n\nQuestion 2 (2.5 points)\n\n//Write a program to take a positive integer from users via cin and to print out the value of this number in its octal representation (8-based numbering system). \n//For instance, if you input 8, the output should be 10.\n\n//You should test your program with the following inputs:\n    //12\n    //15\n\n\n\n\n*/\n\n#include <iostream>\n#include <vector>\nusing namespace std;\n\n\nint main()\n{\n\n    int userInteger_base10 = 0; //use this to get user input and to convert their input from decimal to octal\n    int remainder = 0; //use this to store the remainder of any division results //set remainder to 1 in case user inputs '0', the for loop will still execute at least once\n    vector<int> placeValStorageVector_octal;"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q3.cpp",
+        "snippet": "// CIS 200 - LAB 2 - WINTER 2021 - DEMETRIUS JOHNSON.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 4 FEB 2021\n//Last Modification Date:\n//Purpose: use the concept of a macro --> preprocessor function/operation replacement directive\n\n\n*/\n\n/*\n\nQuestion 3 (2.5 points)\n\nDefine a macro, getmin(a, b), by using #define \ngetmin(a, b) returns a if a < b; otherwise return b.\n\nWrite a simple main( ) below:\n\nint main( )\n{\n\n          int a = 5,  b = 10;\n\n          cout << getmin(a, b) << endl;\n        float x = 3.1,  y = 6.4;\n        cout << getmin(x, y) << endl;\n\n       return 0;\n}\n\n\n\n\n*/\n\n#include <iostream>\n#define getmin(a, b) (a < b ? a : b)"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 2\\CIS-200-LAB 2 -DemetriusJohnson\\L2Q4.cpp",
+        "snippet": "// CIS 200 - LAB 2 - WINTER 2021 - DEMETRIUS JOHNSON.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 4 FEB 2021\n//Last Modification Date: \n//Purpose: Show the use of an inline c++ style function\n\n\n\nNOTES:\n\nA macro is a fragment of code which has been given a name. Whenever the name is used, it is replaced by the contents of the macro. (C style)\n\nInline function is a function that is expanded in-line when it is called. \nWhen the inline function is called, the whole code of the inline function gets inserted \nor substituted at the point of inline function call.  (C++ style)\n\n*Note, a macro is a the same as an inline function in that the contents are replaced by the compiler at compile time (pre-processor directive)\n\n\n\n*/\n\n/*\n\nQuestion 4 (2.5 points)\nDefine an inline function, int getmin(int a, int b).\ngetmin(a, b) returns a if a < b; otherwise return b.\n\nWrite a simple main( ) below:\n\nint main( )\n{\n\n          int a = 5,  b = 10;\n\n          cout << getmin(a, b) << endl;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 3\\CIS-200-LAB 3 -DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 3\\CIS-200-LAB 3 -DemetriusJohnson\\Q1_LAB3.cpp",
+      "Labs\\Lab 3\\CIS-200-LAB 3 -DemetriusJohnson\\Q2_LAB3.cpp",
+      "Labs\\Lab 3\\CIS-200-LAB 3 -DemetriusJohnson\\Q3_LAB3.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 3\\CIS-200-LAB 3 -DemetriusJohnson\\Q1_LAB3.cpp",
+        "snippet": "// CIS-200-LAB 3 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 7 FEB 2021\n//Last Modification Date: 2-7-2021\n//Purpose: \n\n\n*/\n\n/*\nQuestion 1 (3.0 points)\n\nSuppose you work for a boss who is stingy about memory use and\nask you to use only one unsigned char variable, x, for the representation of the binary status (ON or OFF) of 8 locations. \n(See a figure below.)  The reason for this is that your boss wants to use your code in handling with multiple-million user information.\nIn addition, your boss requires you to write a code for complete a number of steps as follows:\n\n    1) input a decimal number (0-255)\n    2) convert it to a binary number\n    3) loop throuhg all the bits of this binary number and print out the locations that correspond to the bit value as 1\n    //for example: if you have a binary number 10000001 (decimal: 129) then message output should be: \"Garage, bedroom are on\".\n    bit location representations: \n    0: garage\n    1: kitchen\n    2: hallway\n    3: basement \n    4: great room \n    5: family room \n    6: bathroom \n    7: bed room\nTest your program with the following input numbers:\n\n    (a)\t 3\n    (b)\t13\n    (c)\t133"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 3\\CIS-200-LAB 3 -DemetriusJohnson\\Q2_LAB3.cpp",
+        "snippet": "// CIS-200-LAB 3 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 7 FEB 2021\n//Last Modification Date: 2-7-2021\n//Purpose:\n\n\n*/\n\n/*\n\nQuestion 2 (3.0 points)\nWrite a program to determine whether the character entered is a capital letter, a small case letter, a digit or a special symbol.\nThe following table shows the range of ASCII values for various characters.\nCharacters\tASCII Values\nA  Z\t65  90\na  z\t97  122\n0  9\t48  57\nspecial symbols\t0 - 47, 58 - 64, 91 - 96, 123  127\n\nIn your main( ), you should declare a char variable ch and get a user input from keyboard for ch.  \nBased on the above ASCII table, \nprint out a message to show that the input character is an upper case or a lower case or a digit or a special symbol.\n\nUser test inputs:\n    Y\n    t\n    5\n    *\n\n*/\n\n\n\n#include <iostream>\nusing namespace std;"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 3\\CIS-200-LAB 3 -DemetriusJohnson\\Q3_LAB3.cpp",
+        "snippet": "// CIS-200-LAB 3 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 7 FEB 2021\n//Last Modification Date: 2-7-2021\n//Purpose:\n\n\n*/\n\n/*\nQuestion 3 (4.0 points)\n\nGiven that Sale[NUM_ROW][NUM_COLUMN] is a two dimensional array of float-pofloat type and the two constants are defined as follows:\n\n#define NUM_ROW  4\n#define NUM_COLUMN 4\n\nfloat Value[NUM_ROW][NUM_COLUMN] =\n{ \t 5.1, 5.2, 5.3, 5.4, 4.5, 4.6, 4.7, 4.8, 4.9, 3.0, 3.1, 3.2,\n             3.1, 3.2, 3.3, 3.4\n};\n\nWrite a C++ main function that computes and prints out the following information about this 2d array:\n\n(1)\tThe minimum value of Value[][] array elements (1 points).\n(2)\tThe maximum value of  the Value[][] array elements (1 points).\n(3)\tThe mean of all the Value[][] array elements (1 points).\n(4)\tThe values of four neighboring elements with respect to Value[i][j], where i and j represent the row and column, respectively.  \nYour program should ask users to input i and j, and then the code should prfloat out the values of all the four neighboring elements w.r.t. i and j. \nThe four neighboring elements are defined as the elements at the left, right, up, and down positions adjacent to the element [i][j].\n\nUser test cases:\n(a)\t i = 1,  j=1\n(b)\t i = 0,  j =2\n(c)\ti= 2, j=3\n\nYou need to prfloat the results on computer screen and make a screenshot."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q1_LAB4.cpp",
+      "Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q2_LAB4.cpp",
+      "Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q3_LAB4.cpp",
+      "Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q4_LAB4.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q1_LAB4.cpp",
+        "snippet": "// CIS-200-LAB 4 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 12 FEB 2021\n//Last Modification Date: 2-12-2021\n//Purpose: Test the Assertion function\n\n\n*/\n\n/*\nQuestion 1.\n\nImplement a function with the following skeleton:\n\nfloat getSquareRoot( float x)\n{\n     // add an assert( ) function call here to make sure that x is a positive number\n     .\n\n     // Return the square root of x\n         .\n}\n\nYou should also implement the following main( ):\n\nint main( )\n{\n       float a;\n\n       do\n       {\n             cout << Input a number:  ;\n             cin >> a;\n\n             cout << Square root of   << a   << =  << getSquareRoot(a) << endl;\n         }while(a > -999);"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q2_LAB4.cpp",
+        "snippet": "// CIS-200-LAB 4 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 12 FEB 2021\n//Last Modification Date: 2-12-2021\n//Purpose:\n\n\n*/\n\n/*\nQuestion 2.\n\nImplement the following main( ):\n\nint main( )\n{\n       int a=1, b=2, c=3;\n\n       a++;    b--;    c++;\n\n       cout << a   << b   << c << endl;      // position 1\n\n\n       a++;    b--;    c++;\n\n       cout << a   << b   << c << endl;      // position 2\n\n\n       a++;    b--;    c++;\n\n       cout << a   << b   << c << endl;      // position 3\n\n       return 0;\n}\n\nWhen you run this code, what do you see in the DOS window?"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q3_LAB4.cpp",
+        "snippet": "// CIS-200-LAB 4 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 12 FEB 2021\n//Last Modification Date: 2-12-2021\n//Purpose: practice using break points\n\n\n*/\n\n/*\nQuestion 3.\n\nImplement the following factorial( ) and main( ):\n\nInt factorial( int n)\n{\n          If(n == 1)\n               Return 1;\n          Else\n               Return( n* factorial(n-1));   // position 2\n}\n\nint main( )\n{\n       int c=3;\n\n       cout << factorial(3)=   << factorial(c) << endl;      // position 1\n\n       return 0;\n}\n\n(1)\tSet a regular breakpoint at position 1 and then use step-into button to step into factorial( ).\n(2)\tInside the factorial( ), use step-over button to move to position 2 and use step-into button to step into the factorial( ) again\n(3)\tRepeat the above step 2 until the recursion finishes the calculation and comes back to the main( )\n\nMake a screenshot at position 1 and each position 2 at different recursive levels."
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 4\\CIS-200-LAB 4 -DemetriusJohnson\\Q4_LAB4.cpp",
+        "snippet": "// CIS-200-LAB 4 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 12 FEB 2021\n//Last Modification Date: 2-12-2021\n//Purpose: Cryptography program that takes advantage of arrays and char numbers through ASCII standard\n\n\n*/\n\n/*\nQuestion 4\n\nIn cryptography, Caesar cipher is one of the simplest encryption techniques. \nThe key idea of this method is to replace each plaintext letter with one fixed number of places down the alphabet. \nBelow is an example with a shift of two:\n\nPlain:     ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\nCipher:  CDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzAB\n\nTo cipher a string, A is replaced by C, B is substituted by D, and so on. To decode a string, A is replaced by y, etc.\n\nWrite a program that takes a char array: Merry Christmas and Happy New Year. as an input, encodes the content, and outputs the encoded content to another char array.  \nPrint out the content of the new array on computer screen and make a screenshot.\n\n\n*/\n\n\n\n#include <iostream>\n#define STRING_SIZE 35 //size of the sentence to be ciphered (including spaces) //remember: char arrays are not automatically NULL terminated, only string literals\nusing namespace std;\n\nint main()\n{\n\n    cout << \"----WELCOME to the Simple Cryptography Two-letter Shift program------BY Demetrius Johnson-------\\n\\n\";"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 5\\CIS-200-LAB 5 -DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 5\\CIS-200-LAB 5 -DemetriusJohnson\\Q1_LAB5.cpp",
+      "Labs\\Lab 5\\CIS-200-LAB 5 -DemetriusJohnson\\Q2_LAB5.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 5\\CIS-200-LAB 5 -DemetriusJohnson\\Q1_LAB5.cpp",
+        "snippet": "// CIS-200-LAB 5 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 19 FEB 2021\n//Last Modification Date: 2-19-2021\n//Purpose:  create a data type and output its data member contents\n\n\n*/\n\n/*\nQuestion 1: User-defined Data Type\n\nDefine your own data type, REAL44, which means a 4-by-4 float array.\n\nThen, in your main( ), create two instances of this data type:\n\nREAL44 a, b;\n\nfor(int i=0; i<4; i++)\n     for(int j=0; j<4; j++)\n    {\n             a[i][j] = i*j;\n             cout << a[i][j] <<    ;\n     }\n\n\nCreate a screenshot of the running result.\n\n*/\n\n\n\n#include <iostream>\n#include<assert.h>\n#define ROW 4\n#define COL 4\nusing namespace std;"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 5\\CIS-200-LAB 5 -DemetriusJohnson\\Q2_LAB5.cpp",
+        "snippet": "// CIS-200-LAB 5 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 19 FEB 2021\n//Last Modification Date: 2-19-2021\n//Purpose: demonstrate the use of class constructors and operator overloading\n\n\n*/\n\n/*\nQuestion 2: Class Constructors and Operator Overloading\n\n\nCreate a class called Student, which contains the following data members:\n\nprivate:\n        int x;\nprotected:\n        float y;\n\nClass Student should include the following member functions:\n\n(1)\tDefault constructor that sets x and y to 0 and 0.0, respectively\n(2)\tParameterized constructor that take two input arguments: int a, float b\n(3)\tCopy constructor\n(4)\tOverloading of = operator\n\n\nImplement a main( ), in which you need to design test cases to test each of the above member functions.\n\nCreate screenshots to show the results.\n\n*/\n\n\n\n#include <iostream>"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 6",
+    "code_files": [
+      "Labs\\Lab 6\\Q1_LAB6.cpp",
+      "Labs\\Lab 6\\Q2_LAB6.cpp",
+      "Labs\\Lab 6\\Q3_LAB6.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 6\\Q1_LAB6.cpp",
+        "snippet": "// CIS-200-LAB_6-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 08 MONTH 2021\n//Last Modification Date: 03-08-2021\n//Purpose: test the use of a recursive function\n\n\n*/\n\n/*\nQuestion 1:\n\nWrite a recursive function defined by the following recursive formula:\n\nfoo (Y, X) =\n    Y                                                            if  X = 1\n    1                                                             if  X = Y\n    (foo ( Y-1, X-1) + 4* foo ( Y-1, X))      if Y > X  > 1\n\nWrite a driver to print out the value for foo (5, 3)    and foo (6, 5).\n\nIn addition, print out the total number of recursive function calls in each case.\n\n\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\nint recursiveFunction(int Y, int X, int& numRecFunc_calls);"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 6\\Q2_LAB6.cpp",
+        "snippet": "// CIS-200-LAB_6-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 08 MONTH 2021\n//Last Modification Date: 03-08-2021\n//Purpose: implement a recursive function that conducts a binary search\n\n\n*/\n\n/*\nQuestion 2:\n\nImplement a recursive function that conducts a binary search with the following interface:\n\nbool BinarySearch (int info[ ],  int x,  int fromLoc, int toLoc, int &step);\n//  info[fromLoc, toLoc] stores an ordered list\n// step:  the number of search step of this binary search\n//  x --  a search item\n//  if x is in the list, return true; otherwise, return false\n\n\nTest cases:\n#define LEN 10000\nint info[LEN];\nfor(int i=0; i< LEN; i++)\n    info[i] = i;\n\nint step;\n\ncout << BinarySearch(info, 997, 0, LEN-1, step)  << endl;\ncout << Binary search steps:  << step << endl;\n\ncout << BinarySearch(info, 20000, 0, LEN-1, step) << endl;\ncout << Binary search steps:  << step << endl;"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 6\\Q3_LAB6.cpp",
+        "snippet": "// CIS-200-LAB_6-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 08 MONTH 2021\n//Last Modification Date: 03-08-2021\n//Purpose: Show use of a Linear search\n\n\n*/\n\n/*\nQuestion 3:\n\nImplement a function that conducts a linear search with the following interface:\n\nbool LinearSearch (int info[ ],  int x,  int fromLoc, int toLoc, int &step);\n//  info[fromLoc, toLoc] stores an ordered list\n// step:  the number of search step of this linear search\n//  x --  a search item\n//  if x is in the list, return true; otherwise, return false\n\n\nTest cases:\n#define LEN 10000\nint info[LEN];\nfor(int i=0; i< LEN; i++)\n    info[i] = i;\n\nint step;\n\ncout << LinearSearch(info, 997, 0, LEN-1, step)  << endl;\ncout << Linear search steps:  << step << endl;\n\ncout << LinearSearch(info, 20000, 0, LEN-1, step) << endl;\ncout << Linear search steps:  << step << endl;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q1_LAB7.cpp",
+      "Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q2_LAB7.cpp",
+      "Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q3_LAB7.cpp",
+      "Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q4_LAB7.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q1_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 16 MAR 2021\n//Last Modification Date: 03-16-2021\n//Purpose: use a template function that can swap many data types\n\n\n*/\n\n/*\nQuestion 1:\n\n//Design and implement a template function, called swapt(T *p1, T *p2), \n//which takes two parameters with the same generic data type. \n//The function swaps the values of these two parameters.\n\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\ntemplate<typename T> \nvoid swapT(T* p1, T* p2);\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q2_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 16 MAR 2021\n//Last Modification Date: 03-16-2021\n//Purpose: implement a template struct\n\n\n*/\n\n/*\nQuestion 2:\n\nDesign and implement a template struct, called Employeet, \n//which contains two data members (id and salary). \n//The data types of id and salary are T1 and T2, respectively.\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\ntemplate<typename T1, typename T2> \nstruct EmployeeT { T1 id; T2 salary; };\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\n    cout << \"\\n-----WELCOME to the simple template struct program --BY Demetrius Johnson-----\\n\\n\";"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q3_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 16 MAR 2021\n//Last Modification Date: 03-16-2021\n//Purpose: practice the use of dynamic allocation using a multi-dimensional array of 3 Dimensions\n\n\n*/\n\n/*\nQuestion 3:\n\nDynamic memory allocation is an efficient and flexible way for software development. Design and implement a function, bar( ... ), \nwhich dynamically allocates a three-dimensional arrays. This function has four parameters: \n1) a parameter for transmitting the array between main( ) and bar( ); \n2) an integer parameter for specifying the length of the first index of the array; \n3) an integer parameter for specifying the length of the second index of the array; \n4) an integer parameter for specifying the length of the third index of the array.\n\nIn the function of bar( ), you need to do the following tasks:\n\ni) dynamically allocate a three-dimensional array (say x[][][] ) with length (length1, length2, length3)\n\nii) perform the following loops:\n     for(int i=0; i< length1; i++)\n          for(int j=0; j<length2; j++)\n               for(int k=0; k<length3; k++)\n                      x[i][j][k]= sin(i*j*k);\n\n  In the function of main( ), you need to do the following tasks:\n\ni) assume the three-dimensional array is of float type;\nii) ask users to input three integer parameters: s1, s2, and s3 for lengths of three indices of the array to be created.\niii) call bar()  by passing s1, s2 and s3 to length1, length 2 and length3 in bar( )\niv) after finishing the calling of bar(), perform the following loops:\n     for(int i=0; i< s1; i++)\n          for(int j=0; j<s2; j++)"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\CIS-200-LAB_7-DemetriusJohnson\\Q4_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 19 MONTH 2021\n//Last Modification Date: 03-21-2021\n//Purpose: demontrate the use of try-catch-throw exception handling blcoks\n\n\n*/\n\n/*\nQuestion 4:\n\n\n\n*/\n\n\n\n#include <iostream>\n//#include <string>\n//#include<stdexcept>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\tcout << \"----WELCOME to the simple try-throw-catch program ---BY Demetrius Johnson\\n\\n\";\n\tcout << \"Enter a value for x: 'q' to quit program, 'a' to throw int, 'c' to throw string literal, or input any other character.\\n\\n\";"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 7\\TXT BACKUPS",
+    "code_files": [
+      "Labs\\Lab 7\\TXT BACKUPS\\Q1_LAB7.cpp",
+      "Labs\\Lab 7\\TXT BACKUPS\\Q2_LAB7.cpp",
+      "Labs\\Lab 7\\TXT BACKUPS\\Q3_LAB7.cpp",
+      "Labs\\Lab 7\\TXT BACKUPS\\Q4_LAB7.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\TXT BACKUPS\\Q1_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 16 MAR 2021\n//Last Modification Date: 03-16-2021\n//Purpose: use a template function that can swap many data types\n\n\n*/\n\n/*\nQuestion 1:\n\n//Design and implement a template function, called swapt(T *p1, T *p2), \n//which takes two parameters with the same generic data type. \n//The function swaps the values of these two parameters.\n\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\ntemplate<typename T> \nvoid swapT(T* p1, T* p2);\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\TXT BACKUPS\\Q2_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 16 MAR 2021\n//Last Modification Date: 03-16-2021\n//Purpose: implement a template struct\n\n\n*/\n\n/*\nQuestion 2:\n\nDesign and implement a template struct, called Employeet, \n//which contains two data members (id and salary). \n//The data types of id and salary are T1 and T2, respectively.\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\ntemplate<typename T1, typename T2> \nstruct EmployeeT { T1 id; T2 salary; };\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\n    cout << \"\\n-----WELCOME to the simple template struct program --BY Demetrius Johnson-----\\n\\n\";"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\TXT BACKUPS\\Q3_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 16 MAR 2021\n//Last Modification Date: 03-16-2021\n//Purpose: practice the use of dynamic allocation using a multi-dimensional array of 3 Dimensions\n\n\n*/\n\n/*\nQuestion 3:\n\nDynamic memory allocation is an efficient and flexible way for software development. Design and implement a function, bar( ... ), \nwhich dynamically allocates a three-dimensional arrays. This function has four parameters: \n1) a parameter for transmitting the array between main( ) and bar( ); \n2) an integer parameter for specifying the length of the first index of the array; \n3) an integer parameter for specifying the length of the second index of the array; \n4) an integer parameter for specifying the length of the third index of the array.\n\nIn the function of bar( ), you need to do the following tasks:\n\ni) dynamically allocate a three-dimensional array (say x[][][] ) with length (length1, length2, length3)\n\nii) perform the following loops:\n     for(int i=0; i< length1; i++)\n          for(int j=0; j<length2; j++)\n               for(int k=0; k<length3; k++)\n                      x[i][j][k]= sin(i*j*k);\n\n  In the function of main( ), you need to do the following tasks:\n\ni) assume the three-dimensional array is of float type;\nii) ask users to input three integer parameters: s1, s2, and s3 for lengths of three indices of the array to be created.\niii) call bar()  by passing s1, s2 and s3 to length1, length 2 and length3 in bar( )\niv) after finishing the calling of bar(), perform the following loops:\n     for(int i=0; i< s1; i++)\n          for(int j=0; j<s2; j++)"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 7\\TXT BACKUPS\\Q4_LAB7.cpp",
+        "snippet": "// CIS-200-LAB 7 -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 19 MONTH 2021\n//Last Modification Date: 03-21-2021\n//Purpose: demontrate the use of try-catch-throw exception handling blcoks\n\n\n*/\n\n/*\nQuestion 4:\n\n\n\n*/\n\n\n\n#include <iostream>\n//#include <string>\n//#include<stdexcept>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\tcout << \"----WELCOME to the simple try-throw-catch program ---BY Demetrius Johnson\\n\\n\";\n\tcout << \"Enter a value for x: 'q' to quit program, 'a' to throw int, 'c' to throw string literal, or input any other character.\\n\\n\";"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 8\\BackupTXT",
+    "code_files": [
+      "Labs\\Lab 8\\BackupTXT\\Q1.cpp",
+      "Labs\\Lab 8\\BackupTXT\\Q2.cpp",
+      "Labs\\Lab 8\\BackupTXT\\Q3.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 8\\BackupTXT\\Q1.cpp",
+        "snippet": "// CIS-200-LAB_8-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n\n/*\n//Author: Demetrius E Johnson\n//Date: April 26, 2021\n//Last Modification Date: April 26, 2021\n//Purpose: This program demonstrates the use of a linked list using a struct and some basic functions\n\n\n*/\n\n/*\nQuestion 1:\n\n//Write a function called listsize that takes a pointer to the start of a linked list and returns the number of elements in the list,  \n//and another function called listsum that also takes a pointer to the start of a linked list and returns the sum of the values of all elements in the list. \n//In your main routine, you need to print out the results of these two functions on computer screen.\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\nstruct listrec\n{\n    int value;\n    struct listrec* next;\n};\n\nint listsize(listrec* LinkedList_Ptr); // takes a pointer to the start of a linked list and returns the number of elements in the list\nint listsum(listrec* LinkedList_Ptr); //takes a pointer to the start of a linked list and returns the sum of the values of all elements in the list\n\n//FUNCTION DECLARATIONS"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 8\\BackupTXT\\Q2.cpp",
+        "snippet": "// CIS-200-LAB_8-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n\n/*\n//Author: Demetrius E Johnson\n//Date: April 26, 2021\n//Last Modification Date: April 26, 2021\n//Purpose: This program demonstrates the use of a linked list using a struct and some basic functions\n\n\n*/\n\n/*\nQuestion 2:\n\n//Write a function called listsize that takes a pocharer to the start of a linked list and returns the number of elements in the list,  \n//and another function called listsum that also takes a pocharer to the start of a linked list and returns the sum of the values of all elements in the list. \n//In your main routine, you need to prchar out the results of these two functions on computer screen.\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\nstruct listrec\n{\n    char value;\n    struct listrec* next;\n};\n\nvoid printlist(listrec* start_of_linked_list);  // print out all the nodes in the list\n\n\n//FUNCTION DECLARATIONS"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 8\\BackupTXT\\Q3.cpp",
+        "snippet": "// CIS-200-LAB_8-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n\n/*\n//Author: Demetrius E Johnson\n//Date: April 27, 2021\n//Last Modification Date: April 27, 2021\n//Purpose: This program demonstrates how to output beginning memory addresses\n\n\n*/\n\n/*\nQuestion 2:\n\n//In the following main( ) function, try to find a way to print out the beginning memory address of each variable.\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n\n\n\nint add(int x, int y)\n{\n    return (x + y);\n}\n\nint main()\n{\n   cout << \"---Welcome: This program demonstrates how to output beginning memory addresses\\n--By Demetrius Johnson\\n\\n\";\n\n\n   int a = 10;\n   float b = 3.14;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Labs\\Lab 8\\CIS-200-LAB_8-DemetriusJohnson",
+    "code_files": [
+      "Labs\\Lab 8\\CIS-200-LAB_8-DemetriusJohnson\\Q1.cpp",
+      "Labs\\Lab 8\\CIS-200-LAB_8-DemetriusJohnson\\Q2.cpp",
+      "Labs\\Lab 8\\CIS-200-LAB_8-DemetriusJohnson\\Q3.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 8\\CIS-200-LAB_8-DemetriusJohnson\\Q1.cpp",
+        "snippet": "// CIS-200-LAB_8-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n\n/*\n//Author: Demetrius E Johnson\n//Date: April 26, 2021\n//Last Modification Date: April 26, 2021\n//Purpose: This program demonstrates the use of a linked list using a struct and some basic functions\n\n\n*/\n\n/*\nQuestion 1:\n\n//Write a function called listsize that takes a pointer to the start of a linked list and returns the number of elements in the list,  \n//and another function called listsum that also takes a pointer to the start of a linked list and returns the sum of the values of all elements in the list. \n//In your main routine, you need to print out the results of these two functions on computer screen.\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\nstruct listrec\n{\n    int value;\n    struct listrec* next;\n};\n\nint listsize(listrec* LinkedList_Ptr); // takes a pointer to the start of a linked list and returns the number of elements in the list\nint listsum(listrec* LinkedList_Ptr); //takes a pointer to the start of a linked list and returns the sum of the values of all elements in the list\n\n//FUNCTION DECLARATIONS"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 8\\CIS-200-LAB_8-DemetriusJohnson\\Q2.cpp",
+        "snippet": "// CIS-200-LAB_8-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n\n/*\n//Author: Demetrius E Johnson\n//Date: April 26, 2021\n//Last Modification Date: April 26, 2021\n//Purpose: This program demonstrates the use of a linked list using a struct and some basic functions\n\n\n*/\n\n/*\nQuestion 2:\n\n//Write a function called printlist that takes a pointer to the start of a char linked list and prints \n//out all the nodes in the list in sequence. \n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\nstruct listrec\n{\n    char value;\n    struct listrec* next;\n};\n\nvoid printlist(listrec* start_of_linked_list);  // print out all the nodes in the list\n\n\n//FUNCTION DECLARATIONS"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Labs\\Lab 8\\CIS-200-LAB_8-DemetriusJohnson\\Q3.cpp",
+        "snippet": "// CIS-200-LAB_8-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n\n/*\n//Author: Demetrius E Johnson\n//Date: April 27, 2021\n//Last Modification Date: April 27, 2021\n//Purpose: This program demonstrates how to output beginning memory addresses\n\n\n*/\n\n/*\nQuestion 2:\n\n//In the following main( ) function, try to find a way to print out the beginning memory address of each variable.\n\n*/\n\n\n\n#include <iostream>\n//#include<assert.h>\nusing namespace std;\n\n\n\n\n\nint add(int x, int y)\n{\n    return (x + y);\n}\n\nint main()\n{\n   cout << \"---Welcome: This program demonstrates how to output beginning memory addresses\\n--By Demetrius Johnson\\n\\n\";\n\n\n   int a = 10;\n   float b = 3.14;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "myTemplates",
+    "code_files": [
+      "myTemplates\\Q#_LAB#.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\myTemplates\\Q#_LAB#.cpp",
+        "snippet": "// CIS-200-LAB ##INSERT LAB NUMBER HERE## -DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 00 MONTH 2021\n//Last Modification Date: 00-00-2021\n//Purpose: *****\n\n\n*/\n\n/*\nQuestion #:\n\n\n\n*/\n\n\n\n#include <iostream>\n#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\n\n\n    cout << endl << endl << \"The program has finished execution....now exiting...thank you....\\n\\n\";"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES",
+    "code_files": [
+      "Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\IPhone.cpp",
+      "Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\IPhone12.cpp",
+      "Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\Phone.cpp",
+      "Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\Q1_Assg1_MAIN.cpp",
+      "Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\Q2_Assg1_MAIN.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\IPhone.cpp",
+        "snippet": "#include \"IPhone.h\"\n\n\n\n//constructors\nIPhone::IPhone() { AppleID = 0; }\n\n//set and get functions\nvoid IPhone::setAppleID(int x) { AppleID = x; }\nint IPhone::getAppleID(void) { return AppleID; }"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\IPhone12.cpp",
+        "snippet": "#include \"IPhone12.h\"\n\n\n//constructor\nIPhone12::IPhone12() { AugmentedRealityStatus = false; }\n\n//set and get functions\nvoid IPhone12::setAugmentedRealityStatus(bool status) { AugmentedRealityStatus = status; }\nbool IPhone12::getAugmentedRealityStatus(void) { return AugmentedRealityStatus; }"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\Phone.cpp",
+        "snippet": "#include \"Phone.h\"\n\n\n//constructors\nPhone::Phone() { Age = 0; Price = 0.0; }\nPhone::Phone(int a, float b) { Age = a; Price = b; }\n\n//set and get functions\nvoid Phone::setAge(int a) { Age = a; }\nvoid Phone::setPrice(float b) { Price = b; }\nint Phone::getAge(void) { return Age; }\nfloat Phone::getPrice(void) { return Price; }"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\Q1_Assg1_MAIN.cpp",
+        "snippet": "// CIS-200_Assg1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 12 MAR 2021\n//Last Modification Date: 12-03-2021\n//Purpose: demonstrate the utility of multiple inheritance\n\n\n\n\n\n\n#include <iostream>\n#include \"IPhone12.h\" //this will cause a chain of inlcudes: iphone12 --> includes iphone ---> includes phone.\nusing namespace std;\n\n\nint main()\n{\n    cout << \"---WELCOME to the Mulitple Inheritance Utility Demonstration Program ----By Demetrius Johnson\\n\\n\";\n\n\n    Phone x;\n    cout << \"Initial value for x: \" << endl;\n    cout << \"\\tAge = \" << x.getAge() << \"\\n\\tPrice = \" << x.getPrice() << endl;\n\n    x.setAge(3);\n    x.setPrice(200);\n    cout << \"Modified value for x: \" << endl;\n    cout << \"\\tAge = \" << x.getAge() << \"\\n\\tPrice = \" << x.getPrice() << endl << endl;\n\n\n\n    IPhone y;\n    cout << \"Initial value for y: \" << endl;\n    cout << \"\\tAge = \" << y.getAge() << \"\\n\\tPrice = \" << y.getPrice() << \"\\n\\tApple ID = \" << y.getAppleID() << endl;\n\n    y.setAge(2);\n    y.setPrice(300);\n    y.setAppleID(1234);"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\assg1_All_Files-Complete_DemetriusJohnson\\MAIN_CPP_H FILES\\Q2_Assg1_MAIN.cpp",
+        "snippet": "// CIS-200_Assg1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 12 MAR 2021\n//Last Modification Date: 12-03-2021\n//Purpose: demonstrate the use of defining a class\n\n\n\n\n\n\n#include <iostream>\n#include <fstream>\nusing namespace std;\n\n\n//Employee class definition\nclass Employee\n{\nprivate:\n    int age;\n    int id;\n    float salary;\npublic:\n    //You need to provide the definition of the default constructor and \n    //the first three member functions(setAge, setId and setSalary) \n    //inside the scope defined by the brackets of class Employee\n\n    Employee() { age = 0; id = 0; salary = 0; }  // default constructor: age=0, id=0, and salary=0\n    void setAge(int x) { age = x; }    // let age = x\n    void setId(int x) { id = x; }       //  let id = x\n    void setSalary(float x) { salary = x; }  // salary = x\n\n\n    void print();   // print out the values of attributes on computer screen\n    void print(fstream& os);   // print out the values of attributes to a file\n    Employee(Employee& x);   // copy constructor                    \n    Employee& operator= (Employee& x); // equal sign operator\n    int getAge();        // return age"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson",
+    "code_files": [
+      "Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\IPhone.cpp",
+      "Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\IPhone12.cpp",
+      "Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\Phone.cpp",
+      "Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\Q1_Assg1_MAIN.cpp",
+      "Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\Q2_Assg1_MAIN.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\IPhone.cpp",
+        "snippet": "#include \"IPhone.h\"\n\n\n\n//constructors\nIPhone::IPhone() { AppleID = 0; }\n\n//set and get functions\nvoid IPhone::setAppleID(int x) { AppleID = x; }\nint IPhone::getAppleID(void) { return AppleID; }"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\IPhone12.cpp",
+        "snippet": "#include \"IPhone12.h\"\n\n\n//constructor\nIPhone12::IPhone12() { AugmentedRealityStatus = false; }\n\n//set and get functions\nvoid IPhone12::setAugmentedRealityStatus(bool status) { AugmentedRealityStatus = status; }\nbool IPhone12::getAugmentedRealityStatus(void) { return AugmentedRealityStatus; }"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\Phone.cpp",
+        "snippet": "#include \"Phone.h\"\n\n\n//constructors\nPhone::Phone() { Age = 0; Price = 0.0; }\nPhone::Phone(int a, float b) { Age = a; Price = b; }\n\n//set and get functions\nvoid Phone::setAge(int a) { Age = a; }\nvoid Phone::setPrice(float b) { Price = b; }\nint Phone::getAge(void) { return Age; }\nfloat Phone::getPrice(void) { return Price; }"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\Q1_Assg1_MAIN.cpp",
+        "snippet": "// CIS-200_Assg1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 12 MAR 2021\n//Last Modification Date: 12-03-2021\n//Purpose: demonstrate the utility of multiple inheritance\n\n\n\n\n\n\n#include <iostream>\n#include \"IPhone12.h\" //this will cause a chain of inlcudes: iphone12 --> includes iphone ---> includes phone.\nusing namespace std;\n\n\nint main()\n{\n    cout << \"---WELCOME to the Mulitple Inheritance Utility Demonstration Program ----By Demetrius Johnson\\n\\n\";\n\n\n    Phone x;\n    cout << \"Initial value for x: \" << endl;\n    cout << \"\\tAge = \" << x.getAge() << \"\\n\\tPrice = \" << x.getPrice() << endl;\n\n    x.setAge(3);\n    x.setPrice(200);\n    cout << \"Modified value for x: \" << endl;\n    cout << \"\\tAge = \" << x.getAge() << \"\\n\\tPrice = \" << x.getPrice() << endl << endl;\n\n\n\n    IPhone y;\n    cout << \"Initial value for y: \" << endl;\n    cout << \"\\tAge = \" << y.getAge() << \"\\n\\tPrice = \" << y.getPrice() << \"\\n\\tApple ID = \" << y.getAppleID() << endl;\n\n    y.setAge(2);\n    y.setPrice(300);\n    y.setAppleID(1234);"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 1\\CIS-200_Assg1-DemetriusJohnson\\Q2_Assg1_MAIN.cpp",
+        "snippet": "// CIS-200_Assg1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 12 MAR 2021\n//Last Modification Date: 12-03-2021\n//Purpose: demonstrate the use of defining a class\n\n\n\n\n\n\n#include <iostream>\n#include <fstream>\nusing namespace std;\n\n\n//Employee class definition\nclass Employee\n{\nprivate:\n    int age;\n    int id;\n    float salary;\npublic:\n    //You need to provide the definition of the default constructor and \n    //the first three member functions(setAge, setId and setSalary) \n    //inside the scope defined by the brackets of class Employee\n\n    Employee() { age = 0; id = 0; salary = 0; }  // default constructor: age=0, id=0, and salary=0\n    void setAge(int x) { age = x; }    // let age = x\n    void setId(int x) { id = x; }       //  let id = x\n    void setSalary(float x) { salary = x; }  // salary = x\n\n\n    void print();   // print out the values of attributes on computer screen\n    void print(fstream& os);   // print out the values of attributes to a file\n    Employee(Employee& x);   // copy constructor                    \n    Employee& operator= (Employee& x); // equal sign operator\n    int getAge();        // return age"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson",
+    "code_files": [
+      "Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\CIS-200_Assg2-Q1.cpp",
+      "Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\CIS-200_Assg2-Q2.cpp",
+      "Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\Complex.cpp",
+      "Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\UnsortedList.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\CIS-200_Assg2-Q1.cpp",
+        "snippet": "// CIS-200_Assg2-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 04 MAR 2021\n//Last Modification Date: 03-04-2021\n//Purpose:\n\n//Question 1  Unsorted List (30 points)\n\n\n#include <iostream>\n#include \"UnsortedList.h\"\n#include <fstream>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\nint numCharElement(ifstream& x);\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n    std::cout << \"---WELCOME: This program implements the use of an Unsorted List abstract data structure ----By Demetrius Johnson\\n\\n\\n\";\n\n\n    UnsortedList x;\n    \n    ifstream charFile(\"char.dat\"); // open char.dat\n    if (!charFile.is_open()) { \n        \n        std::cout << \"FILE NOT OPENED SUCCESSFULLY\";\n        std::cout << charFile.good();\n    }\n    \n    // set up x based on the data in char.dat\n    char fElement;\n    while (charFile >> fElement) { //get characters from the file"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\CIS-200_Assg2-Q2.cpp",
+        "snippet": "// CIS-200_Assg2-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 04 MAR 2021\n//Last Modification Date: 03-04-2021\n//Purpose: write a program using a class that can represent complex numbers\n\n//Question 2  Operator (30 points)\n\n\n\n\n//A complex number is a number of the form: a + b * i,  where a and b are number of type double, and i is a number that represents sqrt(-1). \n\n#include <iostream>\n#include \"Complex.h\"\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n    cout << \"---WELCOME to the Complex Numbers Program ----By Demetrius Johnson\\n\\n\\n\";\n    cout << \"A complex number is represented in the form z = Real + Imaginary --? a +b*i:\\n\\nA is a real number, B is a real number, and i = sqrt(-1).\\n\\n\";\n\n\n   // In your main() function, you should perform the following tests :\n\n    Complex x(2, 2);\n    Complex y(4, 3);\n    Complex z, w, v, q;\n    Complex T(y); //other test variable\n\n    cout << \"Testing copy constructor and operator<< : Complex T(y) --> T = \" << T << endl;"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\Complex.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Date: 04 MAR 2021\n//Last Modification Date: 03-04-2021\n//Purpose: write a program using a class that can represent imaginary numbers\n\n#include \"Complex.h\"\n\n//A complex number is a number of the form: a + b * i,  where a and b are number of type double, and i is a number that represents sqrt(-1). \n\n\nComplex::Complex() { real = 0; imaginary = 0; }//Include a default constructor that initializes an object to 0 + 0 * i.\n\nComplex::Complex(double Re, double Im) { real = Re; imaginary = Im; } //Include a constructor with two parameters of type double that can be used to set the member variables of an object to any values\n\nComplex::Complex(double realPart) { real = realPart; imaginary = 0; }//Include a constructor with one parameter of type double called realPart and define the constructor so that the object will be initialized to realPart + 0 * i. \n\nComplex::Complex(const Complex& inputObj) {\n\t\n\tthis->real = inputObj.real; \n\tthis->imaginary = inputObj.imaginary; \n\n} //include a copy constructor\n\n\n//Overload all the following operators so that they correctly apply to the type Complex class:\n\nComplex& Complex::operator=(const Complex& inputObj){\n\t\n\tthis->real = inputObj.real;\n\tthis->imaginary = inputObj.imaginary;\n\n\treturn *this;\n\n} //assignment operator\n\nbool Complex::operator==(Complex& inputObj){\n\n\treturn (((this->real == inputObj.real) && (this->imaginary == inputObj.imaginary)) ? true : false); //used the conditional \"?\" operator"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 2\\CIS-200_Assg2-DemetriusJohnson\\UnsortedList.cpp",
+        "snippet": "#include \"UnsortedList.h\"\n#include <iostream>\n\nUnsortedList::UnsortedList() { length = 0; currentPos = -1; } // default constructor: lenght=0, currentPos=-1\n\nvoid UnsortedList::MakeEmpty() { length = 0; }    // let length=0\n\nvoid UnsortedList::InsertItem(ItemType x){\n\n\tif (length == 10) { std::cout << \"unable to add item; list is full.\\n\\n\"; }\n\telse {\n\t\t\n\t\tvalues[length] = x;\n\t\tlength++;\n\n\t}\n\n\treturn;\n\n}   // insert x into the list \n\nvoid UnsortedList::DeleteItem(ItemType x){\n\n\tfor (int i = 0; i < length; i++) {\n\n\t\tif (values[i] == x) { //this will find the first match beginning at start of list //it will not delete more than on items if the item exists more than once in the list\n\n\t\t\tvalues[i] = values[length - 1]; //take last item and set it equal to the item to be deleted\n\t\t\tlength--; //even if length is 1, the element will be replaced with itself, but when length-- is executed then it won't matter since the list size will now be 0\n\t\t}\n\n\t}\n\treturn;\n}  // delete x from the list\n\nbool UnsortedList::IsFull() { return (length == MAX_ITEMS); }   // test if the list is full\n\nint UnsortedList::LengthIs() { return length; }   // return length\n\nvoid UnsortedList::RetrieveItem(ItemType& x, bool& found){"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson",
+    "code_files": [
+      "Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\CIS-200_Assg3-Q1.cpp",
+      "Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\CIS-200_Assg3-Q2.cpp",
+      "Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\CIS-200_Assg3-Q3.cpp",
+      "Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\sortedlist.cpp",
+      "Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\sortedlistdynamicarray.cpp",
+      "Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\ulist.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\CIS-200_Assg3-Q1.cpp",
+        "snippet": "// CIS-200_Assg3-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 22 MAR 2021\n//Last Modification Date: 03-22-2021\n//Purpose: implement unsorted linked list\n\n/*\nQuestion 1 (30 points)\n\nGiven the following skeleton of an unsorted list class that uses an unsorted linked list:\n\ntemplate<class ItemType>\nstruct NodeType\n{\n\tItemType item;\n\tNodeType*  next;\n};\n\ntemplate<class ItemType>\nclass UList\n{\npublic:\n\tUList();  // default constrctor\n\tUList(const UList &x);  // we implement copy constructor with deep copy\n\tUList& operator = (UList &x); // equal sign operator with deep copy\n\tbool IsThere(ItemType item) const;  // return true of false to indicate if item is in the list\n\tvoid Insert(ItemType item);  // if item is not in the list, insert it into the list\n\tvoid Delete(ItemType item);  //  delete item from the list\n\tvoid Print();  // Print all the items in the list on screen\n\tint Length();   // return the number of items in the list\n\t~UList();  // programmer should be responsible to deallocate the linked list\nprivate:\n\tNodeType<ItemType> * listPtr;\n};\n\nTask 1: Implement the template class UList on the basis of the above skeleton.  Compile your program.\nTask 2: Write a simple driver that reads values from file float.dat, inserts them into an instance, x, of the list, prints the length of the final list, and prints the values of all the list elements.\nTask 3: Add code to your driver to test the remaining member functions. Delete 2.0, 9.0, and 6.2 from x and print the list to be sure they are gone.\nTask 4: Create another instance, y, through the copy constructor such that the content of y is the same as that of x, but a deep copy should be done. Print out the all the list elements of y."
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\CIS-200_Assg3-Q2.cpp",
+        "snippet": "// CIS-200_Assg3-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 22 MAR 2021\n//Last Modification Date: 03-27-2021\n//Purpose: this program tests the implementation of an sorted linked list \n\n/*\nQuestion 2 (30 points)\n\nGiven the following skeleton of an unsorted list class that uses an unsorted linked list:\n\ntemplate<class ItemType>\nstruct NodeType\n{\n\tItemType item;\n\tNodeType*  next;\n};\n\ntemplate<class ItemType>\nclass SortedList\n{\npublic:\n\tSortedList();  // default constrctor\n\tSortedList(const SortedList &x);  // we implement copy constructor with deep copy\n\tSortedList& operator = (SortedList &x); // equal sign operator with deep copy\n\tbool IsThere(ItemType item) const;  // return true of false to indicate if item is in the list\n\tvoid Insert(ItemType item);  // if item is not in the list, insert it into the list\n\tvoid Delete(ItemType item);  //  delete item from the list\n\tvoid Print();  // Print all the items in the list on screen\n\tint Length();   // return the number of items in the list\n\t~SortedList();  // programmer should be responsible to deallocate the linked list\nprivate:\n\tNodeType<ItemType> * listPtr;\n};\n\nTask 1: Implement the template class SortedList on the basis of the above skeleton by using a linear search.  Compile your program.\nTask 2: Write a simple driver that reads values from file float.dat, inserts them into an instance, x, of the list, prints the length of the final list, and prints the values of all the list elements.\nTask 3: Add code to your driver to test the remaining member functions. Delete 2.0, 8.0, and 40.0 from x and print the list to be sure they are gone.\nTask 4: Create another instance, y, through the copy constructor such that the content of y is the same as that of x, but a deep copy should be done. Print out the all the list elements of y."
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\CIS-200_Assg3-Q3.cpp",
+        "snippet": "// CIS-200_Assg3-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 22 MAR 2021\n//Last Modification Date: 03-27-2021\n//Purpose: this program tests the implementation of an sorted linked list \n\n/*\nQuestion 3 (30 points)\nGiven the following skeleton of a sorted list class that uses a sorted dynamic array:\n\n\n#define  LEN 30\n\n\n\n\ntemplate<class ItemType>\n\nclass SortedList_DynArr\n{\npublic:\n\tSortedList_DynArr();  // default constrctor: dynamically allocate an array with new operator\n\tSortedList_DynArr(const SortedList_DynArr &x);  // we implement copy constructor with deep copy\n\tSortedList_DynArr& operator = (SortedList_DynArr &x); // equal sign operator with deep copy\n\tbool IsThere(ItemType item) const;  // return true of false to indicate if item is in the list\n\tvoid Insert(ItemType item);  // if item is not in the list, insert it into the list\n\tvoid Delete(ItemType item);  //  delete item from the list\n\tvoid Print();  // Print all the items in the list on screen\n\tint Length();   // return the number of items in the list\n\t~SortedList_DynArr();  //deallocate the dynamic array with delete operator\n\nprivate:\n\tItemType* listPtr;\n};\n\n\nTask 1: Implement the template class SortedList_DynArr on the basis of the above skeleton by using a linear search.  Compile your program.\nTask 2: Write a simple driver that reads values from file float.dat, inserts them into an instance, x, of the list, prints the length of the final list, and prints the values of all the list elements.\nTask 3: Add code to your driver to test the remaining member functions. Delete 2.0, 8.0, and 40.0 from x and print the list to be sure they are gone."
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\sortedlist.cpp",
+        "snippet": "#include \"sortedlist.h\"\n#include <iostream>\n\n\n\ntemplate<class ItemType>\nSortedList<ItemType>::SortedList() {\n\n\tlistPtr = nullptr;\n\ttop = nullptr;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor\n\ntemplate<class ItemType>\nSortedList<ItemType>::SortedList(const SortedList<ItemType>& x) {\n\t\n\tNodeType<ItemType>* copyNodePointer; //use this pointer to go through the nodes of x and assign its item values to the this-> node's item values\n\tcopyNodePointer = x.top; //set the copy pointer equal to the first element in the linked list\n\tthis->length = x.length; //set length in new list equal to passed-in list length\n\tthis->currPos = 0; //set current pos to starting point at element 0\n\n\tthis->top = new NodeType<ItemType>;  //allocate memory for the first node (element) in the linked list; use this to keep track of the address of the first node of the linked list (the top)\n\tthis->listPtr = this->top;   //set listPtr to point to first element in the list (top)\n\n\tfor (int i = 0; i < length; i++) {\n\n\t\tthis->listPtr->item = copyNodePointer->item; //set the current node's item pointed to by listPtr equal to the current node's item in x\n\t\tif (copyNodePointer->next == nullptr) { return; } //use this to exit function since the below statements will not be necessary if next == nullptr, which means we have reached end of list \n\t\t\t\t\t\t\t\t\t\t\t\t\t//Also we do not want the listPtr to point to the next node if the next node == nullptr; then it would point at an invalid node w/o memory \n\t\tthis->listPtr->next = new NodeType<ItemType>;  //allocate memory for the next node (element) in the linked list\n\t\tthis->listPtr = this->listPtr->next; //set list pointer equal to the address of the next node (element) in the list\n\t\tthis->currPos++;\n\t\tcopyNodePointer = copyNodePointer->next; //set x linked list ptr to point to next node\n\t}\n\n\tthis->listPtr->next = nullptr; //make sure to set the last node's next ptr to NULL"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\sortedlistdynamicarray.cpp",
+        "snippet": "#include \"sortedlistdynamicarray.h\"\n#include <iostream>\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(){\n\n\tlistPtr = top;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor: dynamically allocate an array with \"new\" operator\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(const SortedList_DynArr& x){\n\n\tlistPtr = top;\n\tlength = x.length; //set lengths equal\n\tcurrPos = 0;\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}\n\n}  // we implement copy constructor with deep copy\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>& SortedList_DynArr<ItemType>::operator=(SortedList_DynArr<ItemType>& x){\n\n\n\tlength = x.length; //set lengths equal\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\CIS-200_Assg3-DemetriusJohnson\\ulist.cpp",
+        "snippet": "#include \"ulist.h\"\n#include <iostream>\n\n\n\ntemplate<class ItemType>\nUList<ItemType>::UList() {\n\n\tlistPtr = nullptr;\n\ttop = nullptr;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor\n\ntemplate<class ItemType>\nUList<ItemType>::UList(const UList<ItemType>& x) {\n\t\n\tNodeType<ItemType>* copyNodePointer; //use this pointer to go through the nodes of x and assign its item values to the this-> node's item values\n\tcopyNodePointer = x.top; //set the copy pointer equal to the first element in the linked list\n\tthis->length = x.length; //set length in new list equal to passed-in list length\n\tthis->currPos = 0; //set current pos to starting point at element 0\n\n\tthis->top = new NodeType<ItemType>;  //allocate memory for the first node (element) in the linked list; use this to keep track of the address of the first node of the linked list (the top)\n\tthis->listPtr = this->top;   //set listPtr to point to first element in the list (top)\n\n\tfor (int i = 0; i < length; i++) {\n\n\t\tthis->listPtr->item = copyNodePointer->item; //set the current node's item pointed to by listPtr equal to the current node's item in x\n\t\tif (copyNodePointer->next == nullptr) { return; } //use this to exit function since the below statements will not be necessary if next == nullptr, which means we have reached end of list \n\t\t\t\t\t\t\t\t\t\t\t\t\t//Also we do not want the listPtr to point to the next node if the next node == nullptr; then it would point at an invalid node w/o memory \n\t\tthis->listPtr->next = new NodeType<ItemType>;  //allocate memory for the next node (element) in the linked list\n\t\tthis->listPtr = this->listPtr->next; //set list pointer equal to the address of the next node (element) in the list\n\t\tthis->currPos++;\n\t\tcopyNodePointer = copyNodePointer->next; //set x linked list ptr to point to next node\n\t}\n\n\tthis->listPtr->next = nullptr; //make sure to set the last node's next ptr to NULL"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 1 backup txt",
+    "code_files": [
+      "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 1 backup txt\\CIS-200_Assg3-Q1.cpp",
+      "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 1 backup txt\\ulist.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 1 backup txt\\CIS-200_Assg3-Q1.cpp",
+        "snippet": "// CIS-200_Assg3-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 22 MAR 2021\n//Last Modification Date: 03-22-2021\n//Purpose: implement unsorted linked list\n\n/*\nQuestion 1 (30 points)\n\nGiven the following skeleton of an unsorted list class that uses an unsorted linked list:\n\ntemplate<class ItemType>\nstruct NodeType\n{\n\tItemType item;\n\tNodeType*  next;\n};\n\ntemplate<class ItemType>\nclass UList\n{\npublic:\n\tUList();  // default constrctor\n\tUList(const UList &x);  // we implement copy constructor with deep copy\n\tUList& operator = (UList &x); // equal sign operator with deep copy\n\tbool IsThere(ItemType item) const;  // return true of false to indicate if item is in the list\n\tvoid Insert(ItemType item);  // if item is not in the list, insert it into the list\n\tvoid Delete(ItemType item);  //  delete item from the list\n\tvoid Print();  // Print all the items in the list on screen\n\tint Length();   // return the number of items in the list\n\t~UList();  // programmer should be responsible to deallocate the linked list\nprivate:\n\tNodeType<ItemType> * listPtr;\n};\n\nTask 1: Implement the template class UList on the basis of the above skeleton.  Compile your program.\nTask 2: Write a simple driver that reads values from file float.dat, inserts them into an instance, x, of the list, prints the length of the final list, and prints the values of all the list elements.\nTask 3: Add code to your driver to test the remaining member functions. Delete 2.0, 9.0, and 6.2 from x and print the list to be sure they are gone.\nTask 4: Create another instance, y, through the copy constructor such that the content of y is the same as that of x, but a deep copy should be done. Print out the all the list elements of y."
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 1 backup txt\\ulist.cpp",
+        "snippet": "#include \"ulist.h\"\n#include <iostream>\n\n\n\ntemplate<class ItemType>\nUList<ItemType>::UList() {\n\n\tlistPtr = nullptr;\n\ttop = nullptr;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor\n\ntemplate<class ItemType>\nUList<ItemType>::UList(const UList<ItemType>& x) {\n\t\n\tNodeType<ItemType>* copyNodePointer; //use this pointer to go through the nodes of x and assign its item values to the this-> node's item values\n\tcopyNodePointer = x.top; //set the copy pointer equal to the first element in the linked list\n\tthis->length = x.length; //set length in new list equal to passed-in list length\n\tthis->currPos = 0; //set current pos to starting point at element 0\n\n\tthis->top = new NodeType<ItemType>;  //allocate memory for the first node (element) in the linked list; use this to keep track of the address of the first node of the linked list (the top)\n\tthis->listPtr = this->top;   //set listPtr to point to first element in the list (top)\n\n\tfor (int i = 0; i < length; i++) {\n\n\t\tthis->listPtr->item = copyNodePointer->item; //set the current node's item pointed to by listPtr equal to the current node's item in x\n\t\tif (copyNodePointer->next == nullptr) { return; } //use this to exit function since the below statements will not be necessary if next == nullptr, which means we have reached end of list \n\t\t\t\t\t\t\t\t\t\t\t\t\t//Also we do not want the listPtr to point to the next node if the next node == nullptr; then it would point at an invalid node w/o memory \n\t\tthis->listPtr->next = new NodeType<ItemType>;  //allocate memory for the next node (element) in the linked list\n\t\tthis->listPtr = this->listPtr->next; //set list pointer equal to the address of the next node (element) in the list\n\t\tthis->currPos++;\n\t\tcopyNodePointer = copyNodePointer->next; //set x linked list ptr to point to next node\n\t}\n\n\tthis->listPtr->next = nullptr; //make sure to set the last node's next ptr to NULL"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 2 backup txt",
+    "code_files": [
+      "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 2 backup txt\\CIS-200_Assg3-Q2.cpp",
+      "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 2 backup txt\\sortedlist.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 2 backup txt\\CIS-200_Assg3-Q2.cpp",
+        "snippet": "// CIS-200_Assg3-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 22 MAR 2021\n//Last Modification Date: 03-27-2021\n//Purpose: this program tests the implementation of an sorted linked list \n\n/*\nQuestion 2 (30 points)\n\nGiven the following skeleton of an unsorted list class that uses an unsorted linked list:\n\ntemplate<class ItemType>\nstruct NodeType\n{\n\tItemType item;\n\tNodeType*  next;\n};\n\ntemplate<class ItemType>\nclass SortedList\n{\npublic:\n\tSortedList();  // default constrctor\n\tSortedList(const SortedList &x);  // we implement copy constructor with deep copy\n\tSortedList& operator = (SortedList &x); // equal sign operator with deep copy\n\tbool IsThere(ItemType item) const;  // return true of false to indicate if item is in the list\n\tvoid Insert(ItemType item);  // if item is not in the list, insert it into the list\n\tvoid Delete(ItemType item);  //  delete item from the list\n\tvoid Print();  // Print all the items in the list on screen\n\tint Length();   // return the number of items in the list\n\t~SortedList();  // programmer should be responsible to deallocate the linked list\nprivate:\n\tNodeType<ItemType> * listPtr;\n};\n\nTask 1: Implement the template class SortedList on the basis of the above skeleton by using a linear search.  Compile your program.\nTask 2: Write a simple driver that reads values from file float.dat, inserts them into an instance, x, of the list, prints the length of the final list, and prints the values of all the list elements.\nTask 3: Add code to your driver to test the remaining member functions. Delete 2.0, 8.0, and 40.0 from x and print the list to be sure they are gone.\nTask 4: Create another instance, y, through the copy constructor such that the content of y is the same as that of x, but a deep copy should be done. Print out the all the list elements of y."
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 2 backup txt\\sortedlist.cpp",
+        "snippet": "#include \"sortedlist.h\"\n#include <iostream>\n\n\n\ntemplate<class ItemType>\nSortedList<ItemType>::SortedList() {\n\n\tlistPtr = nullptr;\n\ttop = nullptr;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor\n\ntemplate<class ItemType>\nSortedList<ItemType>::SortedList(const SortedList<ItemType>& x) {\n\t\n\tNodeType<ItemType>* copyNodePointer; //use this pointer to go through the nodes of x and assign its item values to the this-> node's item values\n\tcopyNodePointer = x.top; //set the copy pointer equal to the first element in the linked list\n\tthis->length = x.length; //set length in new list equal to passed-in list length\n\tthis->currPos = 0; //set current pos to starting point at element 0\n\n\tthis->top = new NodeType<ItemType>;  //allocate memory for the first node (element) in the linked list; use this to keep track of the address of the first node of the linked list (the top)\n\tthis->listPtr = this->top;   //set listPtr to point to first element in the list (top)\n\n\tfor (int i = 0; i < length; i++) {\n\n\t\tthis->listPtr->item = copyNodePointer->item; //set the current node's item pointed to by listPtr equal to the current node's item in x\n\t\tif (copyNodePointer->next == nullptr) { return; } //use this to exit function since the below statements will not be necessary if next == nullptr, which means we have reached end of list \n\t\t\t\t\t\t\t\t\t\t\t\t\t//Also we do not want the listPtr to point to the next node if the next node == nullptr; then it would point at an invalid node w/o memory \n\t\tthis->listPtr->next = new NodeType<ItemType>;  //allocate memory for the next node (element) in the linked list\n\t\tthis->listPtr = this->listPtr->next; //set list pointer equal to the address of the next node (element) in the list\n\t\tthis->currPos++;\n\t\tcopyNodePointer = copyNodePointer->next; //set x linked list ptr to point to next node\n\t}\n\n\tthis->listPtr->next = nullptr; //make sure to set the last node's next ptr to NULL"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt",
+    "code_files": [
+      "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\CIS-200_Assg3-Q3.cpp",
+      "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\sortedlistdynamicarray.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\CIS-200_Assg3-Q3.cpp",
+        "snippet": "// CIS-200_Assg3-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Date: 22 MAR 2021\n//Last Modification Date: 03-27-2021\n//Purpose: this program tests the implementation of an sorted linked list \n\n/*\nQuestion 3 (30 points)\nGiven the following skeleton of a sorted list class that uses a sorted dynamic array:\n\n\n#define  LEN 30\n\n\n\n\ntemplate<class ItemType>\n\nclass SortedList_DynArr\n{\npublic:\n\tSortedList_DynArr();  // default constrctor: dynamically allocate an array with new operator\n\tSortedList_DynArr(const SortedList_DynArr &x);  // we implement copy constructor with deep copy\n\tSortedList_DynArr& operator = (SortedList_DynArr &x); // equal sign operator with deep copy\n\tbool IsThere(ItemType item) const;  // return true of false to indicate if item is in the list\n\tvoid Insert(ItemType item);  // if item is not in the list, insert it into the list\n\tvoid Delete(ItemType item);  //  delete item from the list\n\tvoid Print();  // Print all the items in the list on screen\n\tint Length();   // return the number of items in the list\n\t~SortedList_DynArr();  //deallocate the dynamic array with delete operator\n\nprivate:\n\tItemType* listPtr;\n};\n\n\nTask 1: Implement the template class SortedList_DynArr on the basis of the above skeleton by using a linear search.  Compile your program.\nTask 2: Write a simple driver that reads values from file float.dat, inserts them into an instance, x, of the list, prints the length of the final list, and prints the values of all the list elements.\nTask 3: Add code to your driver to test the remaining member functions. Delete 2.0, 8.0, and 40.0 from x and print the list to be sure they are gone."
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\sortedlistdynamicarray.cpp",
+        "snippet": "#include \"sortedlistdynamicarray.h\"\n#include <iostream>\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(){\n\n\tlistPtr = top;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor: dynamically allocate an array with \"new\" operator\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(const SortedList_DynArr& x){\n\n\tlistPtr = top;\n\tlength = x.length; //set lengths equal\n\tcurrPos = 0;\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}\n\n}  // we implement copy constructor with deep copy\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>& SortedList_DynArr<ItemType>::operator=(SortedList_DynArr<ItemType>& x){\n\n\n\tlength = x.length; //set lengths equal\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\test code\\sortedlistdynamicarrayBINSEARCH_TESTER.cpp",
+        "snippet": "#include \"sortedlistdynamicarray.h\"\n#include <iostream>\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(){\n\n\tlistPtr = top;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor: dynamically allocate an array with \"new\" operator\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(const SortedList_DynArr& x){\n\n\t\n\tlength = x.length; //set lengths equal\n\tcurrPos = 0;\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}\n\n}  // we implement copy constructor with deep copy\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>& SortedList_DynArr<ItemType>::operator=(SortedList_DynArr<ItemType>& x){\n\n\n\tlength = x.length; //set lengths equal\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\test code",
+    "code_files": [
+      "Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\test code\\sortedlistdynamicarrayBINSEARCH_TESTER.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 3\\TXT BACKUPS\\assg3 question 3 backup txt\\test code\\sortedlistdynamicarrayBINSEARCH_TESTER.cpp",
+        "snippet": "#include \"sortedlistdynamicarray.h\"\n#include <iostream>\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(){\n\n\tlistPtr = top;\n\tlength = 0;\n\tcurrPos = 0;\n\n}  // default constructor: dynamically allocate an array with \"new\" operator\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>::SortedList_DynArr(const SortedList_DynArr& x){\n\n\t\n\tlength = x.length; //set lengths equal\n\tcurrPos = 0;\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}\n\n}  // we implement copy constructor with deep copy\n\n\ntemplate<class ItemType>\nSortedList_DynArr<ItemType>& SortedList_DynArr<ItemType>::operator=(SortedList_DynArr<ItemType>& x){\n\n\n\tlength = x.length; //set lengths equal\n\n\tfor (int i = 0; i < length; i++) { //implement deep copy\n\n\t\ttop[i] = x.top[i];\n\t}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson",
+    "code_files": [
+      "Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\CIS-200_Assg4-Q1.cpp",
+      "Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\CIS-200_Assg4-Q2.cpp",
+      "Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\queueADT.cpp",
+      "Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\stackADT.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\CIS-200_Assg4-Q1.cpp",
+        "snippet": "// CIS-200-_Assg4-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date: 08-04-2021\n//Purpose: Implement a template class that demonstrates stack implementation\n\n\n*/\n\n/*\nQuestion 1:\n\n\n\n*/\n\n\n\n#include <iostream>\n#include \"stackADT.h\"\n#include \"stackADT.cpp\"  //had to incude both .h and .cpp file of stackADT because of template; compiler needs to build every class instance for type called of the template class\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\n    cout << \"----WELCOME:This program implements a template class that demonstrates stack implementation...BY Demetrius Johnson\\n\\n\";"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\CIS-200_Assg4-Q2.cpp",
+        "snippet": "// CIS-200-_Assg4-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date:  04-09-2021\n//Purpose: Implement a template class that demonstrates queue implementation\n\n*/\n\n/*\nQuestion 1:\n\n\n\n*/\n\n\n\n#include <iostream>\n#include \"queueADT.h\"\n#include \"queueADT.cpp\"  //had to incude both .h and .cpp file of queueADT because of template; compiler needs to build every class instance for type called of the template class\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\n    cout << \"----WELCOME:This program implements a template class that demonstrates queue implementation...BY Demetrius Johnson\\n\\n\";"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\queueADT.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date: 04-09-2021\n//Purpose: Implement a template class that demonstrates queue implementation\n\n\n#include \"queueADT.h\"\n#include <iostream>\n\n\ntemplate<typename ItemType>\nqueueADT<ItemType>::queueADT(){\n\n\tfront = nullptr;\n\trear = nullptr;\n\tlength = 0;\n\n\n}  // default constructor: queueADT is created and empty\n\ntemplate<typename ItemType>\nqueueADT<ItemType>::queueADT(const queueADT<ItemType>& x){\n\n\n\n\tthis->front = new NodeType<ItemType>; // always store the memory address of the first position of the queue\n\tNodeType<ItemType>* tempPtr = this->front;\n\tNodeType<ItemType>* copyPtr = x.front;\n\tthis->length = x.length; //set lengths equal\n\n\tfor (int i = 0; i < (length - 1); i++) { //allocate the sufficient number of nodes to copy the passed-in queue. \n\t\t\t\t\t\t\t\t\t\t   //do length - 1 since above, the first node was already allocated\n\n\t\ttempPtr->next = new NodeType<ItemType>; //create a new node\n\t\ttempPtr = tempPtr->next; //move to next node that was just created\n\t}\n\n\trear = tempPtr; //set rear ptr equal to the last node of the queue"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\CIS-200_Assg4-DemetriusJohnson\\stackADT.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date: 08-04-2021\n//Purpose: Implement a template class that demonstrates stack implementation\n\n\n#include \"stackADT.h\"\n\n/*  */\n\ntemplate<typename ItemType>\nstackADT<ItemType>::stackADT(){\n\n\ttopPtr = nullptr;\n\tlength = 0;\n\n}  // default constructor: stackADT is created and empty\n\ntemplate<typename ItemType>\nstackADT<ItemType>::stackADT(const stackADT<ItemType>& x){\n\n\tthis->topPtr = new NodeType<ItemType>; // always store the memory address of the first position of the stack\n\tNodeType<ItemType>* tempPtr = this->topPtr;\n\tNodeType<ItemType>* copyPtr = x.topPtr;\n\tthis->length = x.length;\n\n\tfor (int i = 0; i < (length - 1); i++) { //allocate the sufficient number of nodes to copy the passed-in stack. \n\t\t\t\t\t\t\t\t\t\t   //do length - 1 since above, the first node was already allocated\n\t\n\t\ttempPtr->next = new NodeType<ItemType>; //create a new node\n\t\ttempPtr = tempPtr->next; //move to next node that was just created\n\t}\n\n\ttempPtr->next = nullptr; //assign the end of the stack pointer to NULL so we can track end of the stack easier\n\ttempPtr = this->topPtr; //set tempPtr to point back to the top of this-> stack for the following loop:\n\n\tfor (int j = 0; j < length; j++) { //copy the values only of the passed-in stack to this-> stack\n\t\t\t\t\t\t\t\t\t  \n\t\ttempPtr->info = copyPtr->info;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-200_RETAKE_WITH_JIE_SHIEN",
+    "folder": "Programming Assignments\\assg 4\\TXT BAKCUPS",
+    "code_files": [
+      "Programming Assignments\\assg 4\\TXT BAKCUPS\\CIS-200_Assg4-Q1.cpp",
+      "Programming Assignments\\assg 4\\TXT BAKCUPS\\CIS-200_Assg4-Q2.cpp",
+      "Programming Assignments\\assg 4\\TXT BAKCUPS\\queueADT.cpp",
+      "Programming Assignments\\assg 4\\TXT BAKCUPS\\stackADT.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\TXT BAKCUPS\\CIS-200_Assg4-Q1.cpp",
+        "snippet": "// CIS-200-_Assg4-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date: 08-04-2021\n//Purpose: Implement a template class that demonstrates stack implementation\n\n\n*/\n\n/*\nQuestion 1:\n\n\n\n*/\n\n\n\n#include <iostream>\n#include \"stackADT.h\"\n#include \"stackADT.cpp\"  //had to incude both .h and .cpp file of stackADT because of template; compiler needs to build every class instance for type called of the template class\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\n    cout << \"----WELCOME:This program implements a template class that demonstrates stack implementation...BY Demetrius Johnson\\n\\n\";"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\TXT BAKCUPS\\CIS-200_Assg4-Q2.cpp",
+        "snippet": "// CIS-200-_Assg4-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date:  04-09-2021\n//Purpose: Implement a template class that demonstrates queue implementation\n\n*/\n\n/*\nQuestion 1:\n\n\n\n*/\n\n\n\n#include <iostream>\n#include \"queueADT.h\"\n#include \"queueADT.cpp\"  //had to incude both .h and .cpp file of queueADT because of template; compiler needs to build every class instance for type called of the template class\n//#include<assert.h>\nusing namespace std;\n\n\n//FUNCTION DECLARATIONS\n\n\n\n//FUNCTION DECLARATIONS\n\n\n\nint main()\n{\n\n    cout << \"----WELCOME:This program implements a template class that demonstrates queue implementation...BY Demetrius Johnson\\n\\n\";"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\TXT BAKCUPS\\queueADT.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date: 04-09-2021\n//Purpose: Implement a template class that demonstrates queue implementation\n\n\n#include \"queueADT.h\"\n#include <iostream>\n\n\ntemplate<typename ItemType>\nqueueADT<ItemType>::queueADT(){\n\n\tfront = nullptr;\n\trear = nullptr;\n\tlength = 0;\n\n\n}  // default constructor: queueADT is created and empty\n\ntemplate<typename ItemType>\nqueueADT<ItemType>::queueADT(const queueADT<ItemType>& x){\n\n\n\n\tthis->front = new NodeType<ItemType>; // always store the memory address of the first position of the queue\n\tNodeType<ItemType>* tempPtr = this->front;\n\tNodeType<ItemType>* copyPtr = x.front;\n\tthis->length = x.length; //set lengths equal\n\n\tfor (int i = 0; i < (length - 1); i++) { //allocate the sufficient number of nodes to copy the passed-in queue. \n\t\t\t\t\t\t\t\t\t\t   //do length - 1 since above, the first node was already allocated\n\n\t\ttempPtr->next = new NodeType<ItemType>; //create a new node\n\t\ttempPtr = tempPtr->next; //move to next node that was just created\n\t}\n\n\trear = tempPtr; //set rear ptr equal to the last node of the queue"
+      },
+      {
+        "file": "CIS-200_RETAKE_WITH_JIE_SHIEN\\Programming Assignments\\assg 4\\TXT BAKCUPS\\stackADT.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Date: 08 April 2021\n//Last Modification Date: 08-04-2021\n//Purpose: Implement a template class that demonstrates stack implementation\n\n\n#include \"stackADT.h\"\n\n/*  */\n\ntemplate<typename ItemType>\nstackADT<ItemType>::stackADT(){\n\n\ttopPtr = nullptr;\n\tlength = 0;\n\n}  // default constructor: stackADT is created and empty\n\ntemplate<typename ItemType>\nstackADT<ItemType>::stackADT(const stackADT<ItemType>& x){\n\n\tthis->topPtr = new NodeType<ItemType>; // always store the memory address of the first position of the stack\n\tNodeType<ItemType>* tempPtr = this->topPtr;\n\tNodeType<ItemType>* copyPtr = x.topPtr;\n\tthis->length = x.length;\n\n\tfor (int i = 0; i < (length - 1); i++) { //allocate the sufficient number of nodes to copy the passed-in stack. \n\t\t\t\t\t\t\t\t\t\t   //do length - 1 since above, the first node was already allocated\n\t\n\t\ttempPtr->next = new NodeType<ItemType>; //create a new node\n\t\ttempPtr = tempPtr->next; //move to next node that was just created\n\t}\n\n\ttempPtr->next = nullptr; //assign the end of the stack pointer to NULL so we can track end of the stack easier\n\ttempPtr = this->topPtr; //set tempPtr to point back to the top of this-> stack for the following loop:\n\n\tfor (int j = 0; j < length; j++) { //copy the values only of the passed-in stack to this-> stack\n\t\t\t\t\t\t\t\t\t  \n\t\ttempPtr->info = copyPtr->info;"
+      }
+    ]
+  }
+]

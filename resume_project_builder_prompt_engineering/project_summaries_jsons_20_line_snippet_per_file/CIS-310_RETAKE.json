@@ -1,0 +1,1877 @@
+[
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine",
+    "code_files": [
+      "Irvine\\irvine\\b16.asm",
+      "Irvine\\irvine\\b32.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\b16.asm",
+        "snippet": "TITLE      (.asm)\n\n; This program\n; Last update:\n\nINCLUDE Irvine16.inc\n.data\n\n.code\nmain PROC\n\tmov ax,@data\n\tmov ds,ax\n\n\n\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\b32.asm",
+        "snippet": "TITLE      (.asm)\n\n; This program\n; Last update:\n\nINCLUDE Irvine32.inc\n.data\n\n.code\nmain PROC\n\n\n\n\n\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\b16.asm",
+        "snippet": "TITLE      (.asm)\n\n; This program\n; Last update:\n\nINCLUDE Irvine16.inc\n.data\n\n.code\nmain PROC\n\tmov ax,@data\n\tmov ds,ax\n\n\n\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\b32.asm",
+        "snippet": "TITLE      (.asm)\n\n; This program\n; Last update:\n\nINCLUDE Irvine32.inc\n.data\n\n.code\nmain PROC\n\n\n\n\n\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\C progs\\ExecuteShell\\Source.cpp",
+        "snippet": "#include <cstdlib>\n\nint main()\n{\n\tsystem( \"dir\" );\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\16-bit.asm",
+        "snippet": "TITLE Add and Subtract              (16-bit.asm)\n\n; This program adds and subtracts 32-bit integers.\n\nINCLUDE Irvine16.inc\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax\n\n\tmov\teax,10000h\t\t; EAX = 10000h\n\tadd\teax,40000h\t\t; EAX = 50000h\n\tsub\teax,20000h\t\t; EAX = 30000h\n\tcall\tDumpRegs\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddSub2.asm",
+        "snippet": "TITLE Add and Subtract, Version 2         (AddSub2.asm)\n\n; This program adds and subtracts 32-bit integers\n; and stores the sum in a variable.\n\nINCLUDE Irvine32.inc\n\n.data\nval1     dword  10000h\nval2     dword  40000h\nval3     dword  20000h\nfinalVal dword  ?\n\n.code\nmain PROC\n\n\tmov\teax,val1\t\t\t; start with 10000h\n\tadd\teax,val2\t\t\t; add 40000h\n\tsub\teax,val3\t\t\t; subtract 20000h\n\tmov\tfinalVal,eax\t\t; store the result (30000h)"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwo.asm",
+        "snippet": "; AddTwo.asm - adds two 32-bit integers.\n; Chapter 3 example\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwoSum.asm",
+        "snippet": "; AddTwoSum.asm - Chapter 3 example.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\nsum dword 0\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\tmov sum,eax\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwoSum_64.asm",
+        "snippet": "; AddTwoSum_64.asm - Chapter 3 example.\n\nExitProcess proto\n\n.data\nsum qword 0\n\n.code\nmain proc\n\tmov\t  rax,5\n\tadd\t  rax,6\n\tmov   sum,rax\n\n\tmov   ecx,0\n\tcall  ExitProcess\nmain endp\nend"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples",
+    "code_files": [
+      "Irvine\\irvine\\examples\\b16.asm",
+      "Irvine\\irvine\\examples\\b32.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\b16.asm",
+        "snippet": "TITLE      (.asm)\n\n; This program\n; Last update:\n\nINCLUDE Irvine16.inc\n.data\n\n.code\nmain PROC\n\tmov ax,@data\n\tmov ds,ax\n\n\n\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\b32.asm",
+        "snippet": "TITLE      (.asm)\n\n; This program\n; Last update:\n\nINCLUDE Irvine32.inc\n.data\n\n.code\nmain PROC\n\n\n\n\n\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\C progs\\ExecuteShell\\Source.cpp",
+        "snippet": "#include <cstdlib>\n\nint main()\n{\n\tsystem( \"dir\" );\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\16-bit.asm",
+        "snippet": "TITLE Add and Subtract              (16-bit.asm)\n\n; This program adds and subtracts 32-bit integers.\n\nINCLUDE Irvine16.inc\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax\n\n\tmov\teax,10000h\t\t; EAX = 10000h\n\tadd\teax,40000h\t\t; EAX = 50000h\n\tsub\teax,20000h\t\t; EAX = 30000h\n\tcall\tDumpRegs\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddSub2.asm",
+        "snippet": "TITLE Add and Subtract, Version 2         (AddSub2.asm)\n\n; This program adds and subtracts 32-bit integers\n; and stores the sum in a variable.\n\nINCLUDE Irvine32.inc\n\n.data\nval1     dword  10000h\nval2     dword  40000h\nval3     dword  20000h\nfinalVal dword  ?\n\n.code\nmain PROC\n\n\tmov\teax,val1\t\t\t; start with 10000h\n\tadd\teax,val2\t\t\t; add 40000h\n\tsub\teax,val3\t\t\t; subtract 20000h\n\tmov\tfinalVal,eax\t\t; store the result (30000h)"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwo.asm",
+        "snippet": "; AddTwo.asm - adds two 32-bit integers.\n; Chapter 3 example\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwoSum.asm",
+        "snippet": "; AddTwoSum.asm - Chapter 3 example.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\nsum dword 0\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\tmov sum,eax\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwoSum_64.asm",
+        "snippet": "; AddTwoSum_64.asm - Chapter 3 example.\n\nExitProcess proto\n\n.data\nsum qword 0\n\n.code\nmain proc\n\tmov\t  rax,5\n\tadd\t  rax,6\n\tmov   sum,rax\n\n\tmov   ecx,0\n\tcall  ExitProcess\nmain endp\nend"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddVariables.asm",
+        "snippet": "; AddVariables.asm - Chapter 3 example.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\nfirstval  dword 20002000h\nsecondval dword 11111111h\nthirdval  dword 22222222h\nsum dword 0\n\n.code\nmain proc\n\tmov\teax,firstval\t\t\t\t\n\tadd\teax,secondval\t\t\n\tadd eax,thirdval\n\tmov sum,eax"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\template.asm",
+        "snippet": "; Program template\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\n\t; declare variables here\n.code\nmain proc\n\t; write your code here\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\C progs\\ExecuteShell",
+    "code_files": [
+      "Irvine\\irvine\\examples\\C progs\\ExecuteShell\\Source.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\C progs\\ExecuteShell\\Source.cpp",
+        "snippet": "#include <cstdlib>\n\nint main()\n{\n\tsystem( \"dir\" );\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch03",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch03\\16-bit.asm",
+      "Irvine\\irvine\\examples\\ch03\\AddSub2.asm",
+      "Irvine\\irvine\\examples\\ch03\\AddTwo.asm",
+      "Irvine\\irvine\\examples\\ch03\\AddTwoSum.asm",
+      "Irvine\\irvine\\examples\\ch03\\AddTwoSum_64.asm",
+      "Irvine\\irvine\\examples\\ch03\\AddVariables.asm",
+      "Irvine\\irvine\\examples\\ch03\\template.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\16-bit.asm",
+        "snippet": "TITLE Add and Subtract              (16-bit.asm)\n\n; This program adds and subtracts 32-bit integers.\n\nINCLUDE Irvine16.inc\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax\n\n\tmov\teax,10000h\t\t; EAX = 10000h\n\tadd\teax,40000h\t\t; EAX = 50000h\n\tsub\teax,20000h\t\t; EAX = 30000h\n\tcall\tDumpRegs\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddSub2.asm",
+        "snippet": "TITLE Add and Subtract, Version 2         (AddSub2.asm)\n\n; This program adds and subtracts 32-bit integers\n; and stores the sum in a variable.\n\nINCLUDE Irvine32.inc\n\n.data\nval1     dword  10000h\nval2     dword  40000h\nval3     dword  20000h\nfinalVal dword  ?\n\n.code\nmain PROC\n\n\tmov\teax,val1\t\t\t; start with 10000h\n\tadd\teax,val2\t\t\t; add 40000h\n\tsub\teax,val3\t\t\t; subtract 20000h\n\tmov\tfinalVal,eax\t\t; store the result (30000h)"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwo.asm",
+        "snippet": "; AddTwo.asm - adds two 32-bit integers.\n; Chapter 3 example\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwoSum.asm",
+        "snippet": "; AddTwoSum.asm - Chapter 3 example.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\nsum dword 0\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\tmov sum,eax\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddTwoSum_64.asm",
+        "snippet": "; AddTwoSum_64.asm - Chapter 3 example.\n\nExitProcess proto\n\n.data\nsum qword 0\n\n.code\nmain proc\n\tmov\t  rax,5\n\tadd\t  rax,6\n\tmov   sum,rax\n\n\tmov   ecx,0\n\tcall  ExitProcess\nmain endp\nend"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\AddVariables.asm",
+        "snippet": "; AddVariables.asm - Chapter 3 example.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\nfirstval  dword 20002000h\nsecondval dword 11111111h\nthirdval  dword 22222222h\nsum dword 0\n\n.code\nmain proc\n\tmov\teax,firstval\t\t\t\t\n\tadd\teax,secondval\t\t\n\tadd eax,thirdval\n\tmov sum,eax"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\template.asm",
+        "snippet": "; Program template\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\n\t; declare variables here\n.code\nmain proc\n\t; write your code here\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\64 bit\\AddTwoSum_64.asm",
+        "snippet": "; AddTwoSum_64.asm - Chapter 3 example.\n\nExitProcess proto\n\n.data\nsum qword 0\n\n.code\nmain proc\n\tmov\trax,5\n\tadd\trax,6\n\tmov   sum,rax\n\n\tmov   ecx,0\n\tcall  ExitProcess\n\nmain endp\nend"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\64 bit\\template_64.asm",
+        "snippet": "; 64-bit Assembly Language template \n; Use this when not calling subroutines.\n\nExitProcess proto\n\n.data\n; Declare your variables here.\n\n.code\nmain proc\n\n\n\n\tmov   ecx,0\t\t\t; assign a process return code\n\tcall  ExitProcess\t; terminate the program\nmain endp\nend"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch03\\64 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch03\\64 bit\\AddTwoSum_64.asm",
+      "Irvine\\irvine\\examples\\ch03\\64 bit\\template_64.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\64 bit\\AddTwoSum_64.asm",
+        "snippet": "; AddTwoSum_64.asm - Chapter 3 example.\n\nExitProcess proto\n\n.data\nsum qword 0\n\n.code\nmain proc\n\tmov\trax,5\n\tadd\trax,6\n\tmov   sum,rax\n\n\tmov   ecx,0\n\tcall  ExitProcess\n\nmain endp\nend"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch03\\64 bit\\template_64.asm",
+        "snippet": "; 64-bit Assembly Language template \n; Use this when not calling subroutines.\n\nExitProcess proto\n\n.data\n; Declare your variables here.\n\n.code\nmain proc\n\n\n\n\tmov   ecx,0\t\t\t; assign a process return code\n\tcall  ExitProcess\t; terminate the program\nmain endp\nend"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch04\\32 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch04\\32 bit\\AdditionTest.asm",
+      "Irvine\\irvine\\examples\\ch04\\32 bit\\CopyStr.asm",
+      "Irvine\\irvine\\examples\\ch04\\32 bit\\Moves.asm",
+      "Irvine\\irvine\\examples\\ch04\\32 bit\\Operator.asm",
+      "Irvine\\irvine\\examples\\ch04\\32 bit\\Pointers.asm",
+      "Irvine\\irvine\\examples\\ch04\\32 bit\\SumArray.asm",
+      "Irvine\\irvine\\examples\\ch04\\32 bit\\template.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\32 bit\\AdditionTest.asm",
+        "snippet": "; Addition and Subtraction\t\t\t\t\t(AddSubTest.asm)\n\n; Chapter 4 example. Demonstration of ADD, SUB,\n; INC, DEC, and NEG instructions, and how\n; they affect the CPU status flags.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\nRval   SDWORD ?\nXval   SDWORD 26\nYval   SDWORD 30\nZval   SDWORD 40\n\n.code\nmain proc\n\t; INC and DEC"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\32 bit\\CopyStr.asm",
+        "snippet": "; Copying a String (CopyStr.asm)\n\n; This program copies a string.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess PROTO, dwExitCode:dword\n\n.data\nsource  byte  \"This is the source string\",0\ntarget  byte  SIZEOF source DUP(0),0\n\n.code\nmain proc\n\n\tmov  esi,0\t\t\t\t; index register\n\tmov  ecx,SIZEOF source\t; loop counter\nL1:\n\tmov  al,source[esi]\t\t; get a character from source"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\32 bit\\Moves.asm",
+        "snippet": "; Data Transfer Examples       (Moves.asm)\n\n; Chapter 4 example. Demonstration of MOV and\n; XCHG with direct and direct-offset operands.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess PROTO, dwExitCode:dword\n\n.data\nval1  WORD 1000h\nval2  WORD 2000h\n\narrayB BYTE  10h,20h,30h,40h,50h\narrayW WORD  100h,200h,300h\narrayD DWORD 10000h,20000h\n\n.code\nmain proc"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\32 bit\\Operator.asm",
+        "snippet": "; Operators (Operator.asm)\n\n; Demonstrates the TYPE, LENGTHOF, and SIZEOF operators\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess PROTO, dwExitCode:dword\n\n.data\nbyte1    BYTE  10,20,30\narray1   WORD  30 DUP(?),0,0\narray2   WORD  5 DUP(3 DUP(?))\narray3   DWORD 1,2,3,4\ndigitStr BYTE  '12345678',0\nmyArray  BYTE  10,20,30,40,50,\n               60,70,80,90,100\n\n; You can examine the following constant values\n; by looking in the listing file (Operator.lst):"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\32 bit\\Pointers.asm",
+        "snippet": "; Pointers (Pointers.asm)\n\n; Demonstration of pointers and TYPEDEF.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess PROTO, dwExitCode:dword\n\n; Create user-defined types.\nPBYTE  TYPEDEF PTR BYTE\t\t; pointer to bytes\nPWORD  TYPEDEF PTR WORD\t\t; pointer to words\nPDWORD TYPEDEF PTR DWORD\t\t; pointer to doublewords\n\n.data\narrayB BYTE  10h,20h,30h\narrayW WORD  1,2,3\narrayD DWORD 4,5,6\n\n; Create some pointer variables."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\32 bit\\SumArray.asm",
+        "snippet": "; Summing an Array (SumArray.asm)\n\n; This program sums an array of words.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess PROTO, dwExitCode:dword\n\n.data\nintarray DWORD 10000h,20000h,30000h,40000h\n\n.code\nmain proc\n\n\tmov  edi,OFFSET intarray\t\t; 1: EDI = address of intarray\n\tmov  ecx,LENGTHOF intarray\t\t; 2: initialize loop counter\n\tmov  eax,0\t\t\t\t\t\t; 3: sum = 0\nL1:\t\t\t\t\t\t\t\t\t; 4: mark beginning of loop\n\tadd  eax,[edi]\t\t\t\t\t; 5: add an integer"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\32 bit\\template.asm",
+        "snippet": "; Program template\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\n\t; declare variables here\n.code\nmain proc\n\t; write your code here\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch04\\64 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch04\\64 bit\\AddAndSubtract.asm",
+      "Irvine\\irvine\\examples\\ch04\\64 bit\\Moves.asm",
+      "Irvine\\irvine\\examples\\ch04\\64 bit\\SumArray_64.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\64 bit\\AddAndSubtract.asm",
+        "snippet": "; Moves.asm  - Testing the 64-bit move operations\n\nExitProcess proto\n\n.data\ninitval qword 0\nmyByte byte 55h\nmyWord word 6666h\nmyDword dword 80000000h\n\n.code\nmain proc\n; Moving immediate values:\n\tmov  rax,0FFFFFFFFh\n\tadd  rax,1\t\t\t\t\t; RAX = 100000000h\n\t\n\tmov  rax,0FFFFh\n\tmov  bx,1\n\tadd  ax,bx\t\t\t\t\t; RAX = 0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\64 bit\\Moves.asm",
+        "snippet": "; Moves.asm  - Testing the 64-bit move operations\n\nExitProcess proto\n\n.data\nmessage BYTE \"Welcome to my 64-bit Library!\",0\nmaxuint qword 0FFFFFFFFFFFFFFFFh\nmyByte byte 55h\nmyWord word 6666h\nmyDword dword 80000000h\n\n.code\nmain proc\n; Moving immediate values:\n\tmov  rax,maxuint\t\t; fill all bits in RAX\n\tmov  rax,81111111h\t\t; clears bits 32-63 (no sign extension)\n\tmov  rax,06666h\t\t\t; clears bits 16-63\n\tmov  rax,055h\t\t\t; clears bits 8-63\n\n; Moving memory operands:"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch04\\64 bit\\SumArray_64.asm",
+        "snippet": "; Summing an Array (SumArray_64.asm)\n; This program sums an array of words.\n; The LOOP instruction requires the /LARGEADDRESSAWARE linker switch to equal NO.\n\nExitProcess proto\n.data\nintarray QWORD 1000000000000h,2000000000000h\n\t     QWORD 3000000000000h,4000000000000h\n\n.code\nmain proc\n\n\tmov  rdi,OFFSET intarray\t\t; 1: RDI = address of intarray\n\tmov  rcx,LENGTHOF intarray\t\t; 2: initialize loop counter\n\tmov  rax,0\t\t\t\t\t\t; 3: sum = 0\nL1:\t\t\t\t\t\t\t\t\t; 4: mark beginning of loop\n\tadd  rax,[rdi]\t\t\t\t\t; 5: add an integer\n\tadd  rdi,TYPE intarray   \t\t; 6: point to next element\n\tloop L1\t\t\t\t\t\t\t; 7: repeat until RCX = 0"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch05\\32 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\CodePageDemo.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\colors.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\InputLoop.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\msgbox.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\msgboxAsk.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\RevStr.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\TestArraySum.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\TestLib1.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\TestLib2.asm",
+      "Irvine\\irvine\\examples\\ch05\\32 bit\\TestLib3.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\CodePageDemo.asm",
+        "snippet": "; CodePageDemo.asm\n\n; Displays character codes 1 to 255. Select from the\n; following codepages for single-byte character sets:\n; 1250 - Central Europe\n; 1251 - Cyrillic\n; 1252 - Latin I\n; 1253 - Greek\n; 1254 - Turkish\n; 1255 - Hebrew\n; 1256 - Arabic\n; 1247 - Baltic\n; 1258 - Vietnam\n; 874  - Thai\n; 437  - OEM United States\n; 858  - OEM Multilingual Latin and European\n\nINCLUDE Irvine32.inc\nSetConsoleOutputCP PROTO, pageNum:DWORD"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\colors.asm",
+        "snippet": "; Testing Colors\t(colors.asm)\n\n; Testing SetTextColor and GetTextColor.\n\nINCLUDE Irvine32.inc\n\n.data\nstr1 BYTE \"Sample string, in color\",0dh,0ah,0\n\n.code\nmain PROC\n\n\tmov\tax,yellow + (blue * 16)\n\tcall\tSetTextColor\n\t\n\tmov\tedx,OFFSET str1\n\tcall\tWriteString\n\t\n\tcall\tGetTextColor\n\tcall\tDumpRegs"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\InputLoop.asm",
+        "snippet": "; Library Test #1: Integer I/O   (InputLoop.asm)\n\n; Tests the Clrscr, Crlf, DumpMem, ReadInt, SetTextColor, \n; WaitMsg, WriteBin, WriteHex, and WriteString procedures.\n\nINCLUDE Irvine32.inc\n\n.data\nCOUNT = 4\nBlueTextOnGray = blue + (lightGray * 16)\nDefaultColor = lightGray + (black * 16)\n\narrayD SDWORD 12345678h,1A4B2000h,3434h,7AB9h\n\nprompt BYTE \"Enter a 32-bit signed integer: \",0\n\n.code\nmain PROC\n\n; Set text color to blue text on a light gray background"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\msgbox.asm",
+        "snippet": "; MsgBox demo                     (msgbox.asm)\n\nINCLUDE Irvine32.inc\n\n.data\ncaption db \"Dialog Title\", 0 \n\nHelloMsg BYTE \"This is a pop-up message box.\", 0dh,0ah \n\t    BYTE \"Click OK to continue...\", 0 \n\n.code\nmain PROC\n\n\tmov\tebx,0\t\t\t\t; no caption\n\tmov\tedx,OFFSET HelloMsg\t\t; contents\n\tcall\tMsgBox\n\n\tmov\tebx,OFFSET caption\t\t; caption\n\tmov\tedx,OFFSET HelloMsg\t\t; contents\n\tcall\tMsgBox"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\msgboxAsk.asm",
+        "snippet": "; MsgBoxAsk demo                     (msgboxAsk.asm)\n\nINCLUDE Irvine32.inc\n\n.data\ncaption BYTE \"Survey Completed\",0\nquestion BYTE \"Thank you for completing the survey.\"\n\tBYTE 0dh,0ah\n\tBYTE \"Would you like to receive the results?\",0\nresults BYTE \"The results will be sent via email.\",0dh,0ah,0\n\n.code\nmain PROC\n\n\tmov ebx,OFFSET caption\n\tmov edx,OFFSET question\n\tcall MsgBoxAsk\n\t;(check return value in EAX)\n\n\texit"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\RevStr.asm",
+        "snippet": "; Reversing a String (RevStr.asm)\n; This program reverses a string.\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\naName byte \"Abraham Lincoln\",0\nnameSize = ($ - aName) - 1\n\n.code\nmain proc\n\n; Push the name on the stack.\n\nmov\t ecx,nameSize\n\tmov\t esi,0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\TestArraySum.asm",
+        "snippet": "; Testing the ArraySum procedure\t(TestArraySum.asm)\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess PROTO, dwExitCode:dword\n\n.data\narray dword 10000h,20000h,30000h,40000h,50000h\ntheSum dword ?\n\n.code\nmain proc\n\tmov   esi,OFFSET array \t\t\t; ESI points to array\n\tmov   ecx,LENGTHOF array\t\t; ECX = array count\n\tcall  ArraySum\t\t\t\t\t; calculate the sum\n\tmov   theSum,eax\t\t\t\t; returned in EAX\n\n\tinvoke ExitProcess,0\nmain endp"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\TestLib1.asm",
+        "snippet": "; Library Test #1: Integer I/O   (TestLib1.asm)\n\n; Tests the Clrscr, Crlf, DumpMem, ReadInt, \n; SetTextColor, WaitMsg, WriteBin, WriteHex, \n; and WriteString procedures.\n\nINCLUDE Irvine32.inc\n.data\narrayD     DWORD 1000h,2000h,3000h\nprompt1    BYTE \"Enter a 32-bit signed integer: \",0\ndwordVal   DWORD ?\n\n.code\nmain PROC\n; Set text color to yellow text on blue background:\n\tmov\teax,yellow + (blue * 16)\n\tcall\tSetTextColor\n\tcall\tClrscr\t\t\t; clear the screen\n\n; Display the array using DumpMem."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\TestLib2.asm",
+        "snippet": "; Link Library Test #2\t(TestLib2.asm)\n\n; Testing the Irvine32 Library procedures.\n\nINCLUDE Irvine32.inc\n\nTAB = 9\t\t; ASCII code for Tab\n\n.code\nmain PROC\n\tcall\tRandomize\t\t; init random generator\n\tcall\tRand1\n\tcall\tRand2\n\texit\nmain ENDP\n\nRand1 PROC\n; Generate ten pseudo-random integers.\n\tmov\tecx,10\t\t; loop 10 times"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\32 bit\\TestLib3.asm",
+        "snippet": "; Link Library Test #3\t\t(TestLib3.asm)\n\n; Calculate the elapsed execution time of a nested loop\n\nINCLUDE Irvine32.inc\n\n.data\nOUTER_LOOP_COUNT = 3\nstartTime DWORD ?\nmsg1 BYTE \"Please wait...\",0dh,0ah,0\nmsg2 BYTE \"Elapsed milliseconds: \",0\n\n.code\nmain PROC\n\tmov\tedx,OFFSET msg1     ; \"Please wait...\"\n\tcall\tWriteString\n\n; Save the starting time\n\n\tcall\tGetMSeconds"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch05\\64 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch05\\64 bit\\CallProc_64.asm",
+      "Irvine\\irvine\\examples\\ch05\\64 bit\\Lib64test.asm",
+      "Irvine\\irvine\\examples\\ch05\\64 bit\\TestRandom.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\64 bit\\CallProc_64.asm",
+        "snippet": "; Calling a subroutine in 64-bit mode\t\t\t(CallProc_64.asm)\n\nextrn ExitProcess: PROC\n\n.code\nmain proc\n\tsub  rsp,8           ; align the stack pointer\n\tsub  rsp,20h\t\t\t; reserve 32 bytes for shadow parameters\n\n\tmov  rcx,1\t\t\t\t; pass four parameters, in order\n\tmov  rdx,2\n\tmov  r8,3\n\tmov  r9,4\n\tcall AddFour\t\t; look for return value in RAX\n\n\tmov  ecx,0\n\tcall ExitProcess\nmain endp\n\nAddFour proc"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\64 bit\\Lib64test.asm",
+        "snippet": "; testing 64-bit Windows API\t\t\t(Lib64test.asm)\n;  Chapter 5 example\n\nExitProcess \tproto\nReadInt64       proto\nReadString      proto\nWriteString\t\tproto\nWriteInt64\t\tproto\nWriteHex32\t\tproto\nWriteHex64\t\tproto\nCrlf \t\t\t\tproto\n\n.data\nmessage BYTE \"Testing the Irvine64 library\",0\nmaxval qword 9223372036854775807\nminval qword -9223372036854775808\nhexval qword 0123456789ABCDEFh\ninbuf  BYTE  50 dup(0),0\ninbuf_size = $ - inbuf"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch05\\64 bit\\TestRandom.asm",
+        "snippet": "; Testing the Random Number generator\t\t(TestRandom.asm)\n; Chapter 5 example\n\nExitProcess PROTO\nWriteInt64  PROTO\nCrlf        PROTO\nRandom64\tPROTO\nRandomRange PROTO\nRandomize   PROTO\n\n.code\nmain proc\n\tsub   rsp,8\t\t\t\t; align the stack pointer\n\tsub   rsp,20h\t\t\t; reserve 32 bytes for shadow parameters\n\n\tcall  Randomize\n\tmov   rcx,20\nL1:\n\tmov   rax,234324243242\n\tcall  RandomRange\t\t\t; returns RAX = random value"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch06\\32 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\ArraySum.cpp",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\ArryScan.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\Encrypt.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\Finite.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\Flowchart.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\ifstatements.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\jumps.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\Loopnz.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\ProcTble.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\Regist.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\RegistAlt.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\Section_6_7_1.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\SetCur.asm",
+      "Irvine\\irvine\\examples\\ch06\\32 bit\\TestGetCommandTail.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\ArraySum.cpp",
+        "snippet": "// arraysum.cpp\n// Last update: 06/01/2006\n\n\nvoid main()\n{\n\tint array[] = {10,60,20,33,72,89,45,65,72,18};\n\tint sample = 50;\n\tint ArraySize = sizeof array / sizeof sample;\n\tint index = 0;\n\tint sum = 0;\n\n\twhile( index < ArraySize )\n\t{\n\tif( array[index] > sample )\n\t\tsum += array[index];\n\tindex++;\n\t}\n\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\ArryScan.asm",
+        "snippet": "; Scanning an Array              (ArryScan.asm)\n\n; Scan an array for the first nonzero value.\n\nINCLUDE Irvine32.inc\n\n.data\nintArray SWORD  0,0,0,0,1,20,35,-12,66,4,0\n;intArray SWORD  1,0,0,0\n;intArray SWORD  0,0,0,0\n;intArray SWORD  0,0,0,1\nnoneMsg  BYTE \"A non-zero value was not found\",0\n\n.code\nmain PROC\n\tmov   ebx,OFFSET intArray\t\t; point to the array\n\tmov   ecx,LENGTHOF intArray\t\t; loop counter\n\nL1:\n\tcmp   WORD PTR [ebx],0\t\t; compare value to zero"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\Encrypt.asm",
+        "snippet": "; Encryption Program               (Encrypt.asm)\n\n; This program demonstrates simple symmetric\n; encryption using the XOR instruction.\n\nINCLUDE Irvine32.inc\nKEY = 239     \t\t; any value between 1-255\nBUFMAX = 128     \t; maximum buffer size\n\n.data\nsPrompt  BYTE  \"Enter the plain text: \",0\nsEncrypt BYTE  \"Cipher text:          \",0\nsDecrypt BYTE  \"Decrypted:            \",0\nbuffer   BYTE   BUFMAX+1 DUP(0)\nbufSize  DWORD  ?\n\n.code\nmain PROC\n\tcall\tInputTheString\t\t; input the plain text\n\tcall\tTranslateBuffer\t; encrypt the buffer"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\Finite.asm",
+        "snippet": "; Finite State Machine              (Finite.asm)\n\n; This program implements a finite state machine that\n; accepts an integer with an optional leading sign.\n\nINCLUDE Irvine32.inc\n\nENTER_KEY = 13\n.data\nInvalidInputMsg BYTE \"Invalid input\",13,10,0\n\n.code\nmain PROC\n\tcall Clrscr\n\nStateA:\n\tcall\tGetnext       \t\t; read next char into AL\n\tcmp\tal,'+'         \t; leading + sign?\n\tje\tStateB          \t; go to State B\n\tcmp\tal,'-'         \t; leading - sign?"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\Flowchart.asm",
+        "snippet": "; Flowchart Example              (Flowchart.asm)\n\n; Implements the flowchart in Figure 6-2,\n; Calculates the sum of all array elements larger than\n; a given value (sample).\n\nINCLUDE Irvine32.inc\n\n.data\nsum DWORD 0\nsample DWORD 50\n\narray DWORD 10,60,20,33,72,89,45,65,72,18\nArraySize = ($ - Array) / TYPE array\n\n.code\nmain PROC\n\tmov\teax,0\t\t; sum\n\tmov\tedx,sample\n\tmov\tesi,0\t\t; index"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\ifstatements.asm",
+        "snippet": "; IF statements             (IfStatements.asm)\n\n; Implementations of IF statements\n\nINCLUDE Irvine32.inc\n\n.data\nX\tDWORD ?\nY\tDWORD ?\nop1\tDWORD ?\nop2\tDWORD ?\n\n.code\nmain PROC\n\n\tcall example_3\n\n\texit\nmain ENDP"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\jumps.asm",
+        "snippet": "; Conditional Jumps             (jumps.asm)\n\n; Demonstrates conditional jumps\n\nINCLUDE irvine32.inc\n.data\nvar1 DWORD 0\n\ncode segment 'CODE'\nmain PROC\n\n\tje\tL1\t\t\t; jump to short target\n\tmov  edx,offset var1\t\nL1:\n\n\tmov\tax,bx\n\tnop\t\t\t; align next instruction\n\tmov\tedx,ecx"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\Loopnz.asm",
+        "snippet": "; Scanning for a Positive Value        (Loopnz.asm)\n\n; Scan an array for the first positive value.\n; If no value is found, ESI will point to a sentinel\n; value (0) stored immediately after the array.\n\nINCLUDE Irvine32.inc\n.data\narray  SWORD  -3,-6,-1,-10,10,30,40,4\nsentinel SWORD  0\n\n.code\nmain PROC\n\tmov esi,OFFSET array\n\tmov ecx,LENGTHOF array\n\nnext:\n\ttest WORD PTR [esi],8000h\t\t; test sign bit\n\tpushfd\t\t\t\t\t\t; push flags on stack\n\tadd  esi,TYPE array"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\ProcTble.asm",
+        "snippet": "; Table of Procedure Offsets          (ProcTble.asm)\n\n; This progam contains a table with offsets of procedures.\n; It uses the table to execute indirect procedure calls.\n\nINCLUDE Irvine32.inc\n.data\nCaseTable  BYTE   'A'\t\t\t; lookup value\n           DWORD   Process_A\t\t; address of procedure\n           BYTE   'B'\n           DWORD   Process_B\n           BYTE   'C'\n           DWORD   Process_C\n           BYTE   'D'\n           DWORD   Process_D\nNumberOfEntries = 4\n\nprompt BYTE \"Press capital A,B,C,or D: \",0\nmsgA BYTE \"Process_A\",0\nmsgB BYTE \"Process_B\",0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\32 bit\\Regist.asm",
+        "snippet": ";  College Registration Example         (Regist.asm)\n\n; Simple demonstration of MASM's .IF,\n; .ENDIF, and .ELSEIF directives.\n\nINCLUDE Irvine32.inc\n\n.data\nTRUE = 1\nFALSE = 0\ngradeAverage  WORD 275\t; test value\ncredits       WORD 12\t; test value\nOkToRegister  BYTE ?\n\n.code\nmain PROC\n\n\tmov OkToRegister,FALSE\n\n\t.IF gradeAverage > 350"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch06\\64 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch06\\64 bit\\BooleanOps.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch06\\64 bit\\BooleanOps.asm",
+        "snippet": "; Moves.asm  - Testing the 64-bit move operations\n\nExitProcess proto\n\n.data\nhexval qword 0123456789ABCDEFh\nallones qword 0FFFFFFFFFFFFFFFFh\ntestval qword ?\n\n.code\nmain proc\n; The AND instruction \n\n; The destination is a 64-bit register:\n\tmov  rax,allones\n\tand  rax,80h\t\t\t\t; affects all bits\n\tmov  rax,allones\n\tand  rax,8080h\t\t\t\t; affects all bits\n\tmov  rax,allones\n\tand  rax,808080h\t\t\t; affects all bits"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch07\\32 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\AddPacked.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\ASCII_add.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\BinToAsc.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\Bmult.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\CompareMult.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\Divide32.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\encrypt_1.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\Express.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\ExtAdd.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\Idiv.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\imul.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\Multiply.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\MultiShift.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\Shrd.asm",
+      "Irvine\\irvine\\examples\\ch07\\32 bit\\WriteBin.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\AddPacked.asm",
+        "snippet": "; Packed Decimal Examples            (AddPacked.asm)\n\n; This program adds two decimal integers.\n\nINCLUDE Irvine32.inc\n\n.data\npacked_1 WORD 4536h\npacked_2 WORD 7207h\nsum DWORD ?\n\n.code\nmain PROC\n; Initialize sum and index.\n\tmov\tsum,0\n\tmov\tesi,0\n\t\n; Add low bytes.\n\tmov\tal,BYTE PTR packed_1[esi]\n\tadd\tal,BYTE PTR packed_2[esi]"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\ASCII_add.asm",
+        "snippet": "; ASCII Addition                      (ASCII_add.asm)\n\n; This program performs ASCII arithmetic on digit strings having \n; implied fixed decimal points.\n\nINCLUDE Irvine32.inc\n\nDECIMAL_OFFSET = 5\t\t\t\t\t\t; offset from right of string\n.data\ndecimal_one BYTE \"100123456789765\"\t\t\t; 1001234567.89765\ndecimal_two BYTE \"900402076502015\"\t\t\t; 9004020765.02015\nsum BYTE (SIZEOF decimal_one + 1) DUP(0),0\n\n.code\nmain PROC\n\n; Start at the last digit position.\n\n\tmov\tesi,SIZEOF decimal_one - 1\n\tmov\tedi,SIZEOF decimal_one"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\BinToAsc.asm",
+        "snippet": "; Binary to ASCII                    (BinToAsc.asm)\n\n; This program converts a 32-bit binary integer to ASCII.\n\nINCLUDE Irvine32.inc\n\n.data\nbinVal\tDWORD 1234ABCDh\t\t; sample binary value\nbuffer\tBYTE 32 dup(0),0\n\n.code\nmain PROC\n\tmov\teax,binVal\t\t\t; EAX = binary integer\n\tmov\tesi,OFFSET buffer\t\t; point to the buffer\n\tcall\tBinToAsc\t\t\t\t; do the conversion\n\n\tmov\tedx,OFFSET buffer\t\t; display the buffer\n\tcall WriteString\t\t\t; output: 00010010001101001010101111001101\n\n\tcall Crlf"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\Bmult.asm",
+        "snippet": "; Binary Multiplication         (BMult.asm)\n\n; This program demonstrates binary multiplication using SHL.\n; It multiplies intval by 36, using SHL instructions.\n\nINCLUDE Irvine32.inc\n\n.data\nintval  DWORD  123\n\n.code\nmain PROC\n\n\tmov\teax,intval\n\tmov\tebx,eax\n\tshl\teax,5\t\t; multiply by 32\n\tshl\tebx,2\t\t; multiply by 4\n\tadd\teax,ebx\t\t; sum the products\n\tcall\tDumpRegs"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\CompareMult.asm",
+        "snippet": "; Comparing Multiplications         (CompareMult.asm)\n\n; This program compares the execution times of two approaches to \n; integer multiplication: Binary shifting versus the MUL instruction.\n\nINCLUDE Irvine32.inc\n\nLOOP_COUNT = 0FFFFFFFFh\n\n.data\nintval DWORD 5\nstartTime DWORD ?\n\n.code\nmain PROC\n\n; First approach:\n\n\tcall\tGetMseconds\t; get start time\n\tmov\tstartTime,eax"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\Divide32.asm",
+        "snippet": "Title 32-bit Division Example             (Divide32.asm)\n\n; This program divides a 64-bit integer dividend\n; by a 32-bit divisor. The quotient and remainder\n; are each 32 bits.\n\nINCLUDE Irvine32.inc\n\n.data\ndividend  QWORD   0000000800300020h\ndivisor   DWORD   00000100h\n\n.code\nmain PROC\n\n   mov  edx,dword ptr dividend + 4     ; dividend, high\n   mov  eax,dword ptr dividend         ; dividend, low\n   div  divisor\n\n; quotient(EAX) = 08003000h, remainder(EDX) = 00000020h"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\encrypt_1.asm",
+        "snippet": "; Binary Encryption Example         (Encrypt_1.asm)\n\nINCLUDE Irvine32.inc\n\nBufSize = 80\n\n.data\nbuffer BYTE BufSize DUP(0)\n\nKey\tBYTE 2,5,7,12\nprompt1 BYTE \"Enter a plaintext message: \",0\nmsg1\tBYTE \"The cyphertext text is: \",0\nmsg2\tBYTE \"The decrypted text is:  \",0\n\n.code\nmain PROC\n\n\tmov\tedx,OFFSET prompt1\n\tcall\tWriteString\n\tmov\tedx,OFFSET buffer"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\Express.asm",
+        "snippet": "; Unsigned Arithmetic Expressions        (Express.asm)\n\n; This program shows how to translate simple \n; arithmetic expressions into assembly language.\n\nINCLUDE Irvine32.inc\n\n.data\nmsg1 BYTE \"Unsigned overflow!\",0dh,0ah,0\nvar1 DWORD 3\nvar2 DWORD 6\nvar3 DWORD 4\nvar4 DWORD ?\n\n.code\nmain PROC\n\n;Divide Overflow example:\n\n\tmov ax,1000h"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\ExtAdd.asm",
+        "snippet": "; Extended Addition Example           (ExtAdd.asm)\n\n; This program calculates the sum of two 8-byte integers.\n; The integers are stored as arrays, with the least significant \n; byte stored at the lowest address value.\n\nINCLUDE Irvine32.inc\n\n.data\nop1 BYTE 34h,12h,98h,74h,06h,0A4h,0B2h,0A2h\nop2 BYTE 02h,45h,23h,00h,00h,87h,10h,80h\n\nsum BYTE 9 dup(0) \t; = 0122C32B0674BB5736h\n\n.code\nmain PROC\n\n\tmov\tesi,OFFSET op1\t\t; first operand\n\tmov\tedi,OFFSET op2\t\t; second operand\n\tmov\tebx,OFFSET sum\t\t; sum operand"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\32 bit\\Idiv.asm",
+        "snippet": "; IDIV Examples             (Idiv.asm)\n\n; This program shows examples of various IDIV formats.\n\nINCLUDE Irvine32.inc\n\n.code\nmain PROC\n\n; Example 1\n.data\nbyteVal SBYTE -48\n.code\n\tmov\tal,byteVal\t; dividend\n\tcbw\t\t\t\t; extend AL into AH\n\tmov\tbl,+5\t\t; divisor\n\tidiv\tbl\t\t\t; AL = -9, AH = -3\n\tcall\tDumpRegs\n\n; Example 2"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch07\\64 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch07\\64 bit\\mul_and_imul.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch07\\64 bit\\mul_and_imul.asm",
+        "snippet": "; Mul_and_imul.asm\n; Demonstration of the MUL and IMUL instructions\n; with 64-bit operands\n\nExitProcess proto\nWriteHex64 proto\nCrlf proto\n\n.data\nmultiplier  qword 10h\n.code\nmain proc\n\tsub   rsp,28h\n\n\t\n; 64-bit DIV example\n.data\ndividend_hi qword 00000108h\ndividend_lo qword 33300020h\ndivisor     qword 00010000h"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch08\\32 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\AddTwo.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ArrayFill.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ArrySum.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Endless.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Fact.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\LocalExample.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\LocalVars.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\MakeArray.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Multiword.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Params.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\proc.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Prototypes.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Read_File.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Recurse.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\RecursiveSum.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Reglist.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Smallint.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\swap.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Test_WriteStackFrame.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\Uppercase.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\UsesTest.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\AddTwo.asm",
+        "snippet": "; Demonstrate the AddTwo Procedure     (AddTwo.asm)\n\n; Demonstrates different procedure call protocols.\n\nINCLUDE Irvine32.inc\n\n.data\nword1 WORD 1234h\nword2 WORD 4111h\n\n.code\nmain PROC\n\n\t;call\tExample1\n\t;call\tExample2\n\n\tmovzx\teax,word1\n\tpush\teax\n\tmovzx\teax,word2\n\tpush\teax"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ArrayFill.asm",
+        "snippet": "; Demonstrate reference parameters   (ArrayFill.asm)\n\n; This program fills an array with 16-bit randomly generated integers.\n\nINCLUDE Irvine32.inc\n\n.data\ncount = 100\narray WORD count DUP(?)\n\n.code\nmain PROC\n\n\tpush OFFSET array\n\tpush COUNT\n\tcall ArrayFill\n\t\n\texit\n\nmain ENDP"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ArrySum.asm",
+        "snippet": "; ArraySum Optimization          (ArrySum.asm)\n\n; This program calculates the sum of an array.\n\nINCLUDE Irvine32.inc\n\nOptimized = 1\n\n.data\nArray DWORD 50 DUP(5)\n\n.code\nmain PROC\n\n\tpush LENGTHOF Array\n\tpush OFFSET Array\n\tcall ArraySum\n\tadd  sp,8\n\tcall WriteDec\t\t\t; display the sum\n\tcall Crlf"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\Endless.asm",
+        "snippet": "; Endless Recursion               (Endless.asm)\n\n; This program demonstrates nonstop recursion. It\n; causes a stack overflow.\n\n.386\n.model flat,stdcall\n.stack 0FFFFFh\nExitProcess PROTO, dwExitCode:dword\n\n.code\nmain PROC\n\tcall Endless\n\tINVOKE ExitProcess, 0\nmain ENDP\n\n.code\nEndless PROC\n\n\tcall Endless"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\Fact.asm",
+        "snippet": "; Calculating a Factorial                   (Fact.asm)\n\n; This program uses recursion to calculate the\n; factorial of an integer.\n\nINCLUDE Irvine32.inc\n\n.code\nmain PROC\n\tpush 5\t\t\t; calculate 5 factorial\n\tcall Factorial\t\t; calculate factorial (eax)\n\tcall WriteDec\t\t; display it\n\tcall Crlf\n\texit\nmain ENDP\n\nFactorial PROC\n\tpush ebp\n\tmov  ebp,esp\n\tmov  eax,[ebp+8]\t; get n"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\LocalExample.asm",
+        "snippet": "; Comparing LOCAL with ENTER-LEAVE   (LocalExample.asm)\n\n; This program compares the LOCAL directive to ENTER-LEAVE.\n\nINCLUDE Irvine32.inc\n\n.code\nmain PROC\n\t\n\nmain ENDP\n\nExample1 PROC\n\tLOCAL temp:DWORD\n\n\tmov\teax,temp\n\n\tret\nExample1 ENDP"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\LocalVars.asm",
+        "snippet": "; Demonstrate local variables   (LocalVars.asm)\n\n; This program demonstrates the use of local variables.\n\nINCLUDE Irvine32.inc\n\n.data\n\n.code\nmain PROC\n\n\tcall\tMySub\n\t\n\texit\n\nmain ENDP\n\n\nX_local EQU DWORD PTR [ebp-4]\nY_local EQU DWORD PTR [ebp-8]"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\MakeArray.asm",
+        "snippet": "; (MakeArray.asm)\n\n; This program creates an array on the local variables \n; area of the stack.\n\nINCLUDE Irvine32.inc\n\n.data\ncount = 100\narray WORD count DUP(?)\n\n.code\nmain PROC\n\n\tcall\tmakeArray\n\tmov\teax,0\n\n\texit\n\nmain ENDP"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\Multiword.asm",
+        "snippet": "; Multiword procedure arguments    (Multiword.asm)\n\n; This program demonstrates the passing of a 64-bit argument\n; to a procedure.\n\nINCLUDE Irvine32.inc\n\n.data\nlongVal DQ 1234567800ABCDEFh\n\n.code\nmain PROC\n\n\tpush\tDWORD PTR longVal + 4\t; high\n\tpush\tDWORD PTR longVal\t\t; low\n\tcall\tWriteHex64\n\n\tcall\tCrlf\n\texit\nmain ENDP"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\Params.asm",
+        "snippet": "; Procedure Parameter Examples          (Params.asm)\n\n; This program demonstrates the use of the PROC, \n; PROTO, and INVOKE directives.\n\nINCLUDE Irvine32.inc\n\nSub1 PROTO someData:WORD\nSub2 PROTO dataPtr:PTR WORD\n\nArraySum PROTO,\n\tptrArray:PTR DWORD,\n\tszArray:DWORD\n\nAddThree PROTO,\n\tval1:DWORD,\n\tval2:DWORD,\n\tval3:DWORD\n\nFillArray PROTO,"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch08\\32 bit\\C_Examples\\C_Examples",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\makeArray.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\makeArray.c",
+        "snippet": "// makearray.c\n\nvoid makeArray( ) \n{\n\tchar myString[30];\n\tint i;\n\n\tfor( i = 0; i < 30; i++ )\n\t\tmyString[i] = (char)i;\n\n}\n\n\nvoid main()\n{\n\n\tmakeArray();\n\n\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\Release\\makeArray.asm",
+        "snippet": "; Listing generated by Microsoft (R) Optimizing Compiler Version 17.00.60315.1 \n\n\t;\tD:\\Asmbook 7\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\makeArray.c\n\t.686P\n\t.XMM\n\tinclude listing.inc\n\t.model\tflat\n\nINCLUDELIB LIBCMT\nINCLUDELIB OLDNAMES\n\nPUBLIC\t_makeArray\nPUBLIC\t_main\nEXTRN\t@__security_check_cookie@4:PROC\nEXTRN\t___security_cookie:DWORD\n; Function compile flags: /Ogtp\n;\tCOMDAT _main\n_TEXT\tSEGMENT\n_main\tPROC\t\t\t\t\t\t; COMDAT\n; File d:\\asmbook 7\\examples\\ch08\\32 bit\\c_examples\\c_examples\\makearray.c"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\Release",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\Release\\makeArray.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\Release\\makeArray.asm",
+        "snippet": "; Listing generated by Microsoft (R) Optimizing Compiler Version 17.00.60315.1 \n\n\t;\tD:\\Asmbook 7\\examples\\ch08\\32 bit\\C_Examples\\C_Examples\\makeArray.c\n\t.686P\n\t.XMM\n\tinclude listing.inc\n\t.model\tflat\n\nINCLUDELIB LIBCMT\nINCLUDELIB OLDNAMES\n\nPUBLIC\t_makeArray\nPUBLIC\t_main\nEXTRN\t@__security_check_cookie@4:PROC\nEXTRN\t___security_cookie:DWORD\n; Function compile flags: /Ogtp\n;\tCOMDAT _main\n_TEXT\tSEGMENT\n_main\tPROC\t\t\t\t\t\t; COMDAT\n; File d:\\asmbook 7\\examples\\ch08\\32 bit\\c_examples\\c_examples\\makearray.c"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\Sum_main.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\_arrysum.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\_display.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\_prompt.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\Sum_main.asm",
+        "snippet": "; Integer Summation Program\t\t (Sum_main.asm)\n\n; Multimodule example:   (main module)\n; This program inputs multiple integers from the user,\n; stores them in an array, calculates the sum of the\n; array, and displays the sum.\n\nINCLUDE sum.inc\n\n; modify Count to change the size of the array:\nCount = 3\n\n.data\nprompt1 BYTE  \"Enter a signed integer: \",0\nprompt2 BYTE  \"The sum of the integers is: \",0\narray   DWORD  Count DUP(?)\nsum     DWORD  ?\n\n.code\nmain PROC"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\_arrysum.asm",
+        "snippet": "; ArraySum Procedure                 (_arrysum.asm)\n\nINCLUDE sum.inc\n.code\n;-----------------------------------------------------\nArraySum PROC,\n\tptrArray:PTR DWORD,\t; pointer to array\n\tarraySize:DWORD\t; size of array\n;\n; Calculates the sum of an array of 32-bit integers.\n; Returns:  EAX = sum\n;-----------------------------------------------------\n\tpush ecx\t\t; don't push EAX\n\tpush esi\n\n\tmov  eax,0\t\t; set the sum to zero\n\tmov  esi,ptrArray\n\tmov  ecx,arraySize\n\tcmp  ecx,0\t\t; array size <= 0?\n\tjle  L2\t\t; yes: quit"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\_display.asm",
+        "snippet": "; DisplaySum Procedure\t\t(_display.asm)\n\nINCLUDE Sum.inc\n\n.code\n;-----------------------------------------------------\nDisplaySum PROC,\n\tptrPrompt:PTR BYTE,\t; prompt string\n\ttheSum:DWORD\t\t; the array sum\n;\n; Displays the sum on the console.\n; Returns:  nothing\n;-----------------------------------------------------\n\tpush\teax\n\tpush\tedx\n\n\tmov\tedx,ptrPrompt\t; pointer to prompt\n\tcall\tWriteString\n\tmov\teax,theSum\n\tcall\tWriteInt\t\t; display EAX"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_advanced\\ModSum\\_prompt.asm",
+        "snippet": "; Prompt For Integers\t      (_prompt.asm)\n\nINCLUDE sum.inc\t\t; get procedure prototypes\n\n.code\n;-----------------------------------------------------\nPromptForIntegers PROC,\n  ptrPrompt:PTR BYTE,\t\t; prompt string\n  ptrArray:PTR DWORD,\t\t; pointer to array\n  arraySize:DWORD\t\t\t; size of the array\n;\n; Prompts the user for an array of integers and fills\n; the array with the user's input.\n; Returns:  nothing\n;-----------------------------------------------------\n\tpushad\t\t\t\t; save all registers\n\t\t\n\tmov  ecx,arraySize\n\tcmp  ecx,0\t\t\t; array size <= 0?\n\tjle  L2\t\t\t\t; yes: quit"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\Sum_main.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\_arrysum.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\_display.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\_prompt.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\Sum_main.asm",
+        "snippet": "; Integer Summation Program\t\t (Sum_main.asm)\n\n; Multimodule example:   (main module)\n; This program inputs multiple integers from the user,\n; stores them in an array, calculates the sum of the\n; array, and displays the sum.\n\n; Uses EXTERN to access external procedures\n\nINCLUDE Irvine32.inc\n\nEXTERN PromptForIntegers@0:PROC\nEXTERN ArraySum@0:PROC, DisplaySum@0:PROC\n\n; Redefine external symbols for convenience\nArraySum\t\t\tEQU ArraySum@0\nPromptForIntegers\tEQU PromptForIntegers@0\nDisplaySum\t\tEQU DisplaySum@0\n\n; modify Count to change the size of the array:"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\_arrysum.asm",
+        "snippet": "; ArraySum Procedure             (_arrysum.asm)\n\nINCLUDE Irvine32.inc\n.code\nArraySum PROC\n;\n; Calculates the sum of an array of 32-bit integers.\n\n; Receives:\n;\tptrArray\t\t; pointer to array\n;\tarraySize\t\t; size of array (DWORD)\n; Returns:  EAX = sum\n;-----------------------------------------------------\nptrArray EQU [ebp+8]\narraySize EQU [ebp+12]\n\n\tenter\t0,0\n\tpush\tecx\t\t; don't push EAX\n\tpush\tesi"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\_display.asm",
+        "snippet": "; DisplaySum Procedure\t\t(_display.asm)\n\nINCLUDE Irvine32.inc\n.code\n;-----------------------------------------------------\nDisplaySum PROC\n\n; Displays the sum on the console.\n; Receives:\n;\tptrPrompt\t\t; offset of prompt string\n;\ttheSum\t\t; the array sum (DWORD)\n; Returns: nothing\n;-----------------------------------------------------\n\ntheSum\tEQU [ebp+12]\nptrPrompt\tEQU [ebp+8]\n\n\tenter\t0,0\n\tpush\teax\n\tpush\tedx"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\ModSum32_traditional\\ModSum\\_prompt.asm",
+        "snippet": "; Prompt For Integers\t      (_prompt.asm)\n\nINCLUDE Irvine32.inc\n.code\n;----------------------------------------------------\nPromptForIntegers PROC\n\n; Prompts the user for an array of integers and fills\n; the array with the user's input.\n; Receives:\n; \tptrPrompt:PTR BYTE\t\t\t; prompt string\n; \tptrArray:PTR DWORD\t\t\t; pointer to array\n; \tarraySize:DWORD\t\t\t; size of the array\n; Returns:  nothing\n;-----------------------------------------------------\narraySize\tEQU [ebp+16]\nptrArray\tEQU [ebp+12]\nptrPrompt\tEQU [ebp+8]\n\n\tenter\t0,0"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch08\\32 bit\\public_and_extern",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\public_and_extern\\main.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\public_and_extern\\sub1.asm",
+      "Irvine\\irvine\\examples\\ch08\\32 bit\\public_and_extern\\sub2.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\public_and_extern\\main.asm",
+        "snippet": "; Main module    (main.asm)\n\nINCLUDE Irvine32.inc\nINCLUDE vars.inc\n\n.code\nmain PROC\n\tmov count,2000h\n\tmov eax,SYM1\n\t\nmain ENDP\n\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\public_and_extern\\sub1.asm",
+        "snippet": "; sub1.asm\n\n.386\n.model flat,STDCALL\n\nINCLUDE vars.inc\n\nSYM1 = 10\t\t\t; public\n\n.data\ncount DWORD 0\t\t; public\n\nEND\n\n\n\n.code\nsub1 PROC \t\t; public by default\n\n\tcall localProc"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch08\\32 bit\\public_and_extern\\sub2.asm",
+        "snippet": "; Main module    (main.asm)\n\n; Last update: 4/10/05\n\nINCLUDE Irvine32.inc\n\n\n.code\nmain PROC\n\n\n\texit\n\nmain ENDP\n\nEND main"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch09\\32 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Base-Index.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Bsort.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Cmpsb.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Compare.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\CopyStr.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Length.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Mult.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\RowSum.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\StringDemo.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Table.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Table2.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Trim.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Ucase.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Base-Index.asm",
+        "snippet": "; Two-Dimensional Table                (Base-Index.asm)\n\n; This program uses Base-Index and Base-index-displacement \n; modes to access two-dimensional arrays. \n\n\nINCLUDE Irvine32.inc\n\n.data\ntableB  BYTE   10h,  20h,  30h,  40h,  50h\nRowsize = ($ - tableB)\n        BYTE   60h,  70h,  80h,  90h, 0A0h\n        BYTE  0B0h, 0C0h, 0D0h, 0E0h, 0F0h\n\ntableW  WORD   10h,  20h,  30h,  40h,  50h\nRowsizeW = ($ - tableW)\n        WORD   60h,  70h,  80h,  90h, 0A0h\n        WORD  0B0h, 0C0h, 0D0h, 0E0h, 0F0h\n        \ntableD DWORD 10000h,   20000h,  30000h,  40000h,  50000h"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Bsort.asm",
+        "snippet": ";  BubbleSort Procedure                  (BSort.asm)\n\n; This program sorts an array of signed integers, using \n; the Bubble sort algorithm. The main program is in B_main.asm.\n\nINCLUDE Irvine32.inc\n\n.code\n;----------------------------------------------------------\nBubbleSort PROC USES eax ecx esi,\n\tpArray:PTR DWORD,\t\t; pointer to array\n\tCount:DWORD\t\t\t; array size\n;\n; Sort an array of 32-bit signed integers in ascending order\n; using the bubble sort algorithm.\n; Receives: pointer to array, array size\n; Returns: nothing\n;-----------------------------------------------------------\n\n\tmov ecx,Count"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Cmpsb.asm",
+        "snippet": "; Comparing Strings             (Cmpsb.asm)\n\n; This program uses CMPSB to compare two strings\n; of equal length.\n\nINCLUDE Irvine32.inc\n.data\nsource BYTE \"MARTIN  \"\ndest   BYTE \"MARTINEZ\"\nstr1   BYTE \"Source is smaller\",0dh,0ah,0\nstr2   BYTE \"Source is not smaller\",0dh,0ah,0\n\n.code\nmain PROC\n\tcld\t\t\t\t\t; direction = forward\n\tmov  esi,OFFSET source\n\tmov  edi,OFFSET dest\n\tmov  cx,LENGTHOF source\n\trepe cmpsb\n\tjb   source_smaller"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Compare.asm",
+        "snippet": "; Comparing Strings                    (Compare.asm)\n\n; This program tests the Str_compare procedure,\n; which compares two null-terminated strings.\n\nINCLUDE Irvine32.inc\n\nStr_compare PROTO,\n\tstring1:PTR BYTE,\n\tstring2:PTR BYTE\n\n.data\nstring_1 BYTE \"ABCDEFG\",0\nstring_2 BYTE \"ABCDEFG\",0\nstring_3 BYTE 0\nstring_4 BYTE 0\n\n.code\nmain PROC\n\tcall Clrscr"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\CopyStr.asm",
+        "snippet": "; Copying Strings                    (CopyStr.asm)\n\n; Testing the Str_copy procedure\n\nINCLUDE Irvine32.inc\n\nStr_copy PROTO,\n \tsource:PTR BYTE, \t\t; source string\n \ttarget:PTR BYTE\t\t; target string\n\nStr_length PROTO,\n\tpString:PTR BYTE\t\t; pointer to string\n\n.data\nstring_1 BYTE \"ABCDEFG\",0\nstring_2 BYTE 100 DUP(?)\n\n.code\nmain PROC\n\tcall Clrscr"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Length.asm",
+        "snippet": "; String Length                   (Length.asm)\n\n; This program tests the Str_length procedure,\n; which returns the length of a string.\n\nINCLUDE Irvine32.inc\n\nStr_length PROTO,\n\tpString:PTR BYTE\t\t; pointer to string\n\n.data\nstring_1 BYTE \"Hello\",0\nstring_2 BYTE \"#\",0\nstring_3 BYTE 0\n\n.code\nmain PROC\n\tcall Clrscr\n\n\tINVOKE Str_length,ADDR string_1"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Mult.asm",
+        "snippet": "; Multiply an Array                (Mult.asm)\n\n; This program multiplies each element of an array\n; of 32-bit integers by a constant value.\n\nINCLUDE Irvine32.inc\n\n.data\narray DWORD 1,2,3,4,5,6,7,8,9,10\t; test data\nmultiplier DWORD 10\t\t\t\t; test data\n\n.code\nmain PROC\n\tcld \t\t\t\t\t\t; direction = up\n\tmov\tesi,OFFSET array  \t\t; source index\n\tmov\tedi,esi\t\t\t\t; destination index\n\tmov\tecx,LENGTHOF array\t\t; loop counter\n\nL1:\tlodsd                   \t\t; copy [ESI] into EAX\n\tmul\tmultiplier\t\t\t; multiply by a value"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\RowSum.asm",
+        "snippet": "; Row Sum Calculation\t\t\t\t\t(RowSum.asm)\n\n; This program demonstrates the use of Base-Index addressing \n; with a two-dimensional table array of bytes (a byte matrix).\n\nINCLUDE Irvine32.inc\n\n.data\ntableB  BYTE  10h,  20h,  30h,  40h,  50h\n        BYTE  60h,  70h,  80h,  90h,  0A0h\n        BYTE  0B0h, 0C0h, 0D0h, 0E0h, 0F0h\nRowSize = 5\nmsg1\tBYTE \"Enter row number: \",0\nmsg2 BYTE \"The sum is: \",0\n\n.code\nmain PROC\n\n; Demonstrate Base-Index mode:"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\StringDemo.asm",
+        "snippet": "; String Library Demo\t(StringDemo.asm)\n\n; This program demonstrates the string-handling procedures in \n; the book's link library.\n\nINCLUDE Irvine32.inc\n\n.data\nstring_1 BYTE \"abcde////\",0\nstring_2 BYTE \"ABCDE\",0\nmsg0     BYTE \"string_1 in upper case: \",0\nmsg1     BYTE \"string1 and string2 are equal\",0\nmsg2     BYTE \"string_1 is less than string_2\",0\nmsg3     BYTE \"string_2 is less than string_1\",0\nmsg4     BYTE \"Length of string_2 is \",0\nmsg5     BYTE \"string_1 after trimming: \",0\n\n.code\nmain PROC"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Table.asm",
+        "snippet": "; Two-Dimensional Table                (Table.asm)\n\n; Demonstration of Base-Index mode with a\n; two-dimensional table.\n\nINCLUDE Irvine32.inc\n\n.data\ntableB  BYTE  10h,  20h,  30h,  40h,  50h\n        BYTE  60h,  70h,  80h,  90h, 0A0h\n        BYTE  0B0h, 0C0h, 0D0h, 0E0h, 0F0h\nRowSize = 5\n\n.code\nmain PROC\n\n; Demonstrate Base-Index mode:\n\n   mov  ebx,OFFSET tableB\n   add  ebx,RowSize"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\BinarySearch.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\BinarySearchTest.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\BubbleSort.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\FillArray.asm",
+      "Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\PrintArray.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\BinarySearch.asm",
+        "snippet": "TITLE  Binary Search Procedure            (BinarySearch.asm)\n\n; Binary Search procedure\n\nINCLUDE Irvine32.inc\n\n.code\n;-------------------------------------------------------------\nBinarySearch PROC USES ebx edx esi edi,\n\tpArray:PTR DWORD,\t\t; pointer to array\n\tCount:DWORD,\t\t\t; array size\n\tsearchVal:DWORD\t\t\t; search value\nLOCAL first:DWORD,\t\t\t; first position\n\tlast:DWORD,\t\t\t\t; last position\n\tmid:DWORD\t\t\t\t; midpoint\n;\n; Search an array of signed integers for a single value.\n; Receives: Pointer to array, array size, search value.\n; Returns: If a match is found, EAX = the array position of the\n; matching element; otherwise, EAX = -1."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\BinarySearchTest.asm",
+        "snippet": "TITLE Bubble Sort and Binary Search       BinarySearchTest.asm)\n\n; Bubble sort an array of signed integers, and perform\n; a binary search.\n; Main module, calls Bsearch.asm, Bsort.asm, FillArry.asm\n\nINCLUDE Irvine32.inc\nINCLUDE BinarySearch.inc\t\t; procedure prototypes\n\nLOWVAL = -5000\t\t\t; minimum value\nHIGHVAL = +5000\t\t; maximum value\nARRAY_SIZE = 50\t\t; size of the array\n\n.data\narray DWORD ARRAY_SIZE DUP(?)\n\n.code\nmain PROC\n\tcall Randomize"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\BubbleSort.asm",
+        "snippet": "TITLE  BubbleSort Procedure                  (BubbleSort.asm)\n\n; Sort an array of signed integers, using the Bubble\n; sort algorithm. The main program is in BinarySearchTest.asm.\n\nINCLUDE Irvine32.inc\n\n.code\n;----------------------------------------------------------\nBubbleSort PROC USES eax ecx esi,\n\tpArray:PTR DWORD,\t\t; pointer to array\n\tCount:DWORD\t\t\t; array size\n;\n; Sort an array of 32-bit signed integers in ascending order\n; using the bubble sort algorithm.\n; Receives: pointer to array, array size\n; Returns: nothing\n;-----------------------------------------------------------\n\n\tmov ecx,Count"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\FillArray.asm",
+        "snippet": "TITLE FillArray Procedure                 (FillArray.asm)\n\nINCLUDE Irvine32.inc\n\n.code\n;------------------------------------------------------------\nFillArray PROC USES eax edi ecx edx,\n\tpArray:PTR DWORD,\t\t  ; pointer to array\n\tCount:DWORD,\t\t       ; number of elements\n\tLowerRange:SDWORD,\t\t  ; lower range\n\tUpperRange:SDWORD\t\t  ; upper range\n;\n; Fills an array with a random sequence of 32-bit signed\n; integers between LowerRange and (UpperRange - 1).\n; Returns: nothing\n;-----------------------------------------------------------\n\tmov\tedi,pArray\t           ; EDI points to the array\n\tmov\tecx,Count\t                ; loop counter\n\tmov\tedx,UpperRange\n\tsub\tedx,LowerRange\t           ; EDX = absolute range (0..n)"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\32 bit\\Binary_Search\\PrintArray.asm",
+        "snippet": "TITLE PrintArray Procedure                  (PrintArray.asm)\n\nINCLUDE Irvine32.inc\n\n.code\n;-----------------------------------------------------------\nPrintArray PROC USES eax ecx edx esi,\n\tpArray:PTR DWORD,\t\t; pointer to array\n\tCount:DWORD\t\t\t; number of elements\n;\n; Writes an array of 32-bit signed decimal integers to\n; standard output, separated by commas\n; Receives: pointer to array, array size\n; Returns: nothing\n;-----------------------------------------------------------\n.data\ncomma BYTE \", \",0\n.code\n\tmov\tesi,pArray\n\tmov\tecx,Count"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch09\\64 bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch09\\64 bit\\Irvine64.asm",
+      "Irvine\\irvine\\examples\\ch09\\64 bit\\StringLib64Test.asm",
+      "Irvine\\irvine\\examples\\ch09\\64 bit\\TwoDimArrays.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\64 bit\\Irvine64.asm",
+        "snippet": "; 64-bit Library (Irvine64.asm)\n\n; Version 1.0, 1/1/2014\n\nCOMMENT !\nThis library was created exlusively for use with the book,\n\"Assembly Language for Intel-Based Computers\", 7th Edition,\nby Kip R. Irvine, 2014.\n\nCopyright 2014, Prentice-Hall Publishing. No part of this file may be\nreproduced, in any form or by any other means, without permission in writing\nfrom the author or publisher.\n\nWin64 API classifies RAX,RCX,RDX,R8,R9,R10,and R11 as volatile,\nso their values are not preserved across API function calls.\n!\n\n; Public procedures:\n; Crlf\n; Randomize"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\64 bit\\StringLib64Test.asm",
+        "snippet": "; testing 64-bit Windows API\t\t\t(Lib64test.asm)\n;  Chapter 5 example\n\nStr_compare\t\tproto\nStr_length\t\tproto\nStr_copy\t\t\tproto\nExitProcess \tproto\n\n.data\nsource byte \"AABCDEFGAABCDFG\",0      ; size = 15\ntarget byte 20 dup(0)\n.code\nmain proc\n\tmov   rax,offset source\n\tcall  Str_length\t\t\t\t; returns length in RAX\n\n\tmov   rsi,offset source\n\tmov   rdi,offset target\n\tcall  str_copy"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch09\\64 bit\\TwoDimArrays.asm",
+        "snippet": "; Two-dimensional arrays in 64-bit mode (TwoDimArrays.asm)\n\nCrlf\t\t\tproto\nWriteInt64  proto\nExitProcess proto\n\n.data\ntable QWORD 1,2,3,4,5\nRowSize = ($ - table)\n\t  QWORD 6,7,8,9,10\n     QWORD 11,12,13,14,15\n   \n.code\nmain proc\n; base-index-displacement operands\n\n\tmov\trax,1\t\t\t\t\t; row index (zero-based)\n\tmov\trsi,4\t\t\t\t\t; column index (zero based)\n\tcall\tget_tableVal\t\t; returns the value in RAX\n\tcall\tWriteInt64\t\t\t; and display it"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch10",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch10\\AllPoints.asm",
+      "Irvine\\irvine\\examples\\ch10\\Fibon.asm",
+      "Irvine\\irvine\\examples\\ch10\\HelloNew.asm",
+      "Irvine\\irvine\\examples\\ch10\\List.asm",
+      "Irvine\\irvine\\examples\\ch10\\Macro1.asm",
+      "Irvine\\irvine\\examples\\ch10\\Macro2.asm",
+      "Irvine\\irvine\\examples\\ch10\\Macro3.asm",
+      "Irvine\\irvine\\examples\\ch10\\MacroTest.asm",
+      "Irvine\\irvine\\examples\\ch10\\Repeat.asm",
+      "Irvine\\irvine\\examples\\ch10\\RowSum.asm",
+      "Irvine\\irvine\\examples\\ch10\\ShowTime.asm",
+      "Irvine\\irvine\\examples\\ch10\\Struct1.asm",
+      "Irvine\\irvine\\examples\\ch10\\Struct2.asm",
+      "Irvine\\irvine\\examples\\ch10\\TestDump.asm",
+      "Irvine\\irvine\\examples\\ch10\\Union.asm",
+      "Irvine\\irvine\\examples\\ch10\\Walk.asm",
+      "Irvine\\irvine\\examples\\ch10\\Wraps.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\AllPoints.asm",
+        "snippet": "; Loop Through Array       (AllPoints.asm)\n\n; Loop through the array of points and set their\n; X and Y values.\n\nINCLUDE Irvine32.inc\nNumPoints = 3\n.data\nALIGN WORD\nAllPoints COORD NumPoints DUP(<0,0>)\n\n.code\nmain PROC\n\tmov\tedi,0\t\t\t\t; array index\n\tmov\tecx,NumPoints\t\t\t; loop counter\n\tmov\tax,1\t\t\t\t\t; starting X, Y values\n\nL1:\tmov\t(COORD PTR AllPoints[edi]).X,ax\n\tmov\t(COORD PTR AllPoints[edi]).Y,ax\n\tadd\tedi,TYPE COORD"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\Fibon.asm",
+        "snippet": "; Fibonacci Numbers            (Finbon.asm)\n\n; This program shows how use the WHILE directive\n; to generate doubleword variables containing\n; all Fibonacci numbers less than a given limit.\n\nINCLUDE Irvine32.inc\n\n.data\nval1  = 1\nval2  = 1\nDWORD val1\t\t; first two values\nDWORD val2\nval3 = val1 + val2\n\nWHILE val3 LT 0F0000000h\n\tDWORD val3\n\tval1 = val2\n\tval2 = val3\n\tval3 = val1 + val2"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\HelloNew.asm",
+        "snippet": "; Macro Functions            (HelloNew.asm)\n\n; Shows how to use macros to configure\n; a program to run on multiple platforms.\n\nINCLUDE Macros.inc\nIF IsDefined( RealMode )\n\tINCLUDE Irvine16.inc\nELSE\n\tINCLUDE Irvine32.inc\nENDIF\n\n.code\nmain PROC\n\tStartup\n\n\tmWrite <\"This program can be assembled to run \",0dh,0ah>\n\tmWrite <\"in both Real mode and Protected mode.\",0dh,0ah>\n\n\texit"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\List.asm",
+        "snippet": "; Creating a Linked List            (List.asm)\n\n; This program shows how the STRUC directive\n; and the REPT directive can be combined to\n; create a linked list at assembly time.\n\nINCLUDE Irvine32.inc\n\nListNode STRUCT\n  NodeData DWORD ?\n  NextPtr  DWORD ?\nListNode ENDS\n\nTotalNodeCount = 15\nNULL = 0\nCounter = 0\n\n.data\nLinkedList LABEL PTR ListNode\nREPT TotalNodeCount"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\Macro1.asm",
+        "snippet": "TITLE Macro Examples - 1            (Macro1.ASM)\n\n; This program demonstrates the MACRO directive.\n\nINCLUDE Irvine32.inc\nINCLUDE macros.inc\n\nmPutchar MACRO char\n\tpush eax\n\tmov  al,char\n\tcall WriteChar\n\tpop  eax\nENDM\n\nmPrintChar MACRO char,count\nLOCAL temp\n.data\ntemp BYTE count DUP(&char),0\n.code\n\tpush\tedx"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\Macro2.asm",
+        "snippet": "; Useful Macros                  (Macro2.ASM)\n\n; This program demonstrates several useful macros:\n; mGotoxy, mWrite, mWriteLn, mWriteStr, mReadStr,\n; and mDumpMem.\n\nINCLUDE Irvine32.inc\n\n;-----------------------------------------------------\nmWriteStr MACRO buffer\n;\n; Improved version of mWriteStr that checks for\n; a blank argument.\n;-----------------------------------------------------\n\tIFB <buffer>\n\t  ECHO -----------------------------------------\n\t  ECHO *  Error: parameter missing in mWriteStr\n\t  ECHO *  (no code generated)\n\t  ECHO -----------------------------------------\n\t  EXITM"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\Macro3.asm",
+        "snippet": "; Using Macro Conditional Expressions          (Macro3.asm)\n\n; The MUL32 macro issues a warning and exits if EAX\n; is passed as the second argument. The Text macro LINENUM\n; must be defined first. Then, the % (expansion operator)\n; in the first column of the line containing the ECHO statement\n; causes LINENUM to be expanded into the source file line\n; number where the macro is being expanded. It is important\n; to define LINENUM inside the macro--otherwise, it just\n; returns the line number where LINENUM is declared.\n\nINCLUDE Irvine32.inc\n\nMUL32 MACRO op1, op2, product\n\tIFIDNI <op2>,<EAX>\n\t  LINENUM TEXTEQU %(@LINE)\n\t  ECHO --------------------------------------------------\n%\t  ECHO *  Error on line LINENUM: EAX cannot be the second\n\t  ECHO *  argument when invoking the MUL32 macro.\n\t  ECHO --------------------------------------------------"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\MacroTest.asm",
+        "snippet": "; Macro Library Test               (MacroTest.asm)\n\n; This program demonstrates various macros from\n; the Macros.inc file.\n\nINCLUDE Irvine32.inc\nINCLUDE Macros.inc\n\nNAME_SIZE = 50\n\n.data\nstr1 BYTE NAME_SIZE DUP(0)\narray DWORD 5 DUP(12345678h)\n\n.code\nmain PROC\n\tcall Clrscr\n\tmGotoxy 20,0\n\tmDumpMem OFFSET array,\t\\\t; array offset\n\t  LENGTHOF array,\t\\\t\t; number of units"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\Repeat.asm",
+        "snippet": "; Repeat Block Examples         (Repeat.asm)\n\n; This program demonstrates the REPEAT, FOR,\n; FORC, and WHILE directives.\n\nINCLUDE Irvine32.inc\nINCLUDE Macros.inc\n\nCOURSE STRUCT\n  Number  BYTE 9 DUP(?)\n  Credits BYTE ?\nCOURSE ENDS\n\n; A semester contains an array of courses.\nSEMESTER STRUCT\n\tCourses COURSE 6 DUP(<>)\n\tNumCourses WORD ?\nSEMESTER ENDS\n\n.data"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\RowSum.asm",
+        "snippet": "TITLE Row Sum Calculation               (RowSumMacro.asm)\n\nComment !\nTests the mCalc_row_sum macro.\n!\n\nINCLUDE Irvine32.inc\n\n;------------------------------------------------------------\nmCalc_row_sum MACRO index, arrayOffset, rowSize, eltType\n; Calculates the sum of a row in a two-dimensional array.\n;\n; Receives: row index, offset of the array, number of bytes\n; in each table row, and the array type (BYTE, WORD, or DWORD).\n; Returns: EAX = sum.\n;-------------------------------------------------------------\nLOCAL L1\n\tpush ebx ; save changed regs\n\tpush ecx\n\tpush esi"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch10\\64-bit",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch10\\64-bit\\RowSum.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch10\\64-bit\\RowSum.asm",
+        "snippet": "; 64-bit Row Sum Calculation         (RowSum.asm)\n\nComment !\nTests the mCalc_row_sum macro.\n!\n\nExitProcess PROTO\nWriteHex64 PROTO\nCrlf PROTO\n\n;------------------------------------------------------------\nmCalc_row_sum MACRO index, arrayOffset, rowSize, eltType\n; Calculates the sum of a row in a two-dimensional array.\n;\n; Receives: row index, offset of the array, number of bytes\n; in each table row, and the array type (BYTE, WORD, or DWORD).\n; Returns: RAX = sum.\n;-------------------------------------------------------------\nLOCAL L1\n\tpush rbx\t\t; save changed regs"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch11",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch11\\AppendFile.asm",
+      "Irvine\\irvine\\examples\\ch11\\CheckError.asm",
+      "Irvine\\irvine\\examples\\ch11\\Console1.asm",
+      "Irvine\\irvine\\examples\\ch11\\Console2.asm",
+      "Irvine\\irvine\\examples\\ch11\\CreateFile.asm",
+      "Irvine\\irvine\\examples\\ch11\\HeapTest1.asm",
+      "Irvine\\irvine\\examples\\ch11\\HeapTest2.asm",
+      "Irvine\\irvine\\examples\\ch11\\Keybd.asm",
+      "Irvine\\irvine\\examples\\ch11\\MessageBox.asm",
+      "Irvine\\irvine\\examples\\ch11\\PeekInput.asm",
+      "Irvine\\irvine\\examples\\ch11\\ReadCharTest.asm",
+      "Irvine\\irvine\\examples\\ch11\\ReadConsole.asm",
+      "Irvine\\irvine\\examples\\ch11\\ReadFile.asm",
+      "Irvine\\irvine\\examples\\ch11\\Scroll.asm",
+      "Irvine\\irvine\\examples\\ch11\\template.asm",
+      "Irvine\\irvine\\examples\\ch11\\TestReadkey.asm",
+      "Irvine\\irvine\\examples\\ch11\\Timer.asm",
+      "Irvine\\irvine\\examples\\ch11\\TimingLoop.asm",
+      "Irvine\\irvine\\examples\\ch11\\WinApp.asm",
+      "Irvine\\irvine\\examples\\ch11\\WriteColors.asm",
+      "Irvine\\irvine\\examples\\ch11\\WriteFile.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\AppendFile.asm",
+        "snippet": "; Appending to a File                   (AppendFile.asm)\n\n; This program appends text to an existing file.\n\nINCLUDE Irvine32.inc\n\n.data\nbuffer BYTE \"This text is appended to an output file.\",0dh,0ah\nbufSize DWORD ($-buffer)\nerrMsg BYTE \"Cannot open file\",0dh,0ah,0\nfilename     BYTE \"output.txt\",0\nfileHandle   HANDLE ?\t\t\t; handle to output file\nbytesWritten DWORD ?    \t\t\t; number of bytes written\n\n.code\nmain PROC\n\tINVOKE CreateFile,\n\t  ADDR filename, GENERIC_WRITE, DO_NOT_SHARE, NULL,\n\t  OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\CheckError.asm",
+        "snippet": "; Check for Errors             (CheckError.asm)\n\n; Demonstrates the WriteWindowsMsg function when\n; handling a Windows API error.\n\nINCLUDE Irvine32.inc\n\n.data\nfilename    BYTE \"nonexistentfile.txt\",0\nfileHandle  DWORD ?\n\n.code\nmain PROC\n\n; Attempt to open a file.\n\tmov\tedx,OFFSET filename\n\tcall\tOpenInputFile\n\tmov\tfileHandle,eax\n\n; Check for errors."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\Console1.asm",
+        "snippet": "; Win32 Console Example #1                (Console1.asm)\n\n; This program calls the following Win32 Console functions:\n; GetStdHandle, ExitProcess, WriteConsole\n\nINCLUDE Irvine32.inc\n\n.data\nendl EQU <0dh,0ah>\t\t\t; end of line sequence\n\nmessage LABEL BYTE\n\tBYTE \"This program is a simple demonstration of \"\n\tBYTE \"console mode output, using the GetStdHandle \"\n\tBYTE \"and WriteConsole functions.\", endl\nmessageSize DWORD ($-message)\n\nconsoleHandle HANDLE 0     ; handle to standard output device\nbytesWritten  DWORD ?      ; number of bytes written\n\n.code"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\Console2.asm",
+        "snippet": "; Console Demo #2                (Console2.asm)\n\n; Demonstration of SetConsoleCursorPosition,\n; GetConsoleCursorInfo, SetConsoleCursorInfo,\n; SetConsoleScreenBufferSize, SetConsoleCursorPosition,\n; SetConsoleTitle, and GetConsoleScreenBufferInfo.\n\nINCLUDE SmallWin.inc\n\n.data\noutHandle    DWORD ?\nscrSize COORD <120,50>\nxyPos COORD <20,5>\nconsoleInfo CONSOLE_SCREEN_BUFFER_INFO <>\ncursorInfo CONSOLE_CURSOR_INFO <>\ntitleStr BYTE \"Console2 Demo Program\",0\n\n.code\nmain PROC\n  ; Get Console output handle."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\CreateFile.asm",
+        "snippet": "; Creating a File\t\t\t\t\t(CreateFile.asm)\n\n; Inputs text from the user, writes the text to an output file. \n\nINCLUDE Irvine32.inc  \n\nBUFFER_SIZE = 501\n.data\nbuffer BYTE BUFFER_SIZE DUP(?)\nfilename     BYTE \"output.txt\",0\nfileHandle   HANDLE ?\nstringLength DWORD ?\nbytesWritten DWORD ?\nstr1 BYTE \"Cannot create file\",0dh,0ah,0\nstr2 BYTE \"Bytes written to file [output.txt]: \",0\nstr3 BYTE \"Enter up to 500 characters and press \"\n     BYTE \"[Enter]: \",0dh,0ah,0\n\n.code\nmain PROC"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\HeapTest1.asm",
+        "snippet": "; Heap Test #1                          (Heaptest1.asm)\n\nINCLUDE Irvine32.inc\n\n; This program uses dynamic memory allocation to allocate and \n; fill an array of bytes. \n\n.data\nARRAY_SIZE = 1000\nFILL_VAL EQU 0FFh\n\nhHeap   DWORD ?\t\t; handle to the process heap\npArray  DWORD ?\t\t; pointer to block of memory\nnewHeap DWORD ?\t\t; handle to new heap\nstr1 BYTE \"Heap size is: \",0\n\n.code\nmain PROC\n\tINVOKE GetProcessHeap\t\t; get handle to prog's heap\n\t.IF eax == NULL\t\t\t; failed?"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\HeapTest2.asm",
+        "snippet": "; Heap Test #2                     (Heaptest2.asm)\n\nINCLUDE Irvine32.inc\n\n; Creates a heap and allocates multiple memory blocks, \n; expanding the heap until it fails.\n\n.data\nHEAP_START =   2000000\t;   2 MB\nHEAP_MAX  =  400000000\t; 400 MB\nBLOCK_SIZE =    500000\t;  .5 MB\n\nhHeap DWORD ?\t\t\t; handle to the heap\npData DWORD ?\t\t\t; pointer to block\n\nstr1 BYTE 0dh,0ah,\"Memory allocation failed\",0dh,0ah,0\n\n.code\nmain PROC\n\tINVOKE HeapCreate, 0,HEAP_START, HEAP_MAX"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\Keybd.asm",
+        "snippet": "; Keyboard Toggle Keys             (Keybd.asm)\n\n; This program shows how to detect the states of various\n; keyboard toggle keys. Before you run the program, hold\n; down a selected key.\n\nINCLUDE Irvine32.inc\nINCLUDE Macros.inc\n\n; GetKeyState sets bit 0 in EAX if a toggle key is\n; currently on (CapsLock, NumLock, ScrollLock).\n; It sets the high bit of EAX if the specified key is\n; currently down.\n\n.code\nmain PROC\n\n\tINVOKE GetKeyState, VK_NUMLOCK\n\ttest al,1\n\t.IF !Zero?"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\MessageBox.asm",
+        "snippet": "; Demonstrate MessageBoxA           (MessageBox.asm)\n\n; Demonstration of the Windows API MessageBox function, using\n; various icons and button configurations.\n\nINCLUDE Irvine32.inc\n\n.data\ncaptionW\t\tBYTE \"Warning\",0\nwarningMsg\tBYTE \"The current operation may take years \"\n\t\t\t\tBYTE \"to complete.\",0\n\ncaptionQ\t\tBYTE \"Question\",0 \nquestionMsg\tBYTE \"A matching user account was not found.\"\n\t\t\t\tBYTE 0dh,0ah,\"Do you wish to continue?\",0\t\n\ncaptionC\t\tBYTE \"Information\",0\ninfoMsg\t\tBYTE \"Select Yes to save a backup file \"\n\t\t\t\tBYTE \"before continuing,\",0dh,0ah\n\t\t\t\tBYTE \"or click Cancel to stop the operation\",0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch11\\PeekInput.asm",
+        "snippet": "; Using PeekConsoleInput          (PeekInput.asm)\n\nCOMMENT @\nThis program shows how to get single key input by\ncalling PeekConsoleInput.\nThanks to Richard Stam for his first version of this code.\n\nMore analysis is still to be done on this topic, because the\ncurrent version does not recognize keyboard combinations such as\nCtrl-F1 or Alt-F2. The Ctrl and Shift keys are returned as separate\nkeystrokes in themselves. The MS-Windows virtual keycodes do not\nseem to include these combinations.\n@\n\nINCLUDE Irvine32.inc\nINCLUDE Macros.inc\n\nEVENT_BUFFER_SIZE = 1\n\n.data"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch12",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch12\\Exceptions.asm",
+      "Irvine\\irvine\\examples\\ch12\\Expr.asm",
+      "Irvine\\irvine\\examples\\ch12\\expressions.asm",
+      "Irvine\\irvine\\examples\\ch12\\FCompare.asm",
+      "Irvine\\irvine\\examples\\ch12\\floatTest32.asm",
+      "Irvine\\irvine\\examples\\ch12\\fltTst16.asm",
+      "Irvine\\irvine\\examples\\ch12\\LoadAndStore.asm",
+      "Irvine\\irvine\\examples\\ch12\\LossOfPrecision.asm",
+      "Irvine\\irvine\\examples\\ch12\\MixedMode.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\Exceptions.asm",
+        "snippet": "; Unmasking an Exception  \t(Exceptions.asm)\n\n; This program shows how to mask (set) and unmask (clear) the divide by zero\n; exception flag.\n\nINCLUDE Irvine32.inc\n\n.data\nctrlWord WORD ?\nval1 DWORD 1\nval2 REAL8 0.0\n\n.code\nmain PROC\n\tfinit\t\t; initialize FPU (divide by zero is masked)\n\n; By unmasking, we enable the divide by zero exception.\n\n\tfstcw\tctrlWord\t\t\t\t; get the control word\n\tand\tctrlWord,1111111111111011b\t; unmask Divide by 0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\Expr.asm",
+        "snippet": "; FPU Expression Evaluation              (Expr.asm)\n\n; This program implements the following expression, using \n; floating-point instructions:\n\n;     (6.0 * 2.0) + (4.5 * 3.2)\n\nINCLUDE Irvine32.inc\t; 32-bit Protected mode program.\n\n.data\narray      REAL4 6.0, 2.0, 4.5, 3.2\ndotProduct REAL4 ?\n\n.code\nmain PROC\n\tfinit\t\t\t; initialize FPU\n\t\n\tfld\tarray\t\t; push 6.0 onto the stack\n\tfmul\tarray+4\t\t; ST(0) = 6.0 * 2.0\n\tcall\tShowFPUStack"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\expressions.asm",
+        "snippet": "; Floating-Point Expressions          (Expressions.asm)\n\n; This program shows how different mathematical\n; expressions are coded in floating-point instructions.\n\nINCLUDE Irvine32.inc\nINCLUDE macros.inc\n\n.code\nmain PROC\n\tfinit\n\n;---------------- Test FIDIV -------------------\n.data\nintOne WORD 20\nintTwo WORD 10\n.code\n\tfild\tintOne\n\tfidiv\tintTwo\n\tcall\tShowFPUStack"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\FCompare.asm",
+        "snippet": "; Comparing Floating-Point Values\t\t(FCompare.asm)\n\n; This program demonstrates ways of comparing\n; floating-point values.\n\nINCLUDE Irvine32.inc\nINCLUDE macros.inc\n\n.code\nmain PROC\n\n\tcall compare_for_equality\n\tcall compare_for_inequality\n\n\texit\nmain ENDP\n\n;--------------------------------------------------\ncompare_for_equality PROC\n;--------------------------------------------------"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\floatTest32.asm",
+        "snippet": "; 32-bit Floating-Point I/O Test  \t(floatTest32.asm)\n\n; This program demonstrates floating-point\n; I/O procedures in the Irvine32 library.\n\nINCLUDE Irvine32.inc\nINCLUDE macros.inc\n\n.data\nfirst  REAL8 123.456\nsecond REAL8 10.0\nthird  REAL8 ?\n\n.code\nmain PROC\n\tfinit\t\t\t\t\t; initialize FPU\n\n; Push two floats and display the FPU stack.\n\tfld\tfirst\n\tfld\tsecond"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\fltTst16.asm",
+        "snippet": "; 16-bit Floating-Point I/O Test \t(fltTst16.asm)\n\n; Testing floating-point procedures in the Irvine16 library.\n\nINCLUDE Irvine16.inc\nINCLUDE macros.inc\n\n.data\nfirst  REAL8 123.456\nsecond REAL8 10.0\nthird  REAL8 ?\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax\n\tfinit\t\t; initialize FPU\n\n; Add two floats, display their sum, and\n; display the FPU stack."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\LoadAndStore.asm",
+        "snippet": "; Load and Store (floats)       (LoadAndStore.asm)\n\n; This program demonstrates the use of Load and Store \n; instructions in the FPU instruction set.\n\nINCLUDE Irvine32.inc\n\n.code\nmain PROC\n\n.data\ndblOne   REAL8  1234.56\ndblTwo   REAL8  10.1\n\ndblThree REAL8 ?\ndblFour  REAL8 ?\n\nbigVal   REAL10 1.0123456789012345E+864\n\n.code"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\LossOfPrecision.asm",
+        "snippet": "; Floating-Point PrecisionLoss          (LossOfPrecision.asm)\n\n; This program demonstrates a simple rounding error in \n; often encountered in floating-point operations. Also, the\n; program shows how to compare real numbers by examining the\n; epsilon (absolute value of the difference) between the numbers.\n\nINCLUDE Irvine32.inc\nINCLUDE macros.inc\n\n.code\nmain PROC\n\tfinit\n\tcall\tshow_rounding_error\n\tcall\tcomparing_reals\n\n\texit\nmain ENDP\n\n;------------------------------------------"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch12\\MixedMode.asm",
+        "snippet": "; Mixed-Mode FPU Arithmetic      (MixedMode.asm)\n\n; This program demonstrates mixed-mode arithmetic using \n; reals and integers. Also, it demonstrates the multiplication \n; and division of reals, as well as the SQRT instruction.\n\nINCLUDE Irvine32.inc\n\n.code\nmain PROC\n\n; ------------- Mixed-mode arithmetic ---------------\n; Implement the following expression: Z = (int) (N + X)\n.data\nN SDWORD 20\nX REAL8 3.5\nZ SDWORD ?\nctrlWord WORD ?\n\n.code"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\Addem",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\Addem\\addem.asm",
+      "Irvine\\irvine\\examples\\ch13\\Addem\\addMain.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Addem\\addem.asm",
+        "snippet": "; The addem Subroutine    (addem.asm)\n\n; This subroutine links to Visual C++.\n\n.386P\n.model flat\npublic _addem\n\n.code\n_addem proc near\n    push   ebp\n    mov    ebp,esp\n    mov    eax,[ebp+16]    ; first argument\n    add    eax,[ebp+12]    ; second argument\n    add    eax,[ebp+8]     ; third argument\n    pop    ebp\n    ret                   \n_addem endp\nend"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Addem\\addMain.cpp",
+        "snippet": "// Addem Main Program      (AddMain.cpp) \n\n#include <iostream>\nusing namespace std;\n\nextern \"C\" int addem(int p1, int p2, int p3);\n\nint main()\n{\n  int total = addem( 10, 15, 25 );\n  cout << \"Total = \" << total << endl;\n\n  return 0;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\ArraySum_bak",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum.cpp",
+      "Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum_debug.asm",
+      "Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum_OLD.asm",
+      "Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum_release.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum.cpp",
+        "snippet": "void MySub()\n{\n\tchar A = 'A';\n\tint B = 10;\n\tchar name[20];\n\tname[0] = 'B';\n\tdouble c = 1.2;\n}\n\n\nint ArraySum( int array[], int count )\n{\n\tint sum = 0;\n\n\tfor(int i = 0; i < count; i++)\n\t  sum += array[i];\n\t\n\treturn sum;\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum_debug.asm",
+        "snippet": "; Listing generated by Microsoft (R) Optimizing Compiler Version 13.10.3077 \n\n\tTITLE\t.\\ArraySum.cpp\n\t.386P\ninclude listing.inc\nif @Version gt 510\n.model FLAT\nelse\n_TEXT\tSEGMENT PARA USE32 PUBLIC 'CODE'\n_TEXT\tENDS\n_DATA\tSEGMENT DWORD USE32 PUBLIC 'DATA'\n_DATA\tENDS\nCONST\tSEGMENT DWORD USE32 PUBLIC 'CONST'\nCONST\tENDS\n_BSS\tSEGMENT DWORD USE32 PUBLIC 'BSS'\n_BSS\tENDS\n$$SYMBOLS\tSEGMENT BYTE USE32 'DEBSYM'\n$$SYMBOLS\tENDS\n$$TYPES\tSEGMENT BYTE USE32 'DEBTYP'\n$$TYPES\tENDS"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum_OLD.asm",
+        "snippet": "TITLE\tD:\\Kip\\AsmBook4\\Examples\\HLL_Linking\\VisualCPP\\ArraySum\\ArraySum.cpp\n\t.386P\ninclude listing.inc\n.model FLAT\n\nPUBLIC\t?MySub@@YAXXZ\t\t\t\t\t; MySub\nEXTRN\t__fltused:NEAR\n\n_TEXT\tSEGMENT\n\n_A$ = -4\n_B$ = -8\n_name$ = -28\n_c$ = -36\n\n?MySub@@YAXXZ PROC NEAR\t\t\t\t\t; MySub, COMDAT\n\n\tpush\tebp\n\tmov\tebp, esp\n\tsub\tesp, 100\t\t\t\t; local variables"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\ArraySum_bak\\ArraySum_release.asm",
+        "snippet": "; Listing generated by Microsoft (R) Optimizing Compiler Version 13.10.3077 \n\n\tTITLE\t.\\ArraySum.cpp\n\t.386P\ninclude listing.inc\nif @Version gt 510\n.model FLAT\nelse\n_TEXT\tSEGMENT PARA USE32 PUBLIC 'CODE'\n_TEXT\tENDS\n_DATA\tSEGMENT DWORD USE32 PUBLIC 'DATA'\n_DATA\tENDS\nCONST\tSEGMENT DWORD USE32 PUBLIC 'CONST'\nCONST\tENDS\n_BSS\tSEGMENT DWORD USE32 PUBLIC 'BSS'\n_BSS\tENDS\n$$SYMBOLS\tSEGMENT BYTE USE32 'DEBSYM'\n$$SYMBOLS\tENDS\n$$TYPES\tSEGMENT BYTE USE32 'DEBTYP'\n$$TYPES\tENDS"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\ArraySum_C\\ArraySum_C",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\ArraySum_C\\ArraySum_C\\ArraySum.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\ArraySum_C\\ArraySum_C\\ArraySum.c",
+        "snippet": "// ArraySum.c\n\nint arraySum( int array[], int count )\n{\n\tint i;\n\tint sum = 0;\n\n\tfor(i = 0; i < count; i++)\n\t  sum += array[i];\n\t\n\treturn sum;\n}\n\n\nvoid main()\n{\n\tint array[10] = {1,2,3,4,5,6,7,8,9,10};\n\n\tint sum = arraySum( array, 50 );"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\C_Language_Project\\C_Language_Project",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\C_Language_Project\\C_Language_Project\\asmMain.asm",
+      "Irvine\\irvine\\examples\\ch13\\C_Language_Project\\C_Language_Project\\main.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\C_Language_Project\\C_Language_Project\\asmMain.asm",
+        "snippet": "TITLE Test Floating-point output       (asmMain.asm)\n\n; Test the printf and scanf functions from the C library.\n\nINCLUDE Irvine32.inc\n\nTAB = 9\n\n.code\nasmMain PROC C\n\n;---------- test the printf function --------------\n; Do not pass REAL4 variables to printf using INVOKE!\n\n.data\nformatTwo BYTE \"%.2f\",TAB,\"%.3f\",0dh,0ah,0\nval1 REAL8 456.789\nval2 REAL8 864.231\n.code\nINVOKE printf, ADDR formatTwo, val1, val2"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\C_Language_Project\\C_Language_Project\\main.c",
+        "snippet": "// A C program\n\n#include <stdio.h>\n\nextern int asmMain();\n\nint main() {\n\tprintf(\"Hello world\\n\");\n\n\tasmMain();\n\n\tgetchar();\n\n\treturn 0;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\DirectoryListing",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\DirectoryListing\\asmMain.asm",
+      "Irvine\\irvine\\examples\\ch13\\DirectoryListing\\startup.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\DirectoryListing\\asmMain.asm",
+        "snippet": "; ASM program launched from C++    (asmMain.asm)\n \n.586\n.MODEL flat,C\n\n; Standard C library functions:\nsystem PROTO, pCommand:PTR BYTE\nprintf PROTO, pString:PTR BYTE, args:VARARG\nscanf  PROTO, pFormat:PTR BYTE,pBuffer:PTR BYTE, args:VARARG\nfopen  PROTO, mode:PTR BYTE, filename:PTR BYTE\nfclose PROTO, pFile:DWORD\n\nBUFFER_SIZE = 5000\n.data\nstr1 BYTE \"cls\",0\nstr2 BYTE \"dir/w\",0\nstr3 BYTE \"Enter the name of a file: \",0\nstr4 BYTE \"%s\",0\nstr5 BYTE \"cannot open file\",0dh,0ah,0\nstr6 BYTE \"The file has been opened and closed\",0dh,0ah,0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\DirectoryListing\\startup.cpp",
+        "snippet": "// startup.cpp\n\n// stub module: launches assembly language program\n\nextern \"C\" void asm_main();\t\t// asm startup proc\n\nvoid main()\n{\n\tasm_main();\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\Encode",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\Encode\\Encode.cpp",
+      "Irvine\\irvine\\examples\\ch13\\Encode\\translat.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Encode\\Encode.cpp",
+        "snippet": "// ENCODE.CPP - Copy and encrypt a file.\n\n// Updated 6/30/05\n\n#include <iostream>\n#include <fstream>\n#include \"translat.h\"\n\nusing namespace std;\n\nint main( int argcount, char * args[] ) \n{  \n\t// Read input and output files from the command line.\n\tif( argcount < 3 ) {\n\t\tcout << \"Usage: encode infile outfile\" << endl;\n\t\treturn -1;\n\t}\n\n\tconst int BUFSIZE = 2000;\n\tchar buffer[BUFSIZE];"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Encode\\translat.cpp",
+        "snippet": "// translat.cpp\n\n#include \"translat.h\"\n\n\n/* Translate a buffer of <count> bytes, using an encryption\n   character <eChar>. Uses an XOR operation (ASM function).*/\n\nvoid TranslateBuffer( char * buf, unsigned count, \n                      unsigned char eChar )\n{\n  __asm {\n     mov esi,buf     ; set index register\n     mov ecx,count   /* set loop counter */\n     mov al,eChar \n  L1:\n     xor [esi],al\n     inc  esi\n     Loop L1\n } // asm"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\Encode_Inline",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\Encode_Inline\\Encode.cpp",
+      "Irvine\\irvine\\examples\\ch13\\Encode_Inline\\translat.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Encode_Inline\\Encode.cpp",
+        "snippet": "// ENCODE.CPP - Copy and encrypt a file.\n\n// Updated 6/28/05\n\n#include <iostream>\n#include <fstream>\n#include \"translat.h\"\n\nusing namespace std;\n\nvoid main( int argcount, char * args[] ) \n{  \n\t// Read input and output files from the command line.\n\tif( argcount < 3 ) {\n\t\tcout << \"Usage: encode infile outfile\" << endl;\n\t\treturn;\n\t}\n\n  const int BUFSIZE = 2000;\n  char buffer[BUFSIZE];"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Encode_Inline\\translat.cpp",
+        "snippet": "// translat.cpp\n\n#include \"translat.h\"\n\n\n/* Translate a buffer of <count> bytes, using an encryption\n   character <eChar>. Uses an XOR operation (ASM function).*/\n\nvoid TranslateBuffer( char * buf, unsigned count, \n                      unsigned char eChar )\n{\n  __asm {\n     mov esi,buf     ; set index register\n     mov ecx,count   /* set loop counter */\n     mov al,eChar \n  L1:\n     xor [esi],al\n     inc  esi\n     Loop L1\n } // asm"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\IndexOf_asm",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\IndexOf_asm\\indexof.asm",
+      "Irvine\\irvine\\examples\\ch13\\IndexOf_asm\\main.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\IndexOf_asm\\indexof.asm",
+        "snippet": "; IndexOf function      (IndexOf.asm)\n\n.586\n.model flat,C\nIndexOf PROTO,\n\tsrchVal:DWORD, arrayPtr:PTR DWORD, count:DWORD\n\n.code\n;-----------------------------------------------\nIndexOf PROC uses ecx esi edi,\n\tsrchVal:DWORD, arrayPtr:PTR DWORD, count:DWORD\n;\n; Performs a linear search of a 32-bit integer array,\n; looking for a specific value. If the value is found,\n; the matching index position is returned in EAX; \n; otherwise, EAX equals -1.\n;-----------------------------------------------\n\tNOT_FOUND = -1\n\n \tmov  eax,srchVal    \t\t\t; search value"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\IndexOf_asm\\main.cpp",
+        "snippet": "// main.cpp - Testing the IndexOf function.\n\n#include <iostream>\n#include <time.h>\n#include \"indexof.h\"\nusing namespace std;\n\nint main()  {\n\t// Fill an array with pseudorandom integers.\n\tconst unsigned ARRAY_SIZE = 100000; \n\tconst unsigned LOOP_SIZE = 30000;\n\tchar* boolstr[] = {\"false\",\"true\"};\n\n\tlong array[ARRAY_SIZE]; \n\tfor(unsigned i = 0; i < ARRAY_SIZE; i++) {\n     array[i] = rand() % 50000;\n\t}\n\t\n\tlong searchVal;\n\ttime_t startTime, endTime;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\IndexOf_cpp",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\IndexOf_cpp\\IndexOf.cpp",
+      "Irvine\\irvine\\examples\\ch13\\IndexOf_cpp\\main.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\IndexOf_cpp\\IndexOf.cpp",
+        "snippet": "// IndexOf.cpp\n\n// Implements a linear search of an array of\n// long integers.\n\n#include \"indexof.h\"\n\nlong IndexOf( long searchVal, long array[], unsigned count )\n{\n\tfor(unsigned i = 0; i < count; i++) {\n\t\tif( array[i] == searchVal )\n\t\t\treturn i;\n\t}\n  return -1;\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\IndexOf_cpp\\main.cpp",
+        "snippet": "// main.cpp - Testing the IndexOf function.\n\n#include <iostream>\n#include <time.h>\n#include \"indexof.h\"\nusing namespace std;\n\nint main()  {\n\t// Fill an array with pseudorandom integers.\n\tconst unsigned ARRAY_SIZE = 100000; \n\tconst unsigned LOOP_SIZE = 30000;\n\tchar* boolstr[] = {\"false\",\"true\"};\n\n\tlong array[ARRAY_SIZE]; \n\tfor(unsigned i = 0; i < ARRAY_SIZE; i++)\n     array[i] = rand();\n\n\tlong searchVal;\n\ttime_t startTime, endTime;\n\tcout << \"Enter an integer value to find: \";"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\InlineTest",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\InlineTest\\inlineTest.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\InlineTest\\inlineTest.cpp",
+        "snippet": "// test1.cpp - Test Inline Operators\n\n#pragma warning (disable:4101)\n// disable warning about unreferenced local variables\n\n#include <iostream>\n\nint main()\n{\n\tstd::cout << \"(this program generates no output)\\n\\n\";\n\nstruct Package {\n  long originZip;        // 4\n  long destinationZip;   // 4\n  float shippingPrice;   // 4\n};\n  \n   char myChar;\n   bool myBool;\n   short myShort;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\MultiplicationTable",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\MultiplicationTable\\main.cpp",
+      "Irvine\\irvine\\examples\\ch13\\MultiplicationTable\\subr.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\MultiplicationTable\\main.cpp",
+        "snippet": "// main.cpp\n\n// Demonstrates function calls between a C++ program\n// and an external assembly language module.\n// Last update: 6/24/2005\n\n#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nextern \"C\" {\n\t// external ASM procedures:\n\tvoid DisplayTable();\n\tvoid SetTextOutColor( unsigned color );\n\n\t// local C++ functions:\n\tint askForInteger();\n\tvoid showInt( int value, int width );\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\MultiplicationTable\\subr.asm",
+        "snippet": "; Multiplication Table program       (subr.asm)\n\n; Calls external C++ functions.\n\nINCLUDE Irvine32.inc\n\naskForInteger PROTO C\nshowInt PROTO C, value:SDWORD, outWidth:DWORD\n\nOUT_WIDTH = 8\nENDING_POWER = 10\n\n.data\nintVal DWORD ?\n\n.code\n;---------------------------------------------\nSetTextOutColor PROC C, \n\tcolor:DWORD\n;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\Printf_Example",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\Printf_Example\\asmMain.asm",
+      "Irvine\\irvine\\examples\\ch13\\Printf_Example\\asmMain_stub.asm",
+      "Irvine\\irvine\\examples\\ch13\\Printf_Example\\main.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Printf_Example\\asmMain.asm",
+        "snippet": "TITLE Test Floating - point output       (asmMain.asm)\n\n; Test the printf and scanf functions from the C library.\n; Test the printSingle function in the C++ module.\n\nINCLUDE Irvine32.inc\n\n; printSingle is a function in the startup C++ program,\n; which will be called from this module.\n\nprintSingle PROTO C,\naSingle:REAL4,\n\tprecision : DWORD\n\n\tTAB = 9\n\n\t.code\nasmMain PROC C\t\t\t; Entry point for this module\n\n;---------- test the printf function --------------"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Printf_Example\\asmMain_stub.asm",
+        "snippet": "TITLE Stub program for asmMain     (asmMain_stub.asm)\n\n; Use this file as a starting point for creating a main\n; ASM module called by C++. Its use is explained in the book\n; in Section 12.3.4.1.\n\n.386\n.model flat,stdcall\n.stack 2000\n\n.code\nasmMain PROC C\n\n\tret\nasmMain ENDP\n\nEND"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Printf_Example\\main.cpp",
+        "snippet": "// main.cpp\n\n#include <stdio.h>\n\nextern \"C\" void asmMain( );\nextern \"C\" void printSingle( float d, int precision );\n\nvoid printSingle(float d, int precision)\n{\n\tprintf(\"%f\", d);\n}\n\n/*\nvoid printSingle( float d, int precision )\n{\n\tstrstream temp;\n\ttemp << \"%.\" << precision << \"f\" << '\\0';\n\tprintf(temp.str( ), d );\n}*/"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\Printf_Example - C language",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\Printf_Example - C language\\asmMain.asm",
+      "Irvine\\irvine\\examples\\ch13\\Printf_Example - C language\\asmMain_stub.asm",
+      "Irvine\\irvine\\examples\\ch13\\Printf_Example - C language\\main.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Printf_Example - C language\\asmMain.asm",
+        "snippet": "TITLE Test Floating-point output       (asmMain.asm)\n\n; Test the printf and scanf functions from the C library.\n; Test the printSingle function in the C++ module.\n; Last update: 7/30/05\n\nINCLUDE Irvine32.inc\n\nprintSingle PROTO C,\n\taSingle:REAL4, \n\tprecision:DWORD\n\nprintf PROTO C,\n\tformat:PTR BYTE, args:VARARG\n\nTAB = 9\n\n.code\nasmMain PROC C"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Printf_Example - C language\\asmMain_stub.asm",
+        "snippet": "TITLE Stub program for asmMain     (asmMain_stub.asm)\n\n; Use this file as a starting point for creating a main\n; ASM module called by C++. Its use is explained in the book\n; in Section 12.3.4.1.\n\n.386\n.model flat,stdcall\n.stack 2000\n\n.code\nasmMain PROC C\n\n\tret\nasmMain ENDP\n\nEND"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Printf_Example - C language\\main.c",
+        "snippet": "// main.c\n\n#include <stdio.h>\n\nextern void _asmMain( );\nextern void _printSingle( float d, int precision );\n\nint main( )\n{\n\tasmMain( );\n\treturn 0;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch13\\Strings",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch13\\Strings\\strings.asm",
+      "Irvine\\irvine\\examples\\ch13\\Strings\\strings.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Strings\\strings.asm",
+        "snippet": "TITLE\tstrings.cpp\n\t.386P\ninclude listing.inc\nif @Version gt 510\n.model FLAT\nelse\n_TEXT\tSEGMENT PARA USE32 PUBLIC 'CODE'\n_TEXT\tENDS\n_DATA\tSEGMENT DWORD USE32 PUBLIC 'DATA'\n_DATA\tENDS\nCONST\tSEGMENT DWORD USE32 PUBLIC 'CONST'\nCONST\tENDS\n_BSS\tSEGMENT DWORD USE32 PUBLIC 'BSS'\n_BSS\tENDS\n$$SYMBOLS\tSEGMENT BYTE USE32 'DEBSYM'\n$$SYMBOLS\tENDS\n$$TYPES\tSEGMENT BYTE USE32 'DEBTYP'\n$$TYPES\tENDS\n_TLS\tSEGMENT DWORD USE32 PUBLIC 'TLS'\n_TLS\tENDS"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch13\\Strings\\strings.cpp",
+        "snippet": "// strings.cpp\n\n// The strings example was designed to show how C++ creates\n// stack space for a local variable (a string).\n\n#include <string.h>\n\nextern \"C\" void MakeString()\n{\n\tchar firstName[20];\n\tstrcpy(firstName,\"tim\");\n}\n\nvoid main()\n{\n\tMakeString();\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch14",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch14\\Binfile.asm",
+      "Irvine\\irvine\\examples\\ch14\\DateTime.asm",
+      "Irvine\\irvine\\examples\\ch14\\Encrypt.asm",
+      "Irvine\\irvine\\examples\\ch14\\Fileio.asm",
+      "Irvine\\irvine\\examples\\ch14\\Hello.asm",
+      "Irvine\\irvine\\examples\\ch14\\Hello2.asm",
+      "Irvine\\irvine\\examples\\ch14\\Keybd.asm",
+      "Irvine\\irvine\\examples\\ch14\\Readfile.asm",
+      "Irvine\\irvine\\examples\\ch14\\Test16.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Binfile.asm",
+        "snippet": "; Binary File Program         (Binfile.asm)\n\n; This program creates a binary file containing \n; an array of doublewords.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nmyArray DWORD 50 DUP(?)\n\nfileName   BYTE \"binary array file.bin\",0\nfileHandle WORD ?\ncommaStr   BYTE \", \",0\n\n; Set CreateFile to zero if you just want to\n; read and display the existing binary file.\nCreateFile = 1\n\n.code"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\DateTime.asm",
+        "snippet": "; Display the Date and Time     (DateTime.asm)\n\n; This Real-mode program displays the date and time.\n; Last update: 06/01/2006\n\nInclude Irvine16.inc\n\nWrite PROTO char:BYTE\n.data\nstr1 BYTE \"Date: \",0\nstr2 BYTE \",  Time: \",0\n\n.code\nmain PROC\n\tmov  ax,@data\n\tmov  ds,ax\n\n; Display the date:\n\tmov   dx,OFFSET str1\n\tcall  WriteString"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Encrypt.asm",
+        "snippet": "; Encryption Program               (Encrypt.asm)\n\n; This program uses MS-DOS function calls to\n; read and encrypt a file. Run it from the\n; command prompt, using redirection:\n\n;    Encrypt < infile.txt > outfile.txt\n\n; Function 6 is also used for output, to avoid\n; filtering ASCII control characters.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\nXORVAL = 239\t\t\t; any value between 0-255\n.code\nmain PROC\n\tmov   ax,@data\n\tmov   ds,ax\n\nL1:"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Fileio.asm",
+        "snippet": "; Extended Open/Create            (Fileio.asm)\n\n; Demonstration of 16-bit File I/O.\n; The complete program does not appear in the text, but\n; excerpts appear.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nDate WORD ?\nhandle WORD ?\nactionTaken WORD ?\nFileName BYTE \"long_filename.txt\",0\nNewFile  BYTE \"newfile.txt\",0\ncannotCreate BYTE \"Cannot create newfile.txt\",0dh,0ah,0\ncannotOpen   BYTE \"Cannot open long_filename.txt\",0dh,0ah,0\nfailedMsg    BYTE \"Cannot create or open newfile.txt\",0dh,0ah,0\n\n.code"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Hello.asm",
+        "snippet": "; Hello World Program         (Hello.asm)\n\n.MODEL small\n.STACK 100h\n.386\n\n.data\nmessage BYTE \"Hello, world!\",0dh,0ah\n\n.code\nmain PROC\n\tmov\tax,@data\t\t\t\t; initialize DS\n\tmov\tds,ax\n\n\tmov\tah,40h\t\t\t\t; write to file/device\n\tmov\tbx,1\t\t\t\t\t; output handle\n\tmov\tcx,SIZEOF message\t\t; number of bytes\n\tmov\tdx,OFFSET message\t\t; addr of buffer\n\tint\t21h"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Hello2.asm",
+        "snippet": "; Hello World Program         (Hello2.asm)\n\n.MODEL small\n.STACK 100h\n.386\n\n.data\nmessage BYTE \"Hello, world!\",0dh,0ah\n\n.code\nmain PROC\n\t.STARTUP\n\n\tmov\tah,40h\t\t\t; write to file/device\n\tmov\tbx,1\t\t\t\t; output handle\n\tmov\tcx,SIZEOF message\t; number of bytes\n\tmov\tdx,OFFSET message\t; addr of buffer\n\tint\t21h\n\n    .EXIT"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Keybd.asm",
+        "snippet": "; Buffered Keyboard Input         (Keybd.asm)\n\n; Test function 3Fh, read from file or device\n; with the keyboard. Flush the buffer.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nfirstName BYTE 15 DUP(?),0\nlastName  BYTE 30 DUP(?),0\n\n.code\nmain PROC\n   mov  ax,@data\n   mov  ds,ax\n\n; Input the first name:\n\tmov  ah,3Fh\n\tmov  bx,0\t\t\t\t\t; keyboard handle"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Readfile.asm",
+        "snippet": "; Read a text file         (Readfile.asm)\n\n; Read, display, and copy a text file.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nBufSize = 5000\ninfile    BYTE \"my_text_file.txt\",0\noutfile   BYTE \"my_output_file.txt\",0\ninHandle  WORD ?\noutHandle WORD ?\nbuffer    BYTE BufSize DUP(?)\nbytesRead WORD ?\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Test16.asm",
+        "snippet": "; Testing the Link Library \t        (Test16.asm)\n\n; Use this program to test individual Irvine16\n; library procedures.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.code\nmain PROC\n\tmov ax,@data\n\tmov ds,ax\n\n\tcall ReadHex\n\tcall DumpRegs\n\n\texit\nmain ENDP\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Project\\main.asm",
+        "snippet": "; MASM Template\t\t\t\t\t\t(main.asm)\n\n; Description:\n; \n; Revision date:\n\nINCLUDE Irvine32.inc\n.data\nmyMessage BYTE \"MASM program example\",0dh,0ah,0\n\n\n.code\nmain PROC\n\tcall Clrscr  \n\n\n\tmov\t edx,offset myMessage\n\tcall WriteString\n\n\texit"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch14\\Project",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch14\\Project\\main.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch14\\Project\\main.asm",
+        "snippet": "; MASM Template\t\t\t\t\t\t(main.asm)\n\n; Description:\n; \n; Revision date:\n\nINCLUDE Irvine32.inc\n.data\nmyMessage BYTE \"MASM program example\",0dh,0ah,0\n\n\n.code\nmain PROC\n\tcall Clrscr  \n\n\n\tmov\t edx,offset myMessage\n\tcall WriteString\n\n\texit"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch15",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch15\\Cluster.asm",
+      "Irvine\\irvine\\examples\\ch15\\DiskSpc.asm",
+      "Irvine\\irvine\\examples\\ch15\\Sector.asm",
+      "Irvine\\irvine\\examples\\ch15\\Sector32.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch15\\Cluster.asm",
+        "snippet": "TITLE  Cluster Display Program           (Cluster.asm)\n\n; This program reads the directory of drive A, decodes\n; the file allocation table, and displays the list of\n; clusters allocated to each file.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n; Attributes specific to 1.44MB diskettes:\nFATSectors = 9\t\t; num sectors, first copy of FAT\nDIRSectors = 14\t; num sectors, root directory\nDIR_START = 19\t\t; starting directory sector num\n\nSECTOR_SIZE = 512\nDRIVE_A = 0\nFAT_START = 1\t\t; starting sector of FAT\nEOLN equ <0dh,0ah>\n\nDirectory STRUCT"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch15\\DiskSpc.asm",
+        "snippet": "TITLE Disk Free Space                  (DiskSpc.asm)\n\n; This program calls INT 21h Function 7303h, to get free \n; space information on a FAT-type drive volume. It \n; displays both the volume size and free space. Works \n; under Windows 95/98/Me, but not under Windows NT/2000/XP.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nbuffer ExtGetDskFreSpcStruc <>\ndriveName BYTE \"C:\\\",0\nstr1 BYTE \"Volume size (KB): \",0\nstr2 BYTE \"Free space (KB):  \",0\nstr3 BYTE \"Function call failed.\",0dh,0ah,0\n\n.code\nmain PROC\n\tmov\tax,@data"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch15\\Sector.asm",
+        "snippet": "TITLE Sector Display Program              (Sector.asm)\n\n; Demonstrates INT 21h function 7305h (ABSDiskReadWrite)\n; This Real-mode program reads and displays disk sectors.\n; Works on FAT16 & FAT32 file systems running under Windows\n; 95, 98, and Millenium.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\nSetcursor PROTO, row:BYTE, col:BYTE\nEOLN EQU <0dh,0ah>\nESC_KEY = 1Bh\nDATA_ROW = 5\nDATA_COL = 0\nSECTOR_SIZE = 512\nREAD_MODE = 0\t\t; for Function 7505h\n\nDiskIO STRUCT\n\tstartSector DWORD ?\t\t; starting sector number"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch15\\Sector32.asm",
+        "snippet": "TITLE Sector Display Program              (Sector32.asm)\n\n; Demonstrates INT 21h function 7305h (ABSDiskReadWrite)\n; This Real-mode program reads and displays disk sectors.\n; Works on FAT16 & FAT32 file systems running under Windows\n; 95, 98, and Millenium.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\nSetcursor PROTO, row:BYTE, col:BYTE\nEOLN EQU <0dh,0ah>\nESC_KEY = 1Bh\nDATA_ROW = 5\nDATA_COL = 0\nSECTOR_SIZE = 512\nREAD_MODE = 0\t\t\t\t\t; for Function 7505h\n\nDiskIO STRUCT\n\tstartSector DWORD ?\t\t\t; starting sector number\n\tnumSectors  WORD 1\t\t\t; number of sectors"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch16",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch16\\ClearKbd.asm",
+      "Irvine\\irvine\\examples\\ch16\\ColorSt2.asm",
+      "Irvine\\irvine\\examples\\ch16\\Colorstr.asm",
+      "Irvine\\irvine\\examples\\ch16\\Delay.asm",
+      "Irvine\\irvine\\examples\\ch16\\DrawLine.asm",
+      "Irvine\\irvine\\examples\\ch16\\getVideo.asm",
+      "Irvine\\irvine\\examples\\ch16\\Keybd.asm",
+      "Irvine\\irvine\\examples\\ch16\\Mode13.asm",
+      "Irvine\\irvine\\examples\\ch16\\Mouse.asm",
+      "Irvine\\irvine\\examples\\ch16\\Pixel2.asm",
+      "Irvine\\irvine\\examples\\ch16\\TextWin.asm",
+      "Irvine\\irvine\\examples\\ch16\\WriteColors.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\ClearKbd.asm",
+        "snippet": "TITLE Testing ClearKeyboard       (ClearKbd.asm)\n\n; This program shows how to clear the keyboard\n; buffer, while waiting for a particular key.\n; To test it, rapidly press random keys to fill\n; up the buffer. When you press Esc, the program \n; ends immediately.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\nClearKeyboard PROTO, scanCode:BYTE\nESC_key = 1\t\t\t; scan code\n\n.code\nmain PROC\nL1:\t;------------------------- LOOP BODY\n\t; Display a dot, to show program's progress\n\tmov\tah,2\n\tmov\tdl,'.'\n\tint\t21h"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\ColorSt2.asm",
+        "snippet": "TITLE Color String Example              (ColorSt2.asm)\n\nComment !\nDemonstrates INT 10h function 13h, which writes\na string containing embedded attribute bytes to the\nvideo display. The write mode values in AL are:\n0 = string contains only character codes; cursor not\n    updated after write, and attribute is in BL.\n1 = string contains only character codes; cursor is\n    updated after write, and attribute is in BL.\n2 = string contains alternating character codes and\n    attribute bytes; cursor position not updated\n    after write.\n3 = string contains alternating character codes and\n    attribute bytes; cursor position is updated\n    after write.\n\n; Last update: 06/01/2006\n!"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\Colorstr.asm",
+        "snippet": "TITLE Color String Example              (ColorStr.asm)\n\n; This program writes a multicolor string on the display.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nATTRIB_HI = 10000000b\nstring BYTE \"ABCDEFGHIJKLMOP\"\ncolor  BYTE 1\n\n.code\nmain PROC\n\tmov  ax,@data\n\tmov  ds,ax\n\n\tcall ClrScr\n\tcall EnableBlinking\n\tmov  cx,SIZEOF string"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\Delay.asm",
+        "snippet": "TITLE                               (delay.asm)\n\n; Bit 4 of port 61h toggles every 15.085 microseconds\n; Must be tested under MS-DOS, Windows 95, or Windows 98.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nmilliseconds DWORD 5000\n\n.code\nmain PROC\n\tmov  ax,@data\n\tmov  ds,ax\n\n\tmov  eax,0\n\tmov  cx,5\nL1:\n\tpush eax"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\DrawLine.asm",
+        "snippet": "TITLE DrawLine Program              (DrawLine.asm)\n\n; This program draws text and a straight line in graphics mode.\n; Last update: 4/3/2007\n; Windows XP users: To run this program, open a command prompt using the \n; command_prompt shortcut provided in this folder. Then switch to full-screen \n; mode by pressing Alt-Enter, type Drawline and press Enter.\n\nINCLUDE Irvine16.inc\n\n;------------ Video Mode Constants -------------------\nMode_06 = 6\t\t; 640 X 200,  2 colors\nMode_0D = 0Dh\t\t; 320 X 200, 16 colors\nMode_0E = 0Eh\t\t; 640 X 200, 16 colors\nMode_0F = 0Fh\t\t; 640 X 350,  2 colors\nMode_10 = 10h\t\t; 640 X 350, 16 colors\nMode_11 = 11h\t\t; 640 X 480,  2 colors\nMode_12 = 12h\t\t; 640 X 480, 16 colors\nMode_13 = 13h\t\t; 320 X 200, 256 colors\nMode_6A = 6Ah\t\t; 800 X 600, 16 colors"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\getVideo.asm",
+        "snippet": "TITLE Get Video Information               (getVideo.asm)\n\n; This program retrieves information about the current video\n; display mode as well as a pointer to a table describing the\n; characteristics and capabilities of the video display adapter\n; and monitor. Information about INT 10h function 1Bh may be found\n; in \"Advanced MS-DOS, 2nd Edition\", by Ray Duncan, pages 531-532.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\nINCLUDE Macros.inc\n\nCOMMENT !    ; (CursorPosStruc and VideoInfoStruc are defined in Irvine16.inc)\nCursorPosStruc STRUCT\n\tYcoord BYTE ?\n\tXcoord BYTE ?\nCursorPosStruc ENDS\n\nVideoInfoStruc STRUC\n\tsupportedInfoPtr     DWORD ?"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\Keybd.asm",
+        "snippet": "TITLE Keyboard Display           (keybd.asm)\n\n; This program displays keyboard scan codes\n; and ASCII codes, using INT 16h.\n; Last update: 06/01/2006\n\nInclude Irvine16.inc\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax\n\tcall\tClrScr\t; clear screen\n\nL1:\tmov\tah,10h\t; keyboard input\n\tint\t16h\t\t; using BIOS\n\tcall\tDumpRegs\t; look at AH, AL\n\tcmp\tal,1Bh\t; ESC key pressed?\n\tjne\tL1\t\t; no: repeat the loop"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\Mode13.asm",
+        "snippet": "; Memory Mapped Graphics, Mode 13        \t(Mode13.asm)\n\nComment !\n\nThis program demonstrates direct memory mapping in video\ngraphics Mode 13 (320 x 200, 256 colors). The video memory\nis a two-dimensional array of memory bytes which can be addressed\nand modified individually. Each byte represents a pixel on\nthe screen, and each byte contains an index into the color\npalette.\nLast update: 06/01/2006\n!\n\nINCLUDE Irvine16.inc\n\nVIDEO_PALLETE_PORT = 3C8h\nCOLOR_SELECTION_PORT = 3C9h\nCOLOR_INDEX = 1\nPALLETE_INDEX_BACKGROUND = 0\nSET_VIDEO_MODE = 0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\Mouse.asm",
+        "snippet": "TITLE Tracking the Mouse                      (mouse.asm)\n\n; Demonstrates basic mouse functions available via INT 33h.\n; In Standard DOS mode, each character position in the DOS\n; window equals 8 mouse units.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\nGET_MOUSE_STATUS = 0\nSHOW_MOUSE_POINTER = 1\nHIDE_MOUSE_POINTER = 2\nGET_CURSOR_SIZE = 3\nGET_BUTTON_PRESS_INFO = 5\nGET_MOUSE_POSITION_AND_STATUS = 3\nESCkey = 1Bh\n\n.data\ngreeting    BYTE \"[Mouse.exe] Press Esc to quit\",0\nstatusLine  BYTE \"Left button:                              \""
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch16\\Pixel2.asm",
+        "snippet": "TITLE Cartesian Coordinates                 (Pixel2.asm)\n\n; This program switches into 800 X 600 graphics mode and\n; draws the X and Y axes of a Cartesian coordinate system.\n; Switch to full-screen mode before running this program.\n; Color constants are defined in Irvine16.inc.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\nMode_6A = 6Ah\t\t; 800 X 600, 16 colors\nX_axisY = 300\nX_axisX = 50\nX_axisLen = 700\n\nY_axisX = 400\nY_axisY = 30\nY_axisLen = 540\n\n.data"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch17",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch17\\CtrlBrk.asm",
+      "Irvine\\irvine\\examples\\ch17\\HelloCom.asm",
+      "Irvine\\irvine\\examples\\ch17\\MultCode.asm",
+      "Irvine\\irvine\\examples\\ch17\\MultData.asm",
+      "Irvine\\irvine\\examples\\ch17\\MultiSeg.asm",
+      "Irvine\\irvine\\examples\\ch17\\No_Reset.asm",
+      "Irvine\\irvine\\examples\\ch17\\Speaker.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\CtrlBrk.asm",
+        "snippet": "TITLE Control-Break Handler             (Ctrlbrk.asm)\n\n; This program installs its own Ctrl-Break handler and\n; prevents the user from using Ctrl-Break (or Ctrl-C)\n; to halt the program. The program inputs and echoes\n; keystrokes until the Esc key is pressed.\n; Last update: 06/01/2006\n\nINCLUDE Irvine16.inc\n\n.data\nbreakMsg BYTE \"BREAK\",0\nmsg\tBYTE \"Ctrl-Break demonstration.\"\n\tBYTE  0dh,0ah\n\tBYTE \"This program disables Ctrl-Break (Ctrl-C). Press any\"\n\tBYTE  0dh,0ah\n\tBYTE \"keys to continue, or press ESC to end the program.\"\n\tBYTE  0dh,0ah,0\n\n.code"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\HelloCom.asm",
+        "snippet": "TITLE Hello Program in COM format   (HelloCom.asm)\n\n.model tiny\n.code\norg 100h       \t; must be before main\nmain PROC\n\tmov  ah,9\n\tmov  dx,OFFSET hello_message\n\tint  21h\n\tmov  ax,4C00h\n\tint  21h\nmain ENDP\n\nhello_message BYTE 'Hello, world!',0dh,0ah,'$'\n\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\MultCode.asm",
+        "snippet": "TITLE Multiple Code Segments      (MultCode.asm)\n\n; This small model program contains multiple\n; code segments.\n; Last update: 06/01/2006\n\n.model small,stdcall\n.stack 100h\nWriteString PROTO\n\n.data\nmsg1 db \"First Message\",0dh,0ah,0\nmsg2 db \"Second Message\",0dh,0ah,\"$\"\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax\n\t\n\tmov\tdx,OFFSET msg1"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\MultData.asm",
+        "snippet": "TITLE Multiple Data Segments            (MultData.asm)\n\n; This program shows how to explicitly declare\n; multiple data segments.\n; Last update: 06/01/2006\n\ncseg  SEGMENT 'CODE'\n      ASSUME cs:cseg, ds:data1, ss:mystack\n\nmain PROC\n\tmov  ax,data1           \t; point DS to data1 segment\n\tmov  ds,ax\n\tmov  ax,seg val2        \t; point ES to data2 segment\n\tmov  es,ax\n\n\tmov  ax,val1            \t; requires ASSUME for DS\n\tmov  bx,es:val2         \t; ASSUME not required\n\tcmp  ax,bx\n\tjb   L1                 \t; requires ASSUME for CS\n\tmov  ax,0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\MultiSeg.asm",
+        "snippet": "TITLE Multiple Segment Example                 (MultiSeg.asm)\n\n; This program shows how to explicityly declare\n; multiple data segments.\n; Last update: 06/01/2006\n\ncseg  SEGMENT 'CODE'\n      ASSUME cs:cseg, ds:data1, ss:mystack\n\nmain PROC\n\tmov  ax,data1           \t; point DS to data1 segment\n\tmov  ds,ax\n\tmov  ax,seg val2        \t; point ES to data2 segment\n\tmov  es,ax\n\n\tmov  ax,val1            \t; requires ASSUME for DS\n\tmov  bx,es:val2         \t; ASSUME not required\n\tcmp  ax,bx\n\tjb   L1                 \t; requires ASSUME for CS\n\tmov  ax,0"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\No_Reset.asm",
+        "snippet": "TITLE Reset-Disabling program                  (No_Reset.asm)\n\n; This program disables the usual DOS reset command\n; (Ctrl-Alt-Del), by intercepting the INT 9 keyboard\n; hardware interrupt.  It checks the shift status bits\n; in the MS-DOS keyboard flag and changes any Ctrl-Alt-Del\n; to Alt-Del.  The computer can only be rebooted by\n; typing Ctrl+Alt+Right shift+Del.  Assemble, link,\n; and convert to a COM program by including the /T\n; command on the Microsoft LINK command line.\n; Last update: 12/12/2004\n\n.model tiny\n.386\n.code\n\trt_shift   EQU 01h\t\t; Right shift key: bit 0\n\tctrl_key   EQU 04h\t\t; CTRL key: bit 2\n\talt_key    EQU 08h\t\t; ALT key: bit 3\n\tdel_key    EQU 53h\t\t; scan code for DEL key\n\tkybd_port  EQU 60h\t\t; keyboard input port"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\Speaker.asm",
+        "snippet": "TITLE Speaker Demo Program               (Speaker.asm)\n\n; This program plays a series of ascending notes on\n; the PC speaker.\n; Last update: 10/8/01\n\nINCLUDE Irvine16.inc\t; 16-bit Real mode program\nspeaker  =  61h\t; address of speaker port\ntimer    =  42h\t; address of timer port\ndelay1   = 500\ndelay2   = 0D000h\t; delay between notes\nstartPitch = 60\n\n.code\nmain PROC\n\tin   al,speaker\t; get speaker status\n\tpush ax             \t; save status\n\tor   al,00000011b   \t; set lowest 2 bits\n\tout  speaker,al     \t; turn speaker on\n\tmov  al,startPitch          ; starting pitch"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\Seg2\\seg2.asm",
+        "snippet": "TITLE Segment Example           (main module, Seg2.asm)\n\n; Startup module, which calls a procedure located in an \n; external module. Build this program using the make16.bat\n; file located in the same directory.\n; Last update: 06/01/2006\n\nEXTRN var2:WORD\n\n;subroutine_1 PROTO\t\t; replaced by the following line:\nEXTERN subroutine_1:PROC\t; required by MASM 8.0\n\ncseg SEGMENT BYTE PUBLIC 'CODE'\nASSUME cs:cseg,ds:dseg, ss:sseg\n\nmain PROC\n\tmov  ax,dseg        \t; initialize DS\n\tmov  ds,ax\n\n\tmov  ax,var1        \t; local variable"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\Seg2\\seg2a.asm",
+        "snippet": "TITLE Segment Example       (submodule, SEG2A.ASM)\n\n; External module for the Seg2 program. Build this program using\n; the make16.bat file located in the same directory.\n; Last update: 06/01/2006\n\nPUBLIC subroutine_1, var2\n\ncseg SEGMENT BYTE PUBLIC 'CODE'\nASSUME cs:cseg, ds:dseg\n\nsubroutine_1 PROC           ; called from MAIN\n\tmov ah,9\n\tmov dx,OFFSET msg\n\tint 21h\n\tret\nsubroutine_1 ENDP\ncseg ENDS\n\ndseg SEGMENT WORD PUBLIC 'DATA'"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\ch17\\Seg2",
+    "code_files": [
+      "Irvine\\irvine\\examples\\ch17\\Seg2\\seg2.asm",
+      "Irvine\\irvine\\examples\\ch17\\Seg2\\seg2a.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\Seg2\\seg2.asm",
+        "snippet": "TITLE Segment Example           (main module, Seg2.asm)\n\n; Startup module, which calls a procedure located in an \n; external module. Build this program using the make16.bat\n; file located in the same directory.\n; Last update: 06/01/2006\n\nEXTRN var2:WORD\n\n;subroutine_1 PROTO\t\t; replaced by the following line:\nEXTERN subroutine_1:PROC\t; required by MASM 8.0\n\ncseg SEGMENT BYTE PUBLIC 'CODE'\nASSUME cs:cseg,ds:dseg, ss:sseg\n\nmain PROC\n\tmov  ax,dseg        \t; initialize DS\n\tmov  ds,ax\n\n\tmov  ax,var1        \t; local variable"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\ch17\\Seg2\\seg2a.asm",
+        "snippet": "TITLE Segment Example       (submodule, SEG2A.ASM)\n\n; External module for the Seg2 program. Build this program using\n; the make16.bat file located in the same directory.\n; Last update: 06/01/2006\n\nPUBLIC subroutine_1, var2\n\ncseg SEGMENT BYTE PUBLIC 'CODE'\nASSUME cs:cseg, ds:dseg\n\nsubroutine_1 PROC           ; called from MAIN\n\tmov ah,9\n\tmov dx,OFFSET msg\n\tint 21h\n\tret\nsubroutine_1 ENDP\ncseg ENDS\n\ndseg SEGMENT WORD PUBLIC 'DATA'"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\chapt_13_examples\\Addem",
+    "code_files": [
+      "Irvine\\irvine\\examples\\chapt_13_examples\\Addem\\addem.asm",
+      "Irvine\\irvine\\examples\\chapt_13_examples\\Addem\\addMain.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\chapt_13_examples\\Addem\\addem.asm",
+        "snippet": "; The addem Subroutine    (addem.asm)\n\n; This subroutine links to Visual C++.\n\n.386P\n.model flat\npublic _addem\n\n.code\n_addem proc near\n    push   ebp\n    mov    ebp,esp\n    mov    eax,[ebp+16]    ; first argument\n    add    eax,[ebp+12]    ; second argument\n    add    eax,[ebp+8]     ; third argument\n    pop    ebp\n    ret                   \n_addem endp\nend"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\chapt_13_examples\\Addem\\addMain.cpp",
+        "snippet": "// Addem Main Program      (AddMain.cpp) \n\n#include <iostream>\nusing namespace std;\n\nextern \"C\" int addem(int p1, int p2, int p3);\n\nint main()\n{\n  int total = addem( 10, 15, 25 );\n  cout << \"Total = \" << total << endl;\n  \n  system(\"pause\");\n  return 0;\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_asm",
+    "code_files": [
+      "Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_asm\\indexof.asm",
+      "Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_asm\\main.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_asm\\indexof.asm",
+        "snippet": "; IndexOf function      (IndexOf.asm)\n\n.586\n.model flat,C\nIndexOf PROTO,\n\tsrchVal:DWORD, arrayPtr:PTR DWORD, count:DWORD\n\n.code\n;-----------------------------------------------\nIndexOf PROC uses ecx esi edi,\n\tsrchVal:DWORD, arrayPtr:PTR DWORD, count:DWORD\n;\n; Performs a linear search of a 32-bit integer array,\n; looking for a specific value. If the value is found,\n; the matching index position is returned in EAX; \n; otherwise, EAX equals -1.\n;-----------------------------------------------\n\tNOT_FOUND = -1\n\n \tmov  eax,srchVal    \t\t\t; search value"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_asm\\main.cpp",
+        "snippet": "// main.cpp - Testing the IndexOf function.\n\n#include <iostream>\n#include <time.h>\n#include \"indexof.h\"\nusing namespace std;\n\nint main()  {\n\t// Fill an array with pseudorandom integers.\n\tconst unsigned ARRAY_SIZE = 100000; \n\tconst unsigned LOOP_SIZE = 30000;\n\tchar* boolstr[] = {\"false\",\"true\"};\n\n\tlong array[ARRAY_SIZE]; \n\tfor(unsigned i = 0; i < ARRAY_SIZE; i++) {\n     array[i] = rand() % 50000;\n\t}\n\t\n\tlong searchVal;\n\ttime_t startTime, endTime;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_cpp",
+    "code_files": [
+      "Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_cpp\\IndexOf.cpp",
+      "Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_cpp\\main.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_cpp\\IndexOf.cpp",
+        "snippet": "// IndexOf.cpp\n\n// Implements a linear search of an array of\n// long integers.\n\n#include \"indexof.h\"\n\nlong IndexOf( long searchVal, long array[], unsigned count )\n{\n\tfor(unsigned i = 0; i < count; i++) {\n\t\tif( array[i] == searchVal )\n\t\t\treturn i;\n\t}\n  return -1;\n}"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\chapt_13_examples\\IndexOf_cpp\\main.cpp",
+        "snippet": "// main.cpp - Testing the IndexOf function.\n\n#include <iostream>\n#include <time.h>\n#include \"indexof.h\"\nusing namespace std;\n\nint main()  {\n\t// Fill an array with pseudorandom integers.\n\tconst unsigned ARRAY_SIZE = 100000; \n\tconst unsigned LOOP_SIZE = 30000;\n\tchar* boolstr[] = {\"false\",\"true\"};\n\n\tlong array[ARRAY_SIZE]; \n\tfor(unsigned i = 0; i < ARRAY_SIZE; i++)\n     array[i] = rand();\n\n\tlong searchVal;\n\ttime_t startTime, endTime;\n\tcout << \"Enter an integer value to find: \";"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Lib16",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Lib16\\floatio.asm",
+      "Irvine\\irvine\\examples\\Lib16\\Irvine16.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib16\\floatio.asm",
+        "snippet": "; Floating Point IO Procedures           (floatio.asm)\n\nCOMMENT @\n\nAuthors:  W. A. Barrett, San Jose State University,\n          James Brink, Pacific Lutheran University\nUsed by Permission (July 2005).\n\nRead and Write Float -- these work from keyboard or to screen, using\n  Irvine's character fetching and putting functions.\n\nReadFloat -- accept a float in various formats, returning it in the top\n             stack position of the FPU\n\nWriteFloat -- Top stack value in the FPU is written out in a standard\n              format.\n              \nShowFPUStack -- Displays the floating-point unit's stack.\n\nUpdates:"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib16\\Irvine16.asm",
+        "snippet": "TITLE  Link Library Functions\t\t(Irvine16.asm)\n\nComment @\n\n**** TODO *****\nTEST ParseDecimal32, ParseInteger32, ReadDec\n\nAdd CloseFile, CreateOutputFile, OpenInputFile, ReadFromFile,\nWriteToFile, StrLength, \n\t\n\nThis library was created exlusively for use with the book,\n\"Assembly Language for Intel-Based Computers, 4th Edition & 5th Edition\",\nby Kip R. Irvine, 2002 & 2006.\n\nCopyright 2002-2006, Prentice-Hall Incorporated. No part of this file may be\nreproduced, in any form or by any other means, without permission in writing\nfrom the publisher.\n\nUpdates to this file will be posted on the book's site:"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Lib32",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Lib32\\floatio.asm",
+      "Irvine\\irvine\\examples\\Lib32\\Irvine32.asm",
+      "Irvine\\irvine\\examples\\Lib32\\LibTest.asm",
+      "Irvine\\irvine\\examples\\Lib32\\main.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\floatio.asm",
+        "snippet": "; Floating Point IO Procedures           (floatio.asm)\n\nCOMMENT @\n\nAuthors:  W. A. Barrett, San Jose State University,\n          James Brink, Pacific Lutheran University\nUsed by Permission (July 2005).\n\nRead and Write Float -- these work from keyboard or to screen, using\n  Irvine's character fetching and putting functions.\n\nReadFloat -- accept a float in various formats, returning it in the top\n             stack position of the FPU\n\nWriteFloat -- Top stack value in the FPU is written out in a standard\n              format.\n              \nShowFPUStack -- Displays the floating-point unit's stack."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32.asm",
+        "snippet": "Title Irvine32 Link Library Source Code         (Irvine32.asm)\n\nComment @\nTo view this file with proper indentation, set your \n\teditor's tab stops to columns 5, 11, 35, and 40.\n\nRecent Updates:\n05/02/09: Str_trim\n12/11/2011: StrLength\n\nThis library was created exlusively for use with the book,\n\"Assembly Language for Intel-Based Computers\", 4th, 5th, and 6th Editions,\nby Kip R. Irvine, 2002-2010.\n\nCopyright 2002-2012, Prentice-Hall Publishing. No part of this file may be\nreproduced, in any form or by any other means, without permission in writing\nfrom the author or publisher.\n\nAcknowledgements:\n------------------------------"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\LibTest.asm",
+        "snippet": "TITLE Test the Irvine32 Link Library      (LibTest.asm)\n\n; Use this program to test the Irvine32.asm library.\n\nINCLUDE Irvine32.inc\nINCLUDE macros.inc\n\n.data\ntemp BYTE \"#H\",0         \ndelimiter BYTE \"#\"\n\n.code\nmain PROC\n     movzx eax,delimiter\n     push  eax\n     push  offset temp\n     call Str_trim2\n\n\n    exit"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\main.asm",
+        "snippet": "TITLE MASM Template\t\t\t\t\t\t(main.asm)\n\n; Description:\n; \n; Revision date:\n\nINCLUDE Irvine32.inc\n.data\n\n.code\n\nmain PROC\n\tcall Clrscr\n\tcall GetMaxXY\n\n\texit\nmain ENDP\n\nEND main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\AssemblyInfo.cpp",
+        "snippet": "#include \"stdafx.h\"\n\nusing namespace System;\nusing namespace System::Reflection;\nusing namespace System::Runtime::CompilerServices;\nusing namespace System::Runtime::InteropServices;\nusing namespace System::Security::Permissions;\n\n//\n// General Information about an assembly is controlled through the following\n// set of attributes. Change these attribute values to modify the information\n// associated with an assembly.\n//\n[assembly:AssemblyTitleAttribute(\"ClassLibraryProject\")];\n[assembly:AssemblyDescriptionAttribute(\"\")];\n[assembly:AssemblyConfigurationAttribute(\"\")];\n[assembly:AssemblyCompanyAttribute(\"\")];\n[assembly:AssemblyProductAttribute(\"ClassLibraryProject\")];\n[assembly:AssemblyCopyrightAttribute(\"Copyright (c)  2011\")];\n[assembly:AssemblyTrademarkAttribute(\"\")];"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\ClassLibraryProject.cpp",
+        "snippet": "// This is the main DLL file.\n\n#include \"stdafx.h\"\n\n#include \"ClassLibraryProject.h\""
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\Stdafx.cpp",
+        "snippet": "// stdafx.cpp : source file that includes just the standard includes\n// ClassLibraryProject.pch will be the pre-compiled header\n// stdafx.obj will contain the pre-compiled type information\n\n#include \"stdafx.h\""
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\cmdtest.asm",
+        "snippet": "; cmdtest.asm\n\nINCLUDE Irvine32.inc\n\n.data\n    cmdline    BYTE    144 DUP(0)\n\n\n.code\nmain PROC\n\tcall  ReadFloat\n\n\n\n\n\n    ; get command-line arguments\n    mov    edx, OFFSET cmdline\n    call    GetCommandTail"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\floatio.asm",
+        "snippet": "; Floating Point IO Procedures           (floatio.asm)\n\nCOMMENT @\n\nAuthors:  W. A. Barrett, San Jose State University,\n          James Brink, Pacific Lutheran University\nUsed by Permission (July 2005).\n\nRead and Write Float -- these work from keyboard or to screen, using\n  Irvine's character fetching and putting functions.\n\nReadFloat -- accept a float in various formats, returning it in the top\n             stack position of the FPU\n\nWriteFloat -- Top stack value in the FPU is written out in a standard\n              format.\n              \nShowFPUStack -- Displays the floating-point unit's stack."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\Irvine32.asm",
+        "snippet": "Title Irvine32 Link Library Source Code         (Irvine32.asm)\n\nComment @\nTo view this file with proper indentation, set your \n\teditor's tab stops to columns 5, 11, 35, and 40.\n\nRecent Updates:\n05/02/09: Str_trim\n12/11/2011: StrLength\n\nThis library was created exlusively for use with the book,\n\"Assembly Language for Intel-Based Computers\", 4th, 5th, and 6th Editions,\nby Kip R. Irvine, 2002-2010.\n\nCopyright 2002-2012, Prentice-Hall Publishing. No part of this file may be\nreproduced, in any form or by any other means, without permission in writing\nfrom the author or publisher.\n\nAcknowledgements:\n------------------------------"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\AssemblyInfo.cpp",
+      "Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\ClassLibraryProject.cpp",
+      "Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\Stdafx.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\AssemblyInfo.cpp",
+        "snippet": "#include \"stdafx.h\"\n\nusing namespace System;\nusing namespace System::Reflection;\nusing namespace System::Runtime::CompilerServices;\nusing namespace System::Runtime::InteropServices;\nusing namespace System::Security::Permissions;\n\n//\n// General Information about an assembly is controlled through the following\n// set of attributes. Change these attribute values to modify the information\n// associated with an assembly.\n//\n[assembly:AssemblyTitleAttribute(\"ClassLibraryProject\")];\n[assembly:AssemblyDescriptionAttribute(\"\")];\n[assembly:AssemblyConfigurationAttribute(\"\")];\n[assembly:AssemblyCompanyAttribute(\"\")];\n[assembly:AssemblyProductAttribute(\"ClassLibraryProject\")];\n[assembly:AssemblyCopyrightAttribute(\"Copyright (c)  2011\")];\n[assembly:AssemblyTrademarkAttribute(\"\")];"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\ClassLibraryProject.cpp",
+        "snippet": "// This is the main DLL file.\n\n#include \"stdafx.h\"\n\n#include \"ClassLibraryProject.h\""
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\ClassLibraryProject\\Stdafx.cpp",
+        "snippet": "// stdafx.cpp : source file that includes just the standard includes\n// ClassLibraryProject.pch will be the pre-compiled header\n// stdafx.obj will contain the pre-compiled type information\n\n#include \"stdafx.h\""
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Lib32\\Irvine32_Library",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\cmdtest.asm",
+      "Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\floatio.asm",
+      "Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\Irvine32.asm",
+      "Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\LibTest.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\cmdtest.asm",
+        "snippet": "; cmdtest.asm\n\nINCLUDE Irvine32.inc\n\n.data\n    cmdline    BYTE    144 DUP(0)\n\n\n.code\nmain PROC\n\tcall  ReadFloat\n\n\n\n\n\n    ; get command-line arguments\n    mov    edx, OFFSET cmdline\n    call    GetCommandTail"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\floatio.asm",
+        "snippet": "; Floating Point IO Procedures           (floatio.asm)\n\nCOMMENT @\n\nAuthors:  W. A. Barrett, San Jose State University,\n          James Brink, Pacific Lutheran University\nUsed by Permission (July 2005).\n\nRead and Write Float -- these work from keyboard or to screen, using\n  Irvine's character fetching and putting functions.\n\nReadFloat -- accept a float in various formats, returning it in the top\n             stack position of the FPU\n\nWriteFloat -- Top stack value in the FPU is written out in a standard\n              format.\n              \nShowFPUStack -- Displays the floating-point unit's stack."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\Irvine32.asm",
+        "snippet": "Title Irvine32 Link Library Source Code         (Irvine32.asm)\n\nComment @\nTo view this file with proper indentation, set your \n\teditor's tab stops to columns 5, 11, 35, and 40.\n\nRecent Updates:\n05/02/09: Str_trim\n12/11/2011: StrLength\n\nThis library was created exlusively for use with the book,\n\"Assembly Language for Intel-Based Computers\", 4th, 5th, and 6th Editions,\nby Kip R. Irvine, 2002-2010.\n\nCopyright 2002-2012, Prentice-Hall Publishing. No part of this file may be\nreproduced, in any form or by any other means, without permission in writing\nfrom the author or publisher.\n\nAcknowledgements:\n------------------------------"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib32\\Irvine32_Library\\LibTest.asm",
+        "snippet": "TITLE Test the Irvine32 Link Library      (LibTest.asm)\n\n; Use this program to test the Irvine32.asm library.\n\nINCLUDE Irvine32.inc\nINCLUDE macros.inc\n\n.data\nval1 REAL8\t1.2\nval2 REAL8\t3.4\n\n.code\nmain PROC\n\n\tfld\tval1\n\tfld\tval2\n\tcall\tShowFPUStack\n\t\n\tfmul\n\tcall\tShowFPUStack"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Lib64",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Lib64\\Irvine64.asm",
+      "Irvine\\irvine\\examples\\Lib64\\Lib64test.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib64\\Irvine64.asm",
+        "snippet": "; 64-bit Library (Irvine64.asm)\n\n; Version 1.1, 7/2/2015\n\nCOMMENT !\nThis library was created exlusively for use with the book,\n\"Assembly Language for Intel-Based Computers\", 7th Edition,\nby Kip R. Irvine, 2014.\n\nCopyright 2014, Prentice-Hall Publishing. No part of this file may be\nreproduced, in any form or by any other means, without permission in writing\nfrom the author or publisher.\n\nWin64 API classifies RAX,RCX,RDX,R8,R9,R10,and R11 as volatile,\nso their values are not preserved across API function calls.\n\nBug fixes:\n7/2/2015: corrected the ReadString procedure."
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Lib64\\Lib64test.asm",
+        "snippet": "; testing 64-bit Windows API\t\t\t(Lib64test.asm)\n;  Chapter 5 example\n\nExitProcess \tproto\nReadInt64       proto\nReadString      proto\nWriteString\t\tproto\nWriteInt64\t\tproto\nWriteHex32\t\tproto\nWriteHex64\t\tproto\nCrlf \t\t\t\tproto\n\n.data\nmessage BYTE \"Testing the Irvine64 library\",0\nmaxval qword 9223372036854775807\nminval qword -9223372036854775808\nhexval qword 0123456789ABCDEFh\ninbuf  BYTE  50 dup(0),0\ninbuf_size = $ - inbuf"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Project32_VS2017",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Project32_VS2017\\AddTwo.asm",
+      "Irvine\\irvine\\examples\\Project32_VS2017\\StructExample.asm",
+      "Irvine\\irvine\\examples\\Project32_VS2017\\test.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project32_VS2017\\AddTwo.asm",
+        "snippet": "; AddTwo.asm - adds two 32-bit integers.\n; Chapter 3 example\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project32_VS2017\\StructExample.asm",
+        "snippet": "; Structure example(32 - bit)\n\n.386\n.model flat, stdcall\n.stack 4096\nExitProcess proto, dwExitCode:dword\n\nEmployee STRUCT                            \n     IdNum BYTE \"000000000\"                \n     LastName BYTE 30 DUP(0)               \n     ;ALIGN WORD                           \n     Years WORD 30                         \n     ;ALIGN DWORD                          \n     SalaryHistory DWORD 0, 0, 0, 0        \nEmployee ENDS\n\n;// size of structure: 0x39, or 57 bytes\n\n.data\nemployees Employee 5 DUP(<\"111111111\", \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", 0FFh, 4 DUP(0EEEEEEEEh)>)"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project32_VS2017\\test.asm",
+        "snippet": "; Test.asm\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n.data\nwordVal SWORD -101\t\t\t; FF9Bh\n\n.code\nmain proc\n\tmov\tdx, 0\n\tmov \tax, wordVal\t\t\t; DX:AX = 0000FF9Bh (+65, 435)\n\tcwd\n\tmov \tbx, 2\t\t\t\t; BX is the divisor\n\tidiv\tbx\t\t\t\t\t; divide DX : AX by BX (signed operation)\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Project32_VS2019",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Project32_VS2019\\AddSub2.asm",
+      "Irvine\\irvine\\examples\\Project32_VS2019\\AddTwo.asm",
+      "Irvine\\irvine\\examples\\Project32_VS2019\\CIS-310-PROG#2-DemetriusJohnson.asm",
+      "Irvine\\irvine\\examples\\Project32_VS2019\\StructExample.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project32_VS2019\\AddSub2.asm",
+        "snippet": "TITLE Add and Subtract, Version 2         (AddSub2.asm)\n\n; This program adds and subtracts 32-bit integers\n; and stores the sum in a variable.\n\nINCLUDE Irvine32.inc\n\n.data\nval1     dword  10000h\nval2     dword  40000h\nval3     dword  20000h\nfinalVal dword  ?\n\n.code\nmain PROC\n\n\tmov\teax,val1\t\t\t; start with 10000h\n\tadd\teax,val2\t\t\t; add 40000h\n\tsub\teax,val3\t\t\t; subtract 20000h\n\tmov\tfinalVal,eax\t\t; store the result (30000h)"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project32_VS2019\\AddTwo.asm",
+        "snippet": "; AddTwo.asm - adds two 32-bit integers.\n; Chapter 3 example\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project32_VS2019\\CIS-310-PROG#2-DemetriusJohnson.asm",
+        "snippet": "; Program template\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\n\t; declare variables here\n\n\tRAW WORD 10, 12, 8, 17, 9, 22, 18, 23, 7, 30, 22, 19, 6, 7 \n\n.code\nmain proc\n\t; write your code here\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project32_VS2019\\StructExample.asm",
+        "snippet": "; Structure example(32 - bit)\n\n.386\n.model flat, stdcall\n.stack 4096\nExitProcess proto, dwExitCode:dword\n\nEmployee STRUCT                            \n     IdNum BYTE \"000000000\"                \n     LastName BYTE 30 DUP(0)               \n     ;ALIGN WORD                           \n     Years WORD 30                         \n     ;ALIGN DWORD                          \n     SalaryHistory DWORD 0, 0, 0, 0        \nEmployee ENDS\n\n;// size of structure: 0x39, or 57 bytes\n\n.data\nemployees Employee 5 DUP(<\"111111111\", \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", 0FFh, 4 DUP(0EEEEEEEEh)>)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\Project64_VS2019",
+    "code_files": [
+      "Irvine\\irvine\\examples\\Project64_VS2019\\AddTwoSum_64.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\Project64_VS2019\\AddTwoSum_64.asm",
+        "snippet": "; AddTwoSum_64.asm - Chapter 3 example.\n\nExitProcess proto\n\n.data\nsum qword 0\n\n.code\nmain proc\n\tmov\trax,5\n\tadd\trax,6\n\tmov   sum,rax\n\n\tmov   ecx,0\n\tcall  ExitProcess\n\nmain endp\nend"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Irvine\\irvine\\examples\\test",
+    "code_files": [
+      "Irvine\\irvine\\examples\\test\\16-bit.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Irvine\\irvine\\examples\\test\\16-bit.asm",
+        "snippet": "TITLE Add and Subtract              (16-bit.asm)\n\n; This program adds and subtracts 32-bit integers.\n\nINCLUDE Irvine16.inc\n\n.code\nmain PROC\n\tmov\tax,@data\n\tmov\tds,ax\n\n\tmov\teax,10000h\t\t; EAX = 10000h\n\tadd\teax,40000h\t\t; EAX = 50000h\n\tsub\teax,20000h\t\t; EAX = 30000h\n\tcall\tDumpRegs\n\n\texit\nmain ENDP\nEND main"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Programming Assignments\\PROG#0\\Program0_CIS-310_DemetriusJohnson",
+    "code_files": [
+      "Programming Assignments\\PROG#0\\Program0_CIS-310_DemetriusJohnson\\BinaryClass.cpp",
+      "Programming Assignments\\PROG#0\\Program0_CIS-310_DemetriusJohnson\\HexidecimalClass.cpp",
+      "Programming Assignments\\PROG#0\\Program0_CIS-310_DemetriusJohnson\\MAIN_Program0_CIS-310_DemetriusJohnson.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#0\\Program0_CIS-310_DemetriusJohnson\\BinaryClass.cpp",
+        "snippet": "#include \"BinaryClass.h\"\n\nBinaryClass::BinaryClass() {\n\n\tdecimalVal = 0; //used to store the object's decimal value\n\tbinaryVal = 0;//used to store the object's binary value\n\twholeNum = 0; //use this variable to capture only the digits greater than or equal to 1 (whole numbers/digits to the left of the decimal)\n\tfractionDigits = 0; //use this variable to store the decimal digits (if any) of the passed decimal value \n\n\n\n}\nBinaryClass& BinaryClass::operator=(double decimalNumber) {\n\n\tbinaryVal = 0; //need to reset the binary value everytime the =operator is called otherwise it will be manipulated while old data is still stored in the variable\n\twholeNum = decimalNumber; //use this variable to store the non fractional portion of the decimal number\n\tfractionDigits = decimalNumber - wholeNum; //use this variable to store the decimal digits (if any) of the passed decimal value"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#0\\Program0_CIS-310_DemetriusJohnson\\HexidecimalClass.cpp",
+        "snippet": "#include \"HexidecimalClass.h\"\n\n\nHexidecimalClass::HexidecimalClass() { //default constructor\n\t\n\n}\nHexidecimalClass& HexidecimalClass::operator=(float decimalNumber) {\n\n\thexVal[0] = 48; //from ASCII, decimal 30 is the equivalent of char '0'\n\thexVal[1] = 48;\n\t//use the above to reset the hex digits to 00 (char characters '0')\n\n\twholeNum = decimalNumber; //use this variable to store the non fractional portion of the decimal number\n\tfractionDigits = decimalNumber - wholeNum; //use this variable to store the decimal digits (if any) of the passed decimal value \n\n\t//I made the above in such a way as for if I ever extend this program to convert decimal digits with digits in place values to the right of the decimal as well"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#0\\Program0_CIS-310_DemetriusJohnson\\MAIN_Program0_CIS-310_DemetriusJohnson.cpp",
+        "snippet": "// Program0_CIS-310_DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n\nProgram # 0\nCIS 310 (Yoon)\nSUMMER 2021\nUpload it by Mid-night, 5/16/21 (Sun)\n\nWrite a program in C or C++  that converts decimal numbers to binary, hexadecimal, and BCD (Binary Coded Decimal). \nYou are not allowed to use library functions to do conversion.  The output should look as follows.  \nSend the output to a file and upload it along with your source file.\n\n\nDECIMAL \tBINARY\t\tHEXDECIMAL\t\t        BCD\n0\t\t    0000 0000\t\t00\t\t\t\t0000 0000 0000\n1\t\t    0000 0001\t\t01\t\t\t\t0000 0000 0001\n2\t\t    0000 0010\t\t02\t\t\t\t0000 0000 0010\n.\t\t    .\t\t         .\t\t\t\t   ."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Programming Assignments\\PROG#0\\Program0_finished_DemetriusJohnson-CIS-310",
+    "code_files": [
+      "Programming Assignments\\PROG#0\\Program0_finished_DemetriusJohnson-CIS-310\\BinaryClass.cpp",
+      "Programming Assignments\\PROG#0\\Program0_finished_DemetriusJohnson-CIS-310\\HexidecimalClass.cpp",
+      "Programming Assignments\\PROG#0\\Program0_finished_DemetriusJohnson-CIS-310\\MAIN_Program0_CIS-310_DemetriusJohnson.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#0\\Program0_finished_DemetriusJohnson-CIS-310\\BinaryClass.cpp",
+        "snippet": "#include \"BinaryClass.h\"\n\nBinaryClass::BinaryClass() {\n\n\tdecimalVal = 0; //used to store the object's decimal value\n\tbinaryVal = 0;//used to store the object's binary value\n\twholeNum = 0; //use this variable to capture only the digits greater than or equal to 1 (whole numbers/digits to the left of the decimal)\n\tfractionDigits = 0; //use this variable to store the decimal digits (if any) of the passed decimal value \n\n\n\n}\nBinaryClass& BinaryClass::operator=(double decimalNumber) {\n\n\tbinaryVal = 0; //need to reset the binary value everytime the =operator is called otherwise it will be manipulated while old data is still stored in the variable\n\twholeNum = decimalNumber; //use this variable to store the non fractional portion of the decimal number\n\tfractionDigits = decimalNumber - wholeNum; //use this variable to store the decimal digits (if any) of the passed decimal value"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#0\\Program0_finished_DemetriusJohnson-CIS-310\\HexidecimalClass.cpp",
+        "snippet": "#include \"HexidecimalClass.h\"\n\n\nHexidecimalClass::HexidecimalClass() { //default constructor\n\t\n\n}\nHexidecimalClass& HexidecimalClass::operator=(float decimalNumber) {\n\n\thexVal[0] = 48; //from ASCII, decimal 30 is the equivalent of char '0'\n\thexVal[1] = 48;\n\t//use the above to reset the hex digits to 00 (char characters '0')\n\n\twholeNum = decimalNumber; //use this variable to store the non fractional portion of the decimal number\n\tfractionDigits = decimalNumber - wholeNum; //use this variable to store the decimal digits (if any) of the passed decimal value \n\n\t//I made the above in such a way as for if I ever extend this program to convert decimal digits with digits in place values to the right of the decimal as well\n\n\tdecimalVal = decimalNumber; //set decimal value for the Hex object to the passed-in decimal number simply for storage purposes of the object's decimal equivalent"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#0\\Program0_finished_DemetriusJohnson-CIS-310\\MAIN_Program0_CIS-310_DemetriusJohnson.cpp",
+        "snippet": "// Program0_CIS-310_DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/*\n\nProgram # 0\nCIS 310 (Yoon)\nSUMMER 2021\nUpload it by Mid-night, 5/16/21 (Sun)\n\nWrite a program in C or C++  that converts decimal numbers to binary, hexadecimal, and BCD (Binary Coded Decimal). \nYou are not allowed to use library functions to do conversion.  The output should look as follows.  \nSend the output to a file and upload it along with your source file.\n\n\nDECIMAL \tBINARY\t\tHEXDECIMAL\t\t        BCD\n0\t\t    0000 0000\t\t00\t\t\t\t0000 0000 0000\n1\t\t    0000 0001\t\t01\t\t\t\t0000 0000 0001\n2\t\t    0000 0010\t\t02\t\t\t\t0000 0000 0010\n.\t\t    .\t\t         .\t\t\t\t   ."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Programming Assignments\\PROG#1",
+    "code_files": [
+      "Programming Assignments\\PROG#1\\Program#1-CIS-310-DemetriusJohnson.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#1\\Program#1-CIS-310-DemetriusJohnson.asm",
+        "snippet": ";CIS-350 SUMMER 2021 WITH PROFESSOR DAVID YOON\n;Name: Demetrius Johnson\n;Date: 5-30-21 \n;Program Description: Introduction to MASM; define variables and use registers to complete addition and subtraction operations\n\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.DATA\n\nA\tDWORD 30d\nB\tDWORD 20d\nC1\tDWORD 10d\nD\tDWORD 5d\nFinalResult DWORD ?\t; store the final result of my operation in this location (variable)\n\n.CODE"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Programming Assignments\\PROG#2",
+    "code_files": [
+      "Programming Assignments\\PROG#2\\CIS-310-PROG#2-DemetriusJohnson.asm",
+      "Programming Assignments\\PROG#2\\template.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#2\\CIS-310-PROG#2-DemetriusJohnson.asm",
+        "snippet": "; Program#2 - CIS-310\n;Demetrius Johnson\n;Creation date: June 20, 2021\n;Mod date: June 26, 2021\n;Purpose: Find the mean and variance of an array of numbers\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\t\t\t\t\t\t\t\t\t\t\t\t\t\t;NOTE: I Make lots of notes to myself in this program so I can refer back to it for my later programs\n\t; declare variables here (1 WORD = 2 BYTES)\t\t\t\t;another note: you can only move constants, constant expr or const labels, or same-size reg or mem location into a given reg or mem location\n\n\tstr1\tBYTE \"Welcome to the Mean and Variance Assmebly Language Program#2-CIS-310, By Demetrius Johnson\", 0\n\tstr2\tBYTE \"MEAN: \", 0\n\tstr3\tBYTE \"VARIANCE: \", 0\n\tMEAN_32\tDWORD ?\t\t\t\t\t\t\t\t\t\t\t\t\t\t;need this 32-bit unsigned int in order to use IRVINE32 WriteDec function\n\tVARI_32\tDWORD ?\t\t\t\t\t\t\t\t\t\t\t\t\t\t;need this 32-bit unsigned int in order to use IRVINE32 WriteDec function\n\tVARI\tWORD ?\t\t\t\t\t\t\t\t\t\t\t\t\t\t;use this to store the results of variance"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#2\\template.asm",
+        "snippet": "; Program template\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\n\t; declare variables here\n.code\nmain proc\n\t; write your code here\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Programming Assignments\\PROG#3",
+    "code_files": [
+      "Programming Assignments\\PROG#3\\CIS-310-PROG#3-DemetriusJohnson.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Programming Assignments\\PROG#3\\CIS-310-PROG#3-DemetriusJohnson.asm",
+        "snippet": ";Program#3 - CIS-310\n;Demetrius Johnson\n;Creation date: June 26, 2021\n;Mod date: June 28, 2021\n;Purpose: read an exam score from keyboard input, translate it to a grade based on score, output score and grade\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\t\t\t\t\t\t\t\t\t\t\t\t\n\t\n\tstr1 BYTE \"Welcome to the exam score grade output Program#3 - CIS-310, By Demetrius Johnson\", 0\n\tstr2 BYTE \"Please input an exam score (0-100%): \", 0\n\tuserInput_str BYTE 5 dup(0)\n\tstrSCORE BYTE \"Score = \", 0\n\tstrGRADE BYTE \"Grade = \",0\n\tgrade_Num BYTE ?\n\tgrade_Letter BYTE ?"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Project32_VS2019\\Project32_VS2019",
+    "code_files": [
+      "Project32_VS2019\\Project32_VS2019\\AddSub2.asm",
+      "Project32_VS2019\\Project32_VS2019\\AddTwo.asm",
+      "Project32_VS2019\\Project32_VS2019\\CIS-310-PROG#2-DemetriusJohnson.asm",
+      "Project32_VS2019\\Project32_VS2019\\CIS-310-PROG#3-DemetriusJohnson.asm",
+      "Project32_VS2019\\Project32_VS2019\\Program#1-CIS-310-DemetriusJohnson.asm",
+      "Project32_VS2019\\Project32_VS2019\\StructExample.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Project32_VS2019\\Project32_VS2019\\AddSub2.asm",
+        "snippet": "TITLE Add and Subtract, Version 2         (AddSub2.asm)\n\n; This program adds and subtracts 32-bit integers\n; and stores the sum in a variable.\n\nINCLUDE Irvine32.inc\n\n.data\nval1     dword  10000h\nval2     dword  40000h\nval3     dword  20000h\nfinalVal dword  ?\n\n.code\nmain PROC\n\n\tmov\teax,val1\t\t\t; start with 10000h\n\tadd\teax,val2\t\t\t; add 40000h\n\tsub\teax,val3\t\t\t; subtract 20000h\n\tmov\tfinalVal,eax\t\t; store the result (30000h)"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Project32_VS2019\\Project32_VS2019\\AddTwo.asm",
+        "snippet": "; AddTwo.asm - adds two 32-bit integers.\n; Chapter 3 example\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.code\nmain proc\n\tmov\teax,5\t\t\t\t\n\tadd\teax,6\t\t\t\t\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Project32_VS2019\\Project32_VS2019\\CIS-310-PROG#2-DemetriusJohnson.asm",
+        "snippet": "; Program#2 - CIS-310\n;Demetrius Johnson\n;Creation date: June 20, 2021\n;Mod date: June 26, 2021\n;Purpose: Find the mean and variance of an array of numbers\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\t\t\t\t\t\t\t\t\t\t\t\t\t\t;NOTE: I Make lots of notes to myself in this program so I can refer back to it for my later programs\n\t; declare variables here (1 WORD = 2 BYTES)\t\t\t\t;another note: you can only move constants, constant expr or const labels, or same-size reg or mem location into a given reg or mem location\n\n\tstr1\tBYTE \"Welcome to the Mean and Variance Assmebly Language Program#2-CIS-310, By Demetrius Johnson\", 0\n\tstr2\tBYTE \"MEAN: \", 0\n\tstr3\tBYTE \"VARIANCE: \", 0\n\tMEAN_32\tDWORD ?\t\t\t\t\t\t\t\t\t\t\t\t\t\t;need this 32-bit unsigned int in order to use IRVINE32 WriteDec function\n\tVARI_32\tDWORD ?\t\t\t\t\t\t\t\t\t\t\t\t\t\t;need this 32-bit unsigned int in order to use IRVINE32 WriteDec function\n\tVARI\tWORD ?\t\t\t\t\t\t\t\t\t\t\t\t\t\t;use this to store the results of variance"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Project32_VS2019\\Project32_VS2019\\CIS-310-PROG#3-DemetriusJohnson.asm",
+        "snippet": ";Program#3 - CIS-310\n;Demetrius Johnson\n;Creation date: June 26, 2021\n;Mod date: June 28, 2021\n;Purpose: read an exam score from keyboard input, translate it to a grade based on score, output score and grade\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\t\t\t\t\t\t\t\t\t\t\t\t\n\t\n\tstr1 BYTE \"Welcome to the exam score grade output Program#3 - CIS-310, By Demetrius Johnson\", 0\n\tstr2 BYTE \"Please input an exam score (0-100%): \", 0\n\tuserInput_str BYTE 5 dup(0)\n\tstrSCORE BYTE \"Score = \", 0\n\tstrGRADE BYTE \"Grade = \",0\n\tgrade_Num BYTE ?\n\tgrade_Letter BYTE ?"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Project32_VS2019\\Project32_VS2019\\Program#1-CIS-310-DemetriusJohnson.asm",
+        "snippet": ";CIS-350 SUMMER 2021 WITH PROFESSOR DAVID YOON\n;Name: Demetrius Johnson\n;Date: 6-06-21 \n;Program Description: EXAM I Question 4: write a program that mulitplies 5*4\n\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.DATA\n\n.CODE\nmain proc \n\nmov al, 5d\t;move 5 into al 8-bit register (05)\nmov bl, 4d\t;move 4 into bl 8-bit register (04)\nmul bl\t\t;multiply al * bl --> it will be stored in the 16-bit AX register 0014h = 20d"
+      },
+      {
+        "file": "CIS-310_RETAKE\\Project32_VS2019\\Project32_VS2019\\StructExample.asm",
+        "snippet": "; Structure example(32 - bit)\n\n.386\n.model flat, stdcall\n.stack 4096\nExitProcess proto, dwExitCode:dword\n\nEmployee STRUCT                            \n     IdNum BYTE \"000000000\"                \n     LastName BYTE 30 DUP(0)               \n     ;ALIGN WORD                           \n     Years WORD 30                         \n     ;ALIGN DWORD                          \n     SalaryHistory DWORD 0, 0, 0, 0        \nEmployee ENDS\n\n;// size of structure: 0x39, or 57 bytes\n\n.data\nemployees Employee 5 DUP(<\"111111111\", \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", 0FFh, 4 DUP(0EEEEEEEEh)>)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-310_RETAKE",
+    "folder": "Templates",
+    "code_files": [
+      "Templates\\template.asm"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-310_RETAKE\\Templates\\template.asm",
+        "snippet": "; Program template\n\n.386\n.model flat,stdcall\n.stack 4096\nExitProcess proto,dwExitCode:dword\n\n.data\n\t; declare variables here\n.code\nmain proc\n\t; write your code here\n\n\tinvoke ExitProcess,0\nmain endp\nend main"
+      }
+    ]
+  }
+]

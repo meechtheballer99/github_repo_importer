@@ -1,0 +1,138 @@
+[
+  {
+    "repo": "CIS-350",
+    "folder": ".",
+    "code_files": [
+      ".\\Final exam Question8.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\Final exam Question8.cpp",
+        "snippet": "#include<iostream>\n#include<fstream>\nstruct BinaryNode\n{\n  int element;\n  BinaryNode *left;\n  BinaryNode *right;\n};\n\nint printTreeDecreasingOrder(BinaryNode* node, ostream& out)\n{\n\t//first we handle right sub trees (larger values)\n\n\tif(node->right != NULL) { //use this loop to move to the right-most (largest element) node in a given sub tree\n\n\t\tprintTreeDecreasingOrder(node->right, out); \n\t\t\n\t}\n\tout << node->element; //right is NULL; now we can print current element."
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\CIS350-P3-MAIN-DemetriusJ.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses a priority queue (using a heap) to implement Prim's aglorithm and effectively execute Minimum Spanning Tree Protocol\n//Date Created: 7/14/21\n//Date Modified: 7/15/21\n\n\n\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\n#include \"graph.h\"\nusing namespace std;\n\n\n\nint main()\n{\n\tstring userInputFile;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\edge.cpp",
+        "snippet": "#include \"edge.h\"\n\n\nedge::edge() {\n\n\tsourceVertex = -1;\n\tdestinationVertex = -1;\n\tedgeWeight = -1;\n\tnextEdge = nullptr;\n\n} \nedge::edge(int source, int destination, int weight) {\n\n\tsourceVertex = source;\n\tdestinationVertex = destination;\n\tedgeWeight = weight;\n\tnextEdge = nullptr;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\graph.cpp",
+        "snippet": "#include \"graph.h\"\n\ngraph::graph() {\n\t\n\tnumberOfVertices = 0;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n\tstd::cout << \"Default - Empty Graph Created\\n\";\n\n}\ngraph::graph(int vertices) {\n\n\tnumberOfVertices = vertices;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n}\n\n//Description: adds an edge to the graph"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\pqData.cpp",
+        "snippet": "#include \"pqData.h\""
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\resultSetClass.cpp",
+        "snippet": "#include \"resultSetClass.h\"\n\nresultSetClass::resultSetClass() {\n\n\tparent = -1;\n\tweight = -1;\n\n}"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\CIS-350-Project1-DemetriusJohnson.cpp",
+        "snippet": "// CIS-350-Project1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/** program1Test.cpp\n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#include <iostream>\n#include <string>\n#include \"SortedArray.h\"\n\nusing namespace std;\n\n\nconst int N = 1787;\nconst int M = 2357;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\SortedArray.cpp",
+        "snippet": "/*\n\tSortedArray.cpp skeleton\n*/\n/** \n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#ifndef SORTEDARRAY_CPP\n#define SORTEDARRAY_CPP\n\n#include \"SortedArray.h\"\n\n\n// Default constructor\ntemplate <typename Object>\nSortedArray<Object>::SortedArray()"
+      },
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\MAIN-CIS-350-Project5-DemetriusJohnson.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses the backtracking algorithm to perform a word search on a character grid\n//Date Created: 8/12/21\n//Date Modified: 8/19/21\n\n\n\n#include \"Table.h\"\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\nusing namespace std;\n\n\nvoid searchSequence(string search, Table& grid, ofstream& of);\n\nint main()\n{"
+      },
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\Table.cpp",
+        "snippet": "#include \"Table.h\"\n\n//Author: Demetrius E Johnson\n//Purpose: add coordinates to coordiante vector in order to keep track of the first and last letter of each found word\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::addCoord(int x, int y) {\n\n\tfoundCoord.push_back(x);\n\tfoundCoord.push_back(y);\n}\n//Author: Demetrius E Johnson\n//Purpose: delete the coordinate of a word (first and last letter) in the event that it is not longer apart of the solution set for found words in a phrase\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::deleteLetterCoord(void) {\n\n\tfoundCoord.pop_back();\n\tfoundCoord.pop_back();"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\CIS-350-Program3-Completed EXE and TXT files",
+    "code_files": [
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\CIS350-P3-MAIN-DemetriusJ.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\edge.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\graph.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\pqData.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\resultSetClass.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\CIS350-P3-MAIN-DemetriusJ.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses a priority queue (using a heap) to implement Prim's aglorithm and effectively execute Minimum Spanning Tree Protocol\n//Date Created: 7/14/21\n//Date Modified: 7/15/21\n\n\n\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\n#include \"graph.h\"\nusing namespace std;\n\n\n\nint main()\n{\n\tstring userInputFile;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\edge.cpp",
+        "snippet": "#include \"edge.h\"\n\n\nedge::edge() {\n\n\tsourceVertex = -1;\n\tdestinationVertex = -1;\n\tedgeWeight = -1;\n\tnextEdge = nullptr;\n\n} \nedge::edge(int source, int destination, int weight) {\n\n\tsourceVertex = source;\n\tdestinationVertex = destination;\n\tedgeWeight = weight;\n\tnextEdge = nullptr;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\graph.cpp",
+        "snippet": "#include \"graph.h\"\n\ngraph::graph() {\n\t\n\tnumberOfVertices = 0;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n\tstd::cout << \"Default - Empty Graph Created\\n\";\n\n}\ngraph::graph(int vertices) {\n\n\tnumberOfVertices = vertices;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n}\n\n//Description: adds an edge to the graph"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\pqData.cpp",
+        "snippet": "#include \"pqData.h\""
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\resultSetClass.cpp",
+        "snippet": "#include \"resultSetClass.h\"\n\nresultSetClass::resultSetClass() {\n\n\tparent = -1;\n\tweight = -1;\n\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\CIS350-Project1_Complete-DemetriusJ",
+    "code_files": [
+      "projects\\CIS350-Project1_Complete-DemetriusJ\\CIS-350-Project1-DemetriusJohnson.cpp",
+      "projects\\CIS350-Project1_Complete-DemetriusJ\\SortedArray.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\CIS-350-Project1-DemetriusJohnson.cpp",
+        "snippet": "// CIS-350-Project1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/** program1Test.cpp\n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#include <iostream>\n#include <string>\n#include \"SortedArray.h\"\n\nusing namespace std;\n\n\nconst int N = 1787;\nconst int M = 2357;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\SortedArray.cpp",
+        "snippet": "/*\n\tSortedArray.cpp skeleton\n*/\n/** \n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#ifndef SORTEDARRAY_CPP\n#define SORTEDARRAY_CPP\n\n#include \"SortedArray.h\"\n\n\n// Default constructor\ntemplate <typename Object>\nSortedArray<Object>::SortedArray()"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\PROG 5 COMPLETED",
+    "code_files": [
+      "projects\\PROG 5 COMPLETED\\MAIN-CIS-350-Project5-DemetriusJohnson.cpp",
+      "projects\\PROG 5 COMPLETED\\Table.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\MAIN-CIS-350-Project5-DemetriusJohnson.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses the backtracking algorithm to perform a word search on a character grid\n//Date Created: 8/12/21\n//Date Modified: 8/19/21\n\n\n\n#include \"Table.h\"\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\nusing namespace std;\n\n\nvoid searchSequence(string search, Table& grid, ofstream& of);\n\nint main()\n{"
+      },
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\Table.cpp",
+        "snippet": "#include \"Table.h\"\n\n//Author: Demetrius E Johnson\n//Purpose: add coordinates to coordiante vector in order to keep track of the first and last letter of each found word\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::addCoord(int x, int y) {\n\n\tfoundCoord.push_back(x);\n\tfoundCoord.push_back(y);\n}\n//Author: Demetrius E Johnson\n//Purpose: delete the coordinate of a word (first and last letter) in the event that it is not longer apart of the solution set for found words in a phrase\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::deleteLetterCoord(void) {\n\n\tfoundCoord.pop_back();\n\tfoundCoord.pop_back();"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files",
+    "code_files": [
+      "projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\QuadraticProbing.cpp",
+      "projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\TestQuadraticProbing-CIS350-DemetriusJ.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\QuadraticProbing.cpp",
+        "snippet": "#include \"QuadraticProbing.h\"\n#include <iostream>\nusing namespace std;\n\n/**\n * Internal method to test if a positive number is prime.\n * Not an efficient algorithm.\n */\nbool isPrime( int n )\n{\n    if( n == 2 || n == 3 )\n        return true;\n\n    if( n == 1 || n % 2 == 0 )\n        return false;\n\n    for( int i = 3; i * i <= n; i += 2 )\n        if( n % i == 0 )\n            return false;"
+      },
+      {
+        "file": "CIS-350\\projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\TestQuadraticProbing-CIS350-DemetriusJ.cpp",
+        "snippet": "// CIS-350-Project2-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n/** program2Test\n *\n * Author: Demetrius Johnson\n * Date: 6-8-21\n * Modification Date: 6-14-21\n * Description: A Test Program for Program 2; this program implements the use of a hash table to help with the functionality of a spell-checker\n */\n\n\n#include <iostream>\n#include \"QuadraticProbing.h\"\n#include <fstream>\n#include <sstream>\nusing namespace std;\n\n//below I make notes to myself to remember how parametized main works:\n/*"
+      }
+    ]
+  }
+]

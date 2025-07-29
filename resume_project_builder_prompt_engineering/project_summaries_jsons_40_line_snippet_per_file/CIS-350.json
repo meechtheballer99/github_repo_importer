@@ -1,0 +1,138 @@
+[
+  {
+    "repo": "CIS-350",
+    "folder": ".",
+    "code_files": [
+      ".\\Final exam Question8.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\Final exam Question8.cpp",
+        "snippet": "#include<iostream>\n#include<fstream>\nstruct BinaryNode\n{\n  int element;\n  BinaryNode *left;\n  BinaryNode *right;\n};\n\nint printTreeDecreasingOrder(BinaryNode* node, ostream& out)\n{\n\t//first we handle right sub trees (larger values)\n\n\tif(node->right != NULL) { //use this loop to move to the right-most (largest element) node in a given sub tree\n\n\t\tprintTreeDecreasingOrder(node->right, out); \n\t\t\n\t}\n\tout << node->element; //right is NULL; now we can print current element.\n\t\n\n\t//now we need to handle left sub trees (smaller values):\n\n\tif(node->left != NULL){\n\t\n\t\tprintTreeDecreasingOrder(node->left, out);\n\t\t\n\t}\n\n\t\n\n}"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\CIS350-P3-MAIN-DemetriusJ.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses a priority queue (using a heap) to implement Prim's aglorithm and effectively execute Minimum Spanning Tree Protocol\n//Date Created: 7/14/21\n//Date Modified: 7/15/21\n\n\n\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\n#include \"graph.h\"\nusing namespace std;\n\n\n\nint main()\n{\n\tstring userInputFile;\n\tstring userOutputFile;\n\n\tcout << \"Welcome to the MST Test Program\\n\";\n\tcout << \"Enter output file name: \";\n\tcin >> userOutputFile;\n\tofstream outputFile(userOutputFile);\n\n\t//output file not opened sucessfully case:\n\tif (!outputFile.good()) {\n\t\tcout << \"file \" << userOutputFile << \" cannot be opened  program terminated...\\n\";\n\t\treturn 1;\n\t}\n\t\n\toutputFile << \"Welcome to the MST Test Program\\n\";\n\toutputFile << \"Output file: \" << userOutputFile << endl;\n\n\t\t//Create an empty graph and test functionality  No MST\n\tcout << \"Testing Default Scenario...\\n\";\n\toutputFile << \"Testing Default Scenario...\\n\";\n\tgraph emptyGraphTest;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\edge.cpp",
+        "snippet": "#include \"edge.h\"\n\n\nedge::edge() {\n\n\tsourceVertex = -1;\n\tdestinationVertex = -1;\n\tedgeWeight = -1;\n\tnextEdge = nullptr;\n\n} \nedge::edge(int source, int destination, int weight) {\n\n\tsourceVertex = source;\n\tdestinationVertex = destination;\n\tedgeWeight = weight;\n\tnextEdge = nullptr;\n\n\n}"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\graph.cpp",
+        "snippet": "#include \"graph.h\"\n\ngraph::graph() {\n\t\n\tnumberOfVertices = 0;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n\tstd::cout << \"Default - Empty Graph Created\\n\";\n\n}\ngraph::graph(int vertices) {\n\n\tnumberOfVertices = vertices;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n}\n\n//Description: adds an edge to the graph\n//Pre-condition: need source, dest, and weight, and also output stream so we can output text to the user output file\n//Post-condition: edge will be added to the adjacency array and proper outputs will occur to the screen and user file\nvoid graph::addEdge(int source, int destination, int weight, std::ofstream& outFile) {\n\n\t//3 if-statements to check if request is valid:\n\n\tif (numberOfVertices == 0) {\n\t\n\t\tstd::cout << \"Empty Graph - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight << std::endl;\n\t\toutFile << \"Empty Graph - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight << std::endl;\n\t\treturn;\n\t}\n\tif (source < 0 || destination < 0 || source > (numberOfVertices - 1) || destination > (numberOfVertices - 1)) {\n\t\n\t\tstd::cout << \"Invalid Source or Destination Vertex - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight \n\t\t\t\t\t<< \" - Edge request ignored\" << std::endl;\n\t\toutFile << \"Invalid Source or Destination Vertex - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight\n\t\t\t<< \" - Edge request ignored\" << std::endl;\n\t\treturn;\n\t}"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\pqData.cpp",
+        "snippet": "#include \"pqData.h\""
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\resultSetClass.cpp",
+        "snippet": "#include \"resultSetClass.h\"\n\nresultSetClass::resultSetClass() {\n\n\tparent = -1;\n\tweight = -1;\n\n}"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\CIS-350-Project1-DemetriusJohnson.cpp",
+        "snippet": "// CIS-350-Project1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/** program1Test.cpp\n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#include <iostream>\n#include <string>\n#include \"SortedArray.h\"\n\nusing namespace std;\n\n\nconst int N = 1787;\nconst int M = 2357;\n\nint main()\n{\n\tcout << \"-----WELCOME TO THE SORTED ARRAY PROGRAM -- BY DEMETRIUS JOHNSON - CIS-350 WITH DR. JINHUA GUO---\\n\\n\\n\";\n\n\tSortedArray<int> q;\n\tSortedArray<string> animals;\n\n\tstring str1[] = { \"zebra\", \"tiger\", \"lion\", \"dog\", \"monkey\", \"snake\", \"turkey\",\n\t\t\"cat\", \"duck\", \"alligator\" };\n\n\tint minVal1, maxVal1;\n\tint i, j;\n\n\tint index;\n\n\tfor (i = N; i != 0; i = (i + N) % M)\n\t\tq.insert(i);\n\n\tcout << \"Completed first round of insertions\" << endl;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\SortedArray.cpp",
+        "snippet": "/*\n\tSortedArray.cpp skeleton\n*/\n/** \n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#ifndef SORTEDARRAY_CPP\n#define SORTEDARRAY_CPP\n\n#include \"SortedArray.h\"\n\n\n// Default constructor\ntemplate <typename Object>\nSortedArray<Object>::SortedArray()\n{\n\t//default capacity is 16\n\n\tobjects = new Object[SPARE_CAPACITY];\n\ttheSize = 0;\n\ttheCapacity = SPARE_CAPACITY;\n\treturn; //I know this return isn't necessary, it's just my style so I know I completed the function\n}\n\n// Copy constructor\ntemplate <typename Object>\nSortedArray<Object>::SortedArray(const SortedArray<Object> &from)\n{\n\tthis->objects = new Object[from.theCapacity];\n\tthis->theSize = from.theSize;\n\tthis->theCapacity = from.theCapacity;\n\n\t//deep copy:\n\tfor (int i = 0; i < theSize; i++) {"
+      },
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\MAIN-CIS-350-Project5-DemetriusJohnson.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses the backtracking algorithm to perform a word search on a character grid\n//Date Created: 8/12/21\n//Date Modified: 8/19/21\n\n\n\n#include \"Table.h\"\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\nusing namespace std;\n\n\nvoid searchSequence(string search, Table& grid, ofstream& of);\n\nint main()\n{\n\tstring userInputFile;\n\tstring userOutputFile;\n\tstring testInputFile = \"testGrid.dat\";\n\n\tcout << \"Welcome to the Backtracking Word Search Test Program\\n\";\n\tcout << \"Enter output file name: \";\n\tcin >> userOutputFile;\n\tofstream outputFile(userOutputFile);\n\n\t//output file not opened sucessfully case:\n\tif (!outputFile.good()) {\n\t\tcout << \"file \" << userOutputFile << \" cannot be opened  program terminated...\\n\";\n\t\tsystem(\"pause\");\n\t\treturn 1;\n\t}\n\n\toutputFile << \"Welcome to the Backtracking Word Search Test Program\\n\";\n\toutputFile << \"Output file: \" << userOutputFile << endl;\n\n\t//now build 4x4 test table using input test file \"testGrid.dat\" and test backtracking program functionality"
+      },
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\Table.cpp",
+        "snippet": "#include \"Table.h\"\n\n//Author: Demetrius E Johnson\n//Purpose: add coordinates to coordiante vector in order to keep track of the first and last letter of each found word\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::addCoord(int x, int y) {\n\n\tfoundCoord.push_back(x);\n\tfoundCoord.push_back(y);\n}\n//Author: Demetrius E Johnson\n//Purpose: delete the coordinate of a word (first and last letter) in the event that it is not longer apart of the solution set for found words in a phrase\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::deleteLetterCoord(void) {\n\n\tfoundCoord.pop_back();\n\tfoundCoord.pop_back();\n}\n//Author: Demetrius E Johnson\n//Purpose: build several 2d arrays that are associated with the table input from the user input file\n//Date Created: 8/12/21\n//Date Modified: 8/19/21\nbool Table::buildTable(ifstream& inputFile, ofstream& outputFile) {\n\n\t//first, check to ensure a table is not already present; call destroy function to clear the table if necessary:\n\tdestroyTable();\n\n\t//now build the character table/grid (2D array)\n\n\tstringstream ss;\t\t\t//use this to input an integer stored in a string into an int\n\tstring lineParse;\t\t\t//use this to parse each line from the input file\n\n\n\n\n\tcout << endl << endl;\n\toutputFile << endl << endl;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\CIS-350-Program3-Completed EXE and TXT files",
+    "code_files": [
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\CIS350-P3-MAIN-DemetriusJ.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\edge.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\graph.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\pqData.cpp",
+      "projects\\CIS-350-Program3-Completed EXE and TXT files\\resultSetClass.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\CIS350-P3-MAIN-DemetriusJ.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses a priority queue (using a heap) to implement Prim's aglorithm and effectively execute Minimum Spanning Tree Protocol\n//Date Created: 7/14/21\n//Date Modified: 7/15/21\n\n\n\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\n#include \"graph.h\"\nusing namespace std;\n\n\n\nint main()\n{\n\tstring userInputFile;\n\tstring userOutputFile;\n\n\tcout << \"Welcome to the MST Test Program\\n\";\n\tcout << \"Enter output file name: \";\n\tcin >> userOutputFile;\n\tofstream outputFile(userOutputFile);\n\n\t//output file not opened sucessfully case:\n\tif (!outputFile.good()) {\n\t\tcout << \"file \" << userOutputFile << \" cannot be opened  program terminated...\\n\";\n\t\treturn 1;\n\t}\n\t\n\toutputFile << \"Welcome to the MST Test Program\\n\";\n\toutputFile << \"Output file: \" << userOutputFile << endl;\n\n\t\t//Create an empty graph and test functionality  No MST\n\tcout << \"Testing Default Scenario...\\n\";\n\toutputFile << \"Testing Default Scenario...\\n\";\n\tgraph emptyGraphTest;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\edge.cpp",
+        "snippet": "#include \"edge.h\"\n\n\nedge::edge() {\n\n\tsourceVertex = -1;\n\tdestinationVertex = -1;\n\tedgeWeight = -1;\n\tnextEdge = nullptr;\n\n} \nedge::edge(int source, int destination, int weight) {\n\n\tsourceVertex = source;\n\tdestinationVertex = destination;\n\tedgeWeight = weight;\n\tnextEdge = nullptr;\n\n\n}"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\graph.cpp",
+        "snippet": "#include \"graph.h\"\n\ngraph::graph() {\n\t\n\tnumberOfVertices = 0;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n\tstd::cout << \"Default - Empty Graph Created\\n\";\n\n}\ngraph::graph(int vertices) {\n\n\tnumberOfVertices = vertices;\n\tadjacencyListGraph = new edge[numberOfVertices];\n\tadjacencyListMST = new edge[numberOfVertices];\n}\n\n//Description: adds an edge to the graph\n//Pre-condition: need source, dest, and weight, and also output stream so we can output text to the user output file\n//Post-condition: edge will be added to the adjacency array and proper outputs will occur to the screen and user file\nvoid graph::addEdge(int source, int destination, int weight, std::ofstream& outFile) {\n\n\t//3 if-statements to check if request is valid:\n\n\tif (numberOfVertices == 0) {\n\t\n\t\tstd::cout << \"Empty Graph - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight << std::endl;\n\t\toutFile << \"Empty Graph - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight << std::endl;\n\t\treturn;\n\t}\n\tif (source < 0 || destination < 0 || source > (numberOfVertices - 1) || destination > (numberOfVertices - 1)) {\n\t\n\t\tstd::cout << \"Invalid Source or Destination Vertex - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight \n\t\t\t\t\t<< \" - Edge request ignored\" << std::endl;\n\t\toutFile << \"Invalid Source or Destination Vertex - Cannot Add Edge: \" << source << \",\" << destination << \",\" << weight\n\t\t\t<< \" - Edge request ignored\" << std::endl;\n\t\treturn;\n\t}"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\pqData.cpp",
+        "snippet": "#include \"pqData.h\""
+      },
+      {
+        "file": "CIS-350\\projects\\CIS-350-Program3-Completed EXE and TXT files\\resultSetClass.cpp",
+        "snippet": "#include \"resultSetClass.h\"\n\nresultSetClass::resultSetClass() {\n\n\tparent = -1;\n\tweight = -1;\n\n}"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\CIS350-Project1_Complete-DemetriusJ",
+    "code_files": [
+      "projects\\CIS350-Project1_Complete-DemetriusJ\\CIS-350-Project1-DemetriusJohnson.cpp",
+      "projects\\CIS350-Project1_Complete-DemetriusJ\\SortedArray.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\CIS-350-Project1-DemetriusJohnson.cpp",
+        "snippet": "// CIS-350-Project1-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n\n/** program1Test.cpp\n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#include <iostream>\n#include <string>\n#include \"SortedArray.h\"\n\nusing namespace std;\n\n\nconst int N = 1787;\nconst int M = 2357;\n\nint main()\n{\n\tcout << \"-----WELCOME TO THE SORTED ARRAY PROGRAM -- BY DEMETRIUS JOHNSON - CIS-350 WITH DR. JINHUA GUO---\\n\\n\\n\";\n\n\tSortedArray<int> q;\n\tSortedArray<string> animals;\n\n\tstring str1[] = { \"zebra\", \"tiger\", \"lion\", \"dog\", \"monkey\", \"snake\", \"turkey\",\n\t\t\"cat\", \"duck\", \"alligator\" };\n\n\tint minVal1, maxVal1;\n\tint i, j;\n\n\tint index;\n\n\tfor (i = N; i != 0; i = (i + N) % M)\n\t\tq.insert(i);\n\n\tcout << \"Completed first round of insertions\" << endl;"
+      },
+      {
+        "file": "CIS-350\\projects\\CIS350-Project1_Complete-DemetriusJ\\SortedArray.cpp",
+        "snippet": "/*\n\tSortedArray.cpp skeleton\n*/\n/** \n *\n * Author: Demetrius Johnson\n * Date: 5-25-21\n * Modification Date: 5-27-21\n * Description: A Test Program for Program 1; this program implements the use of a sorted array using dynamically allocated memory\n */\n\n#ifndef SORTEDARRAY_CPP\n#define SORTEDARRAY_CPP\n\n#include \"SortedArray.h\"\n\n\n// Default constructor\ntemplate <typename Object>\nSortedArray<Object>::SortedArray()\n{\n\t//default capacity is 16\n\n\tobjects = new Object[SPARE_CAPACITY];\n\ttheSize = 0;\n\ttheCapacity = SPARE_CAPACITY;\n\treturn; //I know this return isn't necessary, it's just my style so I know I completed the function\n}\n\n// Copy constructor\ntemplate <typename Object>\nSortedArray<Object>::SortedArray(const SortedArray<Object> &from)\n{\n\tthis->objects = new Object[from.theCapacity];\n\tthis->theSize = from.theSize;\n\tthis->theCapacity = from.theCapacity;\n\n\t//deep copy:\n\tfor (int i = 0; i < theSize; i++) {"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\PROG 5 COMPLETED",
+    "code_files": [
+      "projects\\PROG 5 COMPLETED\\MAIN-CIS-350-Project5-DemetriusJohnson.cpp",
+      "projects\\PROG 5 COMPLETED\\Table.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\MAIN-CIS-350-Project5-DemetriusJohnson.cpp",
+        "snippet": "// This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: create a program that uses the backtracking algorithm to perform a word search on a character grid\n//Date Created: 8/12/21\n//Date Modified: 8/19/21\n\n\n\n#include \"Table.h\"\n#include <iostream>\n#include <sstream>\n#include<string>\n#include <fstream>\nusing namespace std;\n\n\nvoid searchSequence(string search, Table& grid, ofstream& of);\n\nint main()\n{\n\tstring userInputFile;\n\tstring userOutputFile;\n\tstring testInputFile = \"testGrid.dat\";\n\n\tcout << \"Welcome to the Backtracking Word Search Test Program\\n\";\n\tcout << \"Enter output file name: \";\n\tcin >> userOutputFile;\n\tofstream outputFile(userOutputFile);\n\n\t//output file not opened sucessfully case:\n\tif (!outputFile.good()) {\n\t\tcout << \"file \" << userOutputFile << \" cannot be opened  program terminated...\\n\";\n\t\tsystem(\"pause\");\n\t\treturn 1;\n\t}\n\n\toutputFile << \"Welcome to the Backtracking Word Search Test Program\\n\";\n\toutputFile << \"Output file: \" << userOutputFile << endl;\n\n\t//now build 4x4 test table using input test file \"testGrid.dat\" and test backtracking program functionality"
+      },
+      {
+        "file": "CIS-350\\projects\\PROG 5 COMPLETED\\Table.cpp",
+        "snippet": "#include \"Table.h\"\n\n//Author: Demetrius E Johnson\n//Purpose: add coordinates to coordiante vector in order to keep track of the first and last letter of each found word\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::addCoord(int x, int y) {\n\n\tfoundCoord.push_back(x);\n\tfoundCoord.push_back(y);\n}\n//Author: Demetrius E Johnson\n//Purpose: delete the coordinate of a word (first and last letter) in the event that it is not longer apart of the solution set for found words in a phrase\n//Date Created: 8/19/21\n//Date Modified: 8/19/21\nvoid Table::deleteLetterCoord(void) {\n\n\tfoundCoord.pop_back();\n\tfoundCoord.pop_back();\n}\n//Author: Demetrius E Johnson\n//Purpose: build several 2d arrays that are associated with the table input from the user input file\n//Date Created: 8/12/21\n//Date Modified: 8/19/21\nbool Table::buildTable(ifstream& inputFile, ofstream& outputFile) {\n\n\t//first, check to ensure a table is not already present; call destroy function to clear the table if necessary:\n\tdestroyTable();\n\n\t//now build the character table/grid (2D array)\n\n\tstringstream ss;\t\t\t//use this to input an integer stored in a string into an int\n\tstring lineParse;\t\t\t//use this to parse each line from the input file\n\n\n\n\n\tcout << endl << endl;\n\toutputFile << endl << endl;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-350",
+    "folder": "projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files",
+    "code_files": [
+      "projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\QuadraticProbing.cpp",
+      "projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\TestQuadraticProbing-CIS350-DemetriusJ.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-350\\projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\QuadraticProbing.cpp",
+        "snippet": "#include \"QuadraticProbing.h\"\n#include <iostream>\nusing namespace std;\n\n/**\n * Internal method to test if a positive number is prime.\n * Not an efficient algorithm.\n */\nbool isPrime( int n )\n{\n    if( n == 2 || n == 3 )\n        return true;\n\n    if( n == 1 || n % 2 == 0 )\n        return false;\n\n    for( int i = 3; i * i <= n; i += 2 )\n        if( n % i == 0 )\n            return false;\n\n    return true;\n}\n\n/**\n * Internal method to return a prime number at least as large as n.\n * Assumes n > 0.\n */\nint nextPrime( int n )\n{\n    if( n <= 0 )\n        n = 3;\n\n    if( n % 2 == 0 )\n        n++;\n\n    for( ; !isPrime( n ); n += 2 )\n        ;\n\n    return n;\n}"
+      },
+      {
+        "file": "CIS-350\\projects\\Project2_Completed_DemetriusJohnson\\offical and complete cpp and h files\\TestQuadraticProbing-CIS350-DemetriusJ.cpp",
+        "snippet": "// CIS-350-Project2-DemetriusJohnson.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n/** program2Test\n *\n * Author: Demetrius Johnson\n * Date: 6-8-21\n * Modification Date: 6-14-21\n * Description: A Test Program for Program 2; this program implements the use of a hash table to help with the functionality of a spell-checker\n */\n\n\n#include <iostream>\n#include \"QuadraticProbing.h\"\n#include <fstream>\n#include <sstream>\nusing namespace std;\n\n//below I make notes to myself to remember how parametized main works:\n/*\n\n//note: the main function always has its first command line argument as the programs name --> //this is because the operating system calls many MAIN() functions, \n    //and the specific main function (the main function is overloaded with numerous function versions!) called depends on the name provided in the first argument parameter.\n    //This is also why MAIN is always the entry point of any program; it is because the Operating System calls the MAIN function (and often expects an int return val when program completes execution)\n    //Also note: int main(int argc, char *argv[]) is the same thing as --> int main(int argc, char** argv); \n    //argc (argument counter) = number of arguments provided (in the pointer array argv);  //argc will always be = 1 for file name\n    //argv (argument \"vector\") = a double pointer --> points to an array of char pointers (c-style strings) //argv[0] will always be the file name char array\n    //remember std::cout overloads the << operator so that cout << char pointer will output the char or the array of char (string) associated to the address\n    //so that: char* c = 'h'; cout << c --> output will be 'h' and not the address that the pointer points to like normal pointers will behave.\n    //Now I can use the argv array and reference it in my program to open or close input or output files, or to use atoi() function to parse a number out of a char array.\n */\n\n\n//FUNCTION DECLARATIONS:\nvoid clear_nonAlpha(string& word);\nvoid spellChecker(const string& word, const int& lineNumber, const HashTable<string>& dictionary);\n\n\n//MAIN FUNCTION:\n\n//COMMAND LINE ARGUMENTS TO USE: ( NUMBER OF WORDS IN THE DICTIONARY, DICTIONARY FILE NAME (USED FOR INPUT), TEXT FILE NAME (USED FOR INPUT, SPELL-CHECKS FILES CONTENTS) )"
+      }
+    ]
+  }
+]

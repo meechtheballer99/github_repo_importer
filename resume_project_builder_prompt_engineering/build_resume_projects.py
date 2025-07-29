@@ -11,7 +11,7 @@ GITHUB_REPOS_ROOT = r"C:\Users\demet\OneDrive\Documents\GitHub\github_repo_impor
 
 SOURCE_EXTENSIONS = {'.py', '.cpp', '.c', '.java', '.asm', '.ipynb', '.js', '.ts', '.rs'}
 EXCLUDE_DIRS = {'docs', 'textbooks', 'slides', '__pycache__', '.git'}
-MAX_LINES_PER_FILE = 20
+MAX_LINES_PER_FILE = 40
 MAX_TOTAL_SNIPPETS_PER_PROJECT = 10
 
 # Each repository will get its own JSON summary under this directory

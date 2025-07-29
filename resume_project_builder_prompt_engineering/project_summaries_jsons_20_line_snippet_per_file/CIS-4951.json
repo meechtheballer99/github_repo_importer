@@ -1,0 +1,267 @@
+[
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV",
+    "code_files": [
+      "Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone-SD1_demo-v1.py",
+      "Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone-SD1_demo-v2.py",
+      "Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone-SD1_demo-v3.py",
+      "Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone.py",
+      "Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone_showHSV.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone-SD1_demo-v1.py",
+        "snippet": "import rospy\nimport cv2\nfrom sensor_msgs.msg import Image\nfrom cv_bridge import CvBridge\n\nrospy.init_node('red_object_detection')\nbridge = CvBridge()\n\n# Create a publisher to publish the video feed to a ROS topic\nimage_pub = rospy.Publisher('red_object_detection/image_raw', Image, queue_size=10)\n\ndef detect_red(cv_image):\n    # Convert the image to HSV color space\n    hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)\n\n    # Define the range of red color in HSV\n    lower_red = (0, 50, 50)\n    upper_red = (10, 255, 255)\n    mask1 = cv2.inRange(hsv, lower_red, upper_red)"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone-SD1_demo-v2.py",
+        "snippet": "import rospy\nimport cv2\nimport numpy as np\nfrom sensor_msgs.msg import Image\nfrom cv_bridge import CvBridge\n\nrospy.init_node('red_object_detection')\nbridge = CvBridge()\n\n# Create a publisher to publish the video feed to a ROS topic\nimage_pub = rospy.Publisher('red_object_detection/image_raw', Image, queue_size=10)\n\ndef detect_red(cv_image):\n    # Convert the image to HSV color space\n    hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)\n\n    # Define the range of red color in HSV\n    lower_red = (0, 50, 50)\n    upper_red = (10, 255, 255)\n    mask1 = cv2.inRange(hsv, lower_red, upper_red)"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone-SD1_demo-v3.py",
+        "snippet": "import rospy\nimport cv2\nimport numpy as np\nfrom sensor_msgs.msg import Image\nfrom cv_bridge import CvBridge\n\nrospy.init_node('red_object_detection')\nbridge = CvBridge()\n\n# Create a publisher to publish the video feed to a ROS topic\nimage_pub = rospy.Publisher('red_object_detection/image_raw', Image, queue_size=10)\n\ndef detect_red(cv_image):\n    # Convert the image to HSV color space\n    hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)\n\n    # Define the range of red color in HSV (red has 2 ranges) --> format is (hue, saturation, value (brightness))\n    #lower range: 0-10 for hue for color red\n    lower_red = (0, 240, 50)\n    upper_red = (8, 255, 255)"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone.py",
+        "snippet": "import numpy\nimport cv2\n\npos = (300,100)\nfont = cv2.FONT_HERSHEY_SIMPLEX\nfontScale = 3\ncolor = (250,250,250)\nthickness = 5\n\nlowColorVal1 = numpy.array([170, 160, 60])\nhighColorVal1 = numpy.array([175, 255, 80])\nlowColorVal2 = numpy.array([0, 240, 255])\nhighColorVal2 = numpy.array([3, 255, 255])\n\ncam = cv2.VideoCapture(0)\n\nif not cam.isOpened():\n    print(\"Cannot open camera\")\n    exit()"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\OpenCV\\DroneRedDetect_OpenCV\\RedDetect_drone_showHSV.py",
+        "snippet": "import numpy\nimport cv2\n\npos = (300,100)\nfont = cv2.FONT_HERSHEY_SIMPLEX\nfontScale = 3\ncolor = (250,250,250)\nthickness = 5\n\n#Color\tHue Range for color RED - it has two ranges, a higher range, and alowe range\n#Red:\tlower range: 0-10, higher range: 170-180\n\nlowColorVal1 = numpy.array([170, 160, 60])\nhighColorVal1 = numpy.array([175, 255, 80])\nlowColorVal2 = numpy.array([0, 255, 255])\nhighColorVal2 = numpy.array([1, 255, 255])\n\ncam = cv2.VideoCapture(0)\n\nif not cam.isOpened():"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\OpenCV\\Jonathan Test Code",
+    "code_files": [
+      "Client - Dr Song\\OpenCV\\Jonathan Test Code\\cvtest.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\OpenCV\\Jonathan Test Code\\cvtest.py",
+        "snippet": "import numpy\nimport cv2\n\npos = (300,100)\nfont = cv2.FONT_HERSHEY_SIMPLEX\nfontScale = 3\ncolor = (250,250,250)\nthickness = 5\n\nlowColorVal1 = numpy.array([167, 45, 45])\nhighColorVal1 = numpy.array([180, 255, 255])\nlowColorVal2 = numpy.array([0, 45, 45])\nhighColorVal2 = numpy.array([3, 255, 255])\n#img = cv2.imread(\"cube.jpg\")\ncam = cv2.VideoCapture(\"red.mp4\")\n#if img is None:\n#    print(\"Cannot open image\")\n#    exit()\nif not cam.isOpened():\n    print(\"Cannot open camera\")"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\OpenCV\\Olivia Test Code",
+    "code_files": [
+      "Client - Dr Song\\OpenCV\\Olivia Test Code\\yellow.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\OpenCV\\Olivia Test Code\\yellow.py",
+        "snippet": "#  Importing the libraries OpenCV and numpy\nimport cv2\nimport numpy as np\n\n# Read the images\nimg = cv2.imread(\"starry_night.jpg\")\n\n# Resizing the image\nimage = cv2.resize(img, (700, 600))\n\n# Convert Image to Image HSV\nhsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)\n\n# Defining lower and upper bound HSV values\nlower = np.array([20, 100, 100])\nupper = np.array([30, 255, 255])\n\n# Defining mask for detecting color\nmask = cv2.inRange(hsv, lower, upper)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV",
+    "code_files": [
+      "Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\cvtest.py",
+      "Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone-SD1_demo-v1.py",
+      "Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone-SD1_demo-v2.py",
+      "Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone-SD1_demo-v3.py",
+      "Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone.py",
+      "Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone_showHSV.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\cvtest.py",
+        "snippet": "import numpy\nimport cv2\n\npos = (300,100)\nfont = cv2.FONT_HERSHEY_SIMPLEX\nfontScale = 3\ncolor = (250,250,250)\nthickness = 5\n\nlowColorVal1 = numpy.array([167, 45, 45])\nhighColorVal1 = numpy.array([180, 255, 255])\nlowColorVal2 = numpy.array([0, 45, 45])\nhighColorVal2 = numpy.array([3, 255, 255])\n#img = cv2.imread(\"cube.jpg\")\ncam = cv2.VideoCapture(\"red.mp4\")\n#if img is None:\n#    print(\"Cannot open image\")\n#    exit()\nif not cam.isOpened():\n    print(\"Cannot open camera\")"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone-SD1_demo-v1.py",
+        "snippet": "import rospy\nimport cv2\nfrom sensor_msgs.msg import Image\nfrom cv_bridge import CvBridge\n\nrospy.init_node('red_object_detection')\nbridge = CvBridge()\n\n# Create a publisher to publish the video feed to a ROS topic\nimage_pub = rospy.Publisher('red_object_detection/image_raw', Image, queue_size=10)\n\ndef detect_red(cv_image):\n    # Convert the image to HSV color space\n    hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)\n\n    # Define the range of red color in HSV\n    lower_red = (0, 50, 50)\n    upper_red = (10, 255, 255)\n    mask1 = cv2.inRange(hsv, lower_red, upper_red)"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone-SD1_demo-v2.py",
+        "snippet": "import rospy\nimport cv2\nimport numpy as np\nfrom sensor_msgs.msg import Image\nfrom cv_bridge import CvBridge\n\nrospy.init_node('red_object_detection')\nbridge = CvBridge()\n\n# Create a publisher to publish the video feed to a ROS topic\nimage_pub = rospy.Publisher('red_object_detection/image_raw', Image, queue_size=10)\n\ndef detect_red(cv_image):\n    # Convert the image to HSV color space\n    hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)\n\n    # Define the range of red color in HSV\n    lower_red = (0, 50, 50)\n    upper_red = (10, 255, 255)\n    mask1 = cv2.inRange(hsv, lower_red, upper_red)"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone-SD1_demo-v3.py",
+        "snippet": "import rospy\nimport cv2\nimport numpy as np\nfrom sensor_msgs.msg import Image\nfrom cv_bridge import CvBridge\nimport sys\nsys.path.insert(0, '/home/pi/Python_files/SocketPrograms')\nimport client as connect\n\nrospy.init_node('red_object_detection')\nbridge = CvBridge()\nUSED = 0\n# Create a publisher to publish the video feed to a ROS topic\nimage_pub = rospy.Publisher('red_object_detection/image_raw', Image, queue_size=10)\n\ndef detect_red(cv_image):\n    # Convert the image to HSV color space\n    hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)\n\n    # Define the range of red color in HSV (red has 2 ranges) --> format is (hue, saturation, value (brightness))"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone.py",
+        "snippet": "import numpy\nimport cv2\n\npos = (300,100)\nfont = cv2.FONT_HERSHEY_SIMPLEX\nfontScale = 3\ncolor = (250,250,250)\nthickness = 5\n\nlowColorVal1 = numpy.array([170, 160, 60])\nhighColorVal1 = numpy.array([175, 255, 80])\nlowColorVal2 = numpy.array([0, 240, 255])\nhighColorVal2 = numpy.array([3, 255, 255])\n\ncam = cv2.VideoCapture(0)\n\nif not cam.isOpened():\n    print(\"Cannot open camera\")\n    exit()"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\RedOpenCV\\RedDetect_drone_showHSV.py",
+        "snippet": "import numpy\nimport cv2\n\npos = (300,100)\nfont = cv2.FONT_HERSHEY_SIMPLEX\nfontScale = 3\ncolor = (250,250,250)\nthickness = 5\n\n#Color\tHue Range for color RED - it has two ranges, a higher range, and alowe range\n#Red:\tlower range: 0-10, higher range: 170-180\n\nlowColorVal1 = numpy.array([170, 160, 60])\nhighColorVal1 = numpy.array([175, 255, 80])\nlowColorVal2 = numpy.array([0, 255, 255])\nhighColorVal2 = numpy.array([1, 255, 255])\n\ncam = cv2.VideoCapture(0)\n\nif not cam.isOpened():"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\PythonFiles_CloverDrone\\SocketPrograms",
+    "code_files": [
+      "Client - Dr Song\\PythonFiles_CloverDrone\\SocketPrograms\\drone_client.py",
+      "Client - Dr Song\\PythonFiles_CloverDrone\\SocketPrograms\\server.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\SocketPrograms\\drone_client.py",
+        "snippet": "# Ryan Sauer\n# CIS 427\n# Socket Program\n# This program is the client script for the yamotd protocol\n\nfrom socket import *\n\n\nSERVER_NAME = \"192.168.11.133\"                            # Server IP (User defiend)\nSERVER_PORT = 10600                         # Server Port (Predefined)\nCLIENT_SOCKET = socket(AF_INET, SOCK_STREAM)    # Client Socket Creation\n\n\ndef send_message(var):\n    CLIENT_SOCKET.connect((SERVER_NAME, SERVER_PORT))\n    CLIENT_SOCKET.send(str(var).encode())"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\SocketPrograms\\server.py",
+        "snippet": "from socket import *\nfrom picarx import Picarx\nimport time\n\nHOSTNAME = socket.gethostname()                             # Server Hostname\nSERVER_NAME = socket.gethostbyname(HOSTNAME)                # Server IP (car)\nSERVER_PORT = 10600                                         # Server Port(Predefined)\nSPEED = 0                                                   # Global speed variable\nDEFAULT_SPEED = 0                                           # Default crusing speed\npx = Picarx()\n\ndef warning(var):\n    global SPEED\n    if var == 2:\n        if SPEED != 0:                                      # Slow car down by half\n            SPEED = SPEED / 2\n            px.forward(SPEED)\n    elif var == 3:\n        raise NotImplementedError                           # Turn car left\n    elif var == 4:"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\PythonFiles_CloverDrone\\StarryNightOpenCV",
+    "code_files": [
+      "Client - Dr Song\\PythonFiles_CloverDrone\\StarryNightOpenCV\\yellow.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_CloverDrone\\StarryNightOpenCV\\yellow.py",
+        "snippet": "#  Importing the libraries OpenCV and numpy\nimport cv2\nimport numpy as np\n\n# Read the images\nimg = cv2.imread(\"starry_night.jpg\")\n\n# Resizing the image\nimage = cv2.resize(img, (700, 600))\n\n# Convert Image to Image HSV\nhsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)\n\n# Defining lower and upper bound HSV values\nlower = np.array([20, 100, 100])\nupper = np.array([30, 255, 255])\n\n# Defining mask for detecting color\nmask = cv2.inRange(hsv, lower, upper)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Red OpenCV",
+    "code_files": [
+      "Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Red OpenCV\\cvtest.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Red OpenCV\\cvtest.py",
+        "snippet": "import numpy\nimport cv2\n\npos = (300,100)\nfont = cv2.FONT_HERSHEY_SIMPLEX\nfontScale = 3\ncolor = (250,250,250)\nthickness = 5\n\nlowColorVal1 = numpy.array([167, 45, 45])\nhighColorVal1 = numpy.array([180, 255, 255])\nlowColorVal2 = numpy.array([0, 45, 45])\nhighColorVal2 = numpy.array([3, 255, 255])\n#img = cv2.imread(\"cube.jpg\")\ncam = cv2.VideoCapture(\"red.mp4\")\n#if img is None:\n#    print(\"Cannot open image\")\n#    exit()\nif not cam.isOpened():\n    print(\"Cannot open camera\")"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Socket Programs",
+    "code_files": [
+      "Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Socket Programs\\client.py",
+      "Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Socket Programs\\picar_server.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Socket Programs\\client.py",
+        "snippet": "# Ryan Sauer\n# CIS 427\n# Socket Program\n# This program is the client script for the yamotd protocol\n\nfrom socket import *\n\n\nMSGS= [\"MSGGET\\n\", \"MSGSTORE\\n\", \"QUIT\\n\"]  # Predefined yamotd messages\nDELIM = '\\n'                                # Response Delim\n\nSERVER_NAME = \"\"                            # Server IP (User defiend)\nSERVER_PORT = 11427                         # Server Port (Predefined)\nCLIENT_SOCKET = socket(AF_INET, SOCK_STREAM)    # Client Socket Creation\n\n\n# Sends packet and decodes response\n# RETURNS: decoded server response\ndef send_packet(PACKET):\n    CLIENT_SOCKET.send(PACKET.encode())"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Socket Programs\\picar_server.py",
+        "snippet": "from socket import *\nfrom picarx import Picarx\nimport time\n\n                             # Server Hostname\nSERVER_NAME = \"192.168.11.133\"                # Server IP (car)\nSERVER_PORT = 10600                                         # Server Port(Predefined)\nSPEED = 0                                                   # Global speed variable\nDEFAULT_SPEED = 0                                           # Default crusing speed\npx = Picarx()\n\ndef warning(var):\n    global SPEED\n    if var == 2:\n        if SPEED != 0:                                      # Slow car down by half\n            SPEED = SPEED / 2\n            px.forward(SPEED)\n    elif var == 3:\n        raise NotImplementedError                           # Turn car left"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Starry Night OpenCV",
+    "code_files": [
+      "Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Starry Night OpenCV\\yellow.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\PythonFiles_PiCarX\\Python_files\\Starry Night OpenCV\\yellow.py",
+        "snippet": "#  Importing the libraries OpenCV and numpy\nimport cv2\nimport numpy as np\n\n# Read the images\nimg = cv2.imread(\"starry_night.jpg\")\n\n# Resizing the image\nimage = cv2.resize(img, (700, 600))\n\n# Convert Image to Image HSV\nhsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)\n\n# Defining lower and upper bound HSV values\nlower = np.array([20, 100, 100])\nupper = np.array([30, 255, 255])\n\n# Defining mask for detecting color\nmask = cv2.inRange(hsv, lower, upper)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\actionlib_msgs\\scripts",
+    "code_files": [
+      "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\actionlib_msgs\\scripts\\genaction.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\actionlib_msgs\\scripts\\genaction.py",
+        "snippet": "#! /usr/bin/env python\n# Copyright (c) 2009, Willow Garage, Inc.\n# All rights reserved.\n# \n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions are met:\n# \n#     * Redistributions of source code must retain the above copyright\n#       notice, this list of conditions and the following disclaimer.\n#     * Redistributions in binary form must reproduce the above copyright\n#       notice, this list of conditions and the following disclaimer in the\n#       documentation and/or other materials provided with the distribution.\n#     * Neither the name of the Willow Garage, Inc. nor the names of its\n#       contributors may be used to endorse or promote products derived from\n#       this software without specific prior written permission.\n# \n# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs",
+    "code_files": [
+      "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\setup.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\setup.py",
+        "snippet": "from setuptools import setup\nfrom catkin_pkg.python_setup import generate_distutils_setup\n\nd = generate_distutils_setup(\n    ##  don't do this unless you want a globally visible script\n    # scripts=['bin/myscript'], \n    packages=['sensor_msgs'],\n    package_dir={'': 'src'}\n)\n\nsetup(**d)"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\src\\sensor_msgs\\point_cloud2.py",
+        "snippet": "#!/usr/bin/env python\n\n# Software License Agreement (BSD License)\n#\n# Copyright (c) 2008, Willow Garage, Inc.\n# All rights reserved.\n#\n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions\n# are met:\n#\n# * Redistributions of source code must retain the above copyright\n# notice, this list of conditions and the following disclaimer.\n# * Redistributions in binary form must reproduce the above\n# copyright notice, this list of conditions and the following\n# disclaimer in the documentation and/or other materials provided\n# with the distribution.\n# * Neither the name of Willow Garage, Inc. nor the names of its\n# contributors may be used to endorse or promote products derived\n# from this software without specific prior written permission."
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\test\\main.cpp",
+        "snippet": "/*\n * Software License Agreement (BSD License)\n *\n *  Copyright (c) 2013, Open Source Robotics Foundation\n *  All rights reserved.\n *\n *  Redistribution and use in source and binary forms, with or without\n *  modification, are permitted provided that the following conditions\n *  are met:\n *\n *   * Redistributions of source code must retain the above copyright\n *     notice, this list of conditions and the following disclaimer.\n *   * Redistributions in binary form must reproduce the above\n *     copyright notice, this list of conditions and the following\n *     disclaimer in the documentation and/or other materials provided\n *     with the distribution.\n *   * Neither the name of Willow Garage, Inc. nor the names of its\n *     contributors may be used to endorse or promote products derived\n *     from this software without specific prior written permission.\n *"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\test\\test_image_encodings.cpp",
+        "snippet": "/*\n * Software License Agreement (BSD License)\n *\n *  Copyright (c) 2016, Kentaro Wada.\n *  All rights reserved.\n *\n *  Redistribution and use in source and binary forms, with or without\n *  modification, are permitted provided that the following conditions\n *  are met:\n *\n *   * Redistributions of source code must retain the above copyright\n *     notice, this list of conditions and the following disclaimer.\n *   * Redistributions in binary form must reproduce the above\n *     copyright notice, this list of conditions and the following\n *     disclaimer in the documentation and/or other materials provided\n *     with the distribution.\n *   * Neither the name of Willow Garage, Inc. nor the names of its\n *     contributors may be used to endorse or promote products derived\n *     from this software without specific prior written permission.\n *"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\src\\sensor_msgs",
+    "code_files": [
+      "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\src\\sensor_msgs\\point_cloud2.py",
+      "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\src\\sensor_msgs\\__init__.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\src\\sensor_msgs\\point_cloud2.py",
+        "snippet": "#!/usr/bin/env python\n\n# Software License Agreement (BSD License)\n#\n# Copyright (c) 2008, Willow Garage, Inc.\n# All rights reserved.\n#\n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions\n# are met:\n#\n# * Redistributions of source code must retain the above copyright\n# notice, this list of conditions and the following disclaimer.\n# * Redistributions in binary form must reproduce the above\n# copyright notice, this list of conditions and the following\n# disclaimer in the documentation and/or other materials provided\n# with the distribution.\n# * Neither the name of Willow Garage, Inc. nor the names of its\n# contributors may be used to endorse or promote products derived\n# from this software without specific prior written permission."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\test",
+    "code_files": [
+      "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\test\\main.cpp",
+      "Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\test\\test_image_encodings.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\test\\main.cpp",
+        "snippet": "/*\n * Software License Agreement (BSD License)\n *\n *  Copyright (c) 2013, Open Source Robotics Foundation\n *  All rights reserved.\n *\n *  Redistribution and use in source and binary forms, with or without\n *  modification, are permitted provided that the following conditions\n *  are met:\n *\n *   * Redistributions of source code must retain the above copyright\n *     notice, this list of conditions and the following disclaimer.\n *   * Redistributions in binary form must reproduce the above\n *     copyright notice, this list of conditions and the following\n *     disclaimer in the documentation and/or other materials provided\n *     with the distribution.\n *   * Neither the name of Willow Garage, Inc. nor the names of its\n *     contributors may be used to endorse or promote products derived\n *     from this software without specific prior written permission.\n *"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\source code\\common_msgs-noetic-devel\\common_msgs-noetic-devel\\sensor_msgs\\test\\test_image_encodings.cpp",
+        "snippet": "/*\n * Software License Agreement (BSD License)\n *\n *  Copyright (c) 2016, Kentaro Wada.\n *  All rights reserved.\n *\n *  Redistribution and use in source and binary forms, with or without\n *  modification, are permitted provided that the following conditions\n *  are met:\n *\n *   * Redistributions of source code must retain the above copyright\n *     notice, this list of conditions and the following disclaimer.\n *   * Redistributions in binary form must reproduce the above\n *     copyright notice, this list of conditions and the following\n *     disclaimer in the documentation and/or other materials provided\n *     with the distribution.\n *   * Neither the name of Willow Garage, Inc. nor the names of its\n *     contributors may be used to endorse or promote products derived\n *     from this software without specific prior written permission.\n *"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-4951",
+    "folder": "Client - Dr Song\\Team4_Song_SD1_Prototype_DemoFiles_4-26-23",
+    "code_files": [
+      "Client - Dr Song\\Team4_Song_SD1_Prototype_DemoFiles_4-26-23\\drone_client.py",
+      "Client - Dr Song\\Team4_Song_SD1_Prototype_DemoFiles_4-26-23\\picar_server.py",
+      "Client - Dr Song\\Team4_Song_SD1_Prototype_DemoFiles_4-26-23\\RedDetect_drone-SD1_demo-v3.py"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-4951\\Client - Dr Song\\Team4_Song_SD1_Prototype_DemoFiles_4-26-23\\drone_client.py",
+        "snippet": "# Ryan Sauer\n# CIS 427\n# Socket Program\n# This program is the client script for the yamotd protocol\n\nfrom socket import *\n\n\nSERVER_NAME = \"192.168.11.133\"                            # Server IP (User defiend)\nSERVER_PORT = 10600                         # Server Port (Predefined)\nCLIENT_SOCKET = socket(AF_INET, SOCK_STREAM)    # Client Socket Creation\n\n\ndef send_message(var):\n    CLIENT_SOCKET.connect((SERVER_NAME, SERVER_PORT))\n    CLIENT_SOCKET.send(str(var).encode())"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\Team4_Song_SD1_Prototype_DemoFiles_4-26-23\\picar_server.py",
+        "snippet": "from socket import *\nfrom picarx import Picarx\nimport time\n\n                             # Server Hostname\nSERVER_NAME = \"192.168.11.133\"                # Server IP (car)\nSERVER_PORT = 10600                                         # Server Port(Predefined)\nSPEED = 0                                                   # Global speed variable\nDEFAULT_SPEED = 0                                           # Default crusing speed\npx = Picarx()\n\ndef warning(var):\n    global SPEED\n    if var == 2:\n        if SPEED != 0:                                      # Slow car down by half\n            SPEED = SPEED / 2\n            px.forward(SPEED)\n    elif var == 3:\n        raise NotImplementedError                           # Turn car left"
+      },
+      {
+        "file": "CIS-4951\\Client - Dr Song\\Team4_Song_SD1_Prototype_DemoFiles_4-26-23\\RedDetect_drone-SD1_demo-v3.py",
+        "snippet": "import rospy\nimport cv2\nimport numpy as np\nfrom sensor_msgs.msg import Image\nfrom cv_bridge import CvBridge\nimport sys\nsys.path.insert(0, '/home/pi/Python_files/SocketPrograms')\nimport client as connect\n\nrospy.init_node('red_object_detection')\nbridge = CvBridge()\nUSED = 0\n# Create a publisher to publish the video feed to a ROS topic\nimage_pub = rospy.Publisher('red_object_detection/image_raw', Image, queue_size=10)\n\ndef detect_red(cv_image):\n    # Convert the image to HSV color space\n    hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)\n\n    # Define the range of red color in HSV (red has 2 ranges) --> format is (hue, saturation, value (brightness))"
+      }
+    ]
+  }
+]

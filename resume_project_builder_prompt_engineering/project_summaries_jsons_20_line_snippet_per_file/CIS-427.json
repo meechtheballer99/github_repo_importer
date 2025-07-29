@@ -1,0 +1,118 @@
+[
+  {
+    "repo": "CIS-427",
+    "folder": "Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ",
+    "code_files": [
+      "Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\ClientSocket.cpp",
+      "Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\ServerSocket.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\ClientSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the client for the client-server socket programming application \n    //to get and update BANNER message of the day service ran on the remote server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\n//this program's main function takes 1 commmandline parameter: server ip address as per the requirement for this assignment.\n\nint main(int argc, char** argv ) //remember: element 0 in the vector is the file name; first commandline argument begins at element 1\n{\n    WSADATA WSAData;\n    SOCKET serverSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures; we will use serverSock/addr to connect to the server via IP address and TCP port#\n    SOCKADDR_IN addr;  // The sockaddr_in structure specifies the address family, IP address, and port of the server to be connected to."
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\ServerSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the server for the client-server socket programming application \n    //to send and update BANNER message of the day service ran on the server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\nint main()\n{\n    WSADATA WSAData;    //WinSock data structure\n\n    SOCKET serverSock, clientSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures: use serverSock to listen to incoming connection requests; use clientSock for accepting incoming requests;\n                                   //We do this so that the server can listen and accept requests at the same time."
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\P1 COMPLETE\\source code\\ClientSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the client for the client-server socket programming application \n    //to get and update BANNER message of the day service ran on the remote server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\n//this program's main function takes 1 commmandline parameter: server ip address as per the requirement for this assignment.\n\nint main(int argc, char** argv ) //remember: element 0 in the vector is the file name; first commandline argument begins at element 1\n{\n    WSADATA WSAData;\n    SOCKET serverSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures; we will use serverSock/addr to connect to the server via IP address and TCP port#\n    SOCKADDR_IN addr;  // The sockaddr_in structure specifies the address family, IP address, and port of the server to be connected to."
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\P1 COMPLETE\\source code\\ServerSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the server for the client-server socket programming application \n    //to send and update BANNER message of the day service ran on the server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\nint main()\n{\n    WSADATA WSAData;    //WinSock data structure\n\n    SOCKET serverSock, clientSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures: use serverSock to listen to incoming connection requests; use clientSock for accepting incoming requests;\n                                   //We do this so that the server can listen and accept requests at the same time."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-427",
+    "folder": "Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\P1 COMPLETE\\source code",
+    "code_files": [
+      "Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\P1 COMPLETE\\source code\\ClientSocket.cpp",
+      "Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\P1 COMPLETE\\source code\\ServerSocket.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\P1 COMPLETE\\source code\\ClientSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the client for the client-server socket programming application \n    //to get and update BANNER message of the day service ran on the remote server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\n//this program's main function takes 1 commmandline parameter: server ip address as per the requirement for this assignment.\n\nint main(int argc, char** argv ) //remember: element 0 in the vector is the file name; first commandline argument begins at element 1\n{\n    WSADATA WSAData;\n    SOCKET serverSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures; we will use serverSock/addr to connect to the server via IP address and TCP port#\n    SOCKADDR_IN addr;  // The sockaddr_in structure specifies the address family, IP address, and port of the server to be connected to."
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\CIS-427-P1-SocketProgram-DemetriusJ\\P1 COMPLETE\\source code\\ServerSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the server for the client-server socket programming application \n    //to send and update BANNER message of the day service ran on the server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\nint main()\n{\n    WSADATA WSAData;    //WinSock data structure\n\n    SOCKET serverSock, clientSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures: use serverSock to listen to incoming connection requests; use clientSock for accepting incoming requests;\n                                   //We do this so that the server can listen and accept requests at the same time."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-427",
+    "folder": "Programming Assignments\\P1\\Linux_Basic_socket_c",
+    "code_files": [
+      "Programming Assignments\\P1\\Linux_Basic_socket_c\\ClientSocket_C.c",
+      "Programming Assignments\\P1\\Linux_Basic_socket_c\\ServerSocket_C.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\Linux_Basic_socket_c\\ClientSocket_C.c",
+        "snippet": "#include <sys/socket.h>\n#include <sys/types.h>\n#include <netinet/in.h>\n#include <netdb.h>\n#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n#include <unistd.h>\n#include <errno.h>\n#include <arpa/inet.h> \n\nint main()\n{\n    int serverSock = 0;\n    \n\n    struct sockaddr_in addr;\n    serverSock = socket(AF_INET, SOCK_STREAM, 0);"
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\Linux_Basic_socket_c\\ServerSocket_C.c",
+        "snippet": "#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <unistd.h>\n#include <errno.h>\n#include <string.h>\n#include <sys/types.h>\n\n\nint main()\n{\n    int server = 0, client = 0;//Linux specifix\n    struct sockaddr_in serverAddr;//linux specific\n    char * message = \"Hello dear \\r\\n\";\n\n    server = socket(AF_INET, SOCK_STREAM, 0);\n\n    serverAddr.sin_addr.s_addr = INADDR_ANY;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-427",
+    "folder": "Programming Assignments\\P1\\Linux_Basic_socket_cpp",
+    "code_files": [
+      "Programming Assignments\\P1\\Linux_Basic_socket_cpp\\ClientSocket_C++.cpp",
+      "Programming Assignments\\P1\\Linux_Basic_socket_cpp\\ServerSocket_C++.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\Linux_Basic_socket_cpp\\ClientSocket_C++.cpp",
+        "snippet": "#include <sys/socket.h>\n#include <sys/types.h>\n#include <netinet/in.h>\n#include <netdb.h>\n#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n#include <unistd.h>\n#include <errno.h>\n#include <arpa/inet.h> \n#include <iostream>\n\nusing namespace std;\n\nint main()\n{\n    int serverSock = 0;\n    \n\n    struct sockaddr_in addr;"
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\Linux_Basic_socket_cpp\\ServerSocket_C++.cpp",
+        "snippet": "#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <unistd.h>\n#include <errno.h>\n#include <string.h>\n#include <sys/types.h>\n#include <iostream>\n\nusing namespace std;\n\nint main()\n{\n    int server = 0, client = 0;//Linux specifix\n    struct sockaddr_in serverAddr;//linux specific\n\n    server = socket(AF_INET, SOCK_STREAM, 0);"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-427",
+    "folder": "Programming Assignments\\P1\\P1 COMPLETE\\source code",
+    "code_files": [
+      "Programming Assignments\\P1\\P1 COMPLETE\\source code\\ClientSocket.cpp",
+      "Programming Assignments\\P1\\P1 COMPLETE\\source code\\ServerSocket.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\P1 COMPLETE\\source code\\ClientSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the client for the client-server socket programming application \n    //to get and update BANNER message of the day service ran on the remote server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\n//this program's main function takes 1 commmandline parameter: server ip address as per the requirement for this assignment.\n\nint main(int argc, char** argv ) //remember: element 0 in the vector is the file name; first commandline argument begins at element 1\n{\n    WSADATA WSAData;\n    SOCKET serverSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures; we will use serverSock/addr to connect to the server via IP address and TCP port#\n    SOCKADDR_IN addr;  // The sockaddr_in structure specifies the address family, IP address, and port of the server to be connected to."
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\P1 COMPLETE\\source code\\ServerSocket.cpp",
+        "snippet": "//Author: Demetrius Johnson\n//For: CIS-427 With Dr. Zheng Song at UM-Dearborn\n//Date created: 10-21-22\n//Date modified: 10-22-22\n//purpose: Create the server for the client-server socket programming application \n    //to send and update BANNER message of the day service ran on the server.\n\n#include <iostream>\n#include <Winsock2.h> //need this for socket programing in Windows\n#include <Ws2tcpip.h> //need this for updated functions that replace depracated functions (such as inet_addr() function)\n#define APP_SOCKET_PORT 5555\nusing namespace std;\n\nint main()\n{\n    WSADATA WSAData;    //WinSock data structure\n\n    SOCKET serverSock, clientSock; //note: SOCKET is a descriptor to identify SOCKADDR_IN structures: use serverSock to listen to incoming connection requests; use clientSock for accepting incoming requests;\n                                   //We do this so that the server can listen and accept requests at the same time."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-427",
+    "folder": "Programming Assignments\\P1\\Windows_Basic_socket_cpp",
+    "code_files": [
+      "Programming Assignments\\P1\\Windows_Basic_socket_cpp\\ClientSocket_SourceCode_C++.cpp",
+      "Programming Assignments\\P1\\Windows_Basic_socket_cpp\\ServerSocket_SourceCode_C++.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\Windows_Basic_socket_cpp\\ClientSocket_SourceCode_C++.cpp",
+        "snippet": "#include <iostream>\n#include <winsock2.h>\n\nusing namespace std;\n\nint main()\n{\n    WSADATA WSAData;\n    SOCKET serverSock;\n    SOCKADDR_IN addr;\n\n    WSAStartup(MAKEWORD(2,0), &WSAData);\n    serverSock = socket(AF_INET, SOCK_STREAM, 0);\n\n    //addr.sin_addr.s_addr = inet_addr(\"192.168.0.8\"); // replace the ip with your futur server ip address. If server AND client are running on the same computer, you can use the local ip 127.0.0.1\n    addr.sin_addr.s_addr = inet_addr(\"127.0.0.1\");\n    addr.sin_family = AF_INET;\n    addr.sin_port = htons(5555);\n\n    connect(serverSock, (SOCKADDR *)&addr, sizeof(addr));"
+      },
+      {
+        "file": "CIS-427\\Programming Assignments\\P1\\Windows_Basic_socket_cpp\\ServerSocket_SourceCode_C++.cpp",
+        "snippet": "#include <iostream>\n#include <winsock2.h>\n\nusing namespace std;\n\nint main()\n{\n    WSADATA WSAData;\n\n    SOCKET serverSock, clientSock;\n\n    SOCKADDR_IN serverAddr, clientAddr;\n\n    WSAStartup(MAKEWORD(2,0), &WSAData);\n    serverSock = socket(AF_INET, SOCK_STREAM, 0);\n\n    serverAddr.sin_addr.s_addr = INADDR_ANY;\n    serverAddr.sin_family = AF_INET;\n    serverAddr.sin_port = htons(5555);"
+      }
+    ]
+  }
+]
