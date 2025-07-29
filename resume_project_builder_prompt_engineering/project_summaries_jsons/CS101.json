@@ -1,0 +1,15 @@
+[
+  {
+    "repo": "CS101",
+    "folder": ".",
+    "code_files": [
+      ".\\hello_world.py"
+    ],
+    "snippets": [
+      {
+        "file": "CS101\\hello_world.py",
+        "snippet": "print(\"Hello, CS101!\")"
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "repo": "CIS-387",
+    "folder": "Labs\\lab 1\\share\\LiME-master\\LiME-master\\src",
+    "code_files": [
+      "Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\deflate.c",
+      "Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\disk.c",
+      "Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\hash.c",
+      "Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\main.c",
+      "Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\tcp.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-387\\Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\deflate.c",
+        "snippet": "/*\n * LiME - Linux Memory Extractor\n * Copyright (c) 2011-2014 Joe Sylve - 504ENSICS Labs\n *\n *\n * Author:\n * Joe Sylve       - joe.sylve@gmail.com, @jtsylve\n *\n * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation; either version 2 of the License, or (at\n * your option) any later version.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\n * General Public License for more details.\n *\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software"
+      },
+      {
+        "file": "CIS-387\\Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\disk.c",
+        "snippet": "/*\n * LiME - Linux Memory Extractor\n * Copyright (c) 2011-2014 Joe Sylve - 504ENSICS Labs\n *\n *\n * Author:\n * Joe Sylve       - joe.sylve@gmail.com, @jtsylve\n *\n * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation; either version 2 of the License, or (at\n * your option) any later version.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\n * General Public License for more details.\n *\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software"
+      },
+      {
+        "file": "CIS-387\\Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\hash.c",
+        "snippet": "/*\n * LiME - Linux Memory Extractor\n * Copyright (c) 2011-2014 Joe Sylve - 504ENSICS Labs\n *\n *\n * Author:\n * Joe Sylve       - joe.sylve@gmail.com, @jtsylve\n *\n * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation; either version 2 of the License, or (at\n * your option) any later version.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\n * General Public License for more details.\n *\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software"
+      },
+      {
+        "file": "CIS-387\\Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\main.c",
+        "snippet": "/*\n * LiME - Linux Memory Extractor\n * Copyright (c) 2011-2014 Joe Sylve - 504ENSICS Labs\n *\n *\n * Author:\n * Joe Sylve       - joe.sylve@gmail.com, @jtsylve\n *\n * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation; either version 2 of the License, or (at\n * your option) any later version.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\n * General Public License for more details.\n *\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software"
+      },
+      {
+        "file": "CIS-387\\Labs\\lab 1\\share\\LiME-master\\LiME-master\\src\\tcp.c",
+        "snippet": "/*\n * LiME - Linux Memory Extractor\n * Copyright (c) 2011-2014 Joe Sylve - 504ENSICS Labs\n *\n *\n * Author:\n * Joe Sylve       - joe.sylve@gmail.com, @jtsylve\n *\n * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation; either version 2 of the License, or (at\n * your option) any later version.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\n * General Public License for more details.\n *\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software"
+      }
+    ]
+  }
+]

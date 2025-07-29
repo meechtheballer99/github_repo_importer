@@ -1,0 +1,312 @@
+[
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\CIS-479_HW4_Q1_MarkovChain_Meech",
+    "code_files": [
+      "programming\\CIS-479_HW4_Q1_MarkovChain_Meech\\CIS-479_HW4_Q1_MarkovChain_Meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\CIS-479_HW4_Q1_MarkovChain_Meech\\CIS-479_HW4_Q1_MarkovChain_Meech.cpp",
+        "snippet": "\ufeff// CIS-479_HW4_Q1_MarkovChain_Meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n// Purpose: Find probabilities from a Markov Chain data model; for CIS 479 SUMMER II With Dr. Shengquan Wang\n//Date Created: 8/13/22\n//Date Modified: 8/15/22\n\n\n/*\n\n\nWe consider a 3-state (a, b, c) Markov Chain. \n\nWe observe the following sequence of data: \nb a a b a b c c b c a b c c a b c c a c b c a b c c b b b a b c. (# of data points collected = 32).\n\nPlease use MLE and Laplace Smoothing with k = 2 to learn the following transition probabilities: \nP(a|a), P(b|a), P(c|a), P(a|b), P(b|b), P(c|b), P(a|c), P(b|c), P(c|c).\n\n\nMLE of \ud835\udc5d_\ud835\udc5a under Laplace Smoothing with k:"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\EM_Algorithm_HW4_Q7-CIS-479_meech",
+    "code_files": [
+      "programming\\EM_Algorithm_HW4_Q7-CIS-479_meech\\EM_Algorithm_HW4_Q7-CIS-479_meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\EM_Algorithm_HW4_Q7-CIS-479_meech\\EM_Algorithm_HW4_Q7-CIS-479_meech.cpp",
+        "snippet": "\ufeff// EM_Algorithm_HW4_Q7-CIS-479_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson (Meech)\n//Purpose: Create the Exepectation Maximization (EM) algorithm in order to answer question 7 from HW4, CIS-479 SUMMER II with DR. Shengquan Wang\n//Date created: 8/17/22\n//Date Modified: 8/18/22\n\n#include <iostream>\n#include <stdlib.h>\n#define _USE_MATH_DEFINES\n#include <math.h>\n#include <vector>\n#include <iomanip>\nusing namespace std;\n\n\n/*\n\nWe have the following six 1D data_set points: 1.6, 2.1, 1.8, 5.3, 6.7, 4.7. \nWe consider EM with two components with the following initial setup: \n\u03c0_1 = 0.4, \u00b5_1 = 1, (\u03c3_1)^2 = 2, \u03c0_2 = 0.6, \u00b5_2 = 2, (\u03c3_2)^2 = 2,"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\FINAL_EXAM_Programs_CIS-479-MEECH",
+    "code_files": [
+      "programming\\FINAL_EXAM_Programs_CIS-479-MEECH\\CIS-479_HW4_Q1_MarkovChain_Meech.cpp",
+      "programming\\FINAL_EXAM_Programs_CIS-479-MEECH\\EM-Algorithm_FINALEXAMQ13_meech.cpp",
+      "programming\\FINAL_EXAM_Programs_CIS-479-MEECH\\K-MeansAlgorithm_FINALEXAMQ12_meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\FINAL_EXAM_Programs_CIS-479-MEECH\\CIS-479_HW4_Q1_MarkovChain_Meech.cpp",
+        "snippet": "\ufeff// CIS-479_HW4_Q1_MarkovChain_Meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n// Purpose: Find probabilities from a Markov Chain data model; for CIS 479 SUMMER II With Dr. Shengquan Wang\n//Date Created: 8/13/22\n//Date Modified: 8/15/22\n\n\n/*\n\n\nWe consider a 3-state (a, b, c) Markov Chain. \n\nWe observe the following sequence of data: \nb a a b a b c c b c a b c c a b c c a c b c a b c c b b b a b c. (# of data points collected = 32).\n\nPlease use MLE and Laplace Smoothing with k = 2 to learn the following transition probabilities: \nP(a|a), P(b|a), P(c|a), P(a|b), P(b|b), P(c|b), P(a|c), P(b|c), P(c|c).\n\n\nMLE of \ud835\udc5d_\ud835\udc5a under Laplace Smoothing with k:"
+      },
+      {
+        "file": "CIS-479\\programming\\FINAL_EXAM_Programs_CIS-479-MEECH\\EM-Algorithm_FINALEXAMQ13_meech.cpp",
+        "snippet": "\ufeff// EM_Algorithm_HW4_Q7-CIS-479_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson (Meech)\n//Purpose: Create the Exepectation Maximization (EM) algorithm in order to answer question 7 from HW4, CIS-479 SUMMER II with DR. Shengquan Wang\n//Date created: 8/17/22\n//Date Modified: 8/18/22\n\n#include <iostream>\n#include <stdlib.h>\n#define _USE_MATH_DEFINES\n#include <math.h>\n#include <vector>\n#include <iomanip>\nusing namespace std;\n\n\n/*\n\nWe have the following six 1D data_set points: 1.6, 2.1, 1.8, 5.3, 6.7, 4.7. \nWe consider EM with two components with the following initial setup: \n\u03c0_1 = 0.4, \u00b5_1 = 1, (\u03c3_1)^2 = 2, \u03c0_2 = 0.6, \u00b5_2 = 2, (\u03c3_2)^2 = 2,"
+      },
+      {
+        "file": "CIS-479\\programming\\FINAL_EXAM_Programs_CIS-479-MEECH\\K-MeansAlgorithm_FINALEXAMQ12_meech.cpp",
+        "snippet": "// K-MeansAlgorithm_HW4_Q6-CIS-479_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson (Meech)\n//Purpose: Create a K-Means algorithm in order to answer question 6 from HW4, CIS-479 SUMMER II with DR. Shengquan Wang\n//Date created: 8/16/22\n//Date Modified: 8/17/22\n/*\n\nWe have the following eight 2D data points:\nX          Y\n24.5     3.5\n26.5     7.0\n21.5     7.5\n25.0    15.5\n2.5     20.5\n9.5     23.0\n11.0    20.0\n21.5     4.0\nTwo initial centroids (12.0, 12.5), (15.0, 15.5). Please find the next two centroids after one iteration using K-means\nwith K = 2 and Euclidean distance."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\K-MeansAlgorithm_HW4_Q6-CIS-479_meech",
+    "code_files": [
+      "programming\\K-MeansAlgorithm_HW4_Q6-CIS-479_meech\\K-MeansAlgorithm_HW4_Q6-CIS-479_meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\K-MeansAlgorithm_HW4_Q6-CIS-479_meech\\K-MeansAlgorithm_HW4_Q6-CIS-479_meech.cpp",
+        "snippet": "// K-MeansAlgorithm_HW4_Q6-CIS-479_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson (Meech)\n//Purpose: Create a K-Means algorithm in order to answer question 6 from HW4, CIS-479 SUMMER II with DR. Shengquan Wang\n//Date created: 8/16/22\n//Date Modified: 8/17/22\n/*\n\nWe have the following eight 2D data points:\nX          Y\n24.5     3.5\n26.5     7.0\n21.5     7.5\n25.0    15.5\n2.5     20.5\n9.5     23.0\n11.0    20.0\n21.5     4.0\nTwo initial centroids (12.0, 12.5), (15.0, 15.5). Please find the next two centroids after one iteration using K-means\nwith K = 2 and Euclidean distance."
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\minHeapPQ_TestModuleProject-meech",
+    "code_files": [
+      "programming\\minHeapPQ_TestModuleProject-meech\\minHeapPQ.cpp",
+      "programming\\minHeapPQ_TestModuleProject-meech\\minHeapPQ_TestModuleProject-meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      },
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\minHeapPQ_TestModuleProject-meech.cpp",
+        "snippet": "// minHeapPQ_TestModuleProject-meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//\n//Author: Demetrius E Johnson\n//Purpose: test the minHeapPQ library module so that I can make sure it can be integrated with other programs\n//Date Created: 7/21/22\n//Date Modified: 7/21/22\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this sitation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n#include <iostream>\n#include <stdlib.h>\nusing namespace std;\n\nminHeapPQ<int> pq;\nvector<int> test;"
+      },
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\back up\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 8/02/21\n\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)\n//i has parent i/2\n//start of a priority queue using a heap structure is at index i = 1 (not index 0; index 0 is place holder)\n//note: since start of heap is nullObject placeholder (index 0 = null element), then size of heap == will always return 1; thus true heap size is heapSize - 1\n\ntemplate<typename T>\nminHeapPQ<T>::minHeapPQ() {\n\n\tvectorPtr = &heapArray;"
+      },
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\CIS-350-ORIGNAL H AND CPP__broken\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 8/02/21\n\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)\n//i has parent i/2\n//start of a priority queue using a heap structure is at index i = 1 (not index 0; index 0 is place holder)\n//note: since start of heap is nullObject placeholder (index 0 = null element), then size of heap == will always return 1; thus true heap size is heapSize - 1\n\ntemplate<typename T>\nminHeapPQ<T>::minHeapPQ() {\n\n\tvectorPtr = &heapArray;"
+      },
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\minHeapPQ_TestModuleProject-meech\\back up",
+    "code_files": [
+      "programming\\minHeapPQ_TestModuleProject-meech\\back up\\minHeapPQ.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\back up\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 8/02/21\n\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)\n//i has parent i/2\n//start of a priority queue using a heap structure is at index i = 1 (not index 0; index 0 is place holder)\n//note: since start of heap is nullObject placeholder (index 0 = null element), then size of heap == will always return 1; thus true heap size is heapSize - 1\n\ntemplate<typename T>\nminHeapPQ<T>::minHeapPQ() {\n\n\tvectorPtr = &heapArray;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\minHeapPQ_TestModuleProject-meech\\CIS-350-ORIGNAL H AND CPP__broken",
+    "code_files": [
+      "programming\\minHeapPQ_TestModuleProject-meech\\CIS-350-ORIGNAL H AND CPP__broken\\minHeapPQ.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\CIS-350-ORIGNAL H AND CPP__broken\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 8/02/21\n\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)\n//i has parent i/2\n//start of a priority queue using a heap structure is at index i = 1 (not index 0; index 0 is place holder)\n//note: since start of heap is nullObject placeholder (index 0 = null element), then size of heap == will always return 1; thus true heap size is heapSize - 1\n\ntemplate<typename T>\nminHeapPQ<T>::minHeapPQ() {\n\n\tvectorPtr = &heapArray;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\minHeapPQ_TestModuleProject-meech\\Tested and Fully functional minHeap PQ files",
+    "code_files": [
+      "programming\\minHeapPQ_TestModuleProject-meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\minHeapPQ_TestModuleProject-meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech",
+    "code_files": [
+      "programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\MAIN_Project1-CIS-479-Meech.cpp",
+      "programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\minHeapPQ.cpp",
+      "programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\QuadraticProbing.cpp",
+      "programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\StateNode.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\MAIN_Project1-CIS-479-Meech.cpp",
+        "snippet": "// Project1-CIS-479-Meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: Implement the A* Search algorithm\n//Date Created: 7/15/22\n//Date Modified: \n\n//CIS-479: Windy Maze puzzle 8-tile program\n#include <iostream>\n#include \"StateNode.h\"\n#include \"minHeapPQ.h\"\n#include \"minHeapPQ.cpp\"\n#include \"QuadraticProbing.h\"\nusing namespace std;\n\n////////////////////////FUNCTION DECLARATIONS//////////////////////\nint getValueLocation_row(StateNode& state, int value);\nint getValueLocation_col(StateNode& state, int value);\nint calcHeuristic_full_state(StateNode& stateStart, StateNode& stateGoal);\nint calcHeuristic_single_tile(StateNode& stateStart, StateNode& stateGoal, int& rowStart, int& colStart);\nvoid calcHeuristic_based_on_parent(StateNode& parentNode, StateNode& childNode);"
+      },
+      {
+        "file": "CIS-479\\programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      },
+      {
+        "file": "CIS-479\\programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\QuadraticProbing.cpp",
+        "snippet": "//Hash Table function provided by Professor Dr. Junhua Guo -- UM-DEARBORN -- \n//Modfied by Demetrius Johnson --for CIS-350 Summer 2021 and CIS-479 Summer 2022\n//this version of the class was adapted for the Windy Puzzle Program 1 for CIS-479 with Doctor Shenquan Wang\n#include \"QuadraticProbing.h\"\n#include <iostream>\nusing namespace std;\n\n/**\n * Internal method to test if a positive number is prime.\n * Not an efficient algorithm.\n */\nbool isPrime( int n )\n{\n    if( n == 2 || n == 3 )\n        return true;\n\n    if( n == 1 || n % 2 == 0 )\n        return false;\n\n    for( int i = 3; i * i <= n; i += 2 )"
+      },
+      {
+        "file": "CIS-479\\programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\StateNode.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: \n//Date Created: 7/15/22\n//Date Modified: \n\n\n#include \"StateNode.h\"\n\nStateNode::StateNode() {\n\n\theuristicVal = -1;\n\tpathCost = -1;\n\tEvalFunction = -1;\n\thash_string.resize(9);\n\tparent = nullptr; //pointer works so that you can trace back to root; but rehash function causes this program to fail; safegaurd placed in main program.\n\n}\nvoid StateNode::setEval_value(void) { EvalFunction = (pathCost + heuristicVal); }\n\n//convert table values for a given node to a uniquely ordered string value"
+      },
+      {
+        "file": "CIS-479\\programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files",
+    "code_files": [
+      "programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\P1_COMPLETED PROJECT\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\P2_COMPLETED PROJECT\\Project2-CIS-479-Meech",
+    "code_files": [
+      "programming\\P2_COMPLETED PROJECT\\Project2-CIS-479-Meech\\MAIN_Project2-CIS-479-Meech.cpp",
+      "programming\\P2_COMPLETED PROJECT\\Project2-CIS-479-Meech\\Value_Iteration_BellmanEquation_meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\P2_COMPLETED PROJECT\\Project2-CIS-479-Meech\\MAIN_Project2-CIS-479-Meech.cpp",
+        "snippet": "\ufeff//MAIN_Project2-CIS-479-Meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: Implement Robot Localization with the HMM (Hidden Markov Model) algorithm - CIS-479-Project2\n//Special Notes: Adapated some of my Value Iteration Bellman Equation Program\n//Date Created: 8/02/2022\n//Date Modified: 8/09/2022\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\nusing namespace std;\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\n\n//note:\n//static keyword will make the variables go in the .DATA section at compile time and not on the run time stack --> which requires an instnace of table to be called\n//static variables therefore are shared by all objects of the class AND can be accessed even before an object of the class is declared.\nstruct table {\n\n    const static int numRows = 6;"
+      },
+      {
+        "file": "CIS-479\\programming\\P2_COMPLETED PROJECT\\Project2-CIS-479-Meech\\Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n                \n//Date Created: 7/28/22\n//Date Modified: 7/28/22\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\nstruct table {\n\n    int tablePos_reward[3][4];\n    float utility_val[3][4];\n    int rewardVal = -3;\n    int selected_utility_val = 0;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\Project1-CIS-479-Meech",
+    "code_files": [
+      "programming\\Project1-CIS-479-Meech\\minHeapPQ.cpp",
+      "programming\\Project1-CIS-479-Meech\\Project1-CIS-479-Meech.cpp",
+      "programming\\Project1-CIS-479-Meech\\QuadraticProbing.cpp",
+      "programming\\Project1-CIS-479-Meech\\StateNode.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\Project1-CIS-479-Meech\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      },
+      {
+        "file": "CIS-479\\programming\\Project1-CIS-479-Meech\\Project1-CIS-479-Meech.cpp",
+        "snippet": "// Project1-CIS-479-Meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: Implement the A* Search algorithm\n//Date Created: 7/15/22\n//Date Modified: \n\n//CIS-479: Windy Maze puzzle 8-tile program\n#include <iostream>\n#include \"StateNode.h\"\n#include \"minHeapPQ.h\"\n#include \"minHeapPQ.cpp\"\n#include \"QuadraticProbing.h\"\nusing namespace std;\n\n////////////////////////FUNCTION DECLARATIONS//////////////////////\nint getValueLocation_row(StateNode& state, int value);\nint getValueLocation_col(StateNode& state, int value);\nint calcHeuristic_full_state(StateNode& stateStart, StateNode& stateGoal);\nint calcHeuristic_single_tile(StateNode& stateStart, StateNode& stateGoal, int& rowStart, int& colStart);\nvoid calcHeuristic_based_on_parent(StateNode& parentNode, StateNode& childNode);"
+      },
+      {
+        "file": "CIS-479\\programming\\Project1-CIS-479-Meech\\QuadraticProbing.cpp",
+        "snippet": "//Hash Table function provided by Professor Dr. Junhua Guo -- UM-DEARBORN -- \n//Modfied by Demetrius Johnson --for CIS-350 Summer 2021 and CIS-479 Summer 2022\n//this version of the class was adapted for the Windy Puzzle Program 1 for CIS-479 with Doctor Shenquan Wang\n#include \"QuadraticProbing.h\"\n#include <iostream>\nusing namespace std;\n\n/**\n * Internal method to test if a positive number is prime.\n * Not an efficient algorithm.\n */\nbool isPrime( int n )\n{\n    if( n == 2 || n == 3 )\n        return true;\n\n    if( n == 1 || n % 2 == 0 )\n        return false;\n\n    for( int i = 3; i * i <= n; i += 2 )"
+      },
+      {
+        "file": "CIS-479\\programming\\Project1-CIS-479-Meech\\StateNode.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: \n//Date Created: 7/15/22\n//Date Modified: \n\n\n#include \"StateNode.h\"\n\nStateNode::StateNode() {\n\n\theuristicVal = -1;\n\tpathCost = -1;\n\tEvalFunction = -1;\n\thash_string.resize(9);\n\tparent = nullptr; //pointer works so that you can trace back to root; but rehash function causes this program to fail; safegaurd placed in main program.\n\n}\nvoid StateNode::setEval_value(void) { EvalFunction = (pathCost + heuristicVal); }\n\n//convert table values for a given node to a uniquely ordered string value"
+      },
+      {
+        "file": "CIS-479\\programming\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files",
+    "code_files": [
+      "programming\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\Project1-CIS-479-Meech\\Tested and Fully functional minHeap PQ files\\minHeapPQ.cpp",
+        "snippet": "//Author: Demetrius E Johnson\n//Purpose: creat a min heap priority queue template class so I can use it for my MST program and for future uses\n//Date Created: 7/25/21\n//Date Modified: 7/21/22\n//New adaptation: added functions to support my CIS-479 P1 windy maze puzzle A* search program\n//As of 7/21/22: have fully tested this module through a test module program (minHeapPQ_testModule_prj). No known issues. Works as expected.\n\n\n //note: minHeapPQ is a template class. There are two solutions to avoid FATAL LINK ERROR:\n//1) Place do not include cpp file in the project, only include the header, and add #include .cpp at end of header file, \n//then just #include the .h file in the main program source file.\n//2)just #include the .h and the cpp files of the header in the main program source file.\n//**for this situation, I tested both cases (they both work!), and decided to go with option 1 for this test project.\n#include \"minHeapPQ.h\"\n\n//pq using an array\n//min will always be at root\n//chidlren will be greater than their parent\n//i has children 2i and 2i+1 (left and right child, respectively)"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\Project2-CIS-479-Meech",
+    "code_files": [
+      "programming\\Project2-CIS-479-Meech\\MAIN_Project2-CIS-479-Meech.cpp",
+      "programming\\Project2-CIS-479-Meech\\Value_Iteration_BellmanEquation_meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\Project2-CIS-479-Meech\\MAIN_Project2-CIS-479-Meech.cpp",
+        "snippet": "\ufeff//MAIN_Project2-CIS-479-Meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius E Johnson\n//Purpose: Implement Robot Localization with the HMM (Hidden Markov Model) algorithm - CIS-479-Project2\n//Special Notes: Adapated some of my Value Iteration Bellman Equation Program\n//Date Created: 8/02/2022\n//Date Modified: 8/09/2022\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\nusing namespace std;\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\n\n//note:\n//static keyword will make the variables go in the .DATA section at compile time and not on the run time stack --> which requires an instnace of table to be called\n//static variables therefore are shared by all objects of the class AND can be accessed even before an object of the class is declared.\nstruct table {\n\n    const static int numRows = 6;"
+      },
+      {
+        "file": "CIS-479\\programming\\Project2-CIS-479-Meech\\Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n                \n//Date Created: 7/28/22\n//Date Modified: 7/28/22\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\nstruct table {\n\n    int tablePos_reward[3][4];\n    float utility_val[3][4];\n    int rewardVal = -3;\n    int selected_utility_val = 0;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\Value_Iteration_BellmanEquation_meech",
+    "code_files": [
+      "programming\\Value_Iteration_BellmanEquation_meech\\HW3_Q4_Value_Iteration_BellmanEquation_meech.cpp",
+      "programming\\Value_Iteration_BellmanEquation_meech\\original_Value_Iteration_BellmanEquation_meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\HW3_Q4_Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "\ufeff//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n//STATUS: WORKS; NO KNOWN ISSUES\n//Revised for HW3 Q4:\n\n/*\n\n\nWe still assume the wind comes from the north\nand the cost of one step is defined as follows (the reward will be the negation of the cost): \n1 for moving southward; \n2 for moving eastward or westward; 3 for moving northward.\nThe reward function R(s,a) will be the negative of the cost.\nWe also assume that the reward reaching at the goal is 80. \nSince the reward function R(s; a) here depends on both the state \nand the action taken at this state, all utility equations should be revised as:\n\nU(s) \u2190 max_a (R(s,a) + \u03b3 \u03a3s' P(s'|s,a) U(s'))"
+      },
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\original_Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n                \n//Date Created: 7/28/22\n//Date Modified: 7/28/22\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\nstruct table {\n\n    int tablePos_reward[3][4];\n    float utility_val[3][4];\n    int rewardVal = -3;\n    int selected_utility_val = 0;"
+      },
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\HW3_Q4_Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "\ufeff//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n//STATUS: WORKS; NO KNOWN ISSUES\n//Revised for HW3 Q4:\n\n/*\n\n\nWe still assume the wind comes from the north\nand the cost of one step is defined as follows (the reward will be the negation of the cost): \n1 for moving southward; \n2 for moving eastward or westward; 3 for moving northward.\nThe reward function R(s,a) will be the negative of the cost.\nWe also assume that the reward reaching at the goal is 80. \nSince the reward function R(s; a) here depends on both the state \nand the action taken at this state, all utility equations should be revised as:\n\nU(s) \u2190 max_a (R(s,a) + \u03b3 \u03a3s' P(s'|s,a) U(s'))"
+      },
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\original_Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n                \n//Date Created: 7/28/22\n//Date Modified: 7/28/22\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\nstruct table {\n\n    int tablePos_reward[3][4];\n    float utility_val[3][4];\n    int rewardVal = -3;\n    int selected_utility_val = 0;"
+      },
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\Value_Iteration_BellmanEquation_officialWorkingVers_meech.cpp",
+        "snippet": "//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n                \n//Date Created: 7/28/22\n//Date Modified: 7/28/22\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\nstruct table {\n\n    int tablePos_reward[3][4];\n    float utility_val[3][4];\n    int rewardVal = -3;\n    int selected_utility_val = 0;"
+      }
+    ]
+  },
+  {
+    "repo": "CIS-479",
+    "folder": "programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file",
+    "code_files": [
+      "programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\HW3_Q4_Value_Iteration_BellmanEquation_meech.cpp",
+      "programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\original_Value_Iteration_BellmanEquation_meech.cpp",
+      "programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\Value_Iteration_BellmanEquation_officialWorkingVers_meech.cpp"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\HW3_Q4_Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "\ufeff//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n//STATUS: WORKS; NO KNOWN ISSUES\n//Revised for HW3 Q4:\n\n/*\n\n\nWe still assume the wind comes from the north\nand the cost of one step is defined as follows (the reward will be the negation of the cost): \n1 for moving southward; \n2 for moving eastward or westward; 3 for moving northward.\nThe reward function R(s,a) will be the negative of the cost.\nWe also assume that the reward reaching at the goal is 80. \nSince the reward function R(s; a) here depends on both the state \nand the action taken at this state, all utility equations should be revised as:\n\nU(s) \u2190 max_a (R(s,a) + \u03b3 \u03a3s' P(s'|s,a) U(s'))"
+      },
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\original_Value_Iteration_BellmanEquation_meech.cpp",
+        "snippet": "//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n                \n//Date Created: 7/28/22\n//Date Modified: 7/28/22\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\nstruct table {\n\n    int tablePos_reward[3][4];\n    float utility_val[3][4];\n    int rewardVal = -3;\n    int selected_utility_val = 0;"
+      },
+      {
+        "file": "CIS-479\\programming\\Value_Iteration_BellmanEquation_meech\\officially working version source file\\Value_Iteration_BellmanEquation_officialWorkingVers_meech.cpp",
+        "snippet": "//Value_Iteration_BellmanEquation_meech.cpp : This file contains the 'main' function. Program execution begins and ends there.\n//Author: Demetrius Johnson\n//Purposse:     //Value Iteration Program using the Bellman Equation\\n-for CIS-479 with Doctor Shengquan Wang\n                //Program Written to demonstrate Lecutre Slide 7 - Planning and Decision Making (slides 42-50)\n                \n//Date Created: 7/28/22\n//Date Modified: 7/28/22\n\n#include <iostream>\n#include <iomanip>\n#include <vector>\n\n///////DATA STRUCTURES && ENUMERATORS////////////////////////////////////////////////////\n\nstruct table {\n\n    int tablePos_reward[3][4];\n    float utility_val[3][4];\n    int rewardVal = -3;\n    int selected_utility_val = 0;"
+      }
+    ]
+  }
+]

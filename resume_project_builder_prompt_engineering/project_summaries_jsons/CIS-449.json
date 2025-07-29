@@ -1,0 +1,60 @@
+[
+  {
+    "repo": "CIS-449",
+    "folder": "Assignment 2\\source code",
+    "code_files": [
+      "Assignment 2\\source code\\call_ls_task6.c",
+      "Assignment 2\\source code\\cap_leak.c",
+      "Assignment 2\\source code\\catall.c",
+      "Assignment 2\\source code\\exploit_ls_task6.c",
+      "Assignment 2\\source code\\myenv.c",
+      "Assignment 2\\source code\\mylib.c",
+      "Assignment 2\\source code\\myprintenv.c",
+      "Assignment 2\\source code\\myprog.c",
+      "Assignment 2\\source code\\task4_system_call.c",
+      "Assignment 2\\source code\\task5_printenv.c"
+    ],
+    "snippets": [
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\call_ls_task6.c",
+        "snippet": "#include <stdio.h>\n#include <stdlib.h>\nint main() {\n\tsystem(\"ls\"); //call ls program using relative path\n\treturn 0;\n}"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\cap_leak.c",
+        "snippet": "#include <unistd.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <fcntl.h>\n\nvoid main()\n{\n  int fd;\n  char *v[2];\n\n  /* Assume that /etc/zzz is an important system file,\n   * and it is owned by root with permission 0644.\n   * Before running this program, you should create\n   * the file /etc/zzz first. */\n  fd = open(\"/etc/zzz\", O_RDWR | O_APPEND);        \n  if (fd == -1) {\n     printf(\"Cannot open /etc/zzz\\n\");\n     exit(0);\n  }"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\catall.c",
+        "snippet": "#include <unistd.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main(int argc, char *argv[])\n{\n  char *v[3];\n  char *command;\n\n  if(argc < 2) {\n    printf(\"Please type a file name.\\n\");\n    return 1;\n  }\n\n  v[0] = \"/bin/cat\"; v[1] = argv[1]; v[2] = NULL;\n\n  command = malloc(strlen(v[0]) + strlen(v[1]) + 2);\n  sprintf(command, \"%s %s\", v[0], v[1]);"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\exploit_ls_task6.c",
+        "snippet": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n\tsystem(\"sh\");\n\treturn 0;\n}"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\myenv.c",
+        "snippet": "#include <unistd.h>\n\nextern char **environ;\n\nint main()\n{\n  char *argv[2];\n\n  argv[0] = \"/usr/bin/env\";\n  argv[1] = NULL;\n\n  execve(\"/usr/bin/env\", argv, environ);  \n\n  return 0 ;\n}"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\mylib.c",
+        "snippet": "#include <stdio.h>\nvoid sleep (int s)\n{\n\t/* If this is invoked by a privileged program,\n\tyou can do damages here! */\n\tprintf(\"I am not sleeping!\\n\");\n\treturn;\n\n}"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\myprintenv.c",
+        "snippet": "#include <unistd.h>\n#include <stdio.h>\n#include <stdlib.h>\n\nextern char **environ;\n\nvoid printenv()\n{\n  int i = 0;\n  while (environ[i] != NULL) {\n     printf(\"%s\\n\", environ[i]);\n     i++;\n  }\n}\n\nvoid main()\n{\n  pid_t childPid;\n  switch(childPid = fork()) {\n    case 0:  /* child process */"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\myprog.c",
+        "snippet": "/* myprog.c */\n#include <unistd.h>\nint main()\n{\n\tsleep(1);\n\treturn 0;\n}"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\task4_system_call.c",
+        "snippet": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(){\n\n\tsystem(\"/usr/bin/env\");\n\treturn 0;\n\n}"
+      },
+      {
+        "file": "CIS-449\\Assignment 2\\source code\\task5_printenv.c",
+        "snippet": "#include <stdio.h>\n#include <stdlib.h>\n\nextern char **environ;\n\nint main()\n{\n\tint i = 0;\n\twhile (environ[i] != NULL) {\n\t\tprintf(\"%s\\n\", environ[i]);\n\t\ti++;\n\t}\n}"
+      }
+    ]
+  }
+]
